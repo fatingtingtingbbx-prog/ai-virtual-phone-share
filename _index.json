@@ -1,38 +1,14 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-10T22:25:22.302Z",
+  "generatedAt": "2026-08-10T22:34:17.898Z",
   "folders": [
     {
-      "name": "CSS方案",
-      "count": 1
-    },
-    {
       "name": "测试测试",
-      "count": 1
-    },
-    {
-      "name": "预设",
       "count": 1
     }
   ],
   "entries": [
-    {
-      "folder": "CSS方案",
-      "name": "示例·奶油白",
-      "dirName": "示例·奶油白",
-      "type": "dir",
-      "path": "资源/CSS方案/示例·奶油白",
-      "files": [
-        "资源/CSS方案/示例·奶油白/奶油白.css"
-      ],
-      "images": [],
-      "description": "示例资源：奶油白全局配色。\n导入到「全局自定义CSS」后在外观页生效，可随时清除。\n投稿时把这个文件夹当模板抄即可：本体 + 说明.txt + 可选封面图。",
-      "author": "",
-      "avatar": "",
-      "ownerHash": "",
-      "updatedAt": "2026-08-10T15:12:20Z"
-    },
     {
       "folder": "测试测试",
       "name": "测试",
@@ -50,22 +26,6 @@
       "avatar": "",
       "ownerHash": "cac7d2e6a0a3d1e2c37b62aa69e5a64e0ba86e13a04701458b79b1defe9d66c2",
       "updatedAt": "2026-08-10T23:20:50+02:00"
-    },
-    {
-      "folder": "预设",
-      "name": "示例·极简预设",
-      "dirName": "示例·极简预设.json",
-      "type": "file",
-      "path": "资源/预设/示例·极简预设.json",
-      "files": [
-        "资源/预设/示例·极简预设.json"
-      ],
-      "images": [],
-      "description": "",
-      "author": "",
-      "avatar": "",
-      "ownerHash": "",
-      "updatedAt": "2026-08-10T15:12:20Z"
     }
   ]
 }
