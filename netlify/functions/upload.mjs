@@ -27,6 +27,7 @@ const rateMap = new Map();
 // 客户端本地也会记录当天已送过，双保险）
 const flowerMap = new Map();
 const FLOWERS_FILE = "_flowers.json";
+const CONFIG_FILE = "_config.json";
 const FLOWER_RATE_PER_HOUR = 30;
 
 const CORS = {
@@ -102,6 +103,35 @@ async function gh(token, method, path, body) {
     return data;
 }
 
+/**
+ * 读取仓库里的集市配置。自动审核开关就存在这儿——写这个文件需要仓库写权限，
+ * 所以"只有仓库所有者能开"是 GitHub 服务端在卡，不是前端自觉。
+ */
+async function readAutoApprove(token, owner, repo) {
+    try {
+        const file = await gh(token, "GET", `/repos/${owner}/${repo}/contents/${CONFIG_FILE}`);
+        const cfg = JSON.parse(Buffer.from(file.content || "", "base64").toString("utf8"));
+        return cfg?.autoApprove === true;
+    } catch {
+        // 没有配置文件、读不到、格式坏掉 —— 一律按"要人工审核"处理
+        return false;
+    }
+}
+
+/** PR 刚建好时 GitHub 还在算能不能合并，给它几次机会 */
+async function mergeWithRetry(token, owner, repo, prNumber) {
+    for (let attempt = 0; attempt < 3; attempt++) {
+        try {
+            await gh(token, "PUT", `/repos/${owner}/${repo}/pulls/${prNumber}/merge`, { merge_method: "merge" });
+            return true;
+        } catch (err) {
+            if (attempt === 2) return false;
+            await new Promise(resolve => setTimeout(resolve, 1200));
+        }
+    }
+    return false;
+}
+
 async function handleUpload(token, payload) {
     const folder = cleanSegment(payload.folder, "");
     // 标题可能带贴纸/排版标记，文件夹名用安全化版本，原始标题另存 .title
@@ -174,7 +204,14 @@ async function handleUpload(token, payload) {
         body: [`来自资源集市 App 的投稿。`, ``, `- 分类：${folder}`, `- 名称：${name}`, `- 投稿人：${author}`, description ? `\n${description}` : ""].join("\n"),
     });
 
-    return json(200, { ok: true, prUrl: pr.html_url, prNumber: pr.number, path: dir });
+    // 自动审核开着就直接合并上架；合并失败（冲突等）则退回人工队列，不影响投稿
+    if (await readAutoApprove(token, owner, repo)) {
+        if (await mergeWithRetry(token, owner, repo, pr.number)) {
+            return json(200, { ok: true, merged: true, prUrl: pr.html_url, prNumber: pr.number, path: dir });
+        }
+    }
+
+    return json(200, { ok: true, merged: false, prUrl: pr.html_url, prNumber: pr.number, path: dir });
 }
 
 async function handleDelete(token, payload) {
