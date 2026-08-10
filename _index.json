@@ -1,10 +1,14 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-10T16:51:12.400Z",
+  "generatedAt": "2026-08-10T16:56:26.602Z",
   "folders": [
     {
       "name": "CSS方案",
+      "count": 1
+    },
+    {
+      "name": "测试测试",
       "count": 1
     },
     {
@@ -24,6 +28,20 @@
       "images": [],
       "description": "示例资源：奶油白全局配色。\n导入到「全局自定义CSS」后在外观页生效，可随时清除。\n投稿时把这个文件夹当模板抄即可：本体 + 说明.txt + 可选封面图。",
       "updatedAt": "2026-08-10T15:12:20Z"
+    },
+    {
+      "folder": "测试测试",
+      "name": "测试",
+      "type": "dir",
+      "path": "资源/测试测试/测试",
+      "files": [
+        "资源/测试测试/测试/Gemini长镜头·都市群像正则0802.json"
+      ],
+      "images": [
+        "资源/测试测试/测试/IMG_1122.png"
+      ],
+      "description": "[红]测试[/红]",
+      "updatedAt": "2026-08-10T18:56:16+02:00"
     },
     {
       "folder": "预设",
