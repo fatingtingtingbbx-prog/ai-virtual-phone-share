@@ -73,6 +73,9 @@ if (existsSync(ROOT)) {
                     .filter(f => !IMAGE_RE.test(f) && !descNames.has(f.toLowerCase()))
                     .map(f => `${itemPath}/${f}`);
                 const avatar = existsSync(join(itemPath, ".avatar.png")) ? `${itemPath}/.avatar.png` : "";
+                // 发布者钥匙的指纹：换设备的人拿钥匙一算就知道哪些资源是自己的，
+                // 不用逐个去仓库探测。指纹本来就在公开仓库里，放进索引不多泄露任何东西。
+                const ownerHash = readSmallFile(join(itemPath, ".owner"), 64).toLowerCase();
                 entries.push({
                     folder,
                     name: readTitle(itemPath, item),
@@ -84,6 +87,7 @@ if (existsSync(ROOT)) {
                     description: readDesc(itemPath),
                     author: readAuthor(itemPath),
                     avatar,
+                    ownerHash,
                     updatedAt: gitDate(itemPath),
                 });
             } else {
@@ -99,6 +103,7 @@ if (existsSync(ROOT)) {
                     description: "",
                     author: "",
                     avatar: "",
+                    ownerHash: "",
                     updatedAt: gitDate(itemPath),
                 });
             }
