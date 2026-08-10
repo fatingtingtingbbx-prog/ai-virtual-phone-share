@@ -115,6 +115,10 @@ async function handleUpload(token, payload) {
     if (ownerKeyHash) {
         toWrite.push({ name: ".owner", contentBase64: Buffer.from(ownerKeyHash, "utf8").toString("base64") });
     }
+    // 投稿人写进 .author 隐藏文件，索引会带上、详情页展示
+    if (author && author !== "匿名") {
+        toWrite.push({ name: ".author", contentBase64: Buffer.from(author, "utf8").toString("base64") });
+    }
     for (const file of toWrite) {
         await gh(token, "PUT", `/repos/${owner}/${repo}/contents/${encodePath(dir)}/${encodeURIComponent(file.name)}`, {
             message: `投稿：${dir}/${file.name}`,

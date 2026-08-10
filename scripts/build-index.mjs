@@ -31,6 +31,17 @@ function readDesc(dir) {
     return "";
 }
 
+// 投稿人：上传时写入的 .author 隐藏文件（没有就不显示）
+function readAuthor(dir) {
+    const p = join(dir, ".author");
+    if (!existsSync(p)) return "";
+    try {
+        return readFileSync(p, "utf8").trim().slice(0, 40);
+    } catch {
+        return "";
+    }
+}
+
 const folders = [];
 const entries = [];
 
@@ -60,6 +71,7 @@ if (existsSync(ROOT)) {
                     files,
                     images,
                     description: readDesc(itemPath),
+                    author: readAuthor(itemPath),
                     updatedAt: gitDate(itemPath),
                 });
             } else {
@@ -72,6 +84,7 @@ if (existsSync(ROOT)) {
                     files: [itemPath],
                     images: [],
                     description: "",
+                    author: "",
                     updatedAt: gitDate(itemPath),
                 });
             }
