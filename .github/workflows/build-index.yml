@@ -1,0 +1,25 @@
+name: Build index
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    # 机器人自己的提交只改 _index.json，跳过避免死循环
+    if: github.actor != 'github-actions[bot]'
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # 完整历史才能取到每条资源的真实更新时间
+      - name: Build _index.json
+        run: node scripts/build-index.mjs
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add _index.json
+          git diff --cached --quiet || git commit -m "chore: rebuild _index.json"
+          git push
