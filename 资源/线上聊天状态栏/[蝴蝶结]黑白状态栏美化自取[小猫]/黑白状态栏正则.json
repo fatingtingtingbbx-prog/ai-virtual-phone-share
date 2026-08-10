@@ -1,0 +1,44 @@
+{
+  "name": "黑白状态栏正则",
+  "description": "",
+  "rules": [
+    {
+      "id": "rule_1785480317006_7ksn",
+      "scriptName": "礼品卡渲染（单聊）",
+      "findRegex": "/天气[:：]\\s*([\\s\\S]*?)\\s*位置[:：]\\s*([\\s\\S]*?)\\s*穿着[:：]\\s*([\\s\\S]*?)\\s*动作[:：]\\s*([\\s\\S]*?)\\s*内心[:：]\\s*([\\s\\S]*)/",
+      "replaceString": "<div style=\"position: relative; margin: 30px 0 10px; background: rgba(255,255,255,0.95); border: 1px solid #eaeaea; box-shadow: 0 15px 35px rgba(0,0,0,0.08); padding: 35px 20px 20px; font-family: -apple-system, sans-serif; border-radius: 4px; overflow: visible;\"><div style=\"position: absolute; top: -16px; right: 20px; background: #050505; color: #fff; padding: 12px 20px; box-shadow: 0 8px 20px rgba(0,0,0,0.25);\"><div style=\"font-size: 8px; letter-spacing: 3px; color: #aaa; margin-bottom: 4px; text-transform: uppercase;\">Status Report</div><div style=\"font-size: 16px; font-family: 'Times New Roman', serif; font-weight: bold; letter-spacing: 1px;\">OVERVIEW</div></div><div style=\"border-bottom: 2px solid #111; padding-bottom: 12px; margin-bottom: 15px; margin-top: 5px;\"><div style=\"font-size: 9px; color: #888; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 6px;\">01 / Location</div><div style=\"font-size: 14px; color: #111; font-weight: 600; line-height: 1.5;\">$2</div></div><div style=\"display: flex; gap: 15px; margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 15px;\"><div style=\"flex: 1;\"><div style=\"font-size: 9px; color: #999; letter-spacing: 1px; margin-bottom: 4px;\">WEATHER</div><div style=\"font-size: 12px; color: #333; line-height: 1.5;\">$1</div></div><div style=\"flex: 1;\"><div style=\"font-size: 9px; color: #999; letter-spacing: 1px; margin-bottom: 4px;\">OUTFIT</div><div style=\"font-size: 12px; color: #333; line-height: 1.5;\">$3</div></div></div><div style=\"margin-bottom: 15px;\"><div style=\"font-size: 10px; color: #111; font-weight: bold; letter-spacing: 1px; margin-bottom: 8px;\">▶ ACTION BRIEFING</div><div style=\"font-size: 13px; color: #444; line-height: 1.6; text-align: justify;\">$4</div></div><div style=\"background: #f4f4f4; border-left: 3px solid #050505; padding: 12px 15px;\"><div style=\"font-size: 9px; color: #888; letter-spacing: 1px; margin-bottom: 6px;\">INTERNAL MONOLOGUE</div><div style=\"font-size: 13px; color: #555; font-style: italic; font-family: 'Songti SC', serif; line-height: 1.6;\">$5</div></div></div>",
+      "tags": [
+        "chat",
+        "text"
+      ],
+      "disabled": false,
+      "placement": [
+        2
+      ],
+      "markdownOnly": true,
+      "promptOnly": false,
+      "substituteRegex": 0,
+      "runOnEdit": false,
+      "trimStrings": []
+    },
+    {
+      "id": "rule_1785480317006_w0k2",
+      "scriptName": "礼品卡渲染（群聊）",
+      "findRegex": "/天气[:：]\\s*([\\s\\S]*?)\\s*位置[:：]\\s*([\\s\\S]*?)\\s*穿着[:：]\\s*([\\s\\S]*?)\\s*动作[:：]\\s*([\\s\\S]*?)\\s*内心[:：]\\s*([\\s\\S]*)/",
+      "replaceString": "<div style=\"position: relative; margin: 30px 0 10px; background: rgba(255,255,255,0.95); border: 1px solid #eaeaea; box-shadow: 0 15px 35px rgba(0,0,0,0.08); padding: 35px 20px 20px; font-family: -apple-system, sans-serif; border-radius: 4px; overflow: visible;\"><div style=\"position: absolute; top: -16px; right: 20px; background: #050505; color: #fff; padding: 12px 20px; box-shadow: 0 8px 20px rgba(0,0,0,0.25);\"><div style=\"font-size: 8px; letter-spacing: 3px; color: #aaa; margin-bottom: 4px; text-transform: uppercase;\">Status Report</div><div style=\"font-size: 16px; font-family: 'Times New Roman', serif; font-weight: bold; letter-spacing: 1px;\">OVERVIEW</div></div><div style=\"border-bottom: 2px solid #111; padding-bottom: 12px; margin-bottom: 15px; margin-top: 5px;\"><div style=\"font-size: 9px; color: #888; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 6px;\">01 / Location</div><div style=\"font-size: 14px; color: #111; font-weight: 600; line-height: 1.5;\">$2</div></div><div style=\"display: flex; gap: 15px; margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 15px;\"><div style=\"flex: 1;\"><div style=\"font-size: 9px; color: #999; letter-spacing: 1px; margin-bottom: 4px;\">WEATHER</div><div style=\"font-size: 12px; color: #333; line-height: 1.5;\">$1</div></div><div style=\"flex: 1;\"><div style=\"font-size: 9px; color: #999; letter-spacing: 1px; margin-bottom: 4px;\">OUTFIT</div><div style=\"font-size: 12px; color: #333; line-height: 1.5;\">$3</div></div></div><div style=\"margin-bottom: 15px;\"><div style=\"font-size: 10px; color: #111; font-weight: bold; letter-spacing: 1px; margin-bottom: 8px;\">▶ ACTION BRIEFING</div><div style=\"font-size: 13px; color: #444; line-height: 1.6; text-align: justify;\">$4</div></div><div style=\"background: #f4f4f4; border-left: 3px solid #050505; padding: 12px 15px;\"><div style=\"font-size: 9px; color: #888; letter-spacing: 1px; margin-bottom: 6px;\">INTERNAL MONOLOGUE</div><div style=\"font-size: 13px; color: #555; font-style: italic; font-family: 'Songti SC', serif; line-height: 1.6;\">$5</div></div></div>",
+      "tags": [
+        "group_chat",
+        "text"
+      ],
+      "disabled": false,
+      "placement": [
+        2
+      ],
+      "markdownOnly": true,
+      "promptOnly": false,
+      "substituteRegex": 0,
+      "runOnEdit": false,
+      "trimStrings": []
+    }
+  ]
+}
