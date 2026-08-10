@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-10T20:59:38.146Z",
+  "generatedAt": "2026-08-10T21:20:58.958Z",
   "folders": [
     {
       "name": "CSS方案",
@@ -46,10 +46,10 @@
         "资源/测试测试/测试/IMG_1122.png"
       ],
       "description": "[红]测试[/红]",
-      "author": "",
+      "author": "测试昵称",
       "avatar": "",
       "ownerHash": "cac7d2e6a0a3d1e2c37b62aa69e5a64e0ba86e13a04701458b79b1defe9d66c2",
-      "updatedAt": "2026-08-10T18:56:16+02:00"
+      "updatedAt": "2026-08-10T23:20:50+02:00"
     },
     {
       "folder": "预设",
