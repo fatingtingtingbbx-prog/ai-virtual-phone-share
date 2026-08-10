@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-10T11:54:49.657Z",
+  "generatedAt": "2026-08-10T14:59:51.703Z",
   "folders": [
     {
       "name": "CSS方案",
@@ -9,6 +9,10 @@
     },
     {
       "name": "netlify",
+      "count": 1
+    },
+    {
+      "name": "测试测试",
       "count": 1
     },
     {
@@ -40,6 +44,22 @@
       "images": [],
       "description": "",
       "updatedAt": "2026-08-10T11:54:38Z"
+    },
+    {
+      "folder": "测试测试",
+      "name": "测试",
+      "type": "dir",
+      "path": "测试测试/测试",
+      "files": [
+        "测试测试/测试/Gemini长镜头·都市群像正则0802.json",
+        "测试测试/测试/长镜头·都市群像-状态栏前置版.json"
+      ],
+      "images": [
+        "测试测试/测试/IMG_1127.png",
+        "测试测试/测试/IMG_1128.jpeg"
+      ],
+      "description": "测试测试",
+      "updatedAt": "2026-08-10T16:54:31+02:00"
     },
     {
       "folder": "预设",
