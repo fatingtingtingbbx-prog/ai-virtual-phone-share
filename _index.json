@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-10T15:00:41.309Z",
+  "generatedAt": "2026-08-10T15:00:52.890Z",
   "folders": [
     {
       "name": "CSS方案",
@@ -27,7 +27,7 @@
       ],
       "images": [],
       "description": "示例资源：奶油白全局配色。\n导入到「全局自定义CSS」后在外观页生效，可随时清除。\n投稿时把这个文件夹当模板抄即可：本体 + 说明.txt + 可选封面图。",
-      "updatedAt": "2026-08-10T10:44:05+00:00"
+      "updatedAt": "2026-08-10T10:44:05Z"
     },
     {
       "folder": "测试测试",
@@ -55,7 +55,7 @@
       ],
       "images": [],
       "description": "",
-      "updatedAt": "2026-08-10T10:44:05+00:00"
+      "updatedAt": "2026-08-10T10:44:05Z"
     }
   ]
 }
