@@ -7,7 +7,7 @@ import { join } from "node:path";
 
 const IMAGE_RE = /\.(jpe?g|png|webp|gif)$/i;
 const DESC_NAMES = ["说明.txt", "readme.md", "README.md", "readme.txt"];
-const SKIP_DIRS = new Set([".git", ".github", "scripts", "node_modules"]);
+const SKIP_DIRS = new Set([".git", ".github", "scripts", "node_modules", "netlify"]);
 const DESC_MAX = 600;
 
 function gitDate(path) {
