@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-10T15:00:52.890Z",
+  "generatedAt": "2026-08-10T15:12:04.203Z",
   "folders": [
     {
       "name": "CSS方案",
@@ -21,41 +21,41 @@
       "folder": "CSS方案",
       "name": "示例·奶油白",
       "type": "dir",
-      "path": "CSS方案/示例·奶油白",
+      "path": "资源/CSS方案/示例·奶油白",
       "files": [
-        "CSS方案/示例·奶油白/奶油白.css"
+        "资源/CSS方案/示例·奶油白/奶油白.css"
       ],
       "images": [],
       "description": "示例资源：奶油白全局配色。\n导入到「全局自定义CSS」后在外观页生效，可随时清除。\n投稿时把这个文件夹当模板抄即可：本体 + 说明.txt + 可选封面图。",
-      "updatedAt": "2026-08-10T10:44:05Z"
+      "updatedAt": null
     },
     {
       "folder": "测试测试",
       "name": "测试",
       "type": "dir",
-      "path": "测试测试/测试",
+      "path": "资源/测试测试/测试",
       "files": [
-        "测试测试/测试/Gemini长镜头·都市群像正则0802.json",
-        "测试测试/测试/长镜头·都市群像-状态栏前置版.json"
+        "资源/测试测试/测试/Gemini长镜头·都市群像正则0802.json",
+        "资源/测试测试/测试/长镜头·都市群像-状态栏前置版.json"
       ],
       "images": [
-        "测试测试/测试/IMG_1127.png",
-        "测试测试/测试/IMG_1128.jpeg"
+        "资源/测试测试/测试/IMG_1127.png",
+        "资源/测试测试/测试/IMG_1128.jpeg"
       ],
       "description": "测试测试",
-      "updatedAt": "2026-08-10T16:54:31+02:00"
+      "updatedAt": null
     },
     {
       "folder": "预设",
       "name": "示例·极简预设",
       "type": "file",
-      "path": "预设/示例·极简预设.json",
+      "path": "资源/预设/示例·极简预设.json",
       "files": [
-        "预设/示例·极简预设.json"
+        "资源/预设/示例·极简预设.json"
       ],
       "images": [],
       "description": "",
-      "updatedAt": "2026-08-10T10:44:05Z"
+      "updatedAt": null
     }
   ]
 }
