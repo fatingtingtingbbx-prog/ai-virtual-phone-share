@@ -57,7 +57,7 @@ async function gh(token, method, path, body) {
 }
 
 export default async function handler(req, context) {
-    if (req.method === "OPTIONS") return new Response("", { status: 204, headers: CORS });
+    if (req.method === "OPTIONS") return new Response(null, { status: 204, headers: CORS });
     if (req.method !== "POST") return json(405, { ok: false, error: "只接受 POST" });
 
     const token = process.env.SHARE_BOT_TOKEN;
