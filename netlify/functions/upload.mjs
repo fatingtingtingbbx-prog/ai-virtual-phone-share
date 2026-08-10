@@ -18,6 +18,7 @@ const MAX_FILES = 12;
 const MAX_FILE_B64 = 4 * 1024 * 1024;   // 单文件 base64 后 ≤4MB
 const MAX_TOTAL_B64 = 5 * 1024 * 1024;  // 单次提交总量 ≤5MB（Netlify 请求体上限 6MB）
 const MAX_TEXT = 4000;
+const MAX_AVATAR_B64 = 64 * 1024;        // 头像压过的 64×64 PNG，够用了
 const RATE_LIMIT_PER_HOUR = 6;
 
 // 冷启动会清空的软频控（够挡手滑连点和无脑脚本）
@@ -53,6 +54,34 @@ function encodePath(path) {
     return path.split("/").map(encodeURIComponent).join("/");
 }
 
+/** 取文件的 sha（不存在返回空），更新已有文件必须带上 */
+async function fileSha(token, owner, repo, path) {
+    try {
+        const info = await gh(token, "GET", `/repos/${owner}/${repo}/contents/${encodePath(path)}`);
+        return Array.isArray(info) ? "" : (info.sha || "");
+    } catch (err) {
+        if (err.status === 404) return "";
+        throw err;
+    }
+}
+
+/** 写文件（有则覆盖），直接提交默认分支 */
+async function putFile(token, owner, repo, path, contentBase64, message) {
+    const sha = await fileSha(token, owner, repo, path);
+    await gh(token, "PUT", `/repos/${owner}/${repo}/contents/${encodePath(path)}`, {
+        message,
+        content: contentBase64.replace(/[\r\n]/g, ""),
+        ...(sha ? { sha } : {}),
+    });
+}
+
+/** 删文件（不存在就跳过） */
+async function deleteFile(token, owner, repo, path, message) {
+    const sha = await fileSha(token, owner, repo, path);
+    if (!sha) return;
+    await gh(token, "DELETE", `/repos/${owner}/${repo}/contents/${encodePath(path)}`, { message, sha });
+}
+
 async function gh(token, method, path, body) {
     const res = await fetch(`${API}${path}`, {
         method,
@@ -75,8 +104,11 @@ async function gh(token, method, path, body) {
 
 async function handleUpload(token, payload) {
     const folder = cleanSegment(payload.folder, "");
+    // 标题可能带贴纸/排版标记，文件夹名用安全化版本，原始标题另存 .title
+    const rawTitle = String(payload.name ?? "").trim().slice(0, 80);
     const name = cleanSegment(payload.name, "");
     const author = cleanSegment(payload.author, "匿名");
+    const avatarBase64 = typeof payload.avatarBase64 === "string" ? payload.avatarBase64.replace(/[\r\n]/g, "") : "";
     const description = String(payload.description ?? "").trim().slice(0, MAX_TEXT);
     // 删除凭证哈希（客户端生成凭证、只上传哈希；凭证本体只留在上传者设备里）
     const ownerKeyHash = /^[a-f0-9]{64}$/i.test(String(payload.ownerKeyHash ?? "")) ? String(payload.ownerKeyHash).toLowerCase() : "";
@@ -119,6 +151,14 @@ async function handleUpload(token, payload) {
     if (author && author !== "匿名") {
         toWrite.push({ name: ".author", contentBase64: Buffer.from(author, "utf8").toString("base64") });
     }
+    // 原始标题（文件夹名被安全化后可能与它不同）
+    if (rawTitle && rawTitle !== name) {
+        toWrite.push({ name: ".title", contentBase64: Buffer.from(rawTitle, "utf8").toString("base64") });
+    }
+    // 作者头像（客户端已压成 64×64 PNG）
+    if (avatarBase64 && avatarBase64.length <= MAX_AVATAR_B64) {
+        toWrite.push({ name: ".avatar.png", contentBase64: avatarBase64 });
+    }
     for (const file of toWrite) {
         await gh(token, "PUT", `/repos/${owner}/${repo}/contents/${encodePath(dir)}/${encodeURIComponent(file.name)}`, {
             message: `投稿：${dir}/${file.name}`,
@@ -134,7 +174,7 @@ async function handleUpload(token, payload) {
         body: [`来自资源集市 App 的投稿。`, ``, `- 分类：${folder}`, `- 名称：${name}`, `- 投稿人：${author}`, description ? `\n${description}` : ""].join("\n"),
     });
 
-    return json(200, { ok: true, prUrl: pr.html_url, prNumber: pr.number });
+    return json(200, { ok: true, prUrl: pr.html_url, prNumber: pr.number, path: dir });
 }
 
 async function handleDelete(token, payload) {
@@ -149,18 +189,8 @@ async function handleDelete(token, payload) {
     const [owner, repo] = REPO.split("/");
 
     // 校验凭证：资源文件夹里的 .owner 存的是凭证哈希
-    let storedHash = "";
-    try {
-        const ownerFile = await gh(token, "GET", `/repos/${owner}/${repo}/contents/${encodePath(path)}/.owner`);
-        storedHash = Buffer.from(ownerFile.content || "", "base64").toString("utf8").trim().toLowerCase();
-    } catch (err) {
-        if (err.status === 404) return json(404, { ok: false, error: "该资源不存在、尚未上架，或不支持自助删除（无删除凭证）" });
-        throw err;
-    }
-    const givenHash = createHash("sha256").update(ownerKey, "utf8").digest("hex");
-    if (!storedHash || givenHash !== storedHash) {
-        return json(403, { ok: false, error: "删除凭证不匹配" });
-    }
+    const verified = await verifyOwnerKey(token, owner, repo, path, ownerKey);
+    if (verified) return verified;
 
     // 凭证通过：递归删除该资源文件夹（机器人直接提交 main）
     const removePath = async (target) => {
@@ -176,6 +206,93 @@ async function handleDelete(token, payload) {
     };
     await removePath(path);
     return json(200, { ok: true });
+}
+
+/**
+ * 作者自助编辑（凭删除凭证验身，改完立即生效）。
+ * 可改：标题(.title)、正文(说明.txt)、投稿人(.author)、头像(.avatar.png)、
+ *      增删资源文件与配图。资源文件夹路径不动——花数、凭证、已有链接都不受影响。
+ */
+async function handleEdit(token, payload) {
+    const path = String(payload.path ?? "").replace(/^\/+|\/+$/g, "");
+    const ownerKey = String(payload.ownerKey ?? "");
+    if (!path.startsWith(`${RESOURCE_ROOT}/`) || path.includes("..") || path.split("/").length !== 3) {
+        return json(400, { ok: false, error: "路径不合法" });
+    }
+    if (!ownerKey) return json(400, { ok: false, error: "缺少编辑凭证" });
+
+    const [owner, repo] = REPO.split("/");
+    const verified = await verifyOwnerKey(token, owner, repo, path, ownerKey);
+    if (verified) return verified;   // 校验失败时直接返回错误响应
+
+    const title = String(payload.title ?? "").trim().slice(0, 80);
+    const description = String(payload.description ?? "").trim().slice(0, MAX_TEXT);
+    const author = cleanSegment(payload.author, "");
+    const avatarBase64 = typeof payload.avatarBase64 === "string" ? payload.avatarBase64.replace(/[\r\n]/g, "") : "";
+    const addFiles = Array.isArray(payload.addFiles) ? payload.addFiles : [];
+    const removeNames = Array.isArray(payload.removeFiles) ? payload.removeFiles : [];
+    if (addFiles.length > MAX_FILES) return json(400, { ok: false, error: `文件太多（上限 ${MAX_FILES} 个）` });
+
+    // 先删：只允许删本资源文件夹内的普通文件，隐藏文件（.owner 等）一律不给碰
+    for (const raw of removeNames) {
+        const fileName = String(raw ?? "").split("/").pop() || "";
+        if (!fileName || fileName.startsWith(".") || fileName.includes("..")) {
+            return json(400, { ok: false, error: "待删除的文件名不合法" });
+        }
+        await deleteFile(token, owner, repo, `${path}/${fileName}`, `编辑：删除 ${path}/${fileName}`);
+    }
+
+    // 再加：与上传同一套体积校验
+    let total = 0;
+    for (const file of addFiles) {
+        const fileName = cleanSegment(file?.name, "");
+        const content = String(file?.contentBase64 ?? "");
+        if (!fileName || !content) return json(400, { ok: false, error: "文件名或内容为空" });
+        if (!/^[A-Za-z0-9+/=\r\n]+$/.test(content)) return json(400, { ok: false, error: "文件内容必须是 base64" });
+        if (content.length > MAX_FILE_B64) return json(400, { ok: false, error: `文件「${fileName}」超过大小上限` });
+        total += content.length;
+        if (total > MAX_TOTAL_B64) return json(400, { ok: false, error: "单次提交总量超限，请拆分或压缩" });
+        await putFile(token, owner, repo, `${path}/${fileName}`, content, `编辑：更新 ${path}/${fileName}`);
+    }
+
+    // 文字类字段：有值就写，清空就删掉对应文件
+    const dirName = path.split("/")[2];
+    const textFields = [
+        { name: ".title", value: title && title !== dirName ? title : "" },
+        { name: "说明.txt", value: description },
+        { name: ".author", value: author },
+    ];
+    for (const field of textFields) {
+        const target = `${path}/${field.name}`;
+        if (field.value) {
+            await putFile(token, owner, repo, target, Buffer.from(field.value, "utf8").toString("base64"), `编辑：${target}`);
+        } else {
+            await deleteFile(token, owner, repo, target, `编辑：清空 ${target}`);
+        }
+    }
+    if (avatarBase64) {
+        if (avatarBase64.length > MAX_AVATAR_B64) return json(400, { ok: false, error: "头像太大" });
+        await putFile(token, owner, repo, `${path}/.avatar.png`, avatarBase64, `编辑：${path}/.avatar.png`);
+    }
+
+    return json(200, { ok: true, path });
+}
+
+/** 校验删除/编辑凭证；通过返回 null，失败返回可直接下发的错误响应 */
+async function verifyOwnerKey(token, owner, repo, path, ownerKey) {
+    let storedHash = "";
+    try {
+        const ownerFile = await gh(token, "GET", `/repos/${owner}/${repo}/contents/${encodePath(path)}/.owner`);
+        storedHash = Buffer.from(ownerFile.content || "", "base64").toString("utf8").trim().toLowerCase();
+    } catch (err) {
+        if (err.status === 404) return json(404, { ok: false, error: "该资源不存在、尚未上架，或不支持自助操作（无凭证）" });
+        throw err;
+    }
+    const givenHash = createHash("sha256").update(ownerKey, "utf8").digest("hex");
+    if (!storedHash || givenHash !== storedHash) {
+        return json(403, { ok: false, error: "凭证不匹配" });
+    }
+    return null;
 }
 
 // 送花：把计数写进仓库根目录 _flowers.json（{资源路径: 花数}）。
@@ -259,6 +376,7 @@ export default async function handler(req, context) {
 
     try {
         if (payload.action === "flower") return await handleFlower(token, payload, ip);
+        if (payload.action === "edit") return await handleEdit(token, payload);
         if (payload.action === "delete") return await handleDelete(token, payload);
         return await handleUpload(token, payload);
     } catch (err) {

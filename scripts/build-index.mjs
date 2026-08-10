@@ -33,10 +33,19 @@ function readDesc(dir) {
 
 // 投稿人：上传时写入的 .author 隐藏文件（没有就不显示）
 function readAuthor(dir) {
-    const p = join(dir, ".author");
-    if (!existsSync(p)) return "";
+    return readSmallFile(join(dir, ".author"), 40);
+}
+
+// 展示标题：.title 存的是带贴纸/排版标记的原始标题，文件夹名只是它的安全化版本。
+// 这样作者改标题不用挪文件夹（花数、删除凭证、已有链接都不受影响）。
+function readTitle(dir, fallback) {
+    return readSmallFile(join(dir, ".title"), 80) || fallback;
+}
+
+function readSmallFile(path, max) {
+    if (!existsSync(path)) return "";
     try {
-        return readFileSync(p, "utf8").trim().slice(0, 40);
+        return readFileSync(path, "utf8").trim().slice(0, max);
     } catch {
         return "";
     }
@@ -63,15 +72,18 @@ if (existsSync(ROOT)) {
                 const files = inner
                     .filter(f => !IMAGE_RE.test(f) && !descNames.has(f.toLowerCase()))
                     .map(f => `${itemPath}/${f}`);
+                const avatar = existsSync(join(itemPath, ".avatar.png")) ? `${itemPath}/.avatar.png` : "";
                 entries.push({
                     folder,
-                    name: item,
+                    name: readTitle(itemPath, item),
+                    dirName: item,
                     type: "dir",
                     path: itemPath,
                     files,
                     images,
                     description: readDesc(itemPath),
                     author: readAuthor(itemPath),
+                    avatar,
                     updatedAt: gitDate(itemPath),
                 });
             } else {
@@ -79,12 +91,14 @@ if (existsSync(ROOT)) {
                 entries.push({
                     folder,
                     name: item.replace(/\.[^.]+$/, ""),
+                    dirName: item,
                     type: "file",
                     path: itemPath,
                     files: [itemPath],
                     images: [],
                     description: "",
                     author: "",
+                    avatar: "",
                     updatedAt: gitDate(itemPath),
                 });
             }
