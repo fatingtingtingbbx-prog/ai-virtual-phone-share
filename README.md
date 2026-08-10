@@ -28,3 +28,16 @@
 - jsDelivr 单文件上限 20MB
 - CDN 对 `@main` 有缓存（最长约 12 小时）；急刷可访问
   `https://purge.jsdelivr.net/gh/xiaolongbao0709/ai-virtual-phone-share@main/_index.json`
+
+## 应用内上传（上传服务）
+
+本仓库同时是免账号上传服务的代码载体：`netlify/functions/upload.mjs`。
+
+部署方式（管理员一次性操作）：
+1. Netlify → Add new site → Import from Git → 选本仓库（站名建议 `aivp-share`）
+2. Site settings → Environment variables 添加 `SHARE_BOT_TOKEN`
+   （GitHub fine-grained PAT，仅授权本仓库的 Contents 与 Pull requests 读写）
+3. 完成。App 内上传接口地址即 `https://<站名>.netlify.app/.netlify/functions/upload`
+
+安全设计：接口只会开 PR（待审核），永远不直接改 main；管理员 merge 才上架。
+含单文件/总量体积限制与 IP 频控。

@@ -1,0 +1,9 @@
+# 上传服务专用配置：本仓库在 Netlify 上作为独立站点部署时，
+# 只跑 netlify/functions 里的函数，没有页面构建。
+[build]
+  command = "echo no build"
+  publish = "."
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
