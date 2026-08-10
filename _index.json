@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-10T17:15:13.300Z",
+  "generatedAt": "2026-08-10T19:42:19.623Z",
   "folders": [
     {
       "name": "CSS方案",
@@ -20,6 +20,7 @@
     {
       "folder": "CSS方案",
       "name": "示例·奶油白",
+      "dirName": "示例·奶油白",
       "type": "dir",
       "path": "资源/CSS方案/示例·奶油白",
       "files": [
@@ -28,11 +29,13 @@
       "images": [],
       "description": "示例资源：奶油白全局配色。\n导入到「全局自定义CSS」后在外观页生效，可随时清除。\n投稿时把这个文件夹当模板抄即可：本体 + 说明.txt + 可选封面图。",
       "author": "",
+      "avatar": "",
       "updatedAt": "2026-08-10T15:12:20Z"
     },
     {
       "folder": "测试测试",
       "name": "测试",
+      "dirName": "测试",
       "type": "dir",
       "path": "资源/测试测试/测试",
       "files": [
@@ -43,11 +46,13 @@
       ],
       "description": "[红]测试[/红]",
       "author": "",
+      "avatar": "",
       "updatedAt": "2026-08-10T18:56:16+02:00"
     },
     {
       "folder": "预设",
       "name": "示例·极简预设",
+      "dirName": "示例·极简预设.json",
       "type": "file",
       "path": "资源/预设/示例·极简预设.json",
       "files": [
@@ -56,6 +61,7 @@
       "images": [],
       "description": "",
       "author": "",
+      "avatar": "",
       "updatedAt": "2026-08-10T15:12:20Z"
     }
   ]
