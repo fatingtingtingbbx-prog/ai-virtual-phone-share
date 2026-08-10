@@ -22,6 +22,11 @@ const RATE_LIMIT_PER_HOUR = 6;
 
 // 冷启动会清空的软频控（够挡手滑连点和无脑脚本）
 const rateMap = new Map();
+// 送花去重：同 IP 对同一资源每天只算一朵（同样是冷启动即清的软限制，
+// 客户端本地也会记录当天已送过，双保险）
+const flowerMap = new Map();
+const FLOWERS_FILE = "_flowers.json";
+const FLOWER_RATE_PER_HOUR = 30;
 
 const CORS = {
     "Access-Control-Allow-Origin": "*",
@@ -169,6 +174,58 @@ async function handleDelete(token, payload) {
     return json(200, { ok: true });
 }
 
+// 送花：把计数写进仓库根目录 _flowers.json（{资源路径: 花数}）。
+// 提交信息带 [skip-index] 让索引 Actions 跳过；netlify.toml 的 ignore 规则也不会因此触发部署。
+async function handleFlower(token, payload, ip) {
+    const path = String(payload.path ?? "").replace(/^\/+|\/+$/g, "");
+    if (!path.startsWith(`${RESOURCE_ROOT}/`) || path.includes("..") || path.split("/").length !== 3) {
+        return json(400, { ok: false, error: "路径不合法" });
+    }
+
+    const day = new Date().toISOString().slice(0, 10);
+    const dedupKey = `${ip}:${path}:${day}`;
+    if (flowerMap.has(dedupKey)) return json(200, { ok: true, already: true });
+
+    const [owner, repo] = REPO.split("/");
+
+    // 资源必须真实存在，防止往计数表里塞垃圾路径
+    try {
+        await gh(token, "GET", `/repos/${owner}/${repo}/contents/${encodePath(path)}`);
+    } catch (err) {
+        if (err.status === 404) return json(404, { ok: false, error: "该资源不存在或已下架" });
+        throw err;
+    }
+
+    // 读-改-写，SHA 冲突（并发送花）时重试
+    for (let attempt = 0; attempt < 3; attempt++) {
+        let counts = {};
+        let sha;
+        try {
+            const file = await gh(token, "GET", `/repos/${owner}/${repo}/contents/${FLOWERS_FILE}`);
+            sha = file.sha;
+            try { counts = JSON.parse(Buffer.from(file.content || "", "base64").toString("utf8")); } catch { counts = {}; }
+        } catch (err) {
+            if (err.status !== 404) throw err;
+        }
+        if (typeof counts !== "object" || counts === null || Array.isArray(counts)) counts = {};
+        counts[path] = (Number(counts[path]) || 0) + 1;
+        try {
+            await gh(token, "PUT", `/repos/${owner}/${repo}/contents/${FLOWERS_FILE}`, {
+                message: `送花：${path} [skip-index]`,
+                content: Buffer.from(JSON.stringify(counts, null, 2), "utf8").toString("base64"),
+                ...(sha ? { sha } : {}),
+            });
+            flowerMap.set(dedupKey, true);
+            if (flowerMap.size > 20000) flowerMap.clear();
+            return json(200, { ok: true, count: counts[path] });
+        } catch (err) {
+            // 409/422：sha 过期（并发写），重读重试
+            if (err.status !== 409 && err.status !== 422) throw err;
+        }
+    }
+    return json(502, { ok: false, error: "送花失败：仓库繁忙，请稍后再试" });
+}
+
 export default async function handler(req, context) {
     if (req.method === "OPTIONS") return new Response(null, { status: 204, headers: CORS });
     if (req.method !== "POST") return json(405, { ok: false, error: "只接受 POST" });
@@ -177,12 +234,6 @@ export default async function handler(req, context) {
     if (!token) return json(503, { ok: false, error: "上传服务尚未配置（缺少 SHARE_BOT_TOKEN）" });
 
     const ip = context?.ip || req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "unknown";
-    const hour = Math.floor(Date.now() / 3600_000);
-    const rateKey = `${ip}:${hour}`;
-    const used = rateMap.get(rateKey) || 0;
-    if (used >= RATE_LIMIT_PER_HOUR) return json(429, { ok: false, error: "操作太频繁了，请一小时后再试" });
-    rateMap.set(rateKey, used + 1);
-    if (rateMap.size > 5000) rateMap.clear();
 
     let payload;
     try {
@@ -191,7 +242,19 @@ export default async function handler(req, context) {
         return json(400, { ok: false, error: "请求体不是合法 JSON" });
     }
 
+    // 频控：送花走自己的宽松额度（浏览时会频繁触发），上传/删除维持每小时 6 次
+    const hour = Math.floor(Date.now() / 3600_000);
+    const isFlower = payload.action === "flower";
+    const rateKey = `${isFlower ? "f:" : ""}${ip}:${hour}`;
+    const used = rateMap.get(rateKey) || 0;
+    if (used >= (isFlower ? FLOWER_RATE_PER_HOUR : RATE_LIMIT_PER_HOUR)) {
+        return json(429, { ok: false, error: "操作太频繁了，请一小时后再试" });
+    }
+    rateMap.set(rateKey, used + 1);
+    if (rateMap.size > 5000) rateMap.clear();
+
     try {
+        if (payload.action === "flower") return await handleFlower(token, payload, ip);
         if (payload.action === "delete") return await handleDelete(token, payload);
         return await handleUpload(token, payload);
     } catch (err) {

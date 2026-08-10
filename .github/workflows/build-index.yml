@@ -6,8 +6,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    # 机器人自己的提交只改 _index.json，跳过避免死循环
-    if: github.actor != 'github-actions[bot]'
+    # 机器人自己的提交只改 _index.json，跳过避免死循环；
+    # 送花只改 _flowers.json（提交带 [skip-index]），也不用重建索引
+    if: github.actor != 'github-actions[bot]' && !contains(github.event.head_commit.message, '[skip-index]')
     permissions:
       contents: write
     steps:
