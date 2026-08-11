@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-11T21:31:41.635Z",
+  "generatedAt": "2026-08-11T21:32:51.742Z",
   "folders": [
     {
       "name": "BUG反馈专用文件夹",
@@ -39,7 +39,7 @@
   "entries": [
     {
       "folder": "BUG反馈专用文件夹",
-      "name": "[花][花]在这里留下项目中的bug[花][花]",
+      "name": "[花][花]在这个文件夹内留下项目中的bug[花][花]",
       "dirName": "[花][花]在这里留下项目中的bug[花][花]",
       "type": "dir",
       "path": "资源/BUG反馈专用文件夹/[花][花]在这里留下项目中的bug[花][花]",
@@ -51,7 +51,7 @@
       "author": "Float studio",
       "avatar": "资源/BUG反馈专用文件夹/[花][花]在这里留下项目中的bug[花][花]/.avatar.png",
       "ownerHash": "453a5edf22ab6823ac53b76ea9cc952d2130242dfeb690743a0718f31f0c7482",
-      "updatedAt": "2026-08-11T23:31:32+02:00"
+      "updatedAt": "2026-08-11T23:32:39+02:00"
     },
     {
       "folder": "Js插件",
