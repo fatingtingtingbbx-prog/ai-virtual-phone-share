@@ -7,6 +7,11 @@ import { join } from "node:path";
 
 const ROOT = "资源";
 const IMAGE_RE = /\.(jpe?g|png|webp|gif)$/i;
+// 图片当资源本体投稿时（PNG 角色卡、表情包、贴纸），App 会给文件名加 .asset 标记。
+// 带标记的图片进 files（详情页可选中、下载、导入），没标记的照旧进 images（只展示）。
+// 规则与 App 的 lib/resource-hub-types.ts 保持一致，改这里记得同步那边。
+const ASSET_IMAGE_RE = /\.asset\.[^.]+$/i;
+const isPreviewImage = name => IMAGE_RE.test(name) && !ASSET_IMAGE_RE.test(name);
 const DESC_NAMES = ["说明.txt", "readme.md", "README.md", "readme.txt"];
 const DESC_MAX = 600;
 
@@ -67,10 +72,10 @@ if (existsSync(ROOT)) {
             if (statSync(itemPath).isDirectory()) {
                 // 子文件夹式资源（.owner 等隐藏文件不进清单）
                 const inner = readdirSync(itemPath).filter(f => !f.startsWith(".")).sort();
-                const images = inner.filter(f => IMAGE_RE.test(f)).map(f => `${itemPath}/${f}`);
+                const images = inner.filter(f => isPreviewImage(f)).map(f => `${itemPath}/${f}`);
                 const descNames = new Set(DESC_NAMES.map(n => n.toLowerCase()));
                 const files = inner
-                    .filter(f => !IMAGE_RE.test(f) && !descNames.has(f.toLowerCase()))
+                    .filter(f => !isPreviewImage(f) && !descNames.has(f.toLowerCase()))
                     .map(f => `${itemPath}/${f}`);
                 const avatar = existsSync(join(itemPath, ".avatar.png")) ? `${itemPath}/.avatar.png` : "";
                 // 发布者钥匙的指纹：换设备的人拿钥匙一算就知道哪些资源是自己的，

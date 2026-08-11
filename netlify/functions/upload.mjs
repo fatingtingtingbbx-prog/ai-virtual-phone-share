@@ -51,6 +51,21 @@ function cleanSegment(value, fallback) {
     return cleaned || fallback;
 }
 
+/**
+ * 文件名清洗：与 cleanSegment 同规则，但截断时保住扩展名。
+ * 名字长到 60 字上限时直接切尾会把 ".png" 削掉，导入侧全靠扩展名判断类型
+ * （PNG 角色卡尤其），削没了就再也认不出来了。
+ */
+function cleanFileName(value, fallback) {
+    const raw = String(value ?? "").trim()
+        .replace(/[\\/:*?"<>|#%\x00-\x1f]/g, "")
+        .replace(/^\.+|\.+$/g, "");
+    if (raw.length <= 60) return raw || fallback;
+    const dot = raw.lastIndexOf(".");
+    const ext = dot > 0 && raw.length - dot <= 12 ? raw.slice(dot) : "";
+    return (raw.slice(0, Math.max(1, 60 - ext.length)) + ext) || fallback;
+}
+
 function encodePath(path) {
     return path.split("/").map(encodeURIComponent).join("/");
 }
@@ -150,7 +165,7 @@ async function handleUpload(token, payload) {
     let total = 0;
     const normalized = [];
     for (const file of files) {
-        const fileName = cleanSegment(file?.name, "");
+        const fileName = cleanFileName(file?.name, "");
         const content = String(file?.contentBase64 ?? "");
         if (!fileName || !content) return json(400, { ok: false, error: "文件名或内容为空" });
         if (!/^[A-Za-z0-9+/=\r\n]+$/.test(content)) return json(400, { ok: false, error: "文件内容必须是 base64" });
@@ -282,7 +297,7 @@ async function handleEdit(token, payload) {
     // 再加：与上传同一套体积校验
     let total = 0;
     for (const file of addFiles) {
-        const fileName = cleanSegment(file?.name, "");
+        const fileName = cleanFileName(file?.name, "");
         const content = String(file?.contentBase64 ?? "");
         if (!fileName || !content) return json(400, { ok: false, error: "文件名或内容为空" });
         if (!/^[A-Za-z0-9+/=\r\n]+$/.test(content)) return json(400, { ok: false, error: "文件内容必须是 base64" });
