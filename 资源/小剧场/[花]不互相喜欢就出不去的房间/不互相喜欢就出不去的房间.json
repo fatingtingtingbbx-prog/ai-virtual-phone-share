@@ -1,0 +1,22 @@
+{
+  "type": "ai-phone-theater-draft",
+  "version": 1,
+  "title": "不互相喜欢就出不去的房间",
+  "draft": {
+    "title": "不互相喜欢就出不去的房间",
+    "codeName": "QA",
+    "subtitle": "俗套的设定与意外的结局",
+    "synopsis": "一睁眼，你和对方被困在了一个纯白的房间里。墙上写着「不互相喜欢就出不去的房间」。你志得意满地去推门，却发现门纹丝不动……",
+    "storyText": "一睁眼，你和对方被困在了一个纯白的房间里。墙上写着「不互相喜欢就出不去的房间」。你志得意满地去推门，却发现门纹丝不动……",
+    "tagsText": "[\"密室\",\"搞笑\",\"恋爱喜剧\"]",
+    "price": "50",
+    "authorName": "匿名卖家",
+    "openingHtml": "<div style=\"height: 100%; box-sizing: border-box; display: flex; flex-direction: column; justify-content: center; align-items: center; background-color: #1a1a1a; color: #fff; font-family: 'PingFang SC', sans-serif; padding: 20px; text-align: center;\">\n  <h1 style=\"color: #ff4d4f; letter-spacing: 2px; margin-bottom: 20px; text-shadow: 0 0 10px rgba(255,77,79,0.5);\">不互相喜欢就出不去的房间</h1>\n  <p style=\"color: #ccc; font-size: 16px; line-height: 1.8; max-width: 80%;\">\n    墙上醒目的红字诉说着这间密室的规则。<br><br>\n    而你看着这行字，<br>\n    大步流星地走向那扇大门，用力一推——<br><br>\n    门，纹丝不动。\n  </p>\n  <div style=\"margin-top: 40px; width: 60px; height: 100px; border: 2px solid #555; position: relative; border-radius: 4px;\">\n    <div style=\"position: absolute; right: 10px; top: 50%; width: 6px; height: 16px; background: #888; transform: translateY(-50%); border-radius: 2px;\"></div>\n  </div>\n</div>",
+    "allowExternalControl": false,
+    "aiInstruction": "【背景设定】\n{{user}}与{{char}}一觉醒来，发现被关在一个纯白的房间里。房间里只有基本的家具，以及一扇看起来坚固无比的大门。\n墙上用醒目的红字写着：“不互相喜欢就出不去的房间”。\n故事刚刚开始，{{user}}看到墙上的字后志得意满，大步走向大门用力推门，却发现门纹丝不动。\n\n【角色扮演】\n你扮演{{char}}，请保持你原本的性格设定以及对{{user}}的情感态度。\n面对当前的处境（被关在密室、墙上的暧昧规则，以及{{user}}推门失败的窘态），做出符合你性格的反应。你可能会嘲笑{{user}}的盲目自信，可能会因为墙上的字感到脸红，也可能会冷静地分析现状。\n\n【剧情推进与反转规则】\n这是一个共 8 回合的互动剧场。\n1. 前期互动：你们必须在房间内容忍彼此的存在，可能会因为墙上的规则而尝试拉近关系，或者互相表白。然而，无论你们感情升温到什么程度，只要是试图“推门”，门都绝对打不开。\n2. 终极反转：这扇门打不开的真正原因，**并不是因为你们不够喜欢对方，而是因为这扇门是向内拉的，而不是向外推的！**\n3. 触发结局：\n   - 如果{{user}}在剧情中明确表示“拉门”、“向内拉”、“往回拽”等动作，门会立刻顺滑地被拉开。\n   - 如果到了第 8 回合（最终回合），无论如何都要让{{char}}或者{{user}}无意间碰到了门把手向后一拉，或者因为疲惫靠在门上导致门向内开，从而揭开这个令人啼笑皆非的真相。\n\n【输出要求】\n1. 叙事人称要求：在描写中，请严格使用第三人称代指{{char}}，使用第二人称（“你”）代指{{user}}，细致描写{{char}}的心理活动、神态、动作和对话。\n2. 绝对不要代替{{user}}说话、思考或做决定。\n3. 每次回复推动一点剧情，不要急于把所有设定一次性抛出，留给{{user}}互动的空间。",
+    "outputContract": "",
+    "renderRulesText": "[]",
+    "renderCss": "",
+    "memorySummaryPrompt": "总结{{user}}和{{char}}在“不互相喜欢就出不去的房间”中的互动。重点记录双方在面对墙上规则时的情感表现、互动过程，以及最后发现门其实是向内拉时的尴尬或搞笑反应。"
+  }
+}
