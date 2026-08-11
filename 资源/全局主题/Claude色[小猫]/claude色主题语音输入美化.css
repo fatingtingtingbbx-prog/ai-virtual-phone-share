@@ -1,0 +1,267 @@
+/* ════════════════════════════════════════════════════════
+   Claude 语音通话界面专属主题（claude-voice-call.css）
+   用法：把本文档内容追加到「外观设置 → 自定义CSS → 全局」
+         （通常放在 claude-theme.css 后面一起粘贴）。
+   ════════════════════════════════════════════════════════ */
+
+:root {
+  /* Claude 暖调（与 claude-theme.css 兼容；单独粘贴也能工作） */
+  --claude-canvas:       #FAF8F3;
+  --claude-surface:      #FFFFFF;
+  --claude-surface-2:    #F2EFE8;
+  --claude-surface-3:    #EAE6DD;
+  --claude-ink:          #211F1C;
+  --claude-ink-2:        #57534E;
+  --claude-ink-3:        #8A847C;
+  --claude-border:       #E8E3DA;
+  --claude-divider:      #EDE8DF;
+  --claude-accent:       #CC785C;   /* 陶土珊瑚 */
+  --claude-accent-soft:  color-mix(in srgb, var(--claude-accent) 12%, transparent);
+  --claude-danger:       #E5484D;
+  --claude-success:      #34C759;
+  --claude-ease:         cubic-bezier(.32,.72,0,1);
+}
+
+/* ════════════════════════════════════════════════════════
+   1. 背景：默认暖白，不使用 !important，用户上传背景时 inline style 自然覆盖
+   ════════════════════════════════════════════════════════ */
+.call-bg-default {
+  background: var(--claude-canvas);
+}
+
+/* ════════════════════════════════════════════════════════
+   2. 去掉变暗遮罩
+   ════════════════════════════════════════════════════════ */
+.call-overlay,
+.call-overlay[data-has-image] {
+  background: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* ════════════════════════════════════════════════════════
+   3. 顶部状态栏文字改为深色（浅底上可读）
+   ════════════════════════════════════════════════════════ */
+.voicecall-controls,
+.voicecall-controls.gcall-body,
+.voicecall-controls span,
+.voicecall-controls > div,
+.gcall-topbar,
+.gcall-topbar-title,
+.gcall-topbar-sub {
+  color: var(--claude-ink) !important;
+}
+.voicecall-controls button svg,
+.gcall-topbar svg {
+  stroke: var(--claude-ink) !important;
+}
+
+/* ════════════════════════════════════════════════════════
+   4. 隐藏原头像、连接涟漪环、头像下方名字；把容器空出来给 Logo
+   ════════════════════════════════════════════════════════ */
+.voicecall-avatar { display: none !important; }
+.voicecall-controls > div:nth-of-type(2) .absolute.w-\[160px\].h-\[160px\].rounded-full { display: none !important; }
+.voicecall-controls > div.text-center.ts-18.font-semibold.mb-2 { display: none !important; }
+
+/* 让头像容器占据中间空间并居中 */
+.voicecall-controls > div:nth-of-type(2) {
+  position: relative !important;
+  flex: 1 1 auto !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 !important;
+  min-height: 140px !important;
+}
+
+/* ════════════════════════════════════════════════════════
+   5. 中央 Claude 星形 Logo（线条造型，SVG data URI）
+      - 默认静止；
+      - AI 正在说话（.voicecall-avatar[data-speaking]）或思考中
+        （麦克风 busy 状态）时，身上长线一短一长地呼吸变化（SMIL 动画，无整体缩放）。
+      - 星形线条粗细：stroke-width 14（偏粗，可按需调 8~16）。
+   ════════════════════════════════════════════════════════ */
+/* 默认：静态星形 Logo（线条造型，静止）。
+   说话时：隐藏静止层，显示“长线一短一长”的呼吸层（SVG 内 SMIL 动画，
+   两组射线相位相反 → 一短一长的呼吸感；不动整体缩放）。 */
+.voicecall-controls > div:nth-of-type(2)::before,
+.voicecall-controls > div:nth-of-type(2)::after {
+  content: "";
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 128px;
+  height: 128px;
+  transform: translate(-50%, -50%);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  pointer-events: none;
+  will-change: opacity;
+}
+.voicecall-controls > div:nth-of-type(2)::before {
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjAgMTIwIj48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSg2MCw2MCkiIHN0cm9rZT0iI0NDNzg1QyIgc3Ryb2tlLXdpZHRoPSIxNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIj48bGluZSB4MT0iMCIgeTE9IjAiIHgyPSIwIiB5Mj0iLTQyIi8+PGxpbmUgeDE9IjAiIHkxPSIwIiB4Mj0iMCIgeTI9IjQyIi8+PGxpbmUgeDE9IjAiIHkxPSIwIiB4Mj0iMjkuNyIgeTI9Ii0yOS43Ii8+PGxpbmUgeDE9IjAiIHkxPSIwIiB4Mj0iLTI5LjciIHkyPSIyOS43Ii8+PGxpbmUgeDE9IjAiIHkxPSIwIiB4Mj0iNDIiIHkyPSIwIi8+PGxpbmUgeDE9IjAiIHkxPSIwIiB4Mj0iLTQyIiB5Mj0iMCIvPjxsaW5lIHgxPSIwIiB5MT0iMCIgeDI9IjI5LjciIHkyPSIyOS43Ii8+PGxpbmUgeDE9IjAiIHkxPSIwIiB4Mj0iLTI5LjciIHkyPSItMjkuNyIvPjwvZz48L3N2Zz4=");
+}
+.voicecall-controls > div:nth-of-type(2)::after {
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjAgMTIwIj48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSg2MCw2MCkiIHN0cm9rZT0iI0NDNzg1QyIgc3Ryb2tlLXdpZHRoPSIxNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIj48Zz48bGluZSB4MT0iMCIgeTE9IjAiIHgyPSIwIiB5Mj0iLTQyIi8+PGxpbmUgeDE9IjAiIHkxPSIwIiB4Mj0iMCIgeTI9IjQyIi8+PGxpbmUgeDE9IjAiIHkxPSIwIiB4Mj0iMjkuNyIgeTI9Ii0yOS43Ii8+PGxpbmUgeDE9IjAiIHkxPSIwIiB4Mj0iLTI5LjciIHkyPSIyOS43Ii8+PGFuaW1hdGVUcmFuc2Zvcm0gYXR0cmlidXRlTmFtZT0idHJhbnNmb3JtIiB0eXBlPSJzY2FsZSIgdmFsdWVzPSIxOzEuMjg7MSIga2V5VGltZXM9IjA7MC41OzEiIGR1cj0iMi42cyIgY2FsY01vZGU9InNwbGluZSIga2V5U3BsaW5lcz0iMC40IDAgMC42IDE7MC40IDAgMC42IDEiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIi8+PC9nPjxnPjxsaW5lIHgxPSIwIiB5MT0iMCIgeDI9IjQyIiB5Mj0iMCIvPjxsaW5lIHgxPSIwIiB5MT0iMCIgeDI9Ii00MiIgeTI9IjAiLz48bGluZSB4MT0iMCIgeTE9IjAiIHgyPSIyOS43IiB5Mj0iMjkuNyIvPjxsaW5lIHgxPSIwIiB5MT0iMCIgeDI9Ii0yOS43IiB5Mj0iLTI5LjciLz48YW5pbWF0ZVRyYW5zZm9ybSBhdHRyaWJ1dGVOYW1lPSJ0cmFuc2Zvcm0iIHR5cGU9InNjYWxlIiB2YWx1ZXM9IjEuMjg7MTsxLjI4IiBrZXlUaW1lcz0iMDswLjU7MSIgZHVyPSIyLjZzIiBjYWxjTW9kZT0ic3BsaW5lIiBrZXlTcGxpbmVzPSIwLjQgMCAwLjYgMTswLjQgMCAwLjYgMSIgcmVwZWF0Q291bnQ9ImluZGVmaW5pdGUiLz48L2c+PC9nPjwvc3ZnPg==");
+  opacity: 0;
+  transition: opacity .35s var(--claude-ease);
+}
+
+.voicecall-controls:has(.voicecall-avatar[data-speaking]) > div:nth-of-type(2)::before,
+.voicecall-controls:has(.ui-call-mic[data-state="busy"]) > div:nth-of-type(2)::before {
+  opacity: 0;
+}
+.voicecall-controls:has(.voicecall-avatar[data-speaking]) > div:nth-of-type(2)::after,
+.voicecall-controls:has(.ui-call-mic[data-state="busy"]) > div:nth-of-type(2)::after {
+  opacity: 1;
+}
+
+/* ════════════════════════════════════════════════════════
+   6. 字幕气泡：Claude 暖调平面 + 进入过渡动画
+   ════════════════════════════════════════════════════════ */
+.voicecall-subtitle-mask {
+  /* 上、下两端都做渐隐：
+     - 顶部 56px：向上滚出的旧气泡平滑淡出；
+     - 底部 40px：向下滚动时、气泡接近输入栏边缘先淡出，不再被硬切截断。
+     底部渐隐带(40px) < padding-bottom(60px)，保证静止时最新一条不被误淡。 */
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 56px, black calc(100% - 40px), transparent 100%) !important;
+  mask-image: linear-gradient(to bottom, transparent 0%, black 56px, black calc(100% - 40px), transparent 100%) !important;
+  /* 字幕气泡整体离底部输入栏更远一点（拉开间距），让它明显浮在输入栏上方 */
+  padding-bottom: 60px !important;
+}
+/* 顶部弹性占位：把字幕气泡整体压到区域底部，
+   这样顶部 mask 渐隐带只罩住“向上滚出”的旧气泡，
+   让它们在消失时有一段平滑的淡出过渡，而不是直接被切掉。 */
+.voicecall-subtitle-mask::before {
+  content: "";
+  flex: 1 1 auto !important;
+  min-height: 0 !important;
+}
+/* 文字输入框 / 底部控制按钮组：与上方字幕气泡拉开间距 */
+.voicecall-text-input-panel,
+.voicecall-controls > div:last-child {
+  margin-top: 12px !important;
+}
+.call-subtitle {
+  background: var(--claude-surface) !important;
+  color: var(--claude-ink) !important;
+  border: 1px solid var(--claude-border) !important;
+  border-radius: 16px !important;
+  padding: 10px 14px !important;
+  font-size: calc(14px * var(--app-text-scale, 1)) !important;
+  line-height: 1.5 !important;
+  text-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  box-shadow: none !important;
+  animation: claude-subtitle-enter .35s var(--claude-ease) both;
+}
+.call-subtitle[data-role="user"] {
+  align-self: flex-end !important;
+  background: var(--claude-surface-2) !important;
+}
+.call-subtitle[data-role="assistant"] {
+  align-self: flex-start !important;
+  background: var(--claude-surface) !important;
+}
+.call-subtitle[data-interim] {
+  opacity: .72 !important;
+  background: var(--claude-surface-2) !important;
+}
+
+@keyframes claude-subtitle-enter {
+  from { opacity: 0; transform: translateY(12px) scale(.98); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* ════════════════════════════════════════════════════════
+   7. 文字输入框：Claude 暖调平面
+   ════════════════════════════════════════════════════════ */
+.voicecall-text-input-panel,
+.call-text-input-panel {
+  padding: 0 18px 16px !important;
+}
+.call-text-input-shell {
+  background: var(--claude-surface) !important;
+  border: 1px solid var(--claude-border) !important;
+  border-radius: 999px !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+.call-text-input {
+  color: var(--claude-ink) !important;
+  font-size: calc(15px * var(--app-text-scale, 1)) !important;
+}
+.call-text-input::placeholder {
+  color: var(--claude-ink-3) !important;
+}
+.call-text-input:disabled {
+  opacity: .6 !important;
+}
+.call-text-send-btn {
+  color: var(--claude-accent) !important;
+  background: var(--claude-accent-soft) !important;
+  border-radius: 50% !important;
+  width: 32px !important;
+  height: 32px !important;
+}
+.call-text-send-btn:disabled {
+  opacity: .45 !important;
+}
+
+/* ════════════════════════════════════════════════════════
+   8. 底部控制按钮：Claude 暖调平面
+   ════════════════════════════════════════════════════════ */
+.ui-call-btn {
+  color: var(--claude-ink) !important;
+}
+.ui-call-btn svg {
+  stroke: var(--claude-ink) !important;
+}
+
+/* 静音 / 麦克风：浅底 + 细边 */
+.ui-call-btn-muted,
+.ui-call-mic {
+  background: var(--claude-surface) !important;
+  border: 1px solid var(--claude-border) !important;
+  box-shadow: none !important;
+  color: var(--claude-ink) !important;
+}
+.ui-call-btn-muted svg,
+.ui-call-mic svg {
+  stroke: var(--claude-ink) !important;
+}
+.ui-call-btn-muted[data-checked],
+.ui-call-mic[data-state="speaking"] {
+  background: var(--claude-accent-soft) !important;
+  border-color: var(--claude-accent) !important;
+  color: var(--claude-accent) !important;
+}
+.ui-call-mic[data-state="busy"] {
+  background: var(--claude-surface-2) !important;
+  opacity: .7;
+}
+.ui-call-mic[data-state="text"] {
+  background: var(--claude-surface) !important;
+}
+
+/* 挂断键：平面珊瑚红 */
+.ui-call-btn-danger {
+  background: var(--claude-danger) !important;
+  color: #fff !important;
+  box-shadow: none !important;
+}
+.ui-call-btn-danger svg {
+  stroke: #fff !important;
+}
+
+/* 接听键：平面清新绿 */
+.ui-call-btn-success {
+  background: var(--claude-success) !important;
+  color: #fff !important;
+  box-shadow: none !important;
+}
+.ui-call-btn-success svg {
+  stroke: #fff !important;
+}
