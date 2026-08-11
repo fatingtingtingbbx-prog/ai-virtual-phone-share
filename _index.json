@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-10T23:52:30.342Z",
+  "generatedAt": "2026-08-11T04:53:24.977Z",
   "folders": [
     {
       "name": "剧情预设及正则",
@@ -9,6 +9,10 @@
     },
     {
       "name": "线上聊天状态栏",
+      "count": 1
+    },
+    {
+      "name": "线下正则",
       "count": 1
     }
   ],
@@ -51,6 +55,22 @@
       "avatar": "资源/线上聊天状态栏/[蝴蝶结]黑白状态栏美化自取[小猫]/.avatar.png",
       "ownerHash": "453a5edf22ab6823ac53b76ea9cc952d2130242dfeb690743a0718f31f0c7482",
       "updatedAt": "2026-08-11T01:44:08+02:00"
+    },
+    {
+      "folder": "线下正则",
+      "name": "去除线下频繁破折号",
+      "dirName": "去除线下频繁破折号",
+      "type": "dir",
+      "path": "资源/线下正则/去除线下频繁破折号",
+      "files": [
+        "资源/线下正则/去除线下频繁破折号/去除频繁破折号.json"
+      ],
+      "images": [],
+      "description": "该正则可将线下聊天中的破折号替换为逗号，防止破折号灾难",
+      "author": "心如止水煮肉片",
+      "avatar": "资源/线下正则/去除线下频繁破折号/.avatar.png",
+      "ownerHash": "f3b0893a7fe329736590ea476236375fd1017e0f5a65a5d8361c030d7e6b03fc",
+      "updatedAt": "2026-08-11T06:53:13+02:00"
     }
   ]
 }
