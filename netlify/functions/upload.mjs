@@ -159,7 +159,11 @@ async function handleUpload(token, payload) {
     const ownerKeyHash = /^[a-f0-9]{64}$/i.test(String(payload.ownerKeyHash ?? "")) ? String(payload.ownerKeyHash).toLowerCase() : "";
     const files = Array.isArray(payload.files) ? payload.files : [];
     if (!folder || !name) return json(400, { ok: false, error: "缺少分类或资源名称" });
-    if (files.length === 0) return json(400, { ok: false, error: "至少需要一个文件" });
+    // 不再强制要有文件：纯图文帖（只有说明）也能发。但总得有东西可提交，
+    // 否则分支上一个 commit 都没有，开 PR 会以一句看不懂的 GitHub 报错收场。
+    if (files.length === 0 && !description && !ownerKeyHash) {
+        return json(400, { ok: false, error: "资源不能是空的，至少要有文件或说明文字" });
+    }
     if (files.length > MAX_FILES) return json(400, { ok: false, error: `文件太多（上限 ${MAX_FILES} 个）` });
 
     let total = 0;
