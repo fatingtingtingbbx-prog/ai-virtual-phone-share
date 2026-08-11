@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-11T05:47:30.623Z",
+  "generatedAt": "2026-08-11T06:40:14.554Z",
   "folders": [
     {
       "name": "全局主题",
@@ -16,11 +16,19 @@
       "count": 1
     },
     {
+      "name": "应用",
+      "count": 1
+    },
+    {
       "name": "线上聊天状态栏",
       "count": 1
     },
     {
       "name": "线下正则",
+      "count": 1
+    },
+    {
+      "name": "聊天室美化",
       "count": 1
     }
   ],
@@ -84,6 +92,24 @@
       "updatedAt": "2026-08-11T07:47:18+02:00"
     },
     {
+      "folder": "应用",
+      "name": "pulse（仿x）",
+      "dirName": "pulse（仿x）",
+      "type": "dir",
+      "path": "资源/应用/pulse（仿x）",
+      "files": [
+        "资源/应用/pulse（仿x）/7Ou-pulse.zip"
+      ],
+      "images": [
+        "资源/应用/pulse（仿x）/IMG_4866.jpeg"
+      ],
+      "description": "一个仿X应用。可以生成帖子互动、匿名聊天。",
+      "author": "7Ouii",
+      "avatar": "资源/应用/pulse（仿x）/.avatar.png",
+      "ownerHash": "8e3664d10538a0676ceac971b51fd4732a8d3997119b81bc78fdb2e3ce7eaba6",
+      "updatedAt": "2026-08-11T08:18:01+02:00"
+    },
+    {
       "folder": "线上聊天状态栏",
       "name": "[蝴蝶结]黑白状态栏美化自取[小猫]",
       "dirName": "[蝴蝶结]黑白状态栏美化自取[小猫]",
@@ -117,6 +143,24 @@
       "avatar": "资源/线下正则/去除线下频繁破折号/.avatar.png",
       "ownerHash": "f3b0893a7fe329736590ea476236375fd1017e0f5a65a5d8361c030d7e6b03fc",
       "updatedAt": "2026-08-11T06:53:13+02:00"
+    },
+    {
+      "folder": "聊天室美化",
+      "name": "[音符]深夜信笺——聊天室美化",
+      "dirName": "[音符]深夜信笺——聊天室美化",
+      "type": "dir",
+      "path": "资源/聊天室美化/[音符]深夜信笺——聊天室美化",
+      "files": [
+        "资源/聊天室美化/[音符]深夜信笺——聊天室美化/深夜信笺-聊天室.txt"
+      ],
+      "images": [
+        "资源/聊天室美化/[音符]深夜信笺——聊天室美化/IMG_0268.png"
+      ],
+      "description": "导入聊天室使用",
+      "author": "",
+      "avatar": "资源/聊天室美化/[音符]深夜信笺——聊天室美化/.avatar.png",
+      "ownerHash": "453a5edf22ab6823ac53b76ea9cc952d2130242dfeb690743a0718f31f0c7482",
+      "updatedAt": "2026-08-11T08:40:03+02:00"
     }
   ]
 }
