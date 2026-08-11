@@ -1,0 +1,18 @@
+{
+  "id": "rule_1782713959658_xb28",
+  "scriptName": "去除频繁破折号",
+  "findRegex": "/[—–─]{1,4}/g",
+  "replaceString": "，",
+  "tags": [
+    "offline"
+  ],
+  "disabled": false,
+  "placement": [
+    2
+  ],
+  "markdownOnly": true,
+  "promptOnly": false,
+  "substituteRegex": 0,
+  "runOnEdit": false,
+  "trimStrings": []
+}
