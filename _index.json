@@ -1,8 +1,12 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-11T04:53:24.977Z",
+  "generatedAt": "2026-08-11T05:32:05.417Z",
   "folders": [
+    {
+      "name": "全局主题",
+      "count": 1
+    },
     {
       "name": "剧情预设及正则",
       "count": 1
@@ -17,6 +21,28 @@
     }
   ],
   "entries": [
+    {
+      "folder": "全局主题",
+      "name": "Claude色[小猫]",
+      "dirName": "Claude色[小猫]",
+      "type": "dir",
+      "path": "资源/全局主题/Claude色[小猫]",
+      "files": [
+        "资源/全局主题/Claude色[小猫]/Claude色主题时间戳插件（聊天扩展插件）.js",
+        "资源/全局主题/Claude色[小猫]/Claude色全局主题（主题导入）.zip",
+        "资源/全局主题/Claude色[小猫]/claude色主题语音输入美化.css"
+      ],
+      "images": [
+        "资源/全局主题/Claude色[小猫]/1000236557.jpg",
+        "资源/全局主题/Claude色[小猫]/1000236558.jpg",
+        "资源/全局主题/Claude色[小猫]/1000236559.jpg"
+      ],
+      "description": "模仿Claude颜色的全局主题，图标和全局css那些，但是总体布局跟那个Claude还是不一样的\n\n时间戳插件，它显示的只能是隔一些时间的那个东西，只能当做一个摆设，为了好看一点＼（^０＾）／",
+      "author": "林听你",
+      "avatar": "",
+      "ownerHash": "88f102e0ef217cea73fe5b268e0c11999ebe72de7ee6c86765148d0313569196",
+      "updatedAt": "2026-08-11T07:31:48+02:00"
+    },
     {
       "folder": "剧情预设及正则",
       "name": "[幽灵]简约黑白剧情模式预设及正则[蘑菇]",
