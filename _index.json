@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-11T09:24:18.042Z",
+  "generatedAt": "2026-08-11T12:36:15.871Z",
   "folders": [
     {
       "name": "全局主题",
@@ -17,7 +17,7 @@
     },
     {
       "name": "应用",
-      "count": 2
+      "count": 3
     },
     {
       "name": "线上聊天状态栏",
@@ -104,6 +104,22 @@
       "avatar": "资源/小剧场/关于我们穿越进古早ABO龙傲天文学里当苦命beta下属这档子事/.avatar.png",
       "ownerHash": "f3b0893a7fe329736590ea476236375fd1017e0f5a65a5d8361c030d7e6b03fc",
       "updatedAt": "2026-08-11T08:54:07+02:00"
+    },
+    {
+      "folder": "应用",
+      "name": "2048",
+      "dirName": "2048",
+      "type": "dir",
+      "path": "资源/应用/2048",
+      "files": [
+        "资源/应用/2048/2048-1.0.0.zip"
+      ],
+      "images": [],
+      "description": "2048合成小游戏",
+      "author": "vv",
+      "avatar": "",
+      "ownerHash": "4eee9ffd3176e2e3c5d3341370fc682604332bd1a01213a99c38c52d2d6e7527",
+      "updatedAt": "2026-08-11T14:36:04+02:00"
     },
     {
       "folder": "应用",
