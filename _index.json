@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-11T06:45:46.744Z",
+  "generatedAt": "2026-08-11T06:54:19.026Z",
   "folders": [
     {
       "name": "全局主题",
@@ -13,7 +13,7 @@
     },
     {
       "name": "小剧场",
-      "count": 1
+      "count": 2
     },
     {
       "name": "应用",
@@ -86,6 +86,24 @@
       "avatar": "资源/小剧场/[花]不互相喜欢就出不去的房间/.avatar.png",
       "ownerHash": "f3b0893a7fe329736590ea476236375fd1017e0f5a65a5d8361c030d7e6b03fc",
       "updatedAt": "2026-08-11T07:47:18+02:00"
+    },
+    {
+      "folder": "小剧场",
+      "name": "关于我们穿越进古早ABO龙傲天文学里当苦命beta下属这档子事",
+      "dirName": "关于我们穿越进古早ABO龙傲天文学里当苦命beta下属这档子事",
+      "type": "dir",
+      "path": "资源/小剧场/关于我们穿越进古早ABO龙傲天文学里当苦命beta下属这档子事",
+      "files": [
+        "资源/小剧场/关于我们穿越进古早ABO龙傲天文学里当苦命beta下属这档子事/穿成龙傲天总裁的苦命打工人.json"
+      ],
+      "images": [
+        "资源/小剧场/关于我们穿越进古早ABO龙傲天文学里当苦命beta下属这档子事/IMG_5146.jpeg"
+      ],
+      "description": "什？！一觉醒来我们居然穿越进了古早ABO霸总文学里！还是发癫的alpha总裁的苦命beta下属！\n（（默认每2轮总裁全自动发癫一次，可手动更改；每次发癫可不继承上文，为单独小故事；每轮生成内容不少于1000字，可适当代替user发言",
+      "author": "心如止水煮肉片",
+      "avatar": "资源/小剧场/关于我们穿越进古早ABO龙傲天文学里当苦命beta下属这档子事/.avatar.png",
+      "ownerHash": "f3b0893a7fe329736590ea476236375fd1017e0f5a65a5d8361c030d7e6b03fc",
+      "updatedAt": "2026-08-11T08:54:07+02:00"
     },
     {
       "folder": "应用",
