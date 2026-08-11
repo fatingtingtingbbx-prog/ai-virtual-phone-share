@@ -19,7 +19,7 @@ const MAX_FILE_B64 = 4 * 1024 * 1024;   // 单文件 base64 后 ≤4MB
 const MAX_TOTAL_B64 = 5 * 1024 * 1024;  // 单次提交总量 ≤5MB（Netlify 请求体上限 6MB）
 const MAX_TEXT = 4000;
 const MAX_AVATAR_B64 = 64 * 1024;        // 头像压过的 64×64 PNG，够用了
-const RATE_LIMIT_PER_HOUR = 6;
+const RATE_LIMIT_PER_HOUR = 15;
 
 // 冷启动会清空的软频控（够挡手滑连点和无脑脚本）
 const rateMap = new Map();
@@ -400,7 +400,7 @@ export default async function handler(req, context) {
         return json(400, { ok: false, error: "请求体不是合法 JSON" });
     }
 
-    // 频控：送花走自己的宽松额度（浏览时会频繁触发），上传/删除维持每小时 6 次
+    // 频控：送花走自己的宽松额度（浏览时会频繁触发），上传/删除按每小时 15 次算
     const hour = Math.floor(Date.now() / 3600_000);
     const isFlower = payload.action === "flower";
     const rateKey = `${isFlower ? "f:" : ""}${ip}:${hour}`;
