@@ -1,8 +1,12 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-12T05:34:32.215Z",
+  "generatedAt": "2026-08-12T05:36:50.137Z",
   "folders": [
+    {
+      "name": "A 重要须知（自部署版请查看）",
+      "count": 1
+    },
     {
       "name": "BUG反馈专用文件夹",
       "count": 1
@@ -37,6 +41,20 @@
     }
   ],
   "entries": [
+    {
+      "folder": "A 重要须知（自部署版请查看）",
+      "name": "上传文件后，头像、昵称、正文、文件所有人可见",
+      "dirName": "上传文件后，头像、昵称、正文、文件所有人可见",
+      "type": "dir",
+      "path": "资源/A 重要须知（自部署版请查看）/上传文件后，头像、昵称、正文、文件所有人可见",
+      "files": [],
+      "images": [],
+      "description": "[粗][红]务必发布网络允许的安全内容，保护个人隐私。[/红][/粗]",
+      "author": "",
+      "avatar": "资源/A 重要须知（自部署版请查看）/上传文件后，头像、昵称、正文、文件所有人可见/.avatar.png",
+      "ownerHash": "453a5edf22ab6823ac53b76ea9cc952d2130242dfeb690743a0718f31f0c7482",
+      "updatedAt": "2026-08-12T07:36:40+02:00"
+    },
     {
       "folder": "BUG反馈专用文件夹",
       "name": "[花][花]在这个文件夹内留下项目中的bug[花][花]",
