@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-12T08:14:09.617Z",
+  "generatedAt": "2026-08-12T08:21:27.980Z",
   "folders": [
     {
       "name": "A 重要须知（自部署版请查看）",
@@ -33,7 +33,7 @@
     },
     {
       "name": "游戏",
-      "count": 1
+      "count": 2
     },
     {
       "name": "线上聊天状态栏",
@@ -286,6 +286,25 @@
       "avatar": "资源/应用/提问箱/.avatar.png",
       "ownerHash": "8e3664d10538a0676ceac971b51fd4732a8d3997119b81bc78fdb2e3ce7eaba6",
       "updatedAt": "2026-08-12T08:23:55+02:00"
+    },
+    {
+      "folder": "游戏",
+      "name": "动森主题五子棋",
+      "dirName": "动森主题五子棋",
+      "type": "dir",
+      "path": "资源/游戏/动森主题五子棋",
+      "files": [
+        "资源/游戏/动森主题五子棋/五子棋(优化回复问题).html"
+      ],
+      "images": [
+        "资源/游戏/动森主题五子棋/1000237348.jpg",
+        "资源/游戏/动森主题五子棋/1000237349.jpg"
+      ],
+      "description": "那些背景的那些logo都是模仿动森的，对方生成的那些回复可能有点慢",
+      "author": "林听你",
+      "avatar": "",
+      "ownerHash": "88f102e0ef217cea73fe5b268e0c11999ebe72de7ee6c86765148d0313569196",
+      "updatedAt": "2026-08-12T10:21:16+02:00"
     },
     {
       "folder": "游戏",
