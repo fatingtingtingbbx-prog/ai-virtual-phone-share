@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-12T18:44:08.960Z",
+  "generatedAt": "2026-08-12T23:50:34.925Z",
   "folders": [
     {
       "name": "A 重要须知（自部署版请查看）",
@@ -29,7 +29,7 @@
     },
     {
       "name": "应用",
-      "count": 4
+      "count": 5
     },
     {
       "name": "游戏",
@@ -248,6 +248,22 @@
       "avatar": "",
       "ownerHash": "4eee9ffd3176e2e3c5d3341370fc682604332bd1a01213a99c38c52d2d6e7527",
       "updatedAt": "2026-08-11T14:36:04+02:00"
+    },
+    {
+      "folder": "应用",
+      "name": "Whisper耳边私语",
+      "dirName": "Whisper耳边私语",
+      "type": "dir",
+      "path": "资源/应用/Whisper耳边私语",
+      "files": [
+        "资源/应用/Whisper耳边私语/whisper-v6.2.1(2).zip"
+      ],
+      "images": [],
+      "description": "与你亲密的TA共度一段私密语音时光。刷一批专属片单，点进去是配图+配音的沉浸演绎；支持单人/多人模式（最多3位角色同场、各用自己的音色）、拖动进度、单句/整段重新配音、收藏与下载、导入自己的剧本和封面、叠加环境音。\n\n\n[粗]需要配置chatGPT image2生图和minimax语音api哦～音色使用克隆的自然音色效果更好。[/粗]\n[粗]\n[/粗]\n[粗][红]提示词在设置——预设里[/红][/粗]，找到该whisper相关的条目，就可以更改你想要的剧情生成指引。",
+      "author": "Float studio",
+      "avatar": "资源/应用/Whisper耳边私语/.avatar.png",
+      "ownerHash": "453a5edf22ab6823ac53b76ea9cc952d2130242dfeb690743a0718f31f0c7482",
+      "updatedAt": "2026-08-13T01:50:25+02:00"
     },
     {
       "folder": "应用",
