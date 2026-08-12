@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-12T09:25:57.784Z",
+  "generatedAt": "2026-08-12T11:24:03.166Z",
   "folders": [
     {
       "name": "A 重要须知（自部署版请查看）",
@@ -25,7 +25,7 @@
     },
     {
       "name": "小剧场",
-      "count": 3
+      "count": 4
     },
     {
       "name": "应用",
@@ -168,6 +168,20 @@
       "avatar": "资源/剧情预设及正则/[幽灵]简约黑白剧情模式预设及正则[蘑菇]/.avatar.png",
       "ownerHash": "453a5edf22ab6823ac53b76ea9cc952d2130242dfeb690743a0718f31f0c7482",
       "updatedAt": "2026-08-11T01:52:22+02:00"
+    },
+    {
+      "folder": "小剧场",
+      "name": "[小猫]",
+      "dirName": "[小猫]",
+      "type": "dir",
+      "path": "资源/小剧场/[小猫]",
+      "files": [],
+      "images": [],
+      "description": "",
+      "author": "",
+      "avatar": "",
+      "ownerHash": "ee637c765f2c4ca19691370262aee65d1e3c69c6e23b77804cc3550a87428fd1",
+      "updatedAt": "2026-08-12T13:23:47+02:00"
     },
     {
       "folder": "小剧场",
