@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-12T00:10:58.649Z",
+  "generatedAt": "2026-08-12T01:38:57.034Z",
   "folders": [
     {
       "name": "BUG反馈专用文件夹",
@@ -21,7 +21,7 @@
     },
     {
       "name": "小剧场",
-      "count": 2
+      "count": 3
     },
     {
       "name": "应用",
@@ -146,6 +146,22 @@
       "avatar": "资源/小剧场/[花]不互相喜欢就出不去的房间/.avatar.png",
       "ownerHash": "f3b0893a7fe329736590ea476236375fd1017e0f5a65a5d8361c030d7e6b03fc",
       "updatedAt": "2026-08-11T07:47:18+02:00"
+    },
+    {
+      "folder": "小剧场",
+      "name": "do爱的红线怎么连去别的地方了？",
+      "dirName": "do爱的红线怎么连去别的地方了？",
+      "type": "dir",
+      "path": "资源/小剧场/do爱的红线怎么连去别的地方了？",
+      "files": [
+        "资源/小剧场/do爱的红线怎么连去别的地方了？/＄现在暂停当前剧情，为我生成一个番外小剧场。标题自拟，不计入.docx"
+      ],
+      "images": [],
+      "description": "大概就是一个，uu能看见脑袋上连接的红线，一根就代表do过一次吧！纯爱的小剧场，char脑袋上别的红线给uu的衣服裤子了！",
+      "author": "weweko（vv）",
+      "avatar": "资源/小剧场/do爱的红线怎么连去别的地方了？/.avatar.png",
+      "ownerHash": "4eee9ffd3176e2e3c5d3341370fc682604332bd1a01213a99c38c52d2d6e7527",
+      "updatedAt": "2026-08-12T03:38:44+02:00"
     },
     {
       "folder": "小剧场",
