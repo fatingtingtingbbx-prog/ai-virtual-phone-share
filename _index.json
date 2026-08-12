@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-12T11:24:03.166Z",
+  "generatedAt": "2026-08-12T13:41:22.677Z",
   "folders": [
     {
       "name": "A 重要须知（自部署版请查看）",
@@ -13,7 +13,7 @@
     },
     {
       "name": "Js插件",
-      "count": 3
+      "count": 2
     },
     {
       "name": "全局主题",
@@ -110,22 +110,6 @@
       "avatar": "",
       "ownerHash": "88f102e0ef217cea73fe5b268e0c11999ebe72de7ee6c86765148d0313569196",
       "updatedAt": "2026-08-11T16:25:44+02:00"
-    },
-    {
-      "folder": "Js插件",
-      "name": "隐藏思维链插件",
-      "dirName": "隐藏思维链插件",
-      "type": "dir",
-      "path": "资源/Js插件/隐藏思维链插件",
-      "files": [
-        "资源/Js插件/隐藏思维链插件/思维链隐藏.js"
-      ],
-      "images": [],
-      "description": "使用此插件后，模型的思考过程会在回复存入数据库前被删除，不会保存在与角色的聊天记录中。思考过程仍可在后台日志中查看。",
-      "author": "木叶淀粉酶",
-      "avatar": "",
-      "ownerHash": "9255ec1277ace06ef7aebf6566a04ad2844f9b543a7b06e6b1b0b7fe619d781c",
-      "updatedAt": "2026-08-12T06:11:26+02:00"
     },
     {
       "folder": "全局主题",
