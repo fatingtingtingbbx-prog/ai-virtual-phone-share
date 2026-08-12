@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-12T04:11:37.895Z",
+  "generatedAt": "2026-08-12T05:33:45.073Z",
   "folders": [
     {
       "name": "BUG反馈专用文件夹",
@@ -33,6 +33,10 @@
     },
     {
       "name": "线下正则",
+      "count": 1
+    },
+    {
+      "name": "重要须知（自部署版请查看）",
       "count": 1
     }
   ],
@@ -336,6 +340,20 @@
       "avatar": "资源/线下正则/去除线下频繁破折号/.avatar.png",
       "ownerHash": "f3b0893a7fe329736590ea476236375fd1017e0f5a65a5d8361c030d7e6b03fc",
       "updatedAt": "2026-08-11T06:53:13+02:00"
+    },
+    {
+      "folder": "重要须知（自部署版请查看）",
+      "name": "上传后头像、昵称、内容、文件所有人可见",
+      "dirName": "上传后头像、昵称、内容、文件所有人可见",
+      "type": "dir",
+      "path": "资源/重要须知（自部署版请查看）/上传后头像、昵称、内容、文件所有人可见",
+      "files": [],
+      "images": [],
+      "description": "[粗][红]务必保护隐私，发布网络允许的安全内容[/红][/粗]",
+      "author": "",
+      "avatar": "资源/重要须知（自部署版请查看）/上传后头像、昵称、内容、文件所有人可见/.avatar.png",
+      "ownerHash": "453a5edf22ab6823ac53b76ea9cc952d2130242dfeb690743a0718f31f0c7482",
+      "updatedAt": "2026-08-12T07:33:34+02:00"
     }
   ]
 }
