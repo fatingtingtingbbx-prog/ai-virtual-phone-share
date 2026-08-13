@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-13T00:35:29.719Z",
+  "generatedAt": "2026-08-13T07:46:22.084Z",
   "folders": [
     {
       "name": "A 重要须知（自部署版请查看）",
@@ -34,6 +34,10 @@
     {
       "name": "游戏",
       "count": 3
+    },
+    {
+      "name": "线上美化",
+      "count": 1
     },
     {
       "name": "线上聊天状态栏",
@@ -394,6 +398,26 @@
       "avatar": "",
       "ownerHash": "88f102e0ef217cea73fe5b268e0c11999ebe72de7ee6c86765148d0313569196",
       "updatedAt": "2026-08-12T10:13:58+02:00"
+    },
+    {
+      "folder": "线上美化",
+      "name": "线上美化",
+      "dirName": "线上美化",
+      "type": "dir",
+      "path": "资源/线上美化/线上美化",
+      "files": [
+        "资源/线上美化/线上美化/float│半点星by淅沥沥.txt"
+      ],
+      "images": [
+        "资源/线上美化/线上美化/1000241126.jpg",
+        "资源/线上美化/线上美化/1000241129.jpg",
+        "资源/线上美化/线上美化/1000241130.jpg"
+      ],
+      "description": "气泡有两个版本线上美化，放在消息-主页-外观css里食用\n放在全局美化里也可以，但是设置角色界面会有bug",
+      "author": "淅沥沥",
+      "avatar": "资源/线上美化/线上美化/.avatar.png",
+      "ownerHash": "bf65bc1c732341505dc056c65d6ad17b6862e2c1f0cdf99f70af36a873b438aa",
+      "updatedAt": "2026-08-13T15:46:01+08:00"
     },
     {
       "folder": "线上聊天状态栏",
