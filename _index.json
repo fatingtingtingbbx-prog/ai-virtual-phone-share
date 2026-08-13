@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-13T21:24:25.788Z",
+  "generatedAt": "2026-08-13T21:26:39.799Z",
   "folders": [
     {
       "name": "A 重要须知（自部署版请查看）",
@@ -60,8 +60,8 @@
       "description": "[粗][蓝]资源集市说明：[/蓝][/粗]\n[蓝]为了实现开源和闭源共享，资源市场所有内容发布于[粗][大]公开github仓库xiaolongbao0709/ai-virtual-phone-share[/大]，[/粗]共享平台宗旨在于[粗]开放、共享、交流。[/粗][/蓝]\n[蓝][粗]\n[/粗][/蓝]\n[粗][蓝]这也意味着你上传的文件可被所有人查看，是完完全全开源的。[/蓝][/粗]\n[粗][蓝]\n[/蓝][/粗][粗][蓝]为了保护你自己及小手机平台，[/蓝][/粗][粗][红][大]务必发布网络允许的安全内容，保护个人隐私。[/大][/红][/粗]\n\n文件发布后，发布者本人可编辑及删除，小手机会定期清理仓库历史。为了保护您的隐私和安全，对不慎发布的不宜展示的内容，小手机会做下架处理。",
       "author": "Float studio",
       "avatar": "资源/A 重要须知（自部署版请查看）/上传文件后，头像、昵称、正文、文件所有人可见/.avatar.png",
-      "ownerHash": "453a5edf22ab6823ac53b76ea9cc952d2130242dfeb690743a0718f31f0c7482",
-      "updatedAt": "2026-08-13T22:13:29+08:00"
+      "ownerHash": "72adb7d77211b0354bc8d30ad6f28de6e6ba7e1047ed9ec1c80c1ab683f98f11",
+      "updatedAt": "2026-08-14T05:26:29+08:00"
     },
     {
       "folder": "BUG反馈专用文件夹",
@@ -77,7 +77,7 @@
       "author": "Float studio",
       "avatar": "资源/BUG反馈专用文件夹/[花][花]在这里留下项目中的bug[花][花]/.avatar.png",
       "ownerHash": "453a5edf22ab6823ac53b76ea9cc952d2130242dfeb690743a0718f31f0c7482",
-      "updatedAt": "2026-08-13T22:13:29+08:00"
+      "updatedAt": "2026-08-11T23:32:39+02:00"
     },
     {
       "folder": "BUG反馈专用文件夹",
@@ -91,7 +91,7 @@
       "author": "",
       "avatar": "",
       "ownerHash": "fb962c4fceef95a258ac55e1fab9a3cb0bd1440197814a757957ec7d3234aa5e",
-      "updatedAt": "2026-08-13T22:13:29+08:00"
+      "updatedAt": "2026-08-13T17:13:53+08:00"
     },
     {
       "folder": "Js插件",
@@ -109,7 +109,7 @@
       "author": "木叶淀粉酶",
       "avatar": "",
       "ownerHash": "9255ec1277ace06ef7aebf6566a04ad2844f9b543a7b06e6b1b0b7fe619d781c",
-      "updatedAt": "2026-08-13T22:13:29+08:00"
+      "updatedAt": "2026-08-13T02:35:15+02:00"
     },
     {
       "folder": "Js插件",
@@ -127,7 +127,7 @@
       "author": "林听你",
       "avatar": "",
       "ownerHash": "88f102e0ef217cea73fe5b268e0c11999ebe72de7ee6c86765148d0313569196",
-      "updatedAt": "2026-08-13T22:13:29+08:00"
+      "updatedAt": "2026-08-11T16:14:55+02:00"
     },
     {
       "folder": "Js插件",
@@ -145,7 +145,7 @@
       "author": "林听你",
       "avatar": "",
       "ownerHash": "88f102e0ef217cea73fe5b268e0c11999ebe72de7ee6c86765148d0313569196",
-      "updatedAt": "2026-08-13T22:13:29+08:00"
+      "updatedAt": "2026-08-11T16:25:44+02:00"
     },
     {
       "folder": "全局主题",
@@ -167,7 +167,7 @@
       "author": "林听你",
       "avatar": "",
       "ownerHash": "88f102e0ef217cea73fe5b268e0c11999ebe72de7ee6c86765148d0313569196",
-      "updatedAt": "2026-08-13T22:13:29+08:00"
+      "updatedAt": "2026-08-12T20:43:56+02:00"
     },
     {
       "folder": "剧情预设及正则",
@@ -187,7 +187,7 @@
       "author": "",
       "avatar": "资源/剧情预设及正则/[幽灵]简约黑白剧情模式预设及正则[蘑菇]/.avatar.png",
       "ownerHash": "453a5edf22ab6823ac53b76ea9cc952d2130242dfeb690743a0718f31f0c7482",
-      "updatedAt": "2026-08-13T22:13:29+08:00"
+      "updatedAt": "2026-08-11T01:52:22+02:00"
     },
     {
       "folder": "小剧场",
@@ -201,7 +201,7 @@
       "author": "",
       "avatar": "",
       "ownerHash": "ee637c765f2c4ca19691370262aee65d1e3c69c6e23b77804cc3550a87428fd1",
-      "updatedAt": "2026-08-13T22:13:29+08:00"
+      "updatedAt": "2026-08-12T13:23:47+02:00"
     },
     {
       "folder": "小剧场",
@@ -217,7 +217,7 @@
       "author": "心如止水煮肉片",
       "avatar": "资源/小剧场/[花]不互相喜欢就出不去的房间/.avatar.png",
       "ownerHash": "f3b0893a7fe329736590ea476236375fd1017e0f5a65a5d8361c030d7e6b03fc",
-      "updatedAt": "2026-08-13T22:13:29+08:00"
+      "updatedAt": "2026-08-11T07:47:18+02:00"
     },
     {
       "folder": "小剧场",
@@ -233,7 +233,7 @@
       "author": "weweko（vv）",
       "avatar": "资源/小剧场/do爱的红线怎么连去别的地方了？/.avatar.png",
       "ownerHash": "4eee9ffd3176e2e3c5d3341370fc682604332bd1a01213a99c38c52d2d6e7527",
-      "updatedAt": "2026-08-13T22:13:29+08:00"
+      "updatedAt": "2026-08-12T03:38:44+02:00"
     },
     {
       "folder": "小剧场",
@@ -249,7 +249,7 @@
       "author": "热水",
       "avatar": "资源/小剧场/亲了只小猫咪怎么以身相许了/.avatar.png",
       "ownerHash": "ab41a1c81c4f27f02f95c86c1b692595b13f72072de30031ef4f7a91789819da",
-      "updatedAt": "2026-08-13T22:13:29+08:00"
+      "updatedAt": "2026-08-12T19:42:44+02:00"
     },
     {
       "folder": "小剧场",
@@ -267,7 +267,7 @@
       "author": "心如止水煮肉片",
       "avatar": "资源/小剧场/关于我们穿越进古早ABO龙傲天文学里当苦命beta下属这档子事/.avatar.png",
       "ownerHash": "f3b0893a7fe329736590ea476236375fd1017e0f5a65a5d8361c030d7e6b03fc",
-      "updatedAt": "2026-08-13T22:13:29+08:00"
+      "updatedAt": "2026-08-11T08:54:07+02:00"
     },
     {
       "folder": "应用",
@@ -283,7 +283,7 @@
       "author": "vv",
       "avatar": "",
       "ownerHash": "4eee9ffd3176e2e3c5d3341370fc682604332bd1a01213a99c38c52d2d6e7527",
-      "updatedAt": "2026-08-13T22:13:29+08:00"
+      "updatedAt": "2026-08-11T14:36:04+02:00"
     },
     {
       "folder": "应用",
@@ -301,7 +301,7 @@
       "author": "Float studio",
       "avatar": "资源/应用/Whisper耳边私语/.avatar.png",
       "ownerHash": "453a5edf22ab6823ac53b76ea9cc952d2130242dfeb690743a0718f31f0c7482",
-      "updatedAt": "2026-08-13T22:13:29+08:00"
+      "updatedAt": "2026-08-13T01:59:25+02:00"
     },
     {
       "folder": "应用",
@@ -317,7 +317,7 @@
       "author": "但求一睡君莫笑",
       "avatar": "资源/应用/[爱心]贴贴/.avatar.png",
       "ownerHash": "610f4f4de346e85636302c26ece1f8743e84cc7417c5c77618e017ca099b9d06",
-      "updatedAt": "2026-08-13T22:13:29+08:00"
+      "updatedAt": "2026-08-11T11:23:57+02:00"
     },
     {
       "folder": "应用",
@@ -335,7 +335,7 @@
       "author": "7Ouii",
       "avatar": "资源/应用/pulse（仿x）/.avatar.png",
       "ownerHash": "8e3664d10538a0676ceac971b51fd4732a8d3997119b81bc78fdb2e3ce7eaba6",
-      "updatedAt": "2026-08-13T22:13:29+08:00"
+      "updatedAt": "2026-08-12T02:02:50+02:00"
     },
     {
       "folder": "应用",
@@ -392,7 +392,7 @@
       "author": "7Ouii",
       "avatar": "资源/应用/提问箱/.avatar.png",
       "ownerHash": "8e3664d10538a0676ceac971b51fd4732a8d3997119b81bc78fdb2e3ce7eaba6",
-      "updatedAt": "2026-08-13T22:13:29+08:00"
+      "updatedAt": "2026-08-12T08:23:55+02:00"
     },
     {
       "folder": "游戏",
@@ -411,7 +411,7 @@
       "author": "林听你",
       "avatar": "",
       "ownerHash": "88f102e0ef217cea73fe5b268e0c11999ebe72de7ee6c86765148d0313569196",
-      "updatedAt": "2026-08-13T22:13:29+08:00"
+      "updatedAt": "2026-08-12T10:46:56+02:00"
     },
     {
       "folder": "游戏",
@@ -431,7 +431,7 @@
       "author": "林听你",
       "avatar": "",
       "ownerHash": "88f102e0ef217cea73fe5b268e0c11999ebe72de7ee6c86765148d0313569196",
-      "updatedAt": "2026-08-13T22:13:29+08:00"
+      "updatedAt": "2026-08-12T10:24:45+02:00"
     },
     {
       "folder": "游戏",
@@ -450,7 +450,7 @@
       "author": "林听你",
       "avatar": "",
       "ownerHash": "88f102e0ef217cea73fe5b268e0c11999ebe72de7ee6c86765148d0313569196",
-      "updatedAt": "2026-08-13T22:13:29+08:00"
+      "updatedAt": "2026-08-12T10:13:58+02:00"
     },
     {
       "folder": "线上美化",
@@ -470,7 +470,7 @@
       "author": "淅沥沥",
       "avatar": "资源/线上美化/立体蓝/.avatar.png",
       "ownerHash": "bf65bc1c732341505dc056c65d6ad17b6862e2c1f0cdf99f70af36a873b438aa",
-      "updatedAt": "2026-08-13T22:13:29+08:00"
+      "updatedAt": "2026-08-13T15:56:45+08:00"
     },
     {
       "folder": "线上美化",
@@ -490,7 +490,7 @@
       "author": "淅沥沥",
       "avatar": "资源/线上美化/线上美化/.avatar.png",
       "ownerHash": "bf65bc1c732341505dc056c65d6ad17b6862e2c1f0cdf99f70af36a873b438aa",
-      "updatedAt": "2026-08-13T22:13:29+08:00"
+      "updatedAt": "2026-08-13T15:54:02+08:00"
     },
     {
       "folder": "线上美化",
@@ -510,7 +510,7 @@
       "author": "淅沥沥",
       "avatar": "资源/线上美化/莓莓兔丸/.avatar.png",
       "ownerHash": "bf65bc1c732341505dc056c65d6ad17b6862e2c1f0cdf99f70af36a873b438aa",
-      "updatedAt": "2026-08-13T22:13:29+08:00"
+      "updatedAt": "2026-08-13T16:05:33+08:00"
     },
     {
       "folder": "线上美化",
@@ -530,7 +530,7 @@
       "author": "淅沥沥",
       "avatar": "资源/线上美化/韩系兔丸/.avatar.png",
       "ownerHash": "bf65bc1c732341505dc056c65d6ad17b6862e2c1f0cdf99f70af36a873b438aa",
-      "updatedAt": "2026-08-13T22:13:29+08:00"
+      "updatedAt": "2026-08-13T16:01:49+08:00"
     },
     {
       "folder": "线上美化",
@@ -550,7 +550,7 @@
       "author": "淅沥沥",
       "avatar": "资源/线上美化/黑白猪/.avatar.png",
       "ownerHash": "bf65bc1c732341505dc056c65d6ad17b6862e2c1f0cdf99f70af36a873b438aa",
-      "updatedAt": "2026-08-13T22:13:29+08:00"
+      "updatedAt": "2026-08-13T15:55:40+08:00"
     },
     {
       "folder": "线上聊天状态栏",
@@ -568,7 +568,7 @@
       "author": "麻将大王（饭堂群：757031276）",
       "avatar": "资源/线上聊天状态栏/[笑脸]超级无敌丰富的心声修改状态栏/.avatar.png",
       "ownerHash": "3743625076911c10b90371a7a924328118a71dfecc940a01922410bf8e78c3ca",
-      "updatedAt": "2026-08-13T22:13:29+08:00"
+      "updatedAt": "2026-08-11T16:46:08+02:00"
     },
     {
       "folder": "线上聊天状态栏",
@@ -587,7 +587,7 @@
       "author": "",
       "avatar": "资源/线上聊天状态栏/[蝴蝶结]黑白状态栏美化自取[小猫]/.avatar.png",
       "ownerHash": "453a5edf22ab6823ac53b76ea9cc952d2130242dfeb690743a0718f31f0c7482",
-      "updatedAt": "2026-08-13T22:13:29+08:00"
+      "updatedAt": "2026-08-11T01:44:08+02:00"
     },
     {
       "folder": "线上聊天状态栏",
@@ -606,7 +606,7 @@
       "author": "但求一睡君莫笑",
       "avatar": "资源/线上聊天状态栏/线上仿微信美化/.avatar.png",
       "ownerHash": "610f4f4de346e85636302c26ece1f8743e84cc7417c5c77618e017ca099b9d06",
-      "updatedAt": "2026-08-13T22:13:29+08:00"
+      "updatedAt": "2026-08-11T18:39:07+02:00"
     },
     {
       "folder": "线下正则",
@@ -622,7 +622,7 @@
       "author": "心如止水煮肉片",
       "avatar": "资源/线下正则/去除线下频繁破折号/.avatar.png",
       "ownerHash": "f3b0893a7fe329736590ea476236375fd1017e0f5a65a5d8361c030d7e6b03fc",
-      "updatedAt": "2026-08-13T22:13:29+08:00"
+      "updatedAt": "2026-08-11T06:53:13+02:00"
     }
   ]
 }
