@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-13T20:04:44.536Z",
+  "generatedAt": "2026-08-13T20:30:23.484Z",
   "folders": [
     {
       "name": "A 重要须知（自部署版请查看）",
@@ -29,7 +29,7 @@
     },
     {
       "name": "应用",
-      "count": 6
+      "count": 7
     },
     {
       "name": "游戏",
@@ -357,6 +357,24 @@
       "avatar": "",
       "ownerHash": "eee1ff3396b8bafaeaff7dc7209679503c680ddedfc96481ece03b322fd8e867",
       "updatedAt": "2026-08-14T04:04:09+08:00"
+    },
+    {
+      "folder": "应用",
+      "name": "捡手机文学安装包[爱心]",
+      "dirName": "捡手机文学安装包[爱心]",
+      "type": "dir",
+      "path": "资源/应用/捡手机文学安装包[爱心]",
+      "files": [
+        "资源/应用/捡手机文学安装包[爱心]/melon.fiction-2.1.0.zip"
+      ],
+      "images": [
+        "资源/应用/捡手机文学安装包[爱心]/IMG_2137.jpeg"
+      ],
+      "description": "导入应用安装。",
+      "author": "Float studio",
+      "avatar": "",
+      "ownerHash": "72adb7d77211b0354bc8d30ad6f28de6e6ba7e1047ed9ec1c80c1ab683f98f11",
+      "updatedAt": "2026-08-14T04:30:10+08:00"
     },
     {
       "folder": "应用",
