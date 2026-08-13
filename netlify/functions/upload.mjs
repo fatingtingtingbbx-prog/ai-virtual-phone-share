@@ -43,6 +43,15 @@ const CONTRIB_RATE_PER_HOUR = 3;
 // 只许改这些目录下的源码/文档；工作流、依赖清单、配置一律不收
 const CONTRIB_PATH_RE = /^(components|lib|styles|docs|hooks)\/[A-Za-z0-9_\-./\u4e00-\u9fff]+\.(ts|tsx|css|md|js|mjs)$/;
 
+// \u2500\u2500 \u627e\u56de\u4f5c\u54c1\uff08\u6240\u6709\u6743\u7533\u8bf7\uff09\u901a\u9053 \u2500\u2500
+// \u4e22\u4e86\u644a\u4e3b\u94a5\u5319\u7684\u4f5c\u8005\u63d0\u4ea4\u8bc1\u660e\u6750\u6599\uff0c\u7531\u7ba1\u7406\u5458\u5728\u5c0f\u624b\u673a\u7ba1\u7406\u4e2d\u5fc3\u4eba\u5de5\u5ba1\u6838\u3002
+// \u4e2d\u8f6c\u51fd\u6570\u53ea\u8d1f\u8d23\u628a\u7533\u8bf7\u5f00\u6210 PR\uff08\u5206\u652f\u4e0a\u4ec5\u653e\u8bc1\u660e\u6587\u4ef6\uff0c\u6c38\u4e0d\u78b0 .owner\uff09\uff1b
+// \u901a\u8fc7\u4e0e\u5426\u3001\u6539\u5199\u6240\u6709\u6743\uff0c\u5168\u90e8\u7531\u7ba1\u7406\u5458\u7684 token \u624b\u52a8\u6267\u884c\u2014\u2014bot \u4e0d\u505a\u4efb\u4f55\u81ea\u52a8\u88c1\u51b3\u3002
+const CLAIM_MAX_FILES = 6;
+const CLAIM_MAX_TOTAL_B64 = 4 * 1024 * 1024;    // \u8bc1\u660e\u6750\u6599\uff08\u622a\u56fe/\u5de5\u7a0b\u6587\u4ef6\uff09\u603b\u91cf \u22644MB
+const CLAIM_RATE_PER_HOUR = 2;
+const CLAIM_TITLE_PREFIX = "\u3010\u627e\u56de\u7533\u8bf7\u3011";
+
 const CORS = {
     "Access-Control-Allow-Origin": "*",
     "Access-Control-Allow-Methods": "POST, OPTIONS",
@@ -494,6 +503,68 @@ async function handleContribute(payload) {
     return json(200, { ok: true, prNumber: pr.number, prUrl: pr.html_url });
 }
 
+async function handleClaim(token, payload) {
+    const entryPath = String(payload.path ?? "").trim().replace(/\/+$/, "");
+    // 只认「资源/<分类>/<资源名>」两级目录；cleanSegment 同源字符集，杜绝路径穿越
+    if (!/^资源\/[^/]{1,60}\/[^/]{1,60}$/.test(entryPath) || entryPath.includes("..")) {
+        return json(400, { ok: false, error: "资源路径不合法" });
+    }
+    const ownerHash = String(payload.ownerHash ?? "").trim().toLowerCase();
+    if (!/^[0-9a-f]{64}$/.test(ownerHash)) return json(400, { ok: false, error: "钥匙指纹不合法" });
+    const nickname = cleanSegment(payload.nickname, "匿名");
+    const note = String(payload.note ?? "").trim().slice(0, MAX_TEXT);
+    const entryName = cleanSegment(payload.name, "") || entryPath.split("/").pop();
+
+    const files = Array.isArray(payload.files) ? payload.files : [];
+    if (files.length === 0) return json(400, { ok: false, error: "请上传证明文件（能证明作品是你创作的材料）" });
+    if (files.length > CLAIM_MAX_FILES) return json(400, { ok: false, error: `证明文件最多 ${CLAIM_MAX_FILES} 个` });
+    let total = 0;
+    const normalized = [];
+    for (const file of files) {
+        const name = cleanFileName(file?.name, "");
+        const content = String(file?.contentBase64 ?? "");
+        if (!name) return json(400, { ok: false, error: "证明文件名不合法" });
+        if (!content || !/^[A-Za-z0-9+/=\r\n]+$/.test(content)) return json(400, { ok: false, error: `文件「${name}」内容必须是 base64` });
+        total += content.length;
+        normalized.push({ name, contentBase64: content.replace(/[\r\n]/g, "") });
+    }
+    if (total > CLAIM_MAX_TOTAL_B64) return json(400, { ok: false, error: "证明文件总量超限（≤4MB），请压缩后再试" });
+
+    const [owner, repo] = REPO.split("/");
+    // 资源必须真实存在，挡住对着空路径乱开申请
+    try {
+        await gh(token, "GET", `/repos/${owner}/${repo}/contents/${encodePath(entryPath)}`);
+    } catch {
+        return json(404, { ok: false, error: "该资源不存在（可能已下架）" });
+    }
+
+    const claimId = `${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 7)}`;
+    const branch = `claim/${claimId}`;
+    const mainRef = await gh(token, "GET", `/repos/${owner}/${repo}/git/ref/heads/main`);
+    await gh(token, "POST", `/repos/${owner}/${repo}/git/refs`, { ref: `refs/heads/${branch}`, sha: mainRef.object.sha });
+    for (const file of normalized) {
+        await putFileOnBranch(token, owner, repo, branch, `找回申请/${claimId}/${file.name}`,
+            file.contentBase64, `找回申请证明：${entryName}`);
+    }
+
+    const pr = await gh(token, "POST", `/repos/${owner}/${repo}/pulls`, {
+        title: `${CLAIM_TITLE_PREFIX}${entryName}`,
+        head: branch,
+        base: "main",
+        body: [
+            `资源路径：${entryPath}`,
+            `申请人：${nickname}`,
+            `新钥匙指纹：${ownerHash}`,
+            "",
+            note || "（申请人未填写备注）",
+            "",
+            "---",
+            "_⚠️ 请勿直接合并本 PR（证明文件不应进入仓库）。请在小手机「设置 → 管理中心 → 集市审核」里查看证明并点「通过找回」，系统会改写该资源的所有权并关闭本申请。_",
+        ].join("\n"),
+    });
+    return json(200, { ok: true, prNumber: pr.number, prUrl: pr.html_url });
+}
+
 export default async function handler(req, context) {
     if (req.method === "OPTIONS") return new Response(null, { status: 204, headers: CORS });
     if (req.method !== "POST") return json(405, { ok: false, error: "只接受 POST" });
@@ -515,9 +586,13 @@ export default async function handler(req, context) {
     const hour = Math.floor(Date.now() / 3600_000);
     const isFlower = payload.action === "flower";
     const isContribute = payload.action === "contribute";
-    const rateKey = `${isFlower ? "f:" : isContribute ? "c:" : ""}${ip}:${hour}`;
+    const isClaim = payload.action === "claim";
+    const rateKey = `${isFlower ? "f:" : isContribute ? "c:" : isClaim ? "r:" : ""}${ip}:${hour}`;
     const used = rateMap.get(rateKey) || 0;
-    const rateCap = isFlower ? FLOWER_RATE_PER_HOUR : isContribute ? CONTRIB_RATE_PER_HOUR : RATE_LIMIT_PER_HOUR;
+    const rateCap = isFlower ? FLOWER_RATE_PER_HOUR
+        : isContribute ? CONTRIB_RATE_PER_HOUR
+        : isClaim ? CLAIM_RATE_PER_HOUR
+        : RATE_LIMIT_PER_HOUR;
     if (used >= rateCap) {
         return json(429, { ok: false, error: "操作太频繁了，请一小时后再试" });
     }
@@ -526,6 +601,7 @@ export default async function handler(req, context) {
 
     try {
         if (payload.action === "contribute") return await handleContribute(payload);
+        if (payload.action === "claim") return await handleClaim(token, payload);
         if (payload.action === "flower") return await handleFlower(token, payload, ip);
         if (payload.action === "edit") return await handleEdit(token, payload);
         if (payload.action === "delete") return await handleDelete(token, payload);
