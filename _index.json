@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-13T08:05:52.593Z",
+  "generatedAt": "2026-08-13T09:10:25.919Z",
   "folders": [
     {
       "name": "A 重要须知（自部署版请查看）",
@@ -9,7 +9,7 @@
     },
     {
       "name": "BUG反馈专用文件夹",
-      "count": 1
+      "count": 2
     },
     {
       "name": "Js插件",
@@ -78,6 +78,20 @@
       "avatar": "资源/BUG反馈专用文件夹/[花][花]在这里留下项目中的bug[花][花]/.avatar.png",
       "ownerHash": "453a5edf22ab6823ac53b76ea9cc952d2130242dfeb690743a0718f31f0c7482",
       "updatedAt": "2026-08-11T23:32:39+02:00"
+    },
+    {
+      "folder": "BUG反馈专用文件夹",
+      "name": "关于闪退",
+      "dirName": "关于闪退",
+      "type": "dir",
+      "path": "资源/BUG反馈专用文件夹/关于闪退",
+      "files": [],
+      "images": [],
+      "description": "就是点数据管理那里，想要备份删除啥的，等它总结内存板块那里，就会莫名闪退，然后闪退重新回来之后，市集就会在桌面上显示，在数据管理也会消失，但是去美化那里点默认恢复全局定位，然后再退出重进，市集又出现了，但是点数据管理那里就是会闪退，浏览器用的谷歌",
+      "author": "",
+      "avatar": "",
+      "ownerHash": "fb962c4fceef95a258ac55e1fab9a3cb0bd1440197814a757957ec7d3234aa5e",
+      "updatedAt": "2026-08-13T17:10:14+08:00"
     },
     {
       "folder": "Js插件",
