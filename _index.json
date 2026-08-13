@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-13T00:00:09.329Z",
+  "generatedAt": "2026-08-13T00:27:29.891Z",
   "folders": [
     {
       "name": "A 重要须知（自部署版请查看）",
@@ -13,7 +13,7 @@
     },
     {
       "name": "Js插件",
-      "count": 2
+      "count": 3
     },
     {
       "name": "全局主题",
@@ -74,6 +74,24 @@
       "avatar": "资源/BUG反馈专用文件夹/[花][花]在这里留下项目中的bug[花][花]/.avatar.png",
       "ownerHash": "453a5edf22ab6823ac53b76ea9cc952d2130242dfeb690743a0718f31f0c7482",
       "updatedAt": "2026-08-11T23:32:39+02:00"
+    },
+    {
+      "folder": "Js插件",
+      "name": "手机电量感知（适配安卓）",
+      "dirName": "手机电量感知（适配安卓）",
+      "type": "dir",
+      "path": "资源/Js插件/手机电量感知（适配安卓）",
+      "files": [
+        "资源/Js插件/手机电量感知（适配安卓）/电量感知（适配安卓）.js"
+      ],
+      "images": [
+        "资源/Js插件/手机电量感知（适配安卓）/IMG_20260813_082420.jpg"
+      ],
+      "description": "✅二改可以让角色感知到用户手机电量的小插件，启用后默认实时注入电量提示词，可选择是否启用低电量提醒。\n提示词注入效果如图所示",
+      "author": "木叶淀粉酶",
+      "avatar": "",
+      "ownerHash": "9255ec1277ace06ef7aebf6566a04ad2844f9b543a7b06e6b1b0b7fe619d781c",
+      "updatedAt": "2026-08-13T02:27:17+02:00"
     },
     {
       "folder": "Js插件",
