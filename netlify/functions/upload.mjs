@@ -30,19 +30,6 @@ const FLOWERS_FILE = "_flowers.json";
 const CONFIG_FILE = "_config.json";
 const FLOWER_RATE_PER_HOUR = 30;
 
-// ── 共同建设（代码贡献）通道 ──
-// 小坊代用户把改动提交为主仓库的 PR。路径白名单 + 体积/数量/频率三重限制，
-// 中转函数不放行的内容不可能进入仓库；最终把关仍是管理员在 GitHub 审 PR。
-//   CONTRIB_BOT_TOKEN  可选，主仓库的 fine-grained PAT（Contents + Pull requests 读写）；
-//                      缺省复用 SHARE_BOT_TOKEN（此时该 token 需同时勾选两个仓库）。
-//   CONTRIB_REPO       可选，默认 "xiaolongbao0709/ai-virtual-phone"
-const CONTRIB_REPO = process.env.CONTRIB_REPO || "xiaolongbao0709/ai-virtual-phone";
-const CONTRIB_MAX_FILES = 6;
-const CONTRIB_MAX_TOTAL_B64 = 1024 * 1024;      // 代码贡献总量 ≤1MB（够大改动，挡整仓倾倒）
-const CONTRIB_RATE_PER_HOUR = 3;
-// 只许改这些目录下的源码/文档；工作流、依赖清单、配置一律不收
-const CONTRIB_PATH_RE = /^(components|lib|styles|docs|hooks)\/[A-Za-z0-9_\-./\u4e00-\u9fff]+\.(ts|tsx|css|md|js|mjs)$/;
-
 const CORS = {
     "Access-Control-Allow-Origin": "*",
     "Access-Control-Allow-Methods": "POST, OPTIONS",
@@ -99,23 +86,6 @@ async function putFile(token, owner, repo, path, contentBase64, message) {
     const sha = await fileSha(token, owner, repo, path);
     await gh(token, "PUT", `/repos/${owner}/${repo}/contents/${encodePath(path)}`, {
         message,
-        content: contentBase64.replace(/[\r\n]/g, ""),
-        ...(sha ? { sha } : {}),
-    });
-}
-
-/** 写文件到指定分支（有则覆盖） */
-async function putFileOnBranch(token, owner, repo, branch, path, contentBase64, message) {
-    let sha = "";
-    try {
-        const info = await gh(token, "GET", `/repos/${owner}/${repo}/contents/${encodePath(path)}?ref=${encodeURIComponent(branch)}`);
-        sha = Array.isArray(info) ? "" : (info.sha || "");
-    } catch (err) {
-        if (err.status !== 404) throw err;
-    }
-    await gh(token, "PUT", `/repos/${owner}/${repo}/contents/${encodePath(path)}`, {
-        message,
-        branch,
         content: contentBase64.replace(/[\r\n]/g, ""),
         ...(sha ? { sha } : {}),
     });
@@ -433,67 +403,6 @@ async function handleFlower(token, payload, ip) {
     return json(502, { ok: false, error: "送花失败：仓库繁忙，请稍后再试" });
 }
 
-/** 共同建设：把用户的改动提交为主仓库的 community PR（管理员在 GitHub 审核） */
-async function handleContribute(payload) {
-    const token = process.env.CONTRIB_BOT_TOKEN || process.env.SHARE_BOT_TOKEN;
-    if (!token) return json(503, { ok: false, error: "贡献通道尚未配置（缺少 CONTRIB_BOT_TOKEN）" });
-
-    const title = String(payload.title ?? "").trim().slice(0, 80);
-    const summary = String(payload.summary ?? "").trim().slice(0, MAX_TEXT);
-    const contributor = cleanSegment(payload.contributor, "匿名");
-    const githubUser = /^[A-Za-z0-9-]{1,39}$/.test(String(payload.githubUser ?? "")) ? String(payload.githubUser) : "";
-    const files = Array.isArray(payload.files) ? payload.files : [];
-    if (title.length < 4) return json(400, { ok: false, error: "请写一个能说明改动的标题（至少 4 个字）" });
-    if (!summary) return json(400, { ok: false, error: "请说明这个改动做了什么、为什么" });
-    if (files.length === 0) return json(400, { ok: false, error: "没有要提交的文件" });
-    if (files.length > CONTRIB_MAX_FILES) return json(400, { ok: false, error: `一次贡献最多 ${CONTRIB_MAX_FILES} 个文件，请拆成多次提交` });
-
-    let total = 0;
-    const normalized = [];
-    for (const file of files) {
-        const path = String(file?.path ?? "").trim().replace(/^\/+/, "");
-        const content = String(file?.contentBase64 ?? "");
-        if (path.includes("..")) return json(400, { ok: false, error: "路径不合法" });
-        if (!CONTRIB_PATH_RE.test(path)) {
-            return json(400, { ok: false, error: `路径「${path}」不在贡献白名单内（components/lib/styles/hooks/docs 下的源码与文档）` });
-        }
-        if (!content || !/^[A-Za-z0-9+/=\r\n]+$/.test(content)) return json(400, { ok: false, error: `文件「${path}」内容必须是 base64` });
-        total += content.length;
-        normalized.push({ path, contentBase64: content.replace(/[\r\n]/g, "") });
-    }
-    if (total > CONTRIB_MAX_TOTAL_B64) return json(400, { ok: false, error: "单次贡献总量超限，请拆分提交" });
-
-    const [owner, repo] = CONTRIB_REPO.split("/");
-    const branch = `community/${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 7)}`;
-    const mainRef = await gh(token, "GET", `/repos/${owner}/${repo}/git/ref/heads/main`);
-    await gh(token, "POST", `/repos/${owner}/${repo}/git/refs`, { ref: `refs/heads/${branch}`, sha: mainRef.object.sha });
-
-    // 逐个写文件；作者署名进 commit（有 GitHub 名给 Co-authored-by，官方合并后计入其贡献）
-    const coAuthor = githubUser ? `\n\nCo-authored-by: ${githubUser} <${githubUser}@users.noreply.github.com>` : "";
-    for (const file of normalized) {
-        await putFileOnBranch(token, owner, repo, branch, file.path,
-            file.contentBase64, `${title}（${contributor} 经共同建设通道提交）${coAuthor}`);
-    }
-
-    const pr = await gh(token, "POST", `/repos/${owner}/${repo}/pulls`, {
-        title,
-        head: branch,
-        base: "main",
-        body: `贡献者：${contributor}${githubUser ? `（@${githubUser}）` : ""}\n\n${summary}\n\n---\n_经小手机「共同建设」通道提交_`,
-    });
-    // community 标签：先确保存在再打（打不上不算失败，PR 本体已建好）
-    try {
-        await gh(token, "POST", `/repos/${owner}/${repo}/labels`, { name: "community", color: "0e8a16", description: "社区贡献" });
-    } catch (err) {
-        if (err.status !== 422) { /* 已存在=422，其余忽略 */ }
-    }
-    try {
-        await gh(token, "POST", `/repos/${owner}/${repo}/issues/${pr.number}/labels`, { labels: ["community"] });
-    } catch { /* 标签失败不影响提交结果 */ }
-
-    return json(200, { ok: true, prNumber: pr.number, prUrl: pr.html_url });
-}
-
 export default async function handler(req, context) {
     if (req.method === "OPTIONS") return new Response(null, { status: 204, headers: CORS });
     if (req.method !== "POST") return json(405, { ok: false, error: "只接受 POST" });
@@ -510,22 +419,18 @@ export default async function handler(req, context) {
         return json(400, { ok: false, error: "请求体不是合法 JSON" });
     }
 
-    // 频控：送花走自己的宽松额度（浏览时会频繁触发），上传/删除按每小时 15 次算，
-    // 代码贡献更严（每小时 3 次），挡住脚本刷 PR。
+    // 频控：送花走自己的宽松额度（浏览时会频繁触发），上传/删除按每小时 15 次算
     const hour = Math.floor(Date.now() / 3600_000);
     const isFlower = payload.action === "flower";
-    const isContribute = payload.action === "contribute";
-    const rateKey = `${isFlower ? "f:" : isContribute ? "c:" : ""}${ip}:${hour}`;
+    const rateKey = `${isFlower ? "f:" : ""}${ip}:${hour}`;
     const used = rateMap.get(rateKey) || 0;
-    const rateCap = isFlower ? FLOWER_RATE_PER_HOUR : isContribute ? CONTRIB_RATE_PER_HOUR : RATE_LIMIT_PER_HOUR;
-    if (used >= rateCap) {
+    if (used >= (isFlower ? FLOWER_RATE_PER_HOUR : RATE_LIMIT_PER_HOUR)) {
         return json(429, { ok: false, error: "操作太频繁了，请一小时后再试" });
     }
     rateMap.set(rateKey, used + 1);
     if (rateMap.size > 5000) rateMap.clear();
 
     try {
-        if (payload.action === "contribute") return await handleContribute(payload);
         if (payload.action === "flower") return await handleFlower(token, payload, ip);
         if (payload.action === "edit") return await handleEdit(token, payload);
         if (payload.action === "delete") return await handleDelete(token, payload);
