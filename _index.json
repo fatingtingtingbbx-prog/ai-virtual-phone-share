@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-13T21:26:39.799Z",
+  "generatedAt": "2026-08-13T21:31:27.160Z",
   "folders": [
     {
       "name": "A 重要须知（自部署版请查看）",
@@ -76,8 +76,8 @@
       "description": "[粗]开源和闭源都可以反馈～[/粗]",
       "author": "Float studio",
       "avatar": "资源/BUG反馈专用文件夹/[花][花]在这里留下项目中的bug[花][花]/.avatar.png",
-      "ownerHash": "453a5edf22ab6823ac53b76ea9cc952d2130242dfeb690743a0718f31f0c7482",
-      "updatedAt": "2026-08-11T23:32:39+02:00"
+      "ownerHash": "72adb7d77211b0354bc8d30ad6f28de6e6ba7e1047ed9ec1c80c1ab683f98f11",
+      "updatedAt": "2026-08-14T05:31:17+08:00"
     },
     {
       "folder": "BUG反馈专用文件夹",
@@ -186,8 +186,8 @@
       "description": "[粗][红]适配gemini[/红][/粗]\n使用方法：\n[星星]1.导入预设\n[星星]2.导入正则\n[星星]3.配置绑定——为角色配置专属绑定——剧情，绑定该预设及正则",
       "author": "",
       "avatar": "资源/剧情预设及正则/[幽灵]简约黑白剧情模式预设及正则[蘑菇]/.avatar.png",
-      "ownerHash": "453a5edf22ab6823ac53b76ea9cc952d2130242dfeb690743a0718f31f0c7482",
-      "updatedAt": "2026-08-11T01:52:22+02:00"
+      "ownerHash": "72adb7d77211b0354bc8d30ad6f28de6e6ba7e1047ed9ec1c80c1ab683f98f11",
+      "updatedAt": "2026-08-14T05:31:10+08:00"
     },
     {
       "folder": "小剧场",
