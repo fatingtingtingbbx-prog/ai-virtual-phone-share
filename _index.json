@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-13T07:46:22.084Z",
+  "generatedAt": "2026-08-13T07:54:13.980Z",
   "folders": [
     {
       "name": "A 重要须知（自部署版请查看）",
@@ -401,7 +401,7 @@
     },
     {
       "folder": "线上美化",
-      "name": "线上美化",
+      "name": "半点星[星星]",
       "dirName": "线上美化",
       "type": "dir",
       "path": "资源/线上美化/线上美化",
@@ -417,7 +417,7 @@
       "author": "淅沥沥",
       "avatar": "资源/线上美化/线上美化/.avatar.png",
       "ownerHash": "bf65bc1c732341505dc056c65d6ad17b6862e2c1f0cdf99f70af36a873b438aa",
-      "updatedAt": "2026-08-13T15:46:01+08:00"
+      "updatedAt": "2026-08-13T15:54:02+08:00"
     },
     {
       "folder": "线上聊天状态栏",
