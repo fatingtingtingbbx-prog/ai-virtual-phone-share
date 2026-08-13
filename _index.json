@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-13T07:55:54.373Z",
+  "generatedAt": "2026-08-13T07:56:57.874Z",
   "folders": [
     {
       "name": "A 重要须知（自部署版请查看）",
@@ -37,7 +37,7 @@
     },
     {
       "name": "线上美化",
-      "count": 2
+      "count": 3
     },
     {
       "name": "线上聊天状态栏",
@@ -398,6 +398,26 @@
       "avatar": "",
       "ownerHash": "88f102e0ef217cea73fe5b268e0c11999ebe72de7ee6c86765148d0313569196",
       "updatedAt": "2026-08-12T10:13:58+02:00"
+    },
+    {
+      "folder": "线上美化",
+      "name": "立体蓝",
+      "dirName": "立体蓝",
+      "type": "dir",
+      "path": "资源/线上美化/立体蓝",
+      "files": [
+        "资源/线上美化/立体蓝/float│立体蓝by淅沥沥.txt"
+      ],
+      "images": [
+        "资源/线上美化/立体蓝/1000240341.jpg",
+        "资源/线上美化/立体蓝/1000240345.jpg",
+        "资源/线上美化/立体蓝/1000240346.jpg"
+      ],
+      "description": "是线上美化，放到聊天-主页-外观css里",
+      "author": "淅沥沥",
+      "avatar": "资源/线上美化/立体蓝/.avatar.png",
+      "ownerHash": "bf65bc1c732341505dc056c65d6ad17b6862e2c1f0cdf99f70af36a873b438aa",
+      "updatedAt": "2026-08-13T15:56:45+08:00"
     },
     {
       "folder": "线上美化",
