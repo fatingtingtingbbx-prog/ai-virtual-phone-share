@@ -51,6 +51,9 @@ const CLAIM_MAX_FILES = 6;
 const CLAIM_MAX_TOTAL_B64 = 4 * 1024 * 1024;    // \u8bc1\u660e\u6750\u6599\uff08\u622a\u56fe/\u5de5\u7a0b\u6587\u4ef6\uff09\u603b\u91cf \u22644MB
 const CLAIM_RATE_PER_HOUR = 2;
 const CLAIM_TITLE_PREFIX = "\u3010\u627e\u56de\u7533\u8bf7\u3011";
+// \u8bc1\u660e\u6750\u6599\u53ef\u80fd\u542b\u4e2a\u4eba\u4fe1\u606f\uff0c\u7edd\u4e0d\u80fd\u8fdb\u516c\u5f00\u4ed3\u5e93\u2014\u2014\u5355\u72ec\u5b58\u8fdb\u79c1\u6709\u4fdd\u7ba1\u5e93\uff0c
+// \u53ea\u6709\u7ba1\u7406\u5458\uff08\u4ed3\u5e93\u4e3b\uff09\u80fd\u770b\u3002\u516c\u5f00\u7684\u7533\u8bf7 PR \u91cc\u53ea\u6709\u65e0\u9690\u79c1\u7684\u5143\u6570\u636e\u3002
+const CLAIM_VAULT_REPO = process.env.CLAIM_REPO || "xiaolongbao0709/float-claim-vault";
 
 const CORS = {
     "Access-Control-Allow-Origin": "*",
@@ -539,13 +542,25 @@ async function handleClaim(token, payload) {
     }
 
     const claimId = `${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 7)}`;
+
+    // 证明材料先写进私有保管库（含个人信息，绝不能公开）；写不进去就整单失败
+    const [vaultOwner, vaultRepo] = CLAIM_VAULT_REPO.split("/");
+    try {
+        for (const file of normalized) {
+            await putFile(token, vaultOwner, vaultRepo, `找回申请/${claimId}/${file.name}`,
+                file.contentBase64, `找回申请证明：${entryName}（${claimId}）`);
+        }
+    } catch {
+        return json(503, { ok: false, error: "证明保管库暂不可用，请稍后再试或联系管理员" });
+    }
+
+    // 公开仓库里只开一个元数据 PR：分支上放一个无隐私的占位文件
     const branch = `claim/${claimId}`;
     const mainRef = await gh(token, "GET", `/repos/${owner}/${repo}/git/ref/heads/main`);
     await gh(token, "POST", `/repos/${owner}/${repo}/git/refs`, { ref: `refs/heads/${branch}`, sha: mainRef.object.sha });
-    for (const file of normalized) {
-        await putFileOnBranch(token, owner, repo, branch, `找回申请/${claimId}/${file.name}`,
-            file.contentBase64, `找回申请证明：${entryName}`);
-    }
+    await putFileOnBranch(token, owner, repo, branch, `找回申请/${claimId}.md`,
+        Buffer.from(`找回申请 ${claimId}：证明材料保存在私有保管库，仅管理员可见。`, "utf-8").toString("base64"),
+        `找回申请：${entryName}`);
 
     const pr = await gh(token, "POST", `/repos/${owner}/${repo}/pulls`, {
         title: `${CLAIM_TITLE_PREFIX}${entryName}`,
@@ -555,11 +570,13 @@ async function handleClaim(token, payload) {
             `资源路径：${entryPath}`,
             `申请人：${nickname}`,
             `新钥匙指纹：${ownerHash}`,
+            `申请编号：${claimId}`,
+            `证明仓库：${CLAIM_VAULT_REPO}`,
             "",
             note || "（申请人未填写备注）",
             "",
             "---",
-            "_⚠️ 请勿直接合并本 PR（证明文件不应进入仓库）。请在小手机「设置 → 管理中心 → 集市审核」里查看证明并点「通过找回」，系统会改写该资源的所有权并关闭本申请。_",
+            "_证明材料在私有保管库中，仅管理员可见。请勿直接合并本 PR——在小手机「设置 → 管理中心 → 集市审核」里查看证明并点「通过找回」，系统会改写该资源的所有权并关闭本申请。_",
         ].join("\n"),
     });
     return json(200, { ok: true, prNumber: pr.number, prUrl: pr.html_url });
