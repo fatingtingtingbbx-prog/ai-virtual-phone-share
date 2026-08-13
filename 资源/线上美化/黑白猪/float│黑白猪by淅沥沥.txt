@@ -1,0 +1,1178 @@
+float│黑白猪by淅沥沥
+禁止仅下载/禁止二传/可以二改
+线上美化，复制到消息-主页-外观css中食用
+文档包括两个版本，已进行标注
+
+
+以下是双白气泡
+
+
+/* ═══ 聊天应用 CSS 0.8px极简黑边+头像圆形黑框+多卡片悬浮贴纸+双列表卡片包裹完美版 ═══ */
+/* 作用范围：聊天 app 所有页面（消息、联系人、动态、个人主页、聊天室）。 */
+
+
+/* ══════════════════════════
+   1. 颜色变量
+   ══════════════════════════ */
+.chat-app {
+  --c-header-bg: #FFFFFF;         /* 标题栏底色 */
+  --c-page-body-bg: #FAFAFA;      /* 全局默认背景 */
+
+  /* 核心：白色气泡 + 纯黑边缘线 */
+  --c-bubble-self: #FFFFFF;       
+  --c-bubble-other: #FFFFFF;      
+  --c-bubble-border: #000000;     /* 边缘线黑色 */
+  --chat-bubble-shadow: 0 1px 3px rgba(0,0,0,0.015);
+
+  --c-card: #FFFFFF;              
+  --c-card-border: #E0E0E0;       
+  --c-input: #EBEBEB;             
+  --c-input-border: #DADBDF;      
+  --c-text-title: #2C3440;        
+  --c-text: #797E85;              
+}
+
+
+/* ══════════════════════════
+   2. 标题栏（完全不透明）
+   ══════════════════════════ */
+.page-header {
+  background: var(--c-header-bg) !important;         
+  backdrop-filter: none !important;                  
+  -webkit-backdrop-filter: none !important;
+  border-bottom: 0.5px solid var(--c-card-border);
+}
+
+.page-title,
+.page-back-btn {
+  color: var(--c-text-title);
+  font-weight: 600;
+}
+
+.page-body {
+  background: var(--c-page-body-bg);
+}
+
+
+/* ══════════════════════════
+   3. 消息列表 & 通讯录列表（全角色彻底圆角黑边卡片化）
+   ══════════════════════════ */
+/* 搜索框：白色底色 + 0.8px 黑边 + 圆形胶囊 + 右侧内嵌【32px】可爱贴纸 */
+.chat-search-bar {
+  background: #FFFFFF !important;
+  background-color: #FFFFFF !important;
+  border: 0.8px solid var(--c-bubble-border) !important;
+  border-radius: 999px !important;
+  padding: 6px 52px 6px 16px !important;                 
+  box-shadow: var(--chat-bubble-shadow) !important;
+  position: relative !important;
+
+  background-image: url("https://s1.imagehub.cc/images/2026/08/09/b26fce1727831958abb835565116b489.png") !important;
+  background-repeat: no-repeat !important;
+  background-position: calc(100% - 12px) center !important;
+  background-size: 32px 32px !important;                 
+}
+
+.chat-search-input {
+  color: var(--c-text-title) !important;
+  background: transparent !important;                    
+  border: none !important;
+}
+
+/* 分类 Tab 标签 */
+.chat-list-tab {
+  color: var(--c-text) !important;
+  background: #FFFFFF !important;
+  border: 0.8px solid rgba(0,0,0,0.08) !important;
+  border-radius: 999px !important;
+  padding: 5px 14px !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  transition: all 0.2s ease !important;
+  margin-right: 6px !important;
+}
+
+.chat-list-tab.active {
+  color: #FFFFFF !important;
+  background: #000000 !important;
+  border-color: #000000 !important;
+  font-weight: 600 !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15) !important;
+}
+
+/* 强力通配符捕捉列表每一行：重构为 20px 圆润圆角 + 0.8px 黑边独立卡片 */
+.contact-item,
+.chat-item,
+.chat-list-item,
+.session-item,
+.conversation-item,
+[class*="contact-item"],
+[class*="chat-item"],
+[class*="session-item"],
+[class*="conversation-item"] {
+  background: #FFFFFF !important;
+  background-color: #FFFFFF !important;
+  border: 0.8px solid var(--c-bubble-border) !important;   
+  border-radius: 20px !important;                          
+  margin: 12px 14px !important;                            
+  padding: 12px 16px !important;                           
+  box-shadow: var(--chat-bubble-shadow) !important;
+  border-bottom: 0.8px solid var(--c-bubble-border) !important; 
+  transition: transform 0.1s ease !important;
+  display: flex !important;
+  align-items: center !important;
+  overflow: visible !important;
+}
+
+.contact-item:active,
+.chat-item:active,
+.chat-list-item:active,
+[class*="contact-item"]:active,
+[class*="chat-item"]:active {
+  transform: scale(0.98) !important;
+}
+
+/* 列表卡片内的头像：完美圆形 + 0.8px 极细单黑边 */
+.contact-item .minimal-avatar-wrapper,
+.chat-item .minimal-avatar-wrapper,
+[class*="contact-item"] .minimal-avatar-wrapper,
+[class*="chat-item"] .minimal-avatar-wrapper,
+[class*="contact-item"] .chat-msg-avatar,
+[class*="chat-item"] .chat-msg-avatar {
+  border: 0.8px solid var(--c-bubble-border) !important;
+  border-radius: 50% !important;
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+}
+
+/* 未读消息数角标 */
+.chat-unread-badge,
+.unread-badge,
+.unread-count,
+.badge {
+  background: #000000 !important;
+  color: #FFFFFF !important;
+  border: 0.8px solid #000000 !important;
+  border-radius: 999px !important;
+  font-size: 10px !important;
+  font-weight: bold !important;
+  padding: 2px 6px !important;
+}
+
+
+/* ══════════════════════════
+   4. 联系人页（深度美化）
+   ══════════════════════════ */
+.chat-contact-name,
+.contact-name {
+  color: var(--c-text-title) !important;
+  font-weight: 600 !important;
+}
+
+.minimal-avatar-wrapper {
+  border: 0.8px solid var(--c-bubble-border) !important;
+  border-radius: 50% !important;
+  overflow: hidden !important;
+  background: #FFFFFF !important;
+}
+
+/* 分组首字母标题 */
+.contact-letter-header {
+  color: #000000 !important;
+  font-weight: 800 !important;
+  font-size: 15px !important;
+  margin: 14px 20px 4px !important;
+  display: inline-block !important;
+  border-bottom: 2px solid #000000 !important; 
+  padding-bottom: 2px !important;
+}
+
+
+/* ══════════════════════════
+   5. 底部标签栏（完全不透明）
+   ══════════════════════════ */
+.chat-tab-bar {
+  background: var(--c-card) !important;              
+  backdrop-filter: none !important;                  
+  -webkit-backdrop-filter: none !important;
+  border-top: 0.5px solid var(--c-card-border);
+}
+
+
+/* ══════════════════════════
+   6. 聊天室（壁纸透出 + 气泡精细化 + 头像圆形0.8px黑边 + 头像悬浮挂件 + 轮廓外已读）
+   ══════════════════════════ */
+.chat-room-wrapper {
+  background-color: transparent !important; 
+}
+
+.chat-room-wrapper .page-body {
+  background-color: transparent !important; 
+}
+
+/* 解除裁剪限制，确保“已读”、“头像挂件”以及“卡片贴纸”不会被切掉 */
+.chat-msg-wrapper,
+.chat-msg-content,
+.chat-bubble-role-user,
+.chat-bubble-role-assistant,
+.chat-bubble-media {
+  overflow: visible !important;  
+  position: relative !important; 
+}
+
+/* 统一气泡：纯白 + 0.8px 纯黑边 + 24px 极圆角 + 右侧预留放大的贴纸空间 */
+.chat-bubble-role-user,
+.chat-bubble-role-assistant {
+  background: #FFFFFF !important;
+  border: 0.8px solid var(--c-bubble-border) !important;  
+  border-radius: 24px !important;
+  padding: 8px 46px 8px 14px !important;                 
+  color: var(--c-text-title) !important;
+  box-shadow: var(--chat-bubble-shadow);
+  position: relative !important;
+}
+
+/* ━━━ 气泡内部最右边悬浮贴纸（已放大） ━━━ */
+.chat-bubble-role-user::before,
+.chat-bubble-role-assistant::before {
+  content: "" !important;
+  position: absolute !important;
+  right: 10px !important;                                 
+  top: 50% !important;                                    
+  transform: translateY(-50%) !important;
+  width: 28px !important;                                 
+  height: 28px !important;                                
+  background: url("https://s1.imagehub.cc/images/2026/08/09/b26fce1727831958abb835565116b489.png") no-repeat center/contain !important;
+  pointer-events: none !important;
+  z-index: 5 !important;
+}
+
+/* ━━━ 时间戳文本颜色完全漂白 ━━━ */
+.chat-time,
+.chat-timestamp,
+.chat-date,
+.chat-msg-time,
+.chat-message-time,
+.message-time,
+.chat-time-pill,
+.chat-time-pills,
+.chat-offline-time {
+  color: #FFFFFF !important;                 
+  text-shadow: 0 1px 2px rgba(0,0,0,0.15) !important; 
+}
+
+/* ━━━ 左右头像圆形 + 0.8px 极细单黑线包裹 ━━━ */
+.chat-msg-avatar-container {
+  border: none !important;
+  background: transparent !important;
+  overflow: visible !important;                           
+  position: relative !important;
+}
+
+.chat-msg-avatar {
+  border: 0.8px solid var(--c-bubble-border) !important;  
+  border-radius: 50% !important;                          
+  box-sizing: border-box !important;
+  overflow: visible !important;                           
+  background: #FFFFFF !important;
+  position: relative !important;
+}
+
+/* 仅将内层图片强制裁剪成圆形 */
+.chat-msg-avatar img,
+.chat-msg-avatar > div {
+  border: none !important;                                
+  border-radius: 50% !important;
+  overflow: hidden !important;                            
+  object-fit: cover !important;
+}
+
+/* ━━━ 左右头像装饰挂件逻辑 ━━━ */
+/* 1. 右边头像（User - 我）专属挂饰 */
+.chat-msg-wrapper[data-role="user"] .chat-msg-avatar-container::after,
+.chat-msg-wrapper[data-role="user"] .chat-msg-avatar::after {
+  content: "" !important;
+  position: absolute !important;
+  top: -65% !important;                       
+  left: -10% !important;
+  width: 120% !important;                      
+  height: 120% !important;
+  background: url("https://s1.imagehub.cc/images/2026/08/09/1ac4890f6a5d90181ea4c9dfe4a8e9f7.png") no-repeat center/contain !important;
+  pointer-events: none !important;             
+  z-index: 999 !important;                     
+}
+
+/* 2. 左边头像（Assistant - 对方）专属挂饰 */
+.chat-msg-wrapper[data-role="assistant"] .chat-msg-avatar-container::after,
+.chat-msg-wrapper[data-role="assistant"] .chat-msg-avatar::after {
+  content: "" !important;
+  position: absolute !important;
+  top: -65% !important;                       
+  left: -10% !important;
+  width: 120% !important;
+  height: 120% !important;
+  background: url("https://s1.imagehub.cc/images/2026/08/09/b0683cb8a34f072314710e4d2e5f76a5.png") no-repeat center/contain !important;
+  pointer-events: none !important;
+  z-index: 999 !important;                     
+}
+
+/* ━━━ 每一条消息下方对齐生成“已读” ━━━ */
+.chat-bubble-role-user::after,
+.chat-redpacket-card::after,
+.chat-red-packet-card::after,
+.chat-lucky-money-card::after,
+.chat-transfer-card::after,
+.chat-thought-card::after {
+  content: "已读" !important;
+  position: absolute !important;
+  bottom: -20px !important;        
+  right: 12px !important;          
+  font-size: 10px !important;
+  color: var(--c-text) !important;
+  opacity: 0.45 !important;         
+  font-weight: normal !important;
+  white-space: nowrap !important;
+  left: auto !important;           
+}
+
+.chat-bubble-role-assistant::after,
+.chat-offline-turn::after,
+.chat-system-instruction-card::after {
+  content: "已读" !important;
+  position: absolute !important;
+  bottom: -20px !important;        
+  left: 12px !important;           
+  font-size: 10px !important;
+  color: var(--c-text) !important;
+  opacity: 0.45 !important;
+  right: auto !important;          
+}
+
+.chat-msg-wrapper {
+  margin-bottom: 26px !important; 
+}
+
+/* ━━━ 头像连续隐藏逻辑 ━━━ */
+.chat-msg-wrapper[data-consecutive] .chat-msg-avatar-container,
+.chat-msg-wrapper[data-consecutive] .chat-msg-avatar {
+  opacity: 0 !important;            
+  pointer-events: none !important;  
+  height: 0 !important;             
+}
+
+.chat-msg-wrapper[data-consecutive] {
+  margin-top: 4px !important;       
+}
+
+/* ━━━ 回复引用块美化 ━━━ */
+.chat-msg-reply-wrapper {
+  background: #F1F2F5 !important;           
+  border-left: 3px solid #000000 !important; 
+  border-radius: 12px !important;           
+  padding: 6px 10px !important;             
+  margin-bottom: 10px !important;           
+  border: none !important;
+  border-left: 3px solid #000000 !important;
+}
+
+/* 真实图片消息 */
+.chat-bubble-media {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* ━━━ 聊天底栏 & 输入框（雅灰色）美化 ━━━ */
+.chat-input-bar {
+  background: #FFFFFF !important;                    
+  backdrop-filter: none !important;                  
+  -webkit-backdrop-filter: none !important;
+  border-top: 1px solid var(--c-card-border);
+}
+
+.chat-input-bar input,
+.chat-input-bar textarea,
+.chat-input-bar [contenteditable],
+.chat-input-bar .chat-input,
+.chat-input-bar .chat-input-field,
+.chat-input-bar .chat-input-box,
+.chat-input-bar .input-box {
+  background-color: #555555 !important;
+  background-image: url("https://s1.imagehub.cc/images/2026/08/09/b26fce1727831958abb835565116b489.png") !important;
+  background-repeat: no-repeat !important;
+  background-position: calc(100% - 10px) center !important;
+  background-size: 32px 32px !important;            
+  padding-right: 50px !important;                   
+
+  color: #FFFFFF !important;                         
+  caret-color: #FFFFFF !important;                   
+  border: 0.8px solid #555555 !important;            
+}
+
+.chat-input-bar input::placeholder,
+.chat-input-bar textarea::placeholder,
+.chat-input-bar .placeholder {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+
+/* ══════════════════════════
+   7. 聊天卡片（0.8px 细黑边 & 允许溢出挂饰）
+   ══════════════════════════ */
+.chat-html-inline,
+.chat-music-share-card,
+.chat-gift-card,
+.chat-photo-card,
+.chat-xhs-share-card,
+.scan-pay-card,
+.chat-app-card {
+  background: #FFFFFF !important;
+  border: 0.8px solid var(--c-bubble-border) !important; 
+  border-radius: 20px !important;            
+  box-shadow: var(--chat-bubble-shadow);
+  overflow: visible !important;             
+  margin-bottom: 4px;
+  position: relative;
+}
+
+/* ━━━ 【新加入】内心独白（心声卡片）完全重构 + 右上角专属贴纸挂件 ━━━ */
+.chat-thought-card {
+  background: #FFFFFF !important;
+  border: 0.8px solid var(--c-bubble-border) !important; 
+  border-radius: 20px !important;            
+  box-shadow: var(--chat-bubble-shadow);
+  overflow: visible !important;                          /* 允许挂饰露出 */
+  margin-bottom: 4px;
+  position: relative;
+}
+
+/* 心声卡片专属挂饰贴纸：悬浮在卡片右上角 */
+.chat-thought-card::before {
+  content: "" !important;
+  position: absolute !important;
+  top: -24px !important;                                 /* 向上悬浮漂移 */
+  right: -12px !important;                               /* 向右悬浮漂移 */
+  width: 70px !important;                                 /* 精致大小 */
+  height: 70px !important;
+  background: url("https://s1.imagehub.cc/images/2026/08/09/fbd62f241405d9e7e1077eb639bddc22.png") no-repeat center/contain !important;
+  pointer-events: none !important;
+  z-index: 15 !important;
+}
+
+
+/* ━━━ 红包卡片（全白+圈选区域内极限 100px 贴纸） ━━━ */
+.chat-redpacket-card,
+.chat-red-packet-card,
+.chat-lucky-money-card {
+  background: #FFFFFF !important;
+  border: 0.8px solid var(--c-bubble-border) !important; 
+  border-radius: 20px !important;                        
+  box-shadow: var(--chat-bubble-shadow);
+  overflow: visible !important;                          
+  position: relative;
+}
+
+.chat-redpacket-card::before,
+.chat-red-packet-card::before,
+.chat-lucky-money-card::before {
+  content: "" !important;
+  position: absolute !important;
+  top: auto !important;         
+  bottom: -20px !important;     
+  right: 57px !important;       
+  width: 100px !important;      
+  height: 100px !important;     
+  background: url("https://s1.imagehub.cc/images/2026/08/09/3ea8c68eeed7e571beb372faa0349639.png") no-repeat center/contain !important;
+  pointer-events: none !important;
+  z-index: 15 !important;
+}
+
+.chat-redpacket-card * ,
+.chat-red-packet-card * ,
+.chat-lucky-money-card * {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  color: var(--c-text-title) !important;
+}
+
+.chat-redpacket-title {
+  color: var(--c-text-title) !important;
+  font-weight: 600 !important;
+}
+.chat-redpacket-desc, .chat-redpacket-status, .chat-red-packet-desc {
+  color: var(--c-text) !important;
+}
+.chat-redpacket-footer {
+  border-top: 0.8px solid rgba(0,0,0,0.08) !important; 
+}
+.chat-redpacket-icon, .chat-redpacket-card img {
+  filter: grayscale(1) contrast(1.1) !important; 
+}
+
+
+/* ━━━ 转账卡片（全白+圈选区域内极限 100px 贴纸） ━━━ */
+.chat-transfer-card {
+  background: #FFFFFF !important;
+  border: 0.8px solid var(--c-bubble-border) !important; 
+  border-radius: 20px !important;                        
+  box-shadow: var(--chat-bubble-shadow);
+  overflow: visible !important;                          
+  position: relative;
+}
+
+.chat-transfer-card::before {
+  content: "" !important;
+  position: absolute !important;
+  top: -2px !important;         
+  right: -13px !important;       
+  width: 100px !important;      
+  height: 100px !important;     
+  background: url("https://s1.imagehub.cc/images/2026/08/09/59601444b4f7c01a7c13dcff5ea90953.png") no-repeat center/contain !important;
+  pointer-events: none !important;
+  z-index: 15 !important;
+}
+
+.chat-transfer-card * {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  color: var(--c-text-title) !important;
+}
+
+.chat-transfer-amount {
+  color: var(--c-text-title) !important;
+  font-weight: bold !important;
+}
+.chat-transfer-title {
+  color: var(--c-text-title) !important;
+}
+.chat-transfer-status, .chat-transfer-hint {
+  color: var(--c-text) !important;
+}
+.chat-transfer-footer {
+  border-top: 0.8px solid rgba(0,0,0,0.08) !important;
+}
+.chat-transfer-icon, .chat-transfer-card img {
+  filter: grayscale(1) contrast(1.1) !important; 
+}
+
+
+/* ━━━ 其他通用卡片 ━━━ */
+.chat-system-instruction-card {
+  background: var(--c-card);
+  border: 0.8px solid var(--c-bubble-border);            
+  border-radius: 24px;                       
+  box-shadow: var(--chat-bubble-shadow);
+}
+
+.chat-offline-turn {
+  border-radius: 20px !important;
+  background: #FFFFFF !important;
+  border: 0.8px solid var(--c-bubble-border) !important; 
+  position: relative;
+}
+
+
+/* ══════════════════════════
+   8. 其他页面基础（朋友圈等）
+   ══════════════════════════ */
+.feed-post { background: transparent; border-color: var(--c-card-border); }
+.page-body { background: var(--c-page-body-bg); }
+
+
+
+
+以下是黑白气泡
+
+
+
+/* ═══ 聊天应用 CSS 0.8px极简黑边+左气泡雅灰+圆形头像黑框+全卡片包裹完美版 ═══ */
+/* 作用范围：聊天 app 所有页面（消息、联系人、动态、个人主页、聊天室）。 */
+
+
+/* ══════════════════════════
+   1. 颜色变量
+   ══════════════════════════ */
+.chat-app {
+  --c-header-bg: #FFFFFF;         /* 标题栏底色 */
+  --c-page-body-bg: #FAFAFA;      /* 全局默认背景 */
+
+  /* 核心：白色气泡 + 纯黑边缘线 */
+  --c-bubble-self: #FFFFFF;       
+  --c-bubble-other: #5A5A5A;      /* 对方气泡：由 #262626 调淡至更柔和的高级雅灰色 #5A5A5A */
+  --c-bubble-border: #000000;     /* 边缘线黑色 */
+  --chat-bubble-shadow: 0 1px 3px rgba(0,0,0,0.015);
+
+  --c-card: #FFFFFF;              
+  --c-card-border: #E0E0E0;       
+  --c-input: #EBEBEB;             
+  --c-input-border: #DADBDF;      
+  --c-text-title: #2C3440;        
+  --c-text: #797E85;              
+}
+
+
+/* ══════════════════════════
+   2. 标题栏（完全不透明）
+   ══════════════════════════ */
+.page-header {
+  background: var(--c-header-bg) !important;         
+  backdrop-filter: none !important;                  
+  -webkit-backdrop-filter: none !important;
+  border-bottom: 0.5px solid var(--c-card-border);
+}
+
+.page-title,
+.page-back-btn {
+  color: var(--c-text-title);
+  font-weight: 600;
+}
+
+.page-body {
+  background: var(--c-page-body-bg);
+}
+
+
+/* ══════════════════════════
+   3. 消息列表 & 通讯录列表（全角色彻底圆角黑边卡片化）
+   ══════════════════════════ */
+/* 搜索框：白色底色 + 0.8px 黑边 + 圆形胶囊 + 右侧内嵌【32px】可爱贴纸 */
+.chat-search-bar {
+  background: #FFFFFF !important;
+  background-color: #FFFFFF !important;
+  border: 0.8px solid var(--c-bubble-border) !important;
+  border-radius: 999px !important;
+  padding: 6px 52px 6px 16px !important;                 
+  box-shadow: var(--chat-bubble-shadow) !important;
+  position: relative !important;
+
+  background-image: url("https://s1.imagehub.cc/images/2026/08/09/b26fce1727831958abb835565116b489.png") !important;
+  background-repeat: no-repeat !important;
+  background-position: calc(100% - 12px) center !important;
+  background-size: 32px 32px !important;                 
+}
+
+.chat-search-input {
+  color: var(--c-text-title) !important;
+  background: transparent !important;                    
+  border: none !important;
+}
+
+/* 分类 Tab 标签 */
+.chat-list-tab {
+  color: var(--c-text) !important;
+  background: #FFFFFF !important;
+  border: 0.8px solid rgba(0,0,0,0.08) !important;
+  border-radius: 999px !important;
+  padding: 5px 14px !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  transition: all 0.2s ease !important;
+  margin-right: 6px !important;
+}
+
+.chat-list-tab.active {
+  color: #FFFFFF !important;
+  background: #000000 !important;
+  border-color: #000000 !important;
+  font-weight: 600 !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15) !important;
+}
+
+/* 强力通配符捕捉列表每一行：重构为 20px 圆润圆角 + 0.8px 黑边独立卡片 */
+.contact-item,
+.chat-item,
+.chat-list-item,
+.session-item,
+.conversation-item,
+[class*="contact-item"],
+[class*="chat-item"],
+[class*="session-item"],
+[class*="conversation-item"] {
+  background: #FFFFFF !important;
+  background-color: #FFFFFF !important;
+  border: 0.8px solid var(--c-bubble-border) !important;   
+  border-radius: 20px !important;                          
+  margin: 12px 14px !important;                            
+  padding: 12px 16px !important;                           
+  box-shadow: var(--chat-bubble-shadow) !important;
+  border-bottom: 0.8px solid var(--c-bubble-border) !important; 
+  transition: transform 0.1s ease !important;
+  display: flex !important;
+  align-items: center !important;
+  overflow: visible !important;
+}
+
+.contact-item:active,
+.chat-item:active,
+.chat-list-item:active,
+[class*="contact-item"]:active,
+[class*="chat-item"]:active {
+  transform: scale(0.98) !important;
+}
+
+/* 列表卡片内的头像：完美圆形 + 0.8px 极细单黑边 */
+.contact-item .minimal-avatar-wrapper,
+.chat-item .minimal-avatar-wrapper,
+[class*="contact-item"] .minimal-avatar-wrapper,
+[class*="chat-item"] .minimal-avatar-wrapper,
+[class*="contact-item"] .chat-msg-avatar,
+[class*="chat-item"] .chat-msg-avatar {
+  border: 0.8px solid var(--c-bubble-border) !important;
+  border-radius: 50% !important;
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+}
+
+/* 未读消息数角标 */
+.chat-unread-badge,
+.unread-badge,
+.unread-count,
+.badge {
+  background: #000000 !important;
+  color: #FFFFFF !important;
+  border: 0.8px solid #000000 !important;
+  border-radius: 999px !important;
+  font-size: 10px !important;
+  font-weight: bold !important;
+  padding: 2px 6px !important;
+}
+
+
+/* ══════════════════════════
+   4. 联系人页（深度美化）
+   ══════════════════════════ */
+.chat-contact-name,
+.contact-name {
+  color: var(--c-text-title) !important;
+  font-weight: 600 !important;
+}
+
+.minimal-avatar-wrapper {
+  border: 0.8px solid var(--c-bubble-border) !important;
+  border-radius: 50% !important;
+  overflow: hidden !important;
+  background: #FFFFFF !important;
+}
+
+/* 分组首字母标题 */
+.contact-letter-header {
+  color: #000000 !important;
+  font-weight: 800 !important;
+  font-size: 15px !important;
+  margin: 14px 20px 4px !important;
+  display: inline-block !important;
+  border-bottom: 2px solid #000000 !important; 
+  padding-bottom: 2px !important;
+}
+
+
+/* ══════════════════════════
+   5. 底部标签栏（完全不透明）
+   ══════════════════════════ */
+.chat-tab-bar {
+  background: var(--c-card) !important;              
+  backdrop-filter: none !important;                  
+  -webkit-backdrop-filter: none !important;
+  border-top: 0.5px solid var(--c-card-border);
+}
+
+
+/* ══════════════════════════
+   6. 聊天室（壁纸透出 + 气泡精细化 + 头像圆形0.8px黑边 + 头像悬浮挂件 + 轮廓外已读）
+   ══════════════════════════ */
+.chat-room-wrapper {
+  background-color: transparent !important; 
+}
+
+.chat-room-wrapper .page-body {
+  background-color: transparent !important; 
+}
+
+/* 解除裁剪限制，确保“已读”、“头像挂件”以及“卡片贴纸”不会被切掉 */
+.chat-msg-wrapper,
+.chat-msg-content,
+.chat-bubble-role-user,
+.chat-bubble-role-assistant,
+.chat-bubble-media {
+  overflow: visible !important;  
+  position: relative !important; 
+}
+
+/* 统一气泡排版：0.8px 纯黑边 + 24px 极圆角 + 右侧预留放大的贴纸空间 */
+.chat-bubble-role-user,
+.chat-bubble-role-assistant {
+  border: 0.8px solid var(--c-bubble-border) !important;  
+  border-radius: 24px !important;
+  padding: 8px 46px 8px 14px !important;                 
+  box-shadow: var(--chat-bubble-shadow);
+  position: relative !important;
+}
+
+/* ━━━ 【气泡双色排版：黑灰调淡版】 ━━━ */
+/* 我发送的气泡（右侧）：保持纯白色底，深黑色文字 */
+.chat-bubble-role-user {
+  background: #FFFFFF !important;
+  color: var(--c-text-title) !important;
+}
+
+/* 对方发送的气泡（左侧）：美化为雅灰色底（#5A5A5A），打字文字强制漂白 */
+.chat-bubble-role-assistant {
+  background: var(--c-bubble-other) !important;          /* 应用调淡后的高级雅灰 #5A5A5A */
+  color: #FFFFFF !important;                             /* 文字强制设为白色 */
+}
+
+/* 确保对方气泡内部的所有嵌套文字也同步漂白 */
+.chat-bubble-role-assistant * {
+  color: #FFFFFF !important;
+}
+
+/* ━━━ 气泡内部最右边悬浮贴纸（已放大） ━━━ */
+.chat-bubble-role-user::before,
+.chat-bubble-role-assistant::before {
+  content: "" !important;
+  position: absolute !important;
+  right: 10px !important;                                 
+  top: 50% !important;                                    
+  transform: translateY(-50%) !important;
+  width: 28px !important;                                 
+  height: 28px !important;                                
+  background: url("https://s1.imagehub.cc/images/2026/08/09/b26fce1727831958abb835565116b489.png") no-repeat center/contain !important;
+  pointer-events: none !important;
+  z-index: 5 !important;
+}
+
+/* ━━━ 时间戳文本颜色完全漂白 ━━━ */
+.chat-time,
+.chat-timestamp,
+.chat-date,
+.chat-msg-time,
+.chat-message-time,
+.message-time,
+.chat-time-pill,
+.chat-time-pills,
+.chat-offline-time {
+  color: #FFFFFF !important;                 
+  text-shadow: 0 1px 2px rgba(0,0,0,0.15) !important; 
+}
+
+/* ━━━ 左右头像圆形 + 0.8px 极细单黑线包裹 ━━━ */
+.chat-msg-avatar-container {
+  border: none !important;
+  background: transparent !important;
+  overflow: visible !important;                           
+  position: relative !important;
+}
+
+.chat-msg-avatar {
+  border: 0.8px solid var(--c-bubble-border) !important;  
+  border-radius: 50% !important;                          
+  box-sizing: border-box !important;
+  overflow: visible !important;                           
+  background: #FFFFFF !important;
+  position: relative !important;
+}
+
+/* 仅将内层图片强制裁剪成圆形 */
+.chat-msg-avatar img,
+.chat-msg-avatar > div {
+  border: none !important;                                
+  border-radius: 50% !important;
+  overflow: hidden !important;                            
+  object-fit: cover !important;
+}
+
+/* ━━━ 左右头像装饰挂件逻辑 ━━━ */
+/* 1. 右边头像（User - 我）专属挂饰 */
+.chat-msg-wrapper[data-role="user"] .chat-msg-avatar-container::after,
+.chat-msg-wrapper[data-role="user"] .chat-msg-avatar::after {
+  content: "" !important;
+  position: absolute !important;
+  top: -65% !important;                       
+  left: -10% !important;
+  width: 120% !important;                      
+  height: 120% !important;
+  background: url("https://s1.imagehub.cc/images/2026/08/09/1ac4890f6a5d90181ea4c9dfe4a8e9f7.png") no-repeat center/contain !important;
+  pointer-events: none !important;             
+  z-index: 999 !important;                     
+}
+
+/* 2. 左边头像（Assistant - 对方）专属挂饰 */
+.chat-msg-wrapper[data-role="assistant"] .chat-msg-avatar-container::after,
+.chat-msg-wrapper[data-role="assistant"] .chat-msg-avatar::after {
+  content: "" !important;
+  position: absolute !important;
+  top: -65% !important;                       
+  left: -10% !important;
+  width: 120% !important;
+  height: 120% !important;
+  background: url("https://s1.imagehub.cc/images/2026/08/09/b0683cb8a34f072314710e4d2e5f76a5.png") no-repeat center/contain !important;
+  pointer-events: none !important;
+  z-index: 999 !important;                     
+}
+
+/* ━━━ 每一条消息下方对齐生成“已读” ━━━ */
+.chat-bubble-role-user::after,
+.chat-redpacket-card::after,
+.chat-red-packet-card::after,
+.chat-lucky-money-card::after,
+.chat-transfer-card::after,
+.chat-thought-card::after {
+  content: "已读" !important;
+  position: absolute !important;
+  bottom: -20px !important;        
+  right: 12px !important;          
+  font-size: 10px !important;
+  color: var(--c-text) !important;
+  opacity: 0.45 !important;         
+  font-weight: normal !important;
+  white-space: nowrap !important;
+  left: auto !important;           
+}
+
+.chat-bubble-role-assistant::after,
+.chat-offline-turn::after,
+.chat-system-instruction-card::after {
+  content: "已读" !important;
+  position: absolute !important;
+  bottom: -20px !important;        
+  left: 12px !important;           
+  font-size: 10px !important;
+  color: var(--c-text) !important;
+  opacity: 0.45 !important;
+  right: auto !important;          
+}
+
+.chat-msg-wrapper {
+  margin-bottom: 26px !important; 
+}
+
+/* ━━━ 头像连续隐藏逻辑 ━━━ */
+.chat-msg-wrapper[data-consecutive] .chat-msg-avatar-container,
+.chat-msg-wrapper[data-consecutive] .chat-msg-avatar {
+  opacity: 0 !important;            
+  pointer-events: none !important;  
+  height: 0 !important;             
+}
+
+.chat-msg-wrapper[data-consecutive] {
+  margin-top: 4px !important;       
+}
+
+/* ━━━ 回复引用块美化 ━━━ */
+.chat-msg-reply-wrapper {
+  background: #F1F2F5 !important;           
+  border-left: 3px solid #000000 !important; 
+  border-radius: 12px !important;           
+  padding: 6px 10px !important;             
+  margin-bottom: 10px !important;           
+  border: none !important;
+  border-left: 3px solid #000000 !important;
+}
+
+/* 真实图片消息 */
+.chat-bubble-media {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* ━━━ 聊天底栏 & 输入框（雅灰色）美化 ━━━ */
+.chat-input-bar {
+  background: #FFFFFF !important;                    
+  backdrop-filter: none !important;                  
+  -webkit-backdrop-filter: none !important;
+  border-top: 1px solid var(--c-card-border);
+}
+
+.chat-input-bar input,
+.chat-input-bar textarea,
+.chat-input-bar [contenteditable],
+.chat-input-bar .chat-input,
+.chat-input-bar .chat-input-field,
+.chat-input-bar .chat-input-box,
+.chat-input-bar .input-box {
+  background-color: #555555 !important;
+  background-image: url("https://s1.imagehub.cc/images/2026/08/09/b26fce1727831958abb835565116b489.png") !important;
+  background-repeat: no-repeat !important;
+  background-position: calc(100% - 10px) center !important;
+  background-size: 32px 32px !important;            
+  padding-right: 50px !important;                   
+
+  color: #FFFFFF !important;                         
+  caret-color: #FFFFFF !important;                   
+  border: 0.8px solid #555555 !important;            
+}
+
+.chat-input-bar input::placeholder,
+.chat-input-bar textarea::placeholder,
+.chat-input-bar .placeholder {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+
+/* ══════════════════════════
+   7. 聊天卡片（0.8px 细黑边 & 允许溢出挂饰）
+   ══════════════════════════ */
+.chat-html-inline,
+.chat-music-share-card,
+.chat-gift-card,
+.chat-photo-card,
+.chat-xhs-share-card,
+.scan-pay-card,
+.chat-app-card {
+  background: #FFFFFF !important;
+  border: 0.8px solid var(--c-bubble-border) !important; 
+  border-radius: 20px !important;            
+  box-shadow: var(--chat-bubble-shadow);
+  overflow: visible !important;             
+  margin-bottom: 4px;
+  position: relative;
+}
+
+/* 内心独白（心声卡片）完全重构 + 右上角专属贴纸挂件 */
+.chat-thought-card {
+  background: #FFFFFF !important;
+  border: 0.8px solid var(--c-bubble-border) !important; 
+  border-radius: 20px !important;            
+  box-shadow: var(--chat-bubble-shadow);
+  overflow: visible !important;                          
+  margin-bottom: 4px;
+  position: relative;
+}
+
+.chat-thought-card::before {
+  content: "" !important;
+  position: absolute !important;
+  top: -24px !important;                                 
+  right: -12px !important;                               
+  width: 70px !important;                                 
+  height: 70px !important;
+  background: url("https://s1.imagehub.cc/images/2026/08/09/fbd62f241405d9e7e1077eb639bddc22.png") no-repeat center/contain !important;
+  pointer-events: none !important;
+  z-index: 15 !important;
+}
+
+
+/* ━━━ 红包卡片（全白+圈选区域内极限 100px 贴纸） ━━━ */
+.chat-redpacket-card,
+.chat-red-packet-card,
+.chat-lucky-money-card {
+  background: #FFFFFF !important;
+  border: 0.8px solid var(--c-bubble-border) !important; 
+  border-radius: 20px !important;                        
+  box-shadow: var(--chat-bubble-shadow);
+  overflow: visible !important;                          
+  position: relative;
+}
+
+.chat-redpacket-card::before,
+.chat-red-packet-card::before,
+.chat-lucky-money-card::before {
+  content: "" !important;
+  position: absolute !important;
+  top: auto !important;         
+  bottom: -20px !important;     
+  right: 57px !important;       
+  width: 100px !important;      
+  height: 100px !important;     
+  background: url("https://s1.imagehub.cc/images/2026/08/09/3ea8c68eeed7e571beb372faa0349639.png") no-repeat center/contain !important;
+  pointer-events: none !important;
+  z-index: 15 !important;
+}
+
+.chat-redpacket-card * ,
+.chat-red-packet-card * ,
+.chat-lucky-money-card * {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  color: var(--c-text-title) !important;
+}
+
+.chat-redpacket-title {
+  color: var(--c-text-title) !important;
+  font-weight: 600 !important;
+}
+.chat-redpacket-desc, .chat-redpacket-status, .chat-red-packet-desc {
+  color: var(--c-text) !important;
+}
+.chat-redpacket-footer {
+  border-top: 0.8px solid rgba(0,0,0,0.08) !important; 
+}
+.chat-redpacket-icon, .chat-redpacket-card img {
+  filter: grayscale(1) contrast(1.1) !important; 
+}
+
+
+/* ━━━ 转账卡片（全白+圈选区域内极限 100px 贴纸） ━━━ */
+.chat-transfer-card {
+  background: #FFFFFF !important;
+  border: 0.8px solid var(--c-bubble-border) !important; 
+  border-radius: 20px !important;                        
+  box-shadow: var(--chat-bubble-shadow);
+  overflow: visible !important;                          
+  position: relative;
+}
+
+.chat-transfer-card::before {
+  content: "" !important;
+  position: absolute !important;
+  top: -2px !important;         
+  right: -13px !important;       
+  width: 100px !important;      
+  height: 100px !important;     
+  background: url("https://s1.imagehub.cc/images/2026/08/09/59601444b4f7c01a7c13dcff5ea90953.png") no-repeat center/contain !important;
+  pointer-events: none !important;
+  z-index: 15 !important;
+}
+
+.chat-transfer-card * {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  color: var(--c-text-title) !important;
+}
+
+.chat-transfer-amount {
+  color: var(--c-text-title) !important;
+  font-weight: bold !important;
+}
+.chat-transfer-title {
+  color: var(--c-text-title) !important;
+}
+.chat-transfer-status, .chat-transfer-hint {
+  color: var(--c-text) !important;
+}
+.chat-transfer-footer {
+  border-top: 0.8px solid rgba(0,0,0,0.08) !important;
+}
+.chat-transfer-icon, .chat-transfer-card img {
+  filter: grayscale(1) contrast(1.1) !important; 
+}
+
+
+/* ━━━ 其他通用卡片 ━━━ */
+.chat-system-instruction-card {
+  background: var(--c-card);
+  border: 0.8px solid var(--c-bubble-border);            
+  border-radius: 24px;                       
+  box-shadow: var(--chat-bubble-shadow);
+}
+
+.chat-offline-turn {
+  border-radius: 20px !important;
+  background: #FFFFFF !important;
+  border: 0.8px solid var(--c-bubble-border) !important; 
+  position: relative;
+}
+
+
+/* ══════════════════════════
+   8. 其他页面基础（朋友圈等）
+   ══════════════════════════ */
+.feed-post { background: transparent; border-color: var(--c-card-border); }
+.page-body { background: var(--c-page-body-bg); }
+
+
