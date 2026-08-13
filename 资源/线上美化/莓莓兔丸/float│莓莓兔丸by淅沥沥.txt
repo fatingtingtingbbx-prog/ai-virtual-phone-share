@@ -1,0 +1,117 @@
+float│莓莓兔丸by淅沥沥
+严禁二传/严禁仅下载/可以二改
+
+
+
+以下复制
+
+
+/* =========================================
+   Instagram 全局萌化方案 (保持聊天室完美状态)
+========================================= */
+
+:root {
+    --c-header-bg: rgba(252, 248, 249, 0.85);
+    --c-page-body-bg: transparent;
+    --c-bubble-self: #FFF0F4;
+    --c-bubble-other: #F7F7F7;
+    --c-text-title: #4A3B40;
+    --c-text: #6B4954;
+    --c-input: #F0E8EA;
+    --c-card: rgba(255, 255, 255, 0.6);
+}
+
+/* 1. 全局背景穿透与毛玻璃 */
+html, body, .chat-app, .page-body, .chat-room-wrapper, 
+.chat-list-page, .moments-feed-page, .chat-scroll-anchored, #app {
+    background-color: transparent !important;
+}
+
+/* 2. 顶栏与全局返回键（兔子） */
+.page-header { background-color: var(--c-header-bg) !important; backdrop-filter: blur(12px) !important; border-bottom: 1px solid #F0E8EA !important; }
+.page-header-content .page-title { color: var(--c-text-title) !important; }
+.page-header-content .page-title::after { content: " ₍ᐢ·ɷ·ᐢ₎"; font-size: 11px; color: #D65A7C; }
+
+.page-back-btn {
+    color: transparent !important;
+    position: relative !important;
+    width: 38px !important;
+    height: 38px !important;
+    background: url("https://s1.imagehub.cc/images/2026/07/30/d3db4db81f6fbf1ad7c9a70b5824fe82.png") no-repeat center / contain !important;
+}
+.page-back-btn::before, .page-back-btn svg { display: none !important; }
+
+/* 3. 底部导航栏美化 */
+.chat-tab-bar { 
+    background-color: var(--c-header-bg) !important; 
+    backdrop-filter: blur(12px) !important; 
+    border-top: 1px solid #F0E8EA !important; 
+}
+.chat-tab { color: #BCA1B0 !important; }
+.chat-tab-active { color: #D65A7C !important; }
+
+/* 4. 消息列表与搜索框 */
+.chat-search-bar { background-color: var(--c-input) !important; border-radius: 20px !important; border: none !important; }
+.chat-list-tab { color: #BCA1B0 !important; }
+.chat-list-tab.active { color: #D65A7C !important; font-weight: bold; }
+.contact-item { border-bottom: 0.5px solid rgba(240, 232, 234, 0.5) !important; }
+.chat-contact-name, .contact-name { color: var(--c-text-title) !important; }
+
+/* 5. 朋友圈（动态）美化 */
+.feed-post { background-color: var(--c-card) !important; border-radius: 18px !important; margin: 10px !important; padding: 15px !important; border: 1px solid rgba(255, 255, 255, 0.8) !important; }
+.feed-post-author-name { color: #D65A7C !important; }
+.feed-post-content { color: var(--c-text-title) !important; }
+.feed-post-like-btn, .feed-post-comment-btn { color: #D65A7C !important; }
+.feed-profile-name { color: var(--c-text-title) !important; text-shadow: 0 2px 4px rgba(255,255,255,0.8); }
+.feed-profile-avatar { border: 3px solid #FFF0F4 !important; }
+
+/* 6. 个人主页美化 */
+.profile-cell { background-color: var(--c-card) !important; border-radius: 12px !important; margin: 5px 10px !important; }
+
+/* -----------------------------------------
+   以下为聊天室完美样式（严格保持不变）
+   ----------------------------------------- */
+.chat-bubble-role-user, .chat-bubble-role-assistant {
+    border-radius: 26px !important; padding: 8px 14px !important; position: relative !important; overflow: visible !important;
+}
+.chat-bubble-role-assistant { background-color: #F7F7F7 !important; color: #333333 !important; border: 1px solid #E3E3E3 !important; }
+.chat-bubble-role-assistant::before { content: ""; position: absolute; top: -12px; left: -8px; width: 32px; height: 32px; background: url("https://s1.imagehub.cc/images/2026/07/30/e3be5e46c030c9131ad702b6e4de99ea.png") no-repeat center / contain; z-index: 10; }
+.chat-bubble-role-assistant::after { content: ""; position: absolute; bottom: -30px; left: -32px; width: 80px; height: 80px; background: url("https://s1.imagehub.cc/images/2026/07/30/1b487e60abec7d4422c3138ec34586ef.png") no-repeat center / contain; z-index: 10; }
+
+.chat-bubble-role-user { background-color: #FFF0F4 !important; color: #5C434A !important; border: 1px solid #E8C8D0 !important; }
+.chat-bubble-role-user::before { content: ""; position: absolute; top: -12px; right: -8px; width: 32px; height: 32px; background: url("https://s1.imagehub.cc/images/2026/07/30/967290bafdf4f17b6796a162ce145c13.png") no-repeat center / contain; z-index: 10; }
+.chat-bubble-role-user::after { content: ""; position: absolute; bottom: -30px; right: -32px; width: 80px; height: 80px; background: url("https://s1.imagehub.cc/images/2026/07/30/5ba660dafee54452e658aa5f64d7664e.png") no-repeat center / contain; z-index: 10; }
+
+.chat-bubble-role-user:has(.chat-red-packet-card), .chat-bubble-role-user:has(.chat-transfer-card),
+.chat-bubble-role-assistant:has(.chat-red-packet-card), .chat-bubble-role-assistant:has(.chat-transfer-card) {
+    background-color: transparent !important; border: none !important; padding: 0 !important;
+}
+.chat-bubble-role-user:has(.chat-red-packet-card)::before, .chat-bubble-role-user:has(.chat-red-packet-card)::after,
+.chat-bubble-role-user:has(.chat-transfer-card)::before, .chat-bubble-role-user:has(.chat-transfer-card)::after,
+.chat-bubble-role-assistant:has(.chat-red-packet-card)::before, .chat-bubble-role-assistant:has(.chat-red-packet-card)::after,
+.chat-bubble-role-assistant:has(.chat-transfer-card)::before, .chat-bubble-role-assistant:has(.chat-transfer-card)::after {
+    display: none !important;
+}
+
+.chat-msg-avatar { position: relative !important; overflow: visible !important; }
+.chat-msg-avatar::after { content: ""; position: absolute; top: -25%; left: -25%; width: 150%; height: 150%; background: url("https://s1.imagehub.cc/images/2026/07/30/ce4c293ae4842a7b93b066a8ef51a96b.png") no-repeat center / contain; pointer-events: none; z-index: 5; }
+
+.chat-red-packet-card, .chat-transfer-card { background: linear-gradient(135deg, #FFF0F4, #FFE3EC) !important; border: 2px solid #F0AAB8 !important; border-radius: 20px !important; overflow: hidden !important; position: relative !important; }
+.chat-red-packet-card::before { content: ""; position: absolute; left: 12px; top: 38%; transform: translateY(-50%); width: 60px; height: 60px; background: url("https://s1.imagehub.cc/images/2026/07/30/c47e450910c86c07c04dfafda467ae06.png") no-repeat center / contain; z-index: 2; }
+.chat-red-packet-body { background: transparent !important; padding: 12px 12px 12px 75px !important; }
+.chat-red-packet-body > img, .chat-red-packet-body > .ui-icon { display: none !important; }
+.chat-red-packet-footer { background: rgba(255, 240, 244, 0.4) !important; color: #B094A3 !important; }
+.chat-red-packet-title { color: #D65A7C !important; }
+
+.chat-transfer-card::before { content: ""; position: absolute; left: 12px; top: 40%; transform: translateY(-50%); width: 55px; height: 55px; background: url("https://s1.imagehub.cc/images/2026/07/30/c47e450910c86c07c04dfafda467ae06.png") no-repeat center / contain; z-index: 2; }
+.chat-transfer-card::after { content: ""; position: absolute; right: 5px; bottom: 5px; width: 85px; height: 85px; background: url("https://s1.imagehub.cc/images/2026/07/30/c47e450910c86c07c04dfafda467ae06.png") no-repeat center / contain; z-index: 1; opacity: 0.9; }
+.chat-transfer-body { background: transparent !important; padding: 16px 20px 16px 75px !important; word-break: break-all !important; position: relative; z-index: 3; }
+.chat-transfer-body > img, .chat-transfer-body > .ui-icon { display: none !important; }
+.ui-media-footer { background: rgba(255, 240, 244, 0.4) !important; color: #B094A3 !important; position: relative; z-index: 3; }
+
+.chat-app-card, .chat-thought-card, .chat-system-instruction-card, .chat-html-inline { background-color: #FFF0F4 !important; border: 2px solid #F8BBD0 !important; border-radius: 24px !important; color: #D81B60 !important; }
+.ui-status-bar-value, .chat-app-card-progress-fill { background-color: #FF8BA7 !important; }
+
+.chat-input-bar { background-color: rgba(252, 248, 249, 0.85) !important; backdrop-filter: blur(12px); }
+.chat-input-textarea { background-color: #BCA1B0 !important; color: #FFFFFF !important; border-radius: 20px !important; }
+
