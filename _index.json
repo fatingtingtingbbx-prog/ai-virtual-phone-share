@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-13T20:03:58.273Z",
+  "generatedAt": "2026-08-13T20:04:23.108Z",
   "folders": [
     {
       "name": "A 重要须知（自部署版请查看）",
@@ -344,8 +344,7 @@
       "type": "dir",
       "path": "资源/应用/小剧场",
       "files": [
-        "资源/应用/小剧场/little_theater.app-2.0.3.zip",
-        "资源/应用/小剧场/小剧场2.0.2.zip"
+        "资源/应用/小剧场/little_theater.app-2.0.3.zip"
       ],
       "images": [
         "资源/应用/小剧场/Screenshot_20260813_201620_com_sevensix_everlasting_WebV.jpg",
@@ -357,7 +356,7 @@
       "author": "Stella",
       "avatar": "",
       "ownerHash": "eee1ff3396b8bafaeaff7dc7209679503c680ddedfc96481ece03b322fd8e867",
-      "updatedAt": "2026-08-14T04:03:44+08:00"
+      "updatedAt": "2026-08-14T04:04:09+08:00"
     },
     {
       "folder": "应用",
