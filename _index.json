@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-14T02:49:04.479Z",
+  "generatedAt": "2026-08-14T02:55:50.151Z",
   "folders": [
     {
       "name": "A 重要须知（自部署版请查看）",
@@ -41,7 +41,7 @@
     },
     {
       "name": "线上美化",
-      "count": 7
+      "count": 8
     },
     {
       "name": "线上聊天状态栏",
@@ -512,6 +512,24 @@
       "avatar": "",
       "ownerHash": "88f102e0ef217cea73fe5b268e0c11999ebe72de7ee6c86765148d0313569196",
       "updatedAt": "2026-08-12T10:13:58+02:00"
+    },
+    {
+      "folder": "线上美化",
+      "name": "【聊天室】仿LINE微信绿",
+      "dirName": "【聊天室】仿LINE微信绿",
+      "type": "dir",
+      "path": "资源/线上美化/【聊天室】仿LINE微信绿",
+      "files": [
+        "资源/线上美化/【聊天室】仿LINE微信绿/【聊天室】仿LINE微信绿.txt"
+      ],
+      "images": [
+        "资源/线上美化/【聊天室】仿LINE微信绿/仿LINE微信绿.jpg"
+      ],
+      "description": "[粗]注：[/粗]该美化无法正常使用更换背景的功能，可自行修改源码\n关于整体代码的使用范围：\n✅二改自用\n🚫二传二卖\n选择 导入-聊天室css 即可\n\n\n关于底部栏美化代码：\n• 允许直接取用或间接参考、修改并发布\n• 发布时必须标明原作者\n\n\n底部栏按钮依次为 更多、线下模式、表情包、触发AI回复、emoji、发送按钮",
+      "author": "木叶淀粉酶",
+      "avatar": "资源/线上美化/【聊天室】仿LINE微信绿/.avatar.png",
+      "ownerHash": "9255ec1277ace06ef7aebf6566a04ad2844f9b543a7b06e6b1b0b7fe619d781c",
+      "updatedAt": "2026-08-14T10:55:39+08:00"
     },
     {
       "folder": "线上美化",
