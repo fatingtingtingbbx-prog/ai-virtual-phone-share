@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-14T06:31:25.307Z",
+  "generatedAt": "2026-08-14T07:14:41.860Z",
   "folders": [
     {
       "name": "A 重要须知（自部署版请查看）",
@@ -305,7 +305,7 @@
       "author": "ooo",
       "avatar": "资源/应用/Bubble/.avatar.png",
       "ownerHash": "49be41a3123572a056270f82185553fcacc82f792f1e49b045fdd5ccc20f2916",
-      "updatedAt": "2026-08-14T14:31:08+08:00"
+      "updatedAt": "2026-08-14T15:14:32+08:00"
     },
     {
       "folder": "应用",
