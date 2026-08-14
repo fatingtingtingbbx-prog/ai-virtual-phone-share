@@ -1,0 +1,385 @@
+﻿/* 顶部栏右侧整体左移 */
+.page-header-right {
+  position: relative;
+  left: -6px;
+}
+
+/* 顶部栏右侧装饰图片 */ /* 图床 */
+.page-header-right::before {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 30px;
+  background: url("https://i.ibb.co/MDS6Km5X/1782191978111.png") center/contain no-repeat;
+  flex-shrink: 0;
+  margin-right: 20px;
+}
+
+/* 顶部栏右侧按钮隐藏原始图标 */
+.page-header-right .page-back-btn svg {
+  display: none;
+}
+
+/* 顶部栏右侧按钮汉堡菜单 */
+.page-header-right .page-back-btn {
+  position: relative;
+  width: 26px;
+  height: 26px;
+  padding: 6px;
+  background: none;
+}
+
+/* 顶部栏右侧按钮汉堡菜单线条 */
+.page-header-right .page-back-btn::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 18px;
+  height: 1.5px;
+  background: #2C3440;
+  border-radius: 0.5px;
+  box-shadow: 0 7.4px 0 #2C3440, 0 -7.4px 0 #2C3440;
+}
+
+/* ═══ 基础气泡样式（仅文字/语音） ═══ */
+.chat-bubble-role-user:not(.chat-bubble-media):not(.voice-msg-bubble),
+.chat-bubble-role-assistant:not(.chat-bubble-media):not(.voice-msg-bubble) {
+  border-radius: 14px !important;
+  padding: 7px 10px !important;
+  overflow: visible !important;
+}
+
+/* 用户气泡背景与文字色 */
+.chat-bubble-role-user:not(.chat-bubble-media):not(.voice-msg-bubble) {
+  background: #FCE303 !important;
+  color: #000 !important;
+}
+
+/* AI 头像尺寸与圆角 */
+.chat-msg-wrapper[data-role="assistant"] .chat-msg-avatar > div {
+  width: 38px !important;
+  height: 38px !important;
+  border-radius: 14px !important;
+}
+
+/* 用户头像隐藏 */
+.chat-msg-wrapper[data-role="user"] .chat-msg-avatar {
+  display: none;
+}
+
+/* 连续 AI 消息隐藏头像 */
+.chat-msg-wrapper[data-role="assistant"][data-consecutive] .chat-msg-avatar {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* ═══ 气泡间距 ═══ */
+/* 同角色或跨角色相邻气泡通用间距 */
+.chat-scroll-anchored > div:has(.chat-bubble-role-user) + div:has(.chat-bubble-role-user),
+.chat-scroll-anchored > div:has(.chat-bubble-role-user) + div:has(.chat-bubble-role-assistant),
+.chat-scroll-anchored > div:has(.chat-bubble-role-assistant) + div:has(.chat-bubble-role-user),
+.chat-scroll-anchored > div:has(.chat-bubble-role-assistant) + div:has(.chat-bubble-role-assistant) {
+  margin-top: -11px;
+}
+
+/* 不同角色间的间距覆盖 */
+.chat-scroll-anchored > div:has(.chat-bubble-role-user) + div:has(.chat-bubble-role-assistant),
+.chat-scroll-anchored > div:has(.chat-bubble-role-assistant) + div:has(.chat-bubble-role-user) {
+  margin-top: 8px !important;
+}
+
+/* ═══ 气泡小尾巴（图床图片） ═══ */
+/* 用户气泡小尾巴 */
+.chat-bubble-role-user:not(.chat-bubble-media):not(.voice-msg-bubble)::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    background: url('https://i.ibb.co/k2XmQvTM/1781845687624.png') center/contain no-repeat; /* 图床 */
+    transform: translate(9px, -1px) scaleY(-1);
+    pointer-events: none;
+    z-index: 10;
+}
+
+/* AI 气泡小尾巴 */
+.chat-bubble-role-assistant:not(.chat-bubble-media):not(.voice-msg-bubble)::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    background: url('https://i.ibb.co/QvNv0XCJ/1781846107464.png') center/contain no-repeat; /* 图床 */
+    transform: translate(-9px, -1px) scaleY(-1);
+    pointer-events: none;
+    z-index: 10;
+}
+
+/* 连续消息隐藏小尾巴 */
+.chat-msg-wrapper[data-role="user"][data-consecutive] .chat-bubble-role-user:not(.chat-bubble-media):not(.voice-msg-bubble)::before,
+.chat-msg-wrapper[data-role="assistant"][data-consecutive] .chat-bubble-role-assistant:not(.chat-bubble-media):not(.voice-msg-bubble)::before {
+    content: none !important;
+}
+
+/* ═══ 消息引用样式 ═══ */
+.chat-quote-preview {
+  position: relative;
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  margin-bottom: 6px;
+  color: #000;
+}
+
+/* 用户引用前缀 */
+.chat-msg-wrapper[data-role="user"] .chat-quote-preview::before {
+  content: "回复 자기야"; /* 可修改文本 */
+  display: block;
+  font-weight: bold;
+  margin-bottom: 1px;
+  color: #000;
+}
+
+/* AI 引用前缀 */
+.chat-msg-wrapper[data-role="assistant"] .chat-quote-preview::before {
+  content: "回复 用户"; /* 可修改文本 */
+  display: block;
+  font-weight: bold;
+  margin-bottom: 1px;
+  color: #000;
+}
+
+/* 引用分割线 */
+.chat-quote-preview::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 0.8px;
+  margin-top: 6px;
+}
+
+/* 用户侧分割线颜色 */
+.chat-msg-wrapper[data-role="user"] .chat-quote-preview::after {
+  background: #d4b300;
+}
+
+/* AI 侧分割线颜色 */
+.chat-msg-wrapper[data-role="assistant"] .chat-quote-preview::after {
+  background: #ccc;
+}
+
+/* ===========================
+   语音转文字气泡样式
+   =========================== */
+/* 通用白底、圆角、内边距 */
+.chat-msg-wrapper .voice-msg-text-bubble {
+    background: #ffffff !important;
+    border-radius: 14px !important;
+    padding: 38px 14px 12px 14px !important;
+    position: relative;
+    overflow: visible !important;
+}
+
+/* “语音识别”标题 */
+.voice-msg-text-bubble::before {
+    content: "语音识别"; /* 可修改文本 */
+    position: absolute;
+    top: 8px;
+    left: 14px;
+    font-size: 14px !important;
+    color: #888;
+    font-weight: 500;
+    line-height: 1.2;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* 浅灰色分割线 */
+.voice-msg-text-bubble::after {
+    content: "";
+    position: absolute;
+    top: 32px;
+    left: 14px;
+    right: 14px;
+    height: 0.8px;
+    background: #e0e0e0 !important;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* 转文字正文 */
+.voice-msg-text-bubble .chat-markdown,
+.voice-msg-text-bubble .chat-markdown-paragraph {
+    font-size: 14px !important;
+    color: #000;
+    position: relative;
+    z-index: 0;
+}
+
+/* 用户侧转文字气泡右对齐并移除占位 */
+.chat-msg-wrapper[data-role="user"]:has(.voice-msg-text-bubble) {
+    margin-left: auto !important;
+    margin-right: 2px !important;
+}
+.chat-msg-wrapper[data-role="user"] .voice-msg-text-bubble ~ .w-\[40px\] {
+    display: none !important;
+}
+
+/* AI 侧转文字气泡向上偏移并左移 2px */
+.chat-msg-wrapper[data-role="assistant"]:has(.voice-msg-text-bubble) {
+    margin-top: -10px !important;
+    position: relative;
+    left: -2px;
+}
+
+/* 隐藏转账和红包的emoji */
+.chat-transfer-body > .shrink-0,
+.chat-red-packet-body > .shrink-0 {
+  display: none !important;
+}
+
+/* $图标 + 카카오페이 文字 */
+.ui-media-footer span:first-child {
+  font-size: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+.ui-media-footer span:first-child::before {
+  content: "$";
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  background-color: #FCE303;
+  color: #252525;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 5px;       /* 方形微圆角 */
+  line-height: 1;
+  position: relative;
+  left: -2px;               /* 图标左移 */
+}
+.ui-media-footer span:first-child::after {
+  content: "카카오페이";
+  font-size: 12px;
+  color: #8C8C8C;
+  white-space: nowrap;
+}
+/* 红包卡片底部文字稍小 */
+.chat-red-packet-card .ui-media-footer span:first-child::after {
+  font-size: 11px;
+}
+
+/* 底部栏：白底，上留空，分割线（转账基础） */
+.ui-media-footer {
+  background-color: #ffffff !important;
+  position: relative;
+  padding-top: 92px !important;            /* 顶部留白高度 */
+  background-image: linear-gradient(
+    to bottom,
+    transparent 85px,                      /* 分割线位置 */
+    #E5E5E5 85px,
+    #E5E5E5 85.5px,
+    transparent 85.5px
+  ) !important;
+}
+
+/* 卡片主体背景黄 */
+.bg-transfer-gradient,
+.media-modal-header.bg-transfer-gradient,
+.bg-redpacket-gradient,
+.bg-opened-gradient {
+  background: #FCE303 !important;
+}
+/* 缩小高度 */
+.chat-transfer-body,
+.chat-red-packet-body {
+  padding: 8px 16px !important;
+}
+
+/* 提示文字（转账卡片） */
+.ui-media-footer::before {
+  content: "송금 받기 전까지 보낸 분은 내역 상세화면에서 취소할 수 있어요.";
+  position: absolute;
+  top: 8px;                                /* 距顶 */
+  left: 16px;
+  right: 14px;
+  width: auto;
+  text-align: left;
+  font-size: 12px;
+  color: #8C8C8C;
+  line-height: 1.4;
+  white-space: normal;
+  pointer-events: none;
+}
+
+/* 내역 보기 按钮（转账卡片） */
+.ui-media-footer::after {
+  content: "내역 보기";
+  position: absolute;
+  top: 47px;                               /* 距顶 */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #f2f2f2;
+  color: #252525;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 6px 80px;
+  min-width: 120px;
+  text-align: center;
+  border-radius: 8px;
+  white-space: nowrap;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+/* 领取/收款按钮：黄底黑字 */
+.ui-btn.ui-btn-redpacket,
+.ui-btn.ui-btn-transfer {
+  background-color: #FCE303 !important;
+  border-color: #FCE303 !important;
+  color: #252525 !important;
+}
+.ui-btn.ui-btn-redpacket:hover,
+.ui-btn.ui-btn-transfer:hover {
+  background-color: #e6d103 !important;
+}
+
+/* 已收款文字灰色 */
+.ui-media-footer span:last-child {
+  color: #8C8C8C;
+}
+
+/* 黄色区域文字统一黑色 */
+.chat-transfer-body .ts-24,
+.chat-transfer-body .ts-13,
+.chat-red-packet-body .ts-15,
+.media-modal-header .media-modal-amount,
+.media-modal-header .media-modal-label,
+.media-modal-header .media-modal-sub {
+  color: #252525 !important;
+}
+
+/* 红包卡片调整：无提示文字，按钮及分割线上移 */
+.chat-red-packet-card .ui-media-footer {
+  padding-top: 53px !important;            /* 与转账下方间距统一 */
+  background-image: linear-gradient(
+    to bottom,
+    transparent 46px,                      /* 分割线位置 */
+    #E5E5E5 46px,
+    #E5E5E5 46.5px,
+    transparent 46.5px
+  ) !important;
+}
+.chat-red-packet-card .ui-media-footer::before {
+  content: none;                           /* 去除提示文字 */
+}
+.chat-red-packet-card .ui-media-footer::after {
+  top: 8px;                                /* 按钮靠顶 */
+}
