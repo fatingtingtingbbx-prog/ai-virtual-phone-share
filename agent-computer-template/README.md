@@ -22,10 +22,11 @@
 
 ## 常见问题
 
-**部署报错说不认识 `worker_loaders`？**
-你的账号暂时没有这个能力。编辑 `wrangler.jsonc`：删掉 `"worker_loaders": …` 一行，
-并把 `compatibility_flags` 里的 `"experimental"` 去掉，重新部署。
-只会失去 shell 命令（连接测试显示"基础模式"），角色的硬盘完全不受影响。
+**怎么开启 shell 命令（完整模式）？**
+默认部署是基础模式（硬盘可用，shell 关闭），因为 shell 依赖 Cloudflare 的
+`worker_loaders`（beta），不是所有账号都有。账号具备该能力的话：
+编辑 `wrangler.jsonc`，把 `compatibility_flags` 改成 `["nodejs_compat", "experimental"]`，
+并取消 `"worker_loaders"` 那一行的注释，重新部署即可。部署失败就说明账号还没有该能力，改回去即可。
 
 **费用？**
 文件系统跑在 Workers 免费计划的额度内，日常使用一般不花钱。
