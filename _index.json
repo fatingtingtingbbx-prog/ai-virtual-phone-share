@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-14T01:28:18.140Z",
+  "generatedAt": "2026-08-14T01:36:26.584Z",
   "folders": [
     {
       "name": "A 重要须知（自部署版请查看）",
@@ -33,7 +33,7 @@
     },
     {
       "name": "气泡美化",
-      "count": 1
+      "count": 2
     },
     {
       "name": "游戏",
@@ -417,6 +417,24 @@
       "avatar": "资源/气泡美化/两款毛玻璃气泡/.avatar.png",
       "ownerHash": "9255ec1277ace06ef7aebf6566a04ad2844f9b543a7b06e6b1b0b7fe619d781c",
       "updatedAt": "2026-08-14T09:28:03+08:00"
+    },
+    {
+      "folder": "气泡美化",
+      "name": "仿古早消息气泡",
+      "dirName": "仿古早消息气泡",
+      "type": "dir",
+      "path": "资源/气泡美化/仿古早消息气泡",
+      "files": [
+        "资源/气泡美化/仿古早消息气泡/仿古早短信气泡.txt"
+      ],
+      "images": [
+        "资源/气泡美化/仿古早消息气泡/仿古早短信气泡.jpg"
+      ],
+      "description": "✅二改自用\n🚫二传二卖",
+      "author": "木叶淀粉酶",
+      "avatar": "资源/气泡美化/仿古早消息气泡/.avatar.png",
+      "ownerHash": "9255ec1277ace06ef7aebf6566a04ad2844f9b543a7b06e6b1b0b7fe619d781c",
+      "updatedAt": "2026-08-14T09:36:13+08:00"
     },
     {
       "folder": "游戏",
