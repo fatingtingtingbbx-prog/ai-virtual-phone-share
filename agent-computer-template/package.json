@@ -1,6 +1,6 @@
 {
   "name": "ai-phone-agent-computer",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -9,7 +9,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@cloudflare/sandbox": "0.12.4"
+    "@cloudflare/computer": "latest"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "latest",
@@ -20,9 +20,6 @@
     "bindings": {
       "AGENT_TOKEN": {
         "description": "角色电脑连接密钥。请填写一段只由你自己保存的长随机字符串；小手机会用同一串密钥连接你的角色电脑。"
-      },
-      "AGENT_DISK": {
-        "description": "角色电脑的持久文件存储，由 Cloudflare 自动创建并绑定。"
       }
     }
   }

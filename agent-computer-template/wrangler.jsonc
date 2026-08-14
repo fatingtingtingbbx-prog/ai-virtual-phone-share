@@ -3,37 +3,15 @@
   "name": "ai-phone-agent-computer",
   "main": "src/index.ts",
   "compatibility_date": "2026-08-12",
-  "compatibility_flags": ["nodejs_compat"],
-  "vars": {
-    "SANDBOX_TRANSPORT": "rpc",
-    "COMMAND_TIMEOUT_MS": "60000"
-  },
-  "containers": [
-    {
-      "class_name": "Sandbox",
-      "image": "./Dockerfile",
-      "instance_type": "lite",
-      "max_instances": 10
-    }
-  ],
+  // experimental 是 worker_loaders（isolate shell）要求的。
+  // 如果部署报错说不认识 worker_loaders：删掉 worker_loaders 那一行和 "experimental"，
+  // 只会失去 shell 命令；文件系统（角色的持久硬盘）完全不受影响。
+  "compatibility_flags": ["nodejs_compat", "experimental"],
+  "worker_loaders": [{ "binding": "LOADER" }],
   "durable_objects": {
-    "bindings": [
-      {
-        "class_name": "Sandbox",
-        "name": "Sandbox"
-      }
-    ]
+    "bindings": [{ "class_name": "Computer", "name": "Computer" }]
   },
   "migrations": [
-    {
-      "tag": "v1",
-      "new_sqlite_classes": ["Sandbox"]
-    }
-  ],
-  "r2_buckets": [
-    {
-      "binding": "AGENT_DISK",
-      "bucket_name": "ai-phone-agent-disk"
-    }
+    { "tag": "v1", "new_sqlite_classes": ["Computer"] }
   ]
 }
