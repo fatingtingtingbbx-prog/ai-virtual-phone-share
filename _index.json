@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-14T01:38:39.195Z",
+  "generatedAt": "2026-08-14T01:45:48.036Z",
   "folders": [
     {
       "name": "A 重要须知（自部署版请查看）",
@@ -33,7 +33,7 @@
     },
     {
       "name": "气泡美化",
-      "count": 2
+      "count": 3
     },
     {
       "name": "游戏",
@@ -417,6 +417,25 @@
       "avatar": "资源/气泡美化/两款毛玻璃气泡/.avatar.png",
       "ownerHash": "9255ec1277ace06ef7aebf6566a04ad2844f9b543a7b06e6b1b0b7fe619d781c",
       "updatedAt": "2026-08-14T09:38:28+08:00"
+    },
+    {
+      "folder": "气泡美化",
+      "name": "仿KakaoTalk气泡",
+      "dirName": "仿KakaoTalk气泡",
+      "type": "dir",
+      "path": "资源/气泡美化/仿KakaoTalk气泡",
+      "files": [
+        "资源/气泡美化/仿KakaoTalk气泡/[适用群聊] 仿kkt气泡.txt",
+        "资源/气泡美化/仿KakaoTalk气泡/仿kkt气泡.txt"
+      ],
+      "images": [
+        "资源/气泡美化/仿KakaoTalk气泡/IMG_20260814_094005.jpg"
+      ],
+      "description": "✅二改自用\n🚫二传二卖\n可自行修改消息引用部分和char气泡昵称部分的文案\n在群聊使用该美化请下载[粗][适用群聊][/粗]的版本，否则会出现文案与群聊角色昵称重叠的情况",
+      "author": "木叶淀粉酶",
+      "avatar": "资源/气泡美化/仿KakaoTalk气泡/.avatar.png",
+      "ownerHash": "9255ec1277ace06ef7aebf6566a04ad2844f9b543a7b06e6b1b0b7fe619d781c",
+      "updatedAt": "2026-08-14T09:45:36+08:00"
     },
     {
       "folder": "气泡美化",
