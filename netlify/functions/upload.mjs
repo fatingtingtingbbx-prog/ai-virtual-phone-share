@@ -470,6 +470,18 @@ async function handleContribute(payload) {
             return json(400, { ok: false, error: `路径「${path}」不在贡献白名单内（components/lib/styles/hooks/docs 下的源码与文档）` });
         }
         if (!content || !/^[A-Za-z0-9+/=\r\n]+$/.test(content)) return json(400, { ok: false, error: `文件「${path}」内容必须是 base64` });
+        // 防线：内容若是 contents API 的 JSON 元数据信封，说明客户端读取环节拿错了层（镜像源
+        // 无视 raw 媒体类型），合并会把真实文件替换成 18 行 JSON——直接拒收（社区 #103 事故）
+        try {
+            const decoded = Buffer.from(content.replace(/[\r\n]/g, ""), "base64").toString("utf8").trim();
+            if (decoded.startsWith("{") && decoded.includes('"content"')) {
+                const meta = JSON.parse(decoded);
+                if (meta && meta.type === "file" && typeof meta.content === "string"
+                    && (meta.encoding === "base64" || "_links" in meta || "download_url" in meta)) {
+                    return json(400, { ok: false, error: `文件「${path}」的内容是 GitHub API 元数据而不是源码，请让小坊重新读取该文件的真实内容后再提交` });
+                }
+            }
+        } catch { /* 解不开就当普通内容放行 */ }
         total += content.length;
         normalized.push({ path, contentBase64: content.replace(/[\r\n]/g, "") });
     }
