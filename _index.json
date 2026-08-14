@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-14T02:47:56.045Z",
+  "generatedAt": "2026-08-14T02:49:04.479Z",
   "folders": [
     {
       "name": "A 重要须知（自部署版请查看）",
@@ -41,7 +41,7 @@
     },
     {
       "name": "线上美化",
-      "count": 6
+      "count": 7
     },
     {
       "name": "线上聊天状态栏",
@@ -512,6 +512,24 @@
       "avatar": "",
       "ownerHash": "88f102e0ef217cea73fe5b268e0c11999ebe72de7ee6c86765148d0313569196",
       "updatedAt": "2026-08-12T10:13:58+02:00"
+    },
+    {
+      "folder": "线上美化",
+      "name": "【聊天室】仿POP月见粉",
+      "dirName": "【聊天室】仿POP月见粉",
+      "type": "dir",
+      "path": "资源/线上美化/【聊天室】仿POP月见粉",
+      "files": [
+        "资源/线上美化/【聊天室】仿POP月见粉/【聊天室】仿POP月见粉.txt"
+      ],
+      "images": [
+        "资源/线上美化/【聊天室】仿POP月见粉/仿POP月见粉.jpg"
+      ],
+      "description": "✅二改自用\n🚫二传二卖\n选择 导入-聊天室css 即可",
+      "author": "木叶淀粉酶",
+      "avatar": "资源/线上美化/【聊天室】仿POP月见粉/.avatar.png",
+      "ownerHash": "9255ec1277ace06ef7aebf6566a04ad2844f9b543a7b06e6b1b0b7fe619d781c",
+      "updatedAt": "2026-08-14T10:48:48+08:00"
     },
     {
       "folder": "线上美化",
