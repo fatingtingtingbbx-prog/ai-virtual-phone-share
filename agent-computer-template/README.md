@@ -6,8 +6,9 @@
 基于 [`@cloudflare/computer`](https://github.com/cloudflare/computer)：
 
 - **硬盘**：Durable Object 里的 SQLite 虚拟文件系统——持久、重启不丢、**免费计划可用**；
-- **shell**：isolate 后端（just-bash 编译到 Worker 里跑），支持 ls/cat/grep/sed 等常用命令；
-  账号不支持 `worker_loaders` 时自动降级为纯文件系统模式（fs-only），硬盘不受影响；
+- **shell**：开箱即用，支持 ls/cat/grep/sed/管道 等常用命令（just-bash 内核，与
+  Cloudflare 官方 shell 同款）。默认在 Worker 进程内执行（内嵌模式，免费计划可用）；
+  账号具备 `worker_loaders`（beta）时可切换为动态 Worker 隔离执行（见下）；
 - **隔离**：每个角色一台独立电脑（一个 workspace 一个 DO），互相看不见。
 
 ## 部署（一次，约 5 分钟）
@@ -22,11 +23,12 @@
 
 ## 常见问题
 
-**怎么开启 shell 命令（完整模式）？**
-默认部署是基础模式（硬盘可用，shell 关闭），因为 shell 依赖 Cloudflare 的
-`worker_loaders`（beta），不是所有账号都有。账号具备该能力的话：
-编辑 `wrangler.jsonc`，把 `compatibility_flags` 改成 `["nodejs_compat", "experimental"]`，
-并取消 `"worker_loaders"` 那一行的注释，重新部署即可。部署失败就说明账号还没有该能力，改回去即可。
+**shell 是怎么跑的？要额外配置吗？**
+不用配置，默认就有：命令由内嵌的 just-bash 在 Worker 进程内执行（连接测试显示
+"完整模式"）。它不是真 Linux——装不了 npm 包、跑不了任意二进制、没有网络（curl 不存在），
+但文件/文本处理的常用命令都齐。若你的账号有 `worker_loaders`（beta）能力，可编辑
+`wrangler.jsonc`：`compatibility_flags` 加 `"experimental"`、取消 `"worker_loaders"` 行注释，
+重新部署后命令改在独立的动态 Worker 里执行（隔离性更强，能力相同）。部署报错则说明账号没有该能力，改回即可。
 
 **费用？**
 文件系统跑在 Workers 免费计划的额度内，日常使用一般不花钱。

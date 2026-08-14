@@ -11,7 +11,8 @@
 
 import { DurableObject } from "cloudflare:workers";
 import { withWorkspace, getWorkspace, type DurableObjectStorageLike, type WorkspaceHandle } from "@cloudflare/computer";
-import { WorkerShellBackend, type WorkerShellLoader } from "@cloudflare/computer/backends/worker-shell";
+import { WorkerShellBackend, WorkspaceFsAdapter, type WorkerShellLoader } from "@cloudflare/computer/backends/worker-shell";
+import { Bash } from "just-bash";
 
 // isolate shell 的动态 Worker 通过这个服务代理回连本 Worker 的 Workspace，必须从入口导出
 export { WorkspaceServiceProxy } from "@cloudflare/computer";
@@ -119,6 +120,39 @@ function fromBase64(b64: string): Uint8Array {
   return bytes;
 }
 
+// ── 内嵌 shell（保底）───────────────────────────
+// 账号没有 worker_loaders（beta）时，isolate 后端不可用；此时直接在本进程里
+// 跑 just-bash（Cloudflare shell worker 的同款内核），文件系统对接同一块硬盘。
+// 隔离性弱于动态 Worker，但命令只作用于虚拟盘、无网络（未配 fetch），风险面很小。
+
+const EMBEDDED_MAX_OUTPUT = 200_000;
+
+type ExecOutcome = { stdout: string; stderr: string; exitCode: number; engine: "isolate" | "embedded" };
+
+async function runShell(ws: Awaited<ReturnType<typeof getWorkspace>>, command: string): Promise<ExecOutcome> {
+  try {
+    using run = await ws.runtime.exec(command, { encoding: "utf8" });
+    const { stdout, stderr, exitCode } = await run.result();
+    return {
+      stdout: typeof stdout === "string" ? stdout : "",
+      stderr: typeof stderr === "string" ? stderr : "",
+      exitCode: exitCode ?? 0,
+      engine: "isolate",
+    };
+  } catch (err) {
+    const message = err instanceof Error ? err.message : String(err);
+    if (!/execution backend/i.test(message)) throw err;
+    const bash = new Bash({
+      fs: new WorkspaceFsAdapter(ws.fs as never) as never,
+      cwd: "/",
+      defenseInDepth: { enabled: false },
+      executionLimits: { maxOutputSize: EMBEDDED_MAX_OUTPUT },
+    });
+    const result = await bash.exec(command);
+    return { stdout: result.stdout, stderr: result.stderr, exitCode: result.exitCode, engine: "embedded" };
+  }
+}
+
 export default {
   async fetch(request: Request, env: Env): Promise<Response> {
     if (request.method === "OPTIONS") return new Response(null, { status: 204, headers: CORS });
@@ -146,12 +180,13 @@ export default {
           // 文件系统探活 + shell 探活（shell 不可用不算错，报告能力即可）
           await ws.fs.mkdir("/", { recursive: true }).catch(() => {});
           let shell = false;
+          let engine: string | undefined;
           try {
-            using run = await ws.runtime.exec("echo ok");
-            const { exitCode } = await run.result();
-            shell = exitCode === 0;
-          } catch { /* 无 shell 后端 */ }
-          return json({ ok: true, fs: true, shell, mode: shell ? "shell" : "fs-only" });
+            const probe = await runShell(ws, "echo ok");
+            shell = probe.exitCode === 0;
+            engine = probe.engine;
+          } catch { /* 无 shell */ }
+          return json({ ok: true, fs: true, shell, mode: shell ? "shell" : "fs-only", engine });
         }
 
         case "list": {
@@ -215,13 +250,10 @@ export default {
           if (!command) return fail("缺少 command");
           if (command.length > 4000) return fail("命令过长");
           try {
-            using run = await ws.runtime.exec(command, { encoding: "utf8" });
-            const { stdout, stderr, exitCode } = await run.result();
-            const clip = (value: unknown) => {
-              const text = typeof value === "string" ? value : "";
-              return text.length > MAX_EXEC_OUTPUT ? `${text.slice(0, MAX_EXEC_OUTPUT)}\n…（输出过长已截断）` : text;
-            };
-            return json({ ok: true, exitCode, stdout: clip(stdout), stderr: clip(stderr) });
+            const result = await runShell(ws, command);
+            const clip = (value: string) =>
+              value.length > MAX_EXEC_OUTPUT ? `${value.slice(0, MAX_EXEC_OUTPUT)}\n…（输出过长已截断）` : value;
+            return json({ ok: true, exitCode: result.exitCode, stdout: clip(result.stdout), stderr: clip(result.stderr), engine: result.engine });
           } catch (err) {
             return fail(`shell 不可用或执行失败：${err instanceof Error ? err.message : String(err)}`, 501);
           }
