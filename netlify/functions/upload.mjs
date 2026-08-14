@@ -445,6 +445,14 @@ async function handleFlower(token, payload, ip) {
     return json(502, { ok: false, error: "送花失败：仓库繁忙，请稍后再试" });
 }
 
+/** 只读探头：返回资源仓库 main 最新 commit sha。
+ *  给客户端在 GitHub API 匿名限流时兜底定位 CDN（bot token 配额 5000/h,足够富余）。 */
+async function handleHead(token) {
+    const [owner, repo] = REPO.split("/");
+    const data = await gh(token, "GET", `/repos/${owner}/${repo}/commits/main`);
+    return json(200, { ok: true, sha: String(data.sha || ""), repo: REPO });
+}
+
 /** 共同建设：把用户的改动提交为主仓库的 community PR（管理员在 GitHub 审核） */
 async function handleContribute(payload) {
     const token = process.env.CONTRIB_BOT_TOKEN || process.env.SHARE_BOT_TOKEN;
@@ -629,6 +637,7 @@ export default async function handler(req, context) {
     if (rateMap.size > 5000) rateMap.clear();
 
     try {
+        if (payload.action === "head") return await handleHead(token);
         if (payload.action === "contribute") return await handleContribute(payload);
         if (payload.action === "claim") return await handleClaim(token, payload);
         if (payload.action === "flower") return await handleFlower(token, payload, ip);
