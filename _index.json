@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-14T17:24:13.734Z",
+  "generatedAt": "2026-08-14T20:02:45.891Z",
   "folders": [
     {
       "name": "A 重要须知（自部署版请查看）",
@@ -29,7 +29,7 @@
     },
     {
       "name": "应用",
-      "count": 11
+      "count": 12
     },
     {
       "name": "气泡美化",
@@ -327,6 +327,22 @@
       "avatar": "资源/应用/Whisper耳边私语/.avatar.png",
       "ownerHash": "72adb7d77211b0354bc8d30ad6f28de6e6ba7e1047ed9ec1c80c1ab683f98f11",
       "updatedAt": "2026-08-14T05:48:28+08:00"
+    },
+    {
+      "folder": "应用",
+      "name": "[小猫]狼人杀（自部署与链接版互通测试版本）",
+      "dirName": "[小猫]狼人杀（自部署与链接版互通测试版本）",
+      "type": "dir",
+      "path": "资源/应用/[小猫]狼人杀（自部署与链接版互通测试版本）",
+      "files": [
+        "资源/应用/[小猫]狼人杀（自部署与链接版互通测试版本）/moonhowl-werewolf-crossplay-1.1.1.zip"
+      ],
+      "images": [],
+      "description": "该版本狼人杀[粗][红][大]自部署版可以和链接版互通[/大][/红][/粗]，可以邀请亲友一起玩，并修复了一些bug。\n\n\n\n如果有问题可以[粗][蓝]在bug反馈文件夹反馈[/蓝][/粗]。",
+      "author": "Float studio",
+      "avatar": "",
+      "ownerHash": "72adb7d77211b0354bc8d30ad6f28de6e6ba7e1047ed9ec1c80c1ab683f98f11",
+      "updatedAt": "2026-08-15T04:02:35+08:00"
     },
     {
       "folder": "应用",
