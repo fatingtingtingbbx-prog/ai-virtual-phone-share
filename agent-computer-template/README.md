@@ -25,8 +25,8 @@
 
 **shell 是怎么跑的？要额外配置吗？**
 不用配置，默认就有：命令由内嵌的 just-bash 在 Worker 进程内执行（连接测试显示
-"完整模式"）。它不是真 Linux——装不了 npm 包、跑不了任意二进制、没有网络（curl 不存在），
-但文件/文本处理的常用命令都齐。若你的账号有 `worker_loaders`（beta）能力，可编辑
+"完整模式"）。它不是真 Linux——装不了 npm 包、跑不了任意二进制，但文件/文本处理的常用命令都齐，
+`curl` 可用（只读联网：仅 GET/HEAD、禁内网地址、20s 超时、响应 ≤5MB）。若你的账号有 `worker_loaders`（beta）能力，可编辑
 `wrangler.jsonc`：`compatibility_flags` 加 `"experimental"`、取消 `"worker_loaders"` 行注释，
 重新部署后命令改在独立的动态 Worker 里执行（隔离性更强，能力相同）。部署报错则说明账号没有该能力，改回即可。
 

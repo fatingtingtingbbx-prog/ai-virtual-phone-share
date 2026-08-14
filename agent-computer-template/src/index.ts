@@ -12,7 +12,7 @@
 import { DurableObject } from "cloudflare:workers";
 import { withWorkspace, getWorkspace, type DurableObjectStorageLike, type WorkspaceHandle } from "@cloudflare/computer";
 import { WorkerShellBackend, WorkspaceFsAdapter, type WorkerShellLoader } from "@cloudflare/computer/backends/worker-shell";
-import { Bash } from "just-bash";
+import { Bash, NetworkAccessDeniedError, type SecureFetch } from "just-bash";
 
 // isolate shell 的动态 Worker 通过这个服务代理回连本 Worker 的 Workspace，必须从入口导出
 export { WorkspaceServiceProxy } from "@cloudflare/computer";
@@ -127,6 +127,37 @@ function fromBase64(b64: string): Uint8Array {
 
 const EMBEDDED_MAX_OUTPUT = 200_000;
 
+// 只读联网（给 curl 用）：仅 GET/HEAD、仅 http(s)、拦内网/回环地址、20s 超时、响应 ≤5MB。
+// Workers 环境本身触不到部署者内网，字面量拦截属于双保险。
+const FETCH_TIMEOUT_MS = 20_000;
+const FETCH_MAX_BYTES = 5 * 1024 * 1024;
+const PRIVATE_HOST_RE = /^(localhost$|127\.|10\.|192\.168\.|169\.254\.|0\.|\[?::1\]?$|172\.(1[6-9]|2\d|3[01])\.)/i;
+
+const readOnlyFetch: SecureFetch = async (url, options = {}) => {
+  const method = (options.method || "GET").toUpperCase();
+  if (method !== "GET" && method !== "HEAD") throw new NetworkAccessDeniedError(url, "只允许 GET/HEAD");
+  const parsed = new URL(url);
+  if (parsed.protocol !== "http:" && parsed.protocol !== "https:") throw new NetworkAccessDeniedError(url, "仅支持 http/https");
+  if (PRIVATE_HOST_RE.test(parsed.hostname)) throw new NetworkAccessDeniedError(url, "禁止访问内网地址");
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), Math.min(options.timeoutMs ?? FETCH_TIMEOUT_MS, FETCH_TIMEOUT_MS));
+  try {
+    const res = await fetch(url, {
+      method,
+      headers: options.headers as HeadersInit | undefined,
+      signal: options.signal ?? controller.signal,
+      redirect: options.followRedirects === false ? "manual" : "follow",
+    });
+    const buffer = await res.arrayBuffer();
+    if (buffer.byteLength > FETCH_MAX_BYTES) throw new Error("响应超过 5MB 上限");
+    const headers: Record<string, string> = {};
+    res.headers.forEach((value, key) => { headers[key] = value; });
+    return { status: res.status, statusText: res.statusText, headers, body: new Uint8Array(buffer), url: res.url };
+  } finally {
+    clearTimeout(timer);
+  }
+};
+
 type ExecOutcome = { stdout: string; stderr: string; exitCode: number; engine: "isolate" | "embedded" };
 
 async function runShell(ws: Awaited<ReturnType<typeof getWorkspace>>, command: string): Promise<ExecOutcome> {
@@ -145,6 +176,9 @@ async function runShell(ws: Awaited<ReturnType<typeof getWorkspace>>, command: s
     const bash = new Bash({
       fs: new WorkspaceFsAdapter(ws.fs as never) as never,
       cwd: "/",
+      // 只读联网：curl 仅 GET/HEAD（看网页、下载内容），不开写方法——
+      // Worker 不会被当成对外发请求的跳板
+      fetch: readOnlyFetch,
       defenseInDepth: { enabled: false },
       executionLimits: { maxOutputSize: EMBEDDED_MAX_OUTPUT },
     });
