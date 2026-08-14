@@ -1,0 +1,24 @@
+﻿/* ========== 气泡样式（清透毛玻璃，仅普通文本） ========== */
+.chat-bubble-role-user:not(.chat-bubble-media):not(.voice-msg-bubble),
+.chat-bubble-role-assistant:not(.chat-bubble-media):not(.voice-msg-bubble) {
+  backdrop-filter: blur(1.5px) contrast(1.02) brightness(1.02);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  padding: 5px 10px !important;
+  border-radius: 10px !important;
+  margin-bottom: 1px !important;
+  position: relative !important;
+  overflow: visible !important;
+}
+
+/* 对方气泡 */
+.chat-bubble-role-assistant:not(.chat-bubble-media):not(.voice-msg-bubble) {
+  background: rgba(251, 250, 255, 0.12) !important;
+  border: 1px solid rgba(255, 255, 255, 0.5) !important;
+}
+
+/* 自己气泡 */
+.chat-bubble-role-user:not(.chat-bubble-media):not(.voice-msg-bubble) {
+  background: rgba(160, 167, 186, 0.15) !important;
+  border: 1px solid rgba(255, 255, 255, 0.45) !important;
+  color: #252525 !important;
+}
