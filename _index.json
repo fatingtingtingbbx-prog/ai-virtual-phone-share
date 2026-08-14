@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-14T07:14:41.860Z",
+  "generatedAt": "2026-08-14T07:16:25.977Z",
   "folders": [
     {
       "name": "A 重要须知（自部署版请查看）",
@@ -29,7 +29,7 @@
     },
     {
       "name": "应用",
-      "count": 10
+      "count": 11
     },
     {
       "name": "气泡美化",
@@ -390,6 +390,22 @@
       "avatar": "",
       "ownerHash": "310d0e4828215ba191cb8f61590168da1028bc74404e8f17255dc3f36d8d7eee",
       "updatedAt": "2026-08-14T12:45:16+08:00"
+    },
+    {
+      "folder": "应用",
+      "name": "外卖",
+      "dirName": "外卖",
+      "type": "dir",
+      "path": "资源/应用/外卖",
+      "files": [
+        "资源/应用/外卖/waimai.demo-1.0.2.zip"
+      ],
+      "images": [],
+      "description": "返回键需要按返回图标左上角的空白那里",
+      "author": "",
+      "avatar": "",
+      "ownerHash": "a23807a14f5ac32180dd3716ae5e2a4fcf2c310bf68068bfb104a4ca3d941e0b",
+      "updatedAt": "2026-08-14T15:16:12+08:00"
     },
     {
       "folder": "应用",
