@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-14T04:45:27.883Z",
+  "generatedAt": "2026-08-14T06:27:01.610Z",
   "folders": [
     {
       "name": "A 重要须知（自部署版请查看）",
@@ -29,7 +29,7 @@
     },
     {
       "name": "应用",
-      "count": 9
+      "count": 10
     },
     {
       "name": "气泡美化",
@@ -288,6 +288,22 @@
       "avatar": "",
       "ownerHash": "4eee9ffd3176e2e3c5d3341370fc682604332bd1a01213a99c38c52d2d6e7527",
       "updatedAt": "2026-08-11T14:36:04+02:00"
+    },
+    {
+      "folder": "应用",
+      "name": "Bubble",
+      "dirName": "Bubble",
+      "type": "dir",
+      "path": "资源/应用/Bubble",
+      "files": [
+        "资源/应用/Bubble/idol.bubble.sim-1.0.0.zip"
+      ],
+      "images": [],
+      "description": "内置三个韩娱论坛，可以自己发bubble，也可以选择角色身份发bubble，自己发bubble需要给自己建user人设卡，可直播，聊天背景可以更换，直播背景也可以更换，可引用翻牌，发送后自动调用api，不发消息点击刷新也能调用api收取bubble消息，内置行程单可自己刷新并自由选择更换跳过时间，用户在行程中的公开行为将被bubble、论坛自行判定讨论，自己填世界书、文风、检测到恋爱会随机触发是否被拍到，论坛随机触发D社，可以把自己喜欢的角色填入世界书，也可以自由大世界，内置也有粉丝群功能，也有自动总结功能",
+      "author": "ooo",
+      "avatar": "",
+      "ownerHash": "49be41a3123572a056270f82185553fcacc82f792f1e49b045fdd5ccc20f2916",
+      "updatedAt": "2026-08-14T14:26:47+08:00"
     },
     {
       "folder": "应用",
