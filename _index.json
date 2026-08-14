@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-14T02:57:01.716Z",
+  "generatedAt": "2026-08-14T02:57:32.600Z",
   "folders": [
     {
       "name": "A 重要须知（自部署版请查看）",
@@ -561,11 +561,11 @@
       "images": [
         "资源/线上美化/【聊天室】仿iMessage晴山蓝/IMG_20260814_103243.jpg"
       ],
-      "description": "关于整体代码的使用范围：\n✅二改自用\n🚫二传二卖\n选择 导入-聊天室css 即可\n\n\n关于底部栏美化代码：\n• 允许直接取用或间接参考、修改并发布\n• 发布时必须标明原作者",
+      "description": "关于整体代码的使用范围：\n✅二改自用\n🚫二传二卖\n选择 导入-聊天室css 即可\n\n关于底部栏美化代码：\n• 允许直接取用或间接参考、修改并发布\n• 发布时必须标明原作者",
       "author": "木叶淀粉酶",
       "avatar": "资源/线上美化/【聊天室】仿iMessage晴山蓝/.avatar.png",
       "ownerHash": "9255ec1277ace06ef7aebf6566a04ad2844f9b543a7b06e6b1b0b7fe619d781c",
-      "updatedAt": "2026-08-14T10:47:41+08:00"
+      "updatedAt": "2026-08-14T10:57:20+08:00"
     },
     {
       "folder": "线上美化",
