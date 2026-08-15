@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-14T20:06:27.176Z",
+  "generatedAt": "2026-08-15T10:41:12.860Z",
   "folders": [
     {
       "name": "A 重要须知（自部署版请查看）",
@@ -29,7 +29,7 @@
     },
     {
       "name": "应用",
-      "count": 12
+      "count": 13
     },
     {
       "name": "气泡美化",
@@ -429,6 +429,23 @@
       "avatar": "",
       "ownerHash": "a23807a14f5ac32180dd3716ae5e2a4fcf2c310bf68068bfb104a4ca3d941e0b",
       "updatedAt": "2026-08-14T15:18:29+08:00"
+    },
+    {
+      "folder": "应用",
+      "name": "如约来信（设定角色定时主动回复）",
+      "dirName": "如约来信（设定角色定时主动回复）",
+      "type": "dir",
+      "path": "资源/应用/如约来信（设定角色定时主动回复）",
+      "files": [
+        "资源/应用/如约来信（设定角色定时主动回复）/如约来信_v0.5.zip",
+        "资源/应用/如约来信（设定角色定时主动回复）/如约来信_v0.5_使用说明书.docx"
+      ],
+      "images": [],
+      "description": "在应用市场里面添加以后可以让char在某段时间定时回复消息，比如char说回家再找你，就可以设定一个时间范围让char主动找你。",
+      "author": "xxx",
+      "avatar": "",
+      "ownerHash": "b2353d7b810e6658051615dd47fb5a69e69cb8dc4bd0a316ffa4f1f44ab8ea7a",
+      "updatedAt": "2026-08-15T18:41:00+08:00"
     },
     {
       "folder": "应用",
