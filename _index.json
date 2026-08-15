@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-15T12:43:28.868Z",
+  "generatedAt": "2026-08-15T18:33:05.516Z",
   "folders": [
     {
       "name": "A 重要须知（自部署版请查看）",
@@ -9,7 +9,7 @@
     },
     {
       "name": "BUG反馈专用文件夹",
-      "count": 2
+      "count": 3
     },
     {
       "name": "Js插件",
@@ -96,6 +96,22 @@
       "avatar": "",
       "ownerHash": "fb962c4fceef95a258ac55e1fab9a3cb0bd1440197814a757957ec7d3234aa5e",
       "updatedAt": "2026-08-13T17:13:53+08:00"
+    },
+    {
+      "folder": "BUG反馈专用文件夹",
+      "name": "闪退和日历",
+      "dirName": "闪退和日历",
+      "type": "dir",
+      "path": "资源/BUG反馈专用文件夹/闪退和日历",
+      "files": [],
+      "images": [
+        "资源/BUG反馈专用文件夹/闪退和日历/IMG_8124.png"
+      ],
+      "description": "点个别应用商店的应用会闪，然后资源集市就消失了。闪退的时候日历也会变样子，变成这样。还挺好看的！特别喜欢这个日历，不知道有没有什么办法保存这个版本。现在的日历有点太大了",
+      "author": "",
+      "avatar": "",
+      "ownerHash": "2ca4cea6e4e4c8773995bb139ddd009677c4fe22ed42c19fbc8940ae7b5ef9ae",
+      "updatedAt": "2026-08-16T02:32:49+08:00"
     },
     {
       "folder": "Js插件",
