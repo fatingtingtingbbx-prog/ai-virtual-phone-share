@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-16T15:18:00.277Z",
+  "generatedAt": "2026-08-16T16:02:43.995Z",
   "folders": [
     {
       "name": "A 重要须知（自部署版请查看）",
@@ -41,7 +41,7 @@
     },
     {
       "name": "线上美化",
-      "count": 9
+      "count": 10
     },
     {
       "name": "线上聊天状态栏",
@@ -870,6 +870,24 @@
       "avatar": "资源/线上美化/【聊天室】薄雾/.avatar.png",
       "ownerHash": "9255ec1277ace06ef7aebf6566a04ad2844f9b543a7b06e6b1b0b7fe619d781c",
       "updatedAt": "2026-08-16T17:15:06+08:00"
+    },
+    {
+      "folder": "线上美化",
+      "name": "【聊天室】青苹果",
+      "dirName": "【聊天室】青苹果",
+      "type": "dir",
+      "path": "资源/线上美化/【聊天室】青苹果",
+      "files": [
+        "资源/线上美化/【聊天室】青苹果/青苹果 .css"
+      ],
+      "images": [
+        "资源/线上美化/【聊天室】青苹果/IMG_20260817_000137.jpg"
+      ],
+      "description": "一个简陋的绿色系聊天室美化，不带背景（可自传），使用方式：点击导入→选择聊天室css，即可",
+      "author": "",
+      "avatar": "",
+      "ownerHash": "d23c4a5877ea9d4ad2c2109fd88c648da108f59ebf8d61b80ea0c3aa25fd4ce9",
+      "updatedAt": "2026-08-17T00:02:33+08:00"
     },
     {
       "folder": "线上美化",
