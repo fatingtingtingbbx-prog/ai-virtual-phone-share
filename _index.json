@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-16T15:03:16.155Z",
+  "generatedAt": "2026-08-16T15:18:00.277Z",
   "folders": [
     {
       "name": "A 重要须知（自部署版请查看）",
@@ -9,7 +9,7 @@
     },
     {
       "name": "BUG反馈专用文件夹",
-      "count": 3
+      "count": 4
     },
     {
       "name": "Js插件",
@@ -112,6 +112,22 @@
       "avatar": "",
       "ownerHash": "2ca4cea6e4e4c8773995bb139ddd009677c4fe22ed42c19fbc8940ae7b5ef9ae",
       "updatedAt": "2026-08-16T02:32:49+08:00"
+    },
+    {
+      "folder": "BUG反馈专用文件夹",
+      "name": "阅读闪退",
+      "dirName": "阅读闪退",
+      "type": "dir",
+      "path": "资源/BUG反馈专用文件夹/阅读闪退",
+      "files": [
+        "资源/BUG反馈专用文件夹/阅读闪退/Screenrecorder-2026-08-16-23-08-05-879.mp4"
+      ],
+      "images": [],
+      "description": "嗯阅读那边上传了PDF文件以后一直在闪",
+      "author": "",
+      "avatar": "",
+      "ownerHash": "58102ce5a9265a94c2ca149a50be3fd3738f293b8d6dc0ecbe83f61ab233cf6e",
+      "updatedAt": "2026-08-16T23:17:48+08:00"
     },
     {
       "folder": "Js插件",
