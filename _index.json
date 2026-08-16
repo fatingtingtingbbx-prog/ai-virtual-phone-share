@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-16T09:15:17.716Z",
+  "generatedAt": "2026-08-16T10:14:22.666Z",
   "folders": [
     {
       "name": "A 重要须知（自部署版请查看）",
@@ -37,7 +37,7 @@
     },
     {
       "name": "游戏",
-      "count": 3
+      "count": 4
     },
     {
       "name": "线上美化",
@@ -668,6 +668,24 @@
       "avatar": "",
       "ownerHash": "88f102e0ef217cea73fe5b268e0c11999ebe72de7ee6c86765148d0313569196",
       "updatedAt": "2026-08-12T10:24:45+02:00"
+    },
+    {
+      "folder": "游戏",
+      "name": "欢乐麻将",
+      "dirName": "欢乐麻将",
+      "type": "dir",
+      "path": "资源/游戏/欢乐麻将",
+      "files": [
+        "资源/游戏/欢乐麻将/欢乐麻将.json"
+      ],
+      "images": [
+        "资源/游戏/欢乐麻将/Screenshot_20260816_180113_com.huawei.browser_edit_36688.jpg"
+      ],
+      "description": "怎么能缺少欢乐麻将呢\n登登登登登登登登登登登登～",
+      "author": "六神花露水",
+      "avatar": "",
+      "ownerHash": "16a8b52b7fbad80a5064ee67e0745c16315e8e4e1de8c06675d070dbcc88e63c",
+      "updatedAt": "2026-08-16T18:13:59+08:00"
     },
     {
       "folder": "游戏",
