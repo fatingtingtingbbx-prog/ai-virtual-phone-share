@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-16T10:14:22.666Z",
+  "generatedAt": "2026-08-16T10:21:33.681Z",
   "folders": [
     {
       "name": "A 重要须知（自部署版请查看）",
@@ -29,7 +29,7 @@
     },
     {
       "name": "应用",
-      "count": 15
+      "count": 16
     },
     {
       "name": "气泡美化",
@@ -554,6 +554,24 @@
       "avatar": "资源/应用/提问箱/.avatar.png",
       "ownerHash": "8e3664d10538a0676ceac971b51fd4732a8d3997119b81bc78fdb2e3ce7eaba6",
       "updatedAt": "2026-08-12T08:23:55+02:00"
+    },
+    {
+      "folder": "应用",
+      "name": "易物",
+      "dirName": "易物",
+      "type": "dir",
+      "path": "资源/应用/易物",
+      "files": [
+        "资源/应用/易物/7Osms.ios.demo-1.0.0.zip"
+      ],
+      "images": [
+        "资源/应用/易物/IMG_4923.jpeg"
+      ],
+      "description": "放了几天易物规则没细修\n左上角进入物品存档、生成他的物品的界面\n你可以主动发起易物，也可以让他发起。这个过程可以等价/不等价/溢价，说服他接受你的交换\n主界面短信右上角可以生成你世界观的信息，包括生活、通讯、外卖、物流等等",
+      "author": "7Ouii",
+      "avatar": "资源/应用/易物/.avatar.png",
+      "ownerHash": "8e3664d10538a0676ceac971b51fd4732a8d3997119b81bc78fdb2e3ce7eaba6",
+      "updatedAt": "2026-08-16T18:21:19+08:00"
     },
     {
       "folder": "应用",
