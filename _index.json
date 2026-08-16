@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-16T14:18:44.583Z",
+  "generatedAt": "2026-08-16T14:23:57.834Z",
   "folders": [
     {
       "name": "A 重要须知（自部署版请查看）",
@@ -29,7 +29,7 @@
     },
     {
       "name": "应用",
-      "count": 17
+      "count": 18
     },
     {
       "name": "气泡美化",
@@ -611,6 +611,24 @@
       "avatar": "",
       "ownerHash": "4fd92bb153980867431d711956f20b1d2491c7b5f7ff0cccca28fecfd030b996",
       "updatedAt": "2026-08-16T11:46:01+08:00"
+    },
+    {
+      "folder": "应用",
+      "name": "黑珍珠酒吧",
+      "dirName": "黑珍珠酒吧",
+      "type": "dir",
+      "path": "资源/应用/黑珍珠酒吧",
+      "files": [
+        "资源/应用/黑珍珠酒吧/soul-bar-app-20.zip"
+      ],
+      "images": [
+        "资源/应用/黑珍珠酒吧/813.jpg"
+      ],
+      "description": "一个可以聊天，喝酒，吃小吃的地方。",
+      "author": "昭昭儿",
+      "avatar": "资源/应用/黑珍珠酒吧/.avatar.png",
+      "ownerHash": "9be9e2befed8262f2dc8ebeed5742d4950e3b43a5061d45d16097a53ea6841c0",
+      "updatedAt": "2026-08-16T22:23:44+08:00"
     },
     {
       "folder": "气泡美化",
