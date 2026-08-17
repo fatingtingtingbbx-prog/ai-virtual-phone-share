@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-17T06:13:48.959Z",
+  "generatedAt": "2026-08-17T06:23:20.669Z",
   "folders": [
     {
       "name": "A 重要须知（自部署版请查看）",
@@ -29,7 +29,7 @@
     },
     {
       "name": "应用",
-      "count": 21
+      "count": 22
     },
     {
       "name": "气泡美化",
@@ -481,6 +481,22 @@
       "avatar": "",
       "ownerHash": "72adb7d77211b0354bc8d30ad6f28de6e6ba7e1047ed9ec1c80c1ab683f98f11",
       "updatedAt": "2026-08-15T04:06:17+08:00"
+    },
+    {
+      "folder": "应用",
+      "name": "[幽灵]仿OnlyFans",
+      "dirName": "[幽灵]仿OnlyFans",
+      "type": "dir",
+      "path": "资源/应用/[幽灵]仿OnlyFans",
+      "files": [
+        "资源/应用/[幽灵]仿OnlyFans/onlyfans.clone-1.0.1.zip"
+      ],
+      "images": [],
+      "description": "因为最近痴迷于网黄梗，于是这个app诞生了。",
+      "author": "Zzz",
+      "avatar": "资源/应用/[幽灵]仿OnlyFans/.avatar.png",
+      "ownerHash": "4c5a389c9b5a488af6c850b9573f167bd072aa6b1d5a4c2884f314e05e1ca5e5",
+      "updatedAt": "2026-08-17T14:23:00+08:00"
     },
     {
       "folder": "应用",
