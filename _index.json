@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-17T11:20:04.976Z",
+  "generatedAt": "2026-08-17T11:23:42.198Z",
   "folders": [
     {
       "name": "A 重要须知（自部署版请查看）",
@@ -838,11 +838,11 @@
       "images": [
         "资源/消息列表美化/仿ins主页/IMG_20260817_190417.jpg"
       ],
-      "description": "[粗]注：[/粗]该美化可能需要自行二改以适配在不同机型的显示\n✅二改自用\n🚫二传二卖\n文案和头像图片可检索后替换修改，注意不要删掉其他字符\n或者让AI帮忙更改文案（推荐）\n\n\n可更改的图片URL及文案如下，可复制以下内容后让AI进行替换\n头像图片URL：https://i.ibb.co/Q71C39fL/IMG-20260627-181713.jpg\n文案：Across a hundred years and two worlds\nI found no rest\nuntil you became my shore.\nYou are the only soul I chose to keep.\nnot to ferry...\n标签：Renaissance、For me",
+      "description": "[粗]注：[/粗]该美化可能需要自行二改以适配在不同机型的显示\n✅二改自用\n🚫二传二卖\n文案和头像图片可检索后替换修改，注意不要删掉其他字符\n或者让AI帮忙更改文案（推荐）\n\n可更改的图片URL及文案如下，可截图提取以下内容后让AI进行替换\n头像图片URL：https://i.ibb.co/Q71C39fL/IMG-20260627-181713.jpg\n数字：1,314、520、99\n文案：Across a hundred years and two worlds\nI found no rest\nuntil you became my shore.\nYou are the only soul I chose to keep.\nnot to ferry...\n标签：Renaissance、For me",
       "author": "木叶淀粉酶",
       "avatar": "资源/消息列表美化/仿ins主页/.avatar.png",
       "ownerHash": "9255ec1277ace06ef7aebf6566a04ad2844f9b543a7b06e6b1b0b7fe619d781c",
-      "updatedAt": "2026-08-17T19:19:47+08:00"
+      "updatedAt": "2026-08-17T19:23:27+08:00"
     },
     {
       "folder": "游戏",
