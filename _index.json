@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-17T12:42:59.482Z",
+  "generatedAt": "2026-08-17T15:39:40.331Z",
   "folders": [
     {
       "name": "A 重要须知（自部署版请查看）",
@@ -37,7 +37,7 @@
     },
     {
       "name": "消息列表美化",
-      "count": 2
+      "count": 3
     },
     {
       "name": "游戏",
@@ -863,6 +863,24 @@
       "avatar": "资源/消息列表美化/仿KakaoTalk/.avatar.png",
       "ownerHash": "9255ec1277ace06ef7aebf6566a04ad2844f9b543a7b06e6b1b0b7fe619d781c",
       "updatedAt": "2026-08-17T19:42:11+08:00"
+    },
+    {
+      "folder": "消息列表美化",
+      "name": "仿LINE主页",
+      "dirName": "仿LINE主页",
+      "type": "dir",
+      "path": "资源/消息列表美化/仿LINE主页",
+      "files": [
+        "资源/消息列表美化/仿LINE主页/【列表】仿LINE主页.txt"
+      ],
+      "images": [
+        "资源/消息列表美化/仿LINE主页/IMG_20260817_233142.jpg"
+      ],
+      "description": "✅二改自用\n🚫二传二卖\n选择 导入-聊天主页css 即可\n\n\n头像URL可自行替换，文案建议让AI代劳更改，或使用文档的 检索-替换 功能\n检索「Float」和「输入状态信息」自主替换内容",
+      "author": "木叶淀粉酶",
+      "avatar": "资源/消息列表美化/仿LINE主页/.avatar.png",
+      "ownerHash": "9255ec1277ace06ef7aebf6566a04ad2844f9b543a7b06e6b1b0b7fe619d781c",
+      "updatedAt": "2026-08-17T23:39:27+08:00"
     },
     {
       "folder": "消息列表美化",
