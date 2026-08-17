@@ -1,0 +1,543 @@
+/* ═══ 绿色毛玻璃主题（单独聊天室） ═══ */
+/* 背景：青苹果方格手账图（新浪图床）+ 淡绿毛玻璃气泡 */
+
+/* ── 颜色变量（绿色系） ── */
+:root {
+  --c-header-bg: rgba(210, 236, 214, 0.45);       /* 标题栏：淡绿磨砂 */
+  --c-page-body-bg: transparent;                  /* 消息区透明，露出背景图 */
+
+  --c-bubble-self: linear-gradient(135deg, rgba(46,168,102,0.58), rgba(32,140,80,0.48)); /* 我的气泡：绿色毛玻璃(更透) */
+  --c-bubble-other: rgba(255, 255, 255, 0.30);    /* 对方气泡：白色毛玻璃(更透) */
+  --c-text-title: #2E5D3F;        /* 主要文字：深墨绿 */
+  --c-text: #5C7A68;              /* 次要文字：灰绿 */
+  --c-icon: #6FA88C;              /* 普通图标：浅绿 */
+  --c-icon-active: #2E8B57;       /* 强调色：海绿 */
+
+  --c-input: rgba(228, 242, 230, 0.60);       /* 输入区：淡绿磨砂 */
+  --c-input-border: rgba(46, 139, 87, 0.28);
+  --c-card: rgba(255, 255, 255, 0.70);
+  --c-card-border: rgba(46, 139, 87, 0.22);
+}
+
+/* ── 聊天室背景（背景图 + 一层淡绿薄纱提亮） ── */
+.chat-room-wrapper {
+  /* 兜底色：万一背景图加载失败，也不会一片空白，而是淡绿色 */
+  background-color: #E7F2E7;
+  background-image:
+    linear-gradient(rgba(232, 245, 233, 0.30), rgba(232, 245, 233, 0.30)),
+    url("https://wx3.sinaimg.cn/large/008JPmTNgy1ig60n2tktkj30pw1hcwjl.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* ── 标题栏（毛玻璃） ── */
+.page-header {
+  background: color-mix(in srgb, var(--c-header-bg) 80%, transparent);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border-bottom: 1px solid rgba(46, 139, 87, 0.22);   /* 底部边界线 */
+  /* 关闭毛玻璃：backdrop-filter: none; background: var(--c-header-bg); */
+}
+
+.page-header-content {
+  /* padding: 10px 14px; */
+  /* gap: 8px; */
+}
+
+.page-title,
+.page-back-btn {
+  color: var(--c-text-title);
+}
+
+/* ── 消息列表 ── */
+.chat-scroll-anchored {
+  padding: 16px 16px 24px;
+}
+
+.chat-msg-wrapper {
+  gap: 8px;
+}
+
+/* ── 头像装饰 ── */
+.chat-msg-avatar {
+  border-radius: 50%;          /* 圆形头像框，跟随头像形状 */
+  position: relative;
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.35), 0 2px 10px rgba(60, 110, 80, 0.18);
+}
+
+.chat-msg-avatar img {
+  border-radius: 50%;          /* 头像里的图片也切成圆形 */
+}
+
+.chat-msg-avatar::after {
+  content: "✨";
+  position: absolute;
+  right: -4px;
+  bottom: -4px;
+  font-size: 12px;
+}
+
+.chat-sys-msg {
+  color: var(--c-text);
+}
+
+/* 系统指令注入卡片 */
+.chat-system-instruction-card {
+  background: var(--c-card);
+  border: 1px solid var(--c-card-border);
+  border-radius: 8px;
+  box-shadow: var(--chat-bubble-shadow);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.chat-system-instruction-title {
+  color: var(--c-text-title);
+  font-weight: 600;
+}
+
+.chat-system-instruction-body {
+  color: var(--c-text);
+  text-indent: 2em;
+}
+
+/* ── 气泡（毛玻璃半透明 + 玻璃高光） ── */
+.chat-bubble-role-user {
+  background: var(--c-bubble-self);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 6px;
+  padding: 10px 14px;
+  box-shadow: 0 2px 12px rgba(46, 160, 67, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  text-shadow: 0 1px 2px rgba(20, 80, 45, 0.30);
+}
+
+.chat-bubble-role-assistant {
+  background: var(--c-bubble-other);
+  color: var(--c-text-title);
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  border-radius: 6px;
+  padding: 10px 14px;
+  box-shadow: 0 2px 12px rgba(60, 110, 80, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+}
+
+.chat-markdown {
+  color: var(--c-text-title);
+  font-size: calc(12px*var(--app-text-scale,1));   /* 气泡字体调小 */
+  line-height: 1.7;
+}
+
+/* 控制段落间距离 */
+.chat-markdown p + p,
+.chat-markdown-paragraph + .chat-markdown-paragraph {
+  margin-top: 6px;
+}
+
+.chat-bubble-media {
+  border-radius: 12px;
+  overflow: visible;
+}
+
+/* ── 引用、编辑、长按菜单 ── */
+.chat-quote-bar,
+.chat-inline-edit-textarea {
+  background: var(--c-input);
+  border: 1px solid var(--c-input-border);
+  border-radius: 8px;
+}
+
+.chat-inline-edit-btn-save {
+  background: var(--c-icon-active);
+  color: #ffffff;
+}
+
+.ctx-menu {
+  background: #2c2c2c;
+  border-radius: 8px;
+}
+
+.ctx-menu-btn {
+  color: #ffffff;
+}
+
+.ctx-menu-btn-danger {
+  color: #ff6b6b;
+}
+
+/* ── 输入栏（毛玻璃） ── */
+.chat-input-bar {
+  background: color-mix(in srgb, var(--c-input) 55%, transparent);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border-top: 1px solid rgba(46, 139, 87, 0.22);     /* 顶部边界线 */
+}
+
+.chat-input-textarea {
+  background: var(--c-input);
+  border: 0.5px solid var(--c-input-border);
+  color: var(--c-text-title);
+  font-size: calc(15px*var(--app-text-scale,1));
+}
+
+.chat-input-actions {
+  gap: 32px;
+  justify-content: center;
+}
+
+/* ── 线下模式 ── */
+.chat-offline-toggle.chat-offline-active {
+  color: var(--c-text-title);
+}
+
+.chat-offline-body {
+  padding: 16px 8px 24px;
+  gap: 12px;
+}
+
+.chat-offline-empty,
+.chat-offline-time {
+  color: var(--c-icon);
+}
+
+.chat-offline-turn {
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--c-card) 56%, transparent);
+  border: 1px solid color-mix(in srgb, var(--c-card-border) 30%, transparent);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.chat-offline-entry {
+  padding: 10px 14px 10px 18px;
+}
+
+.chat-offline-entry + .chat-offline-entry {
+  border-top: 1px solid color-mix(in srgb, var(--c-card-border) 22%, transparent);
+}
+
+.chat-offline-entry[data-role="user"]::before {
+  background: color-mix(in srgb, var(--c-icon) 50%, transparent);
+}
+
+.chat-offline-entry[data-role="assistant"]::before {
+  background: color-mix(in srgb, var(--c-text-title) 38%, transparent);
+}
+
+.chat-offline-label {
+  border-radius: 4px;
+  font-size: calc(11px*var(--app-text-scale,1));
+  font-weight: 600;
+}
+
+.chat-offline-entry[data-role="user"] .chat-offline-label {
+  color: var(--c-icon);
+  background: color-mix(in srgb, var(--c-icon) 10%, transparent);
+}
+
+.chat-offline-entry[data-role="assistant"] .chat-offline-label {
+  color: var(--c-text-title);
+  background: color-mix(in srgb, var(--c-text-title) 7%, transparent);
+}
+
+.chat-offline-text {
+  color: var(--c-text);
+  font-size: calc(14.5px*var(--app-text-scale,1));
+  line-height: 1.85;
+}
+
+.chat-offline-entry[data-role="assistant"] .chat-offline-text {
+  color: var(--c-text-title);
+}
+
+.chat-offline-text[data-active] {
+  background: color-mix(in srgb, var(--c-icon) 8%, transparent);
+}
+
+.chat-offline-summary-fold {
+  background: color-mix(in srgb, var(--c-page-body-bg) 50%, transparent);
+  border-radius: 6px;
+}
+
+.chat-offline-summary-fold > summary,
+.chat-offline-summary-content,
+.chat-offline-generating {
+  color: var(--c-icon);
+}
+
+.chat-offline-summary-content {
+  font-size: calc(13px*var(--app-text-scale,1));
+  line-height: 1.8;
+}
+
+/* ── 语音条 ── */
+.voice-msg-bubble {
+  border-radius: 12px;
+}
+
+.voice-msg-icon {
+  color: var(--c-icon-active);
+}
+
+.voice-msg-bar {
+  background: var(--c-icon);
+}
+
+.voice-msg-bars[data-playing] .voice-msg-bar {
+  background: var(--c-icon-active);
+}
+
+.voice-msg-dur {
+  color: var(--c-text);
+}
+
+/* ── 内心独白（淡薄荷绿毛玻璃） ── */
+.chat-thought-card {
+  background: linear-gradient(135deg, rgba(232, 245, 233, 0.85), rgba(200, 230, 201, 0.70));
+  border: 1px solid rgba(76, 175, 80, 0.25);
+  border-radius: 12px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.chat-thought-title,
+.chat-thought-sig {
+  color: #2E7D32;
+}
+
+.chat-thought-body {
+  color: #2E5D3F;
+}
+
+.chat-monologue-heart[data-active] {
+  color: #e74c5e;
+}
+
+/* ── 卡片消息 ── */
+.chat-red-packet-card,
+.chat-transfer-card,
+.chat-html-inline,
+.chat-music-share-card {
+  background: var(--c-card);
+  border: 1px solid var(--c-card-border);
+  border-radius: 14px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.chat-red-packet-body {
+  background: linear-gradient(135deg, #4CAF50, #2E8B57);   /* 红包改绿色系，和主题融为一体 */
+  color: #ffffff;
+}
+
+.chat-transfer-body {
+  /* background: linear-gradient(135deg, #ffb347, #ff8c2a); */
+}
+
+.ui-media-footer {
+  background: var(--c-card);
+  color: var(--c-text);
+}
+
+.ui-media-footer[data-status="declined"] {
+  color: var(--c-icon);
+}
+
+.chat-html-inline-frame {
+  max-height: min(36vh, 340px);
+}
+
+.chat-thought-card .chat-html-inline-frame {
+  max-height: min(52vh, 420px);
+}
+
+.chat-msg-content-wrap[data-html="true"] {
+  /* 需要让 HTML 消息更宽时可改为：max-width: 100% !important; */
+}
+
+.chat-music-share-title {
+  color: var(--c-text-title);
+}
+
+.chat-music-share-artist {
+  color: var(--c-text);
+}
+
+/* 位置卡片 */
+.chat-location-card {
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+/* 薄荷抹茶系：红包 & 转账卡片*/
+:root {
+  --cute-pay-base-1: #d8f3df;
+  --cute-pay-base-2: #bce8c8;
+  --cute-pay-base-3: #9bd9ad;
+  --cute-pay-patch-1: #f4fff6;
+  --cute-pay-patch-2: #dcf8e4;
+  --cute-pay-patch-3: #c7f0d3;
+  --cute-pay-line: rgba(48, 154, 87, 0.28);
+  --cute-pay-text: #123f25;
+  --cute-pay-soft-text: #346a47;
+  --cute-pay-shadow: rgba(54, 168, 98, 0.12);
+}
+
+/* 最外层：比上一版窄一丢丢，仍保留图示宽度感 */
+.chat-red-packet-card,
+.chat-transfer-card {
+  position: relative !important;
+  width: min(224px, 68vw) !important;
+  max-width: 68vw !important;
+  background: linear-gradient(135deg, var(--cute-pay-base-1) 0%, var(--cute-pay-base-2) 58%, var(--cute-pay-base-3) 100%) !important;
+  background-color: var(--cute-pay-base-2) !important;
+  border: 1px solid color-mix(in srgb, var(--cute-pay-base-2) 82%, #ffffff) !important;
+  border-radius: 14px !important;
+  overflow: hidden !important;
+  box-shadow: 0 3px 10px var(--cute-pay-shadow), 0 1px 3px rgba(54, 168, 98, 0.08) !important;
+}
+
+/* 可能存在的媒体包裹层透明化，避免旧白底/边缘露出来 */
+.chat-red-packet-card .chat-bubble-media,
+.chat-transfer-card .chat-bubble-media,
+.chat-red-packet-card [class*="media"],
+.chat-transfer-card [class*="media"] {
+  background: transparent !important;
+  background-color: transparent !important;
+  border-radius: inherit !important;
+  overflow: hidden !important;
+}
+
+/* 主体：横排，让原生红包/转账图标与文字并排 */
+.chat-red-packet-body,
+.chat-transfer-body {
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 9px !important;
+  width: auto !important;
+  min-height: 0 !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+  margin: 0 !important;
+  padding: 8px 46px 8px 15px !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  color: var(--cute-pay-text) !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.34);
+}
+
+/* 清掉主体伪元素铺底，防止又变成内嵌整块面板 */
+.chat-red-packet-body::after,
+.chat-transfer-body::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* 原生图标：固定在左侧，与文字并排 */
+.chat-red-packet-body > :first-child,
+.chat-transfer-body > :first-child {
+  flex: 0 0 auto !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 !important;
+}
+
+.chat-red-packet-body > :first-child svg,
+.chat-transfer-body > :first-child svg,
+.chat-red-packet-body > :first-child img,
+.chat-transfer-body > :first-child img {
+  width: 25px !important;
+  height: 25px !important;
+  display: block !important;
+}
+
+/* 文字区：跟图标同排，允许自己收缩，不顶到右侧苹果水印 */
+.chat-red-packet-body > :not(:first-child),
+.chat-transfer-body > :not(:first-child) {
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+}
+
+.chat-red-packet-body > *,
+.chat-transfer-body > *,
+.chat-red-packet-body div,
+.chat-transfer-body div,
+.chat-red-packet-body span,
+.chat-transfer-body span {
+  position: relative !important;
+  z-index: 2 !important;
+  color: var(--cute-pay-text) !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  line-height: 1.20 !important;
+  letter-spacing: 0.01em !important;
+}
+
+.chat-red-packet-body *,
+.chat-transfer-body * {
+  color: var(--cute-pay-text) !important;
+}
+
+/* 青苹果：继续作为右侧淡水印，不参与排版 */
+.chat-red-packet-body::before,
+.chat-transfer-body::before {
+  content: "🍏" !important;
+  position: absolute !important;
+  z-index: 1 !important;
+  right: 14px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  font-size: 25px !important;
+  line-height: 1 !important;
+  opacity: 0.30 !important;
+  filter: saturate(1.08) !important;
+  pointer-events: none !important;
+}
+
+/* 下层说明：贴片压扁一点，跟随当前微窄宽度 */
+.chat-red-packet-card .ui-media-footer,
+.chat-transfer-card .ui-media-footer {
+  position: relative !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 5px 16px 6px !important;
+  background: linear-gradient(135deg, var(--cute-pay-patch-1) 0%, var(--cute-pay-patch-2) 58%, var(--cute-pay-patch-3) 100%) !important;
+  background-color: var(--cute-pay-patch-2) !important;
+  color: var(--cute-pay-soft-text) !important;
+  border-top: 1px solid var(--cute-pay-line) !important;
+  line-height: 1.18 !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.38) !important;
+}
+
+.chat-red-packet-card .ui-media-footer *,
+.chat-transfer-card .ui-media-footer * {
+  color: var(--cute-pay-soft-text) !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  line-height: 1.18 !important;
+  letter-spacing: 0.01em !important;
+}
+
+.chat-red-packet-card:active,
+.chat-transfer-card:active {
+  transform: scale(0.99);
+}
+
+.chat-red-packet-card .ui-media-footer[data-status="declined"],
+.chat-transfer-card .ui-media-footer[data-status="declined"] {
+  color: #557962 !important;
+  background: linear-gradient(135deg, rgba(244,255,246,0.92), rgba(220,248,228,0.92)) !important;
+  background-color: rgba(220, 248, 228, 0.92) !important;
+}
