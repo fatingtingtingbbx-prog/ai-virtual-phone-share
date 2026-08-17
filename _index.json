@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-17T01:32:24.710Z",
+  "generatedAt": "2026-08-17T02:18:34.629Z",
   "folders": [
     {
       "name": "A 重要须知（自部署版请查看）",
@@ -9,7 +9,7 @@
     },
     {
       "name": "BUG反馈专用文件夹",
-      "count": 5
+      "count": 4
     },
     {
       "name": "Js插件",
@@ -82,20 +82,6 @@
       "avatar": "资源/BUG反馈专用文件夹/[花][花]在这里留下项目中的bug[花][花]/.avatar.png",
       "ownerHash": "72adb7d77211b0354bc8d30ad6f28de6e6ba7e1047ed9ec1c80c1ab683f98f11",
       "updatedAt": "2026-08-14T05:31:17+08:00"
-    },
-    {
-      "folder": "BUG反馈专用文件夹",
-      "name": "api",
-      "dirName": "api",
-      "type": "dir",
-      "path": "资源/BUG反馈专用文件夹/api",
-      "files": [],
-      "images": [],
-      "description": "克的有些模型刷新不了小红书和购物，只能切换到哈基米才行🥲",
-      "author": "",
-      "avatar": "",
-      "ownerHash": "f6b523d27d046c892f2039645dbfd76d4030797974f2ea92c5b8abd974dbe306",
-      "updatedAt": "2026-08-17T09:32:11+08:00"
     },
     {
       "folder": "BUG反馈专用文件夹",
