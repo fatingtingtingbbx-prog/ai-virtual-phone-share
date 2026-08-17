@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-17T11:23:42.198Z",
+  "generatedAt": "2026-08-17T11:26:33.897Z",
   "folders": [
     {
       "name": "A 重要须知（自部署版请查看）",
@@ -37,7 +37,7 @@
     },
     {
       "name": "消息列表美化",
-      "count": 1
+      "count": 2
     },
     {
       "name": "游戏",
@@ -825,6 +825,24 @@
       "avatar": "资源/气泡美化/仿古早消息气泡/.avatar.png",
       "ownerHash": "9255ec1277ace06ef7aebf6566a04ad2844f9b543a7b06e6b1b0b7fe619d781c",
       "updatedAt": "2026-08-14T10:16:41+08:00"
+    },
+    {
+      "folder": "消息列表美化",
+      "name": "仿KakaoTalk",
+      "dirName": "仿KakaoTalk",
+      "type": "dir",
+      "path": "资源/消息列表美化/仿KakaoTalk",
+      "files": [
+        "资源/消息列表美化/仿KakaoTalk/【列表】仿kkt.txt"
+      ],
+      "images": [
+        "资源/消息列表美化/仿KakaoTalk/IMG_20260817_190711.jpg"
+      ],
+      "description": "✅二改自用\n🚫二传二卖\n\n可直接检索「About Me」替换昵称，检索「%EB%A7%B9%EC%84%B8%EB%8A%94%20%EC%8B%9C%EC%B0%A8%EA%B0%80%20%EC%9E%88%EB%8A%94%20%EB%B9%84%EC%9D%B4%EB%8B%A4」替换韩文文案，替换文案前要先让AI把文案转为URL编码\n建议让AI帮忙更改文字内容\n图片URL可自行替换",
+      "author": "木叶淀粉酶",
+      "avatar": "资源/消息列表美化/仿KakaoTalk/.avatar.png",
+      "ownerHash": "9255ec1277ace06ef7aebf6566a04ad2844f9b543a7b06e6b1b0b7fe619d781c",
+      "updatedAt": "2026-08-17T19:26:20+08:00"
     },
     {
       "folder": "消息列表美化",
