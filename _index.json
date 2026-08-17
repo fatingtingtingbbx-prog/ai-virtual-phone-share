@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-17T22:34:05.736Z",
+  "generatedAt": "2026-08-17T22:37:52.080Z",
   "folders": [
     {
       "name": "A 重要须知（自部署版请查看）",
@@ -149,7 +149,7 @@
     },
     {
       "folder": "BUG反馈专用文件夹",
-      "name": "阅读不过",
+      "name": "阅读bug和小红书评论",
       "dirName": "阅读不过",
       "type": "dir",
       "path": "资源/BUG反馈专用文件夹/阅读不过",
@@ -157,11 +157,11 @@
         "资源/BUG反馈专用文件夹/阅读不过/IMG_2003.asset.png"
       ],
       "images": [],
-      "description": "导入文件会变乱码",
+      "description": "导入文件会变乱码 另外小红书生成路人评论会生成user的，不知道该怎么避免",
       "author": "",
       "avatar": "",
       "ownerHash": "7456f6be79f28efc8524849b2ba61bed37b61368adf52d1f435c942224bb3ca3",
-      "updatedAt": "2026-08-17T14:04:33+08:00"
+      "updatedAt": "2026-08-18T06:37:42+08:00"
     },
     {
       "folder": "BUG反馈专用文件夹",
