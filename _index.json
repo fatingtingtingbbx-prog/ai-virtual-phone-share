@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-17T06:02:44.657Z",
+  "generatedAt": "2026-08-17T06:04:49.280Z",
   "folders": [
     {
       "name": "A 重要须知（自部署版请查看）",
@@ -9,7 +9,7 @@
     },
     {
       "name": "BUG反馈专用文件夹",
-      "count": 5
+      "count": 6
     },
     {
       "name": "Js插件",
@@ -126,6 +126,22 @@
       "avatar": "",
       "ownerHash": "2ca4cea6e4e4c8773995bb139ddd009677c4fe22ed42c19fbc8940ae7b5ef9ae",
       "updatedAt": "2026-08-16T02:32:49+08:00"
+    },
+    {
+      "folder": "BUG反馈专用文件夹",
+      "name": "阅读不过",
+      "dirName": "阅读不过",
+      "type": "dir",
+      "path": "资源/BUG反馈专用文件夹/阅读不过",
+      "files": [
+        "资源/BUG反馈专用文件夹/阅读不过/IMG_2003.asset.png"
+      ],
+      "images": [],
+      "description": "导入文件会变乱码",
+      "author": "",
+      "avatar": "",
+      "ownerHash": "7456f6be79f28efc8524849b2ba61bed37b61368adf52d1f435c942224bb3ca3",
+      "updatedAt": "2026-08-17T14:04:33+08:00"
     },
     {
       "folder": "BUG反馈专用文件夹",
