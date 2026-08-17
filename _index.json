@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-17T11:40:08.475Z",
+  "generatedAt": "2026-08-17T11:42:51.775Z",
   "folders": [
     {
       "name": "A 重要须知（自部署版请查看）",
@@ -838,11 +838,11 @@
       "images": [
         "资源/消息列表美化/仿KakaoTalk/IMG_20260817_190711.jpg"
       ],
-      "description": "✅二改自用\n🚫二传二卖\n\n可直接检索「About Me」替换昵称，检索「%EB%A7%B9%EC%84%B8%EB%8A%94%20%EC%8B%9C%EC%B0%A8%EA%B0%80%20%EC%9E%88%EB%8A%94%20%EB%B9%84%EC%9D%B4%EB%8B%A4」替换韩文文案（맹세는 시차가 있는 비이다），替换文案前要先让AI把文案转为URL编码\n建议让AI帮忙更改文字内容\n图片URL可自行替换",
+      "description": "✅二改自用\n🚫二传二卖\n选择 导入-聊天主页css 即可\n\n可直接检索「About Me」替换昵称，检索「%EB%A7%B9%EC%84%B8%EB%8A%94%20%EC%8B%9C%EC%B0%A8%EA%B0%80%20%EC%9E%88%EB%8A%94%20%EB%B9%84%EC%9D%B4%EB%8B%A4」替换韩文文案（맹세는 시차가 있는 비이다），替换文案前要先让AI把文案转为URL编码\n建议让AI帮忙更改文字内容\n图片URL可自行替换",
       "author": "木叶淀粉酶",
       "avatar": "资源/消息列表美化/仿KakaoTalk/.avatar.png",
       "ownerHash": "9255ec1277ace06ef7aebf6566a04ad2844f9b543a7b06e6b1b0b7fe619d781c",
-      "updatedAt": "2026-08-17T19:39:57+08:00"
+      "updatedAt": "2026-08-17T19:42:11+08:00"
     },
     {
       "folder": "消息列表美化",
@@ -856,11 +856,11 @@
       "images": [
         "资源/消息列表美化/仿ins主页/IMG_20260817_190417.jpg"
       ],
-      "description": "[粗]注：[/粗]该美化可能需要自行二改以适配在不同机型的显示，“All”按钮下方的黑色横条是始终在那个位置，是一个固有的bug，介意以上慎用\n✅二改自用\n🚫二传二卖\n文案和头像图片可检索后替换修改，注意不要删掉其他字符\n或者让AI帮忙更改文案（推荐）\n\n可更改的图片URL及文案如下，可截图提取以下内容后让AI进行替换\n头像图片URL：https://i.ibb.co/Q71C39fL/IMG-20260627-181713.jpg\n数字：1,314、520、99\n文案：Across a hundred years and two worlds\nI found no rest\nuntil you became my shore.\nYou are the only soul I chose to keep.\nnot to ferry...\n标签：Renaissance、For me",
+      "description": "[粗]注：[/粗]该美化可能需要自行二改以适配在不同机型的显示，“All”按钮下方的黑色横条是始终在那个位置，是一个固有的bug，介意以上慎用\n✅二改自用\n🚫二传二卖\n选择 导入-聊天主页css 即可\n文案和头像图片可检索后替换修改，注意不要删掉其他字符\n或者让AI帮忙更改文案（推荐）\n\n可更改的图片URL及文案如下，可截图提取以下内容后让AI进行替换\n头像图片URL：https://i.ibb.co/Q71C39fL/IMG-20260627-181713.jpg\n数字：1,314、520、99\n文案：Across a hundred years and two worlds\nI found no rest\nuntil you became my shore.\nYou are the only soul I chose to keep.\nnot to ferry...\n标签：Renaissance、For me",
       "author": "木叶淀粉酶",
       "avatar": "资源/消息列表美化/仿ins主页/.avatar.png",
       "ownerHash": "9255ec1277ace06ef7aebf6566a04ad2844f9b543a7b06e6b1b0b7fe619d781c",
-      "updatedAt": "2026-08-17T19:29:09+08:00"
+      "updatedAt": "2026-08-17T19:42:39+08:00"
     },
     {
       "folder": "游戏",
