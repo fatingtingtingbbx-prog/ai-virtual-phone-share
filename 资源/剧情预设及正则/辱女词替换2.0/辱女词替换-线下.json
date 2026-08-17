@@ -1,0 +1,788 @@
+{
+  "name": "辱女词替换-线下",
+  "description": "仅线下场景，仅显示时生效",
+  "rules": [
+    {
+      "id": "regex-offline-000",
+      "scriptName": "辱女词替换-仅显示时",
+      "findRegex": "/草泥马|草你妈|草你妹|操你妹|操你妈|日你妈/g",
+      "replaceString": "骟你爹",
+      "tags": [
+        "offline"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-offline-001",
+      "scriptName": "辱女词替换-仅显示时",
+      "findRegex": "/头发长见识短/g",
+      "replaceString": "见识短",
+      "tags": [
+        "offline"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-offline-002",
+      "scriptName": "辱女词替换-仅显示时",
+      "findRegex": "/你妈了个逼|泥马勒戈壁|你麻痹|你妈逼/g",
+      "replaceString": "你爹个蛋",
+      "tags": [
+        "offline"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-offline-003",
+      "scriptName": "辱女词替换-仅显示时",
+      "findRegex": "/去他娘的|去他妈的/g",
+      "replaceString": "去他爹的",
+      "tags": [
+        "offline"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-offline-006",
+      "scriptName": "辱女词替换-仅显示时",
+      "findRegex": "/干你娘/g",
+      "replaceString": "干你爹",
+      "tags": [
+        "offline"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-offline-007",
+      "scriptName": "辱女词替换-仅显示时",
+      "findRegex": "/日你娘/g",
+      "replaceString": "日你爹",
+      "tags": [
+        "offline"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-offline-008",
+      "scriptName": "辱女词替换-仅显示时",
+      "findRegex": "/操你大爷/g",
+      "replaceString": "骟你大爷",
+      "tags": [
+        "offline"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-offline-009",
+      "scriptName": "辱女词替换-仅显示时",
+      "findRegex": "/胸大无脑/g",
+      "replaceString": "无脑",
+      "tags": [
+        "offline"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-offline-010",
+      "scriptName": "辱女词替换-仅显示时",
+      "findRegex": "/婆婆妈妈/g",
+      "replaceString": "公公爹爹",
+      "tags": [
+        "offline"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-offline-011",
+      "scriptName": "辱女词替换-仅显示时",
+      "findRegex": "/你奶奶的/g",
+      "replaceString": "你爷爷的",
+      "tags": [
+        "offline"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-offline-012",
+      "scriptName": "辱女词替换-仅显示时",
+      "findRegex": "/靠恁娘/g",
+      "replaceString": "靠恁爹",
+      "tags": [
+        "offline"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-offline-013",
+      "scriptName": "辱女词替换-仅显示时",
+      "findRegex": "/娘希匹/g",
+      "replaceString": "爹希匹",
+      "tags": [
+        "offline"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-offline-014",
+      "scriptName": "辱女词替换-仅显示时",
+      "findRegex": "/我操|卧槽/g",
+      "replaceString": "我骟",
+      "tags": [
+        "offline"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-offline-015",
+      "scriptName": "辱女词替换-仅显示时",
+      "findRegex": "/日你/g",
+      "replaceString": "骟你",
+      "tags": [
+        "offline"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-offline-016",
+      "scriptName": "辱女词替换-仅显示时",
+      "findRegex": "/(傻|装|事|事儿|你个)逼/g",
+      "replaceString": "$1吊",
+      "tags": [
+        "offline"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-offline-017",
+      "scriptName": "辱女词替换-仅显示时",
+      "findRegex": "/牛逼/g",
+      "replaceString": "牛根",
+      "tags": [
+        "offline"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-offline-018",
+      "scriptName": "辱女词替换-仅显示时",
+      "findRegex": "/[Ss][Bb]/g",
+      "replaceString": "傻叉",
+      "tags": [
+        "offline"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-offline-019",
+      "scriptName": "辱女词替换-仅显示时",
+      "findRegex": "/婊子/g",
+      "replaceString": "龟公",
+      "tags": [
+        "offline"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-offline-020",
+      "scriptName": "辱女词替换-仅显示时",
+      "findRegex": "/骚货/g",
+      "replaceString": "骚男",
+      "tags": [
+        "offline"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-offline-021",
+      "scriptName": "辱女词替换-仅显示时",
+      "findRegex": "/荡妇/g",
+      "replaceString": "荡夫",
+      "tags": [
+        "offline"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-offline-022",
+      "scriptName": "辱女词替换-仅显示时",
+      "findRegex": "/破鞋/g",
+      "replaceString": "破帽",
+      "tags": [
+        "offline"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-offline-023",
+      "scriptName": "辱女词替换-仅显示时",
+      "findRegex": "/贱人/g",
+      "replaceString": "贱男",
+      "tags": [
+        "offline"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-offline-024",
+      "scriptName": "辱女词替换-仅显示时",
+      "findRegex": "/母狗|剩女|男人婆/g",
+      "replaceString": "",
+      "tags": [
+        "offline"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-offline-025",
+      "scriptName": "辱女词替换-仅显示时",
+      "findRegex": "/妓女|娼妇/g",
+      "replaceString": "性工作者",
+      "tags": [
+        "offline"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-offline-026",
+      "scriptName": "辱女词替换-仅显示时",
+      "findRegex": "/姘头/g",
+      "replaceString": "情人",
+      "tags": [
+        "offline"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-offline-027",
+      "scriptName": "辱女词替换-仅显示时",
+      "findRegex": "/老女人/g",
+      "replaceString": "老人",
+      "tags": [
+        "offline"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-offline-028",
+      "scriptName": "辱女词替换-仅显示时",
+      "findRegex": "/泼妇/g",
+      "replaceString": "泼夫",
+      "tags": [
+        "offline"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-offline-029",
+      "scriptName": "辱女词替换-仅显示时",
+      "findRegex": "/怨妇/g",
+      "replaceString": "怨夫",
+      "tags": [
+        "offline"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-offline-030",
+      "scriptName": "辱女词替换-仅显示时",
+      "findRegex": "/事儿妈/g",
+      "replaceString": "事儿爹",
+      "tags": [
+        "offline"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-offline-031",
+      "scriptName": "辱女词替换-仅显示时",
+      "findRegex": "/长舌妇/g",
+      "replaceString": "长舌夫",
+      "tags": [
+        "offline"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-offline-032",
+      "scriptName": "辱女词替换-仅显示时",
+      "findRegex": "/母夜叉/g",
+      "replaceString": "夜叉",
+      "tags": [
+        "offline"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-offline-034",
+      "scriptName": "辱女词替换-仅显示时",
+      "findRegex": "/二奶/g",
+      "replaceString": "第三者",
+      "tags": [
+        "offline"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-offline-035",
+      "scriptName": "辱女词替换-仅显示时",
+      "findRegex": "/老天爷/g",
+      "replaceString": "老天奶",
+      "tags": [
+        "offline"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-offline-036",
+      "scriptName": "辱女词替换-仅显示时",
+      "findRegex": "/父母/g",
+      "replaceString": "母父",
+      "tags": [
+        "offline"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-offline-037",
+      "scriptName": "辱女词替换-仅显示时",
+      "findRegex": "/爸妈/g",
+      "replaceString": "妈爸",
+      "tags": [
+        "offline"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-offline-038",
+      "scriptName": "辱女词替换-仅显示时",
+      "findRegex": "/嫉妒/g",
+      "replaceString": "忮忌",
+      "tags": [
+        "offline"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-offline-039",
+      "scriptName": "辱女词替换-仅显示时",
+      "findRegex": "/嫌弃/g",
+      "replaceString": "慊弃",
+      "tags": [
+        "offline"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-offline-040",
+      "scriptName": "辱女词替换-仅显示时",
+      "findRegex": "/嫖娼/g",
+      "replaceString": "剽倡",
+      "tags": [
+        "offline"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-offline-041",
+      "scriptName": "辱女词替换-仅显示时",
+      "findRegex": "/白嫖/g",
+      "replaceString": "白剽",
+      "tags": [
+        "offline"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-offline-042",
+      "scriptName": "辱女词替换-仅显示时",
+      "findRegex": "/强奸/g",
+      "replaceString": "强仠",
+      "tags": [
+        "offline"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-offline-043",
+      "scriptName": "辱女词替换-仅显示时",
+      "findRegex": "/把妹王/g",
+      "replaceString": "逗弟主",
+      "tags": [
+        "offline"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-offline-044",
+      "scriptName": "辱女词替换-仅显示时",
+      "findRegex": "/英雄/g",
+      "replaceString": "英雌",
+      "tags": [
+        "offline"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-offline-045",
+      "scriptName": "辱女词替换-仅显示时",
+      "findRegex": "/(我|谁)他妈/g",
+      "replaceString": "$1他爹",
+      "tags": [
+        "offline"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-offline-046",
+      "scriptName": "辱女词替换-仅显示时",
+      "findRegex": "/去你妈的/g",
+      "replaceString": "去你爹的",
+      "tags": [
+        "offline"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-offline-047",
+      "scriptName": "辱女词替换-仅显示时",
+      "findRegex": "/你他妈/g",
+      "replaceString": "你他爹",
+      "tags": [
+        "offline"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-offline-048",
+      "scriptName": "辱女词替换-仅显示时",
+      "findRegex": "/妈呀大姐/g",
+      "replaceString": "爸呀大哥",
+      "tags": [
+        "offline"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    }
+  ]
+}
