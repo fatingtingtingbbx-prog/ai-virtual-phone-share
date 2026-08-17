@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-17T15:39:40.331Z",
+  "generatedAt": "2026-08-17T16:19:51.875Z",
   "folders": [
     {
       "name": "A 重要须知（自部署版请查看）",
@@ -49,7 +49,7 @@
     },
     {
       "name": "线上聊天状态栏",
-      "count": 3
+      "count": 4
     },
     {
       "name": "线下正则",
@@ -1202,6 +1202,24 @@
       "avatar": "资源/线上美化/黑白猪/.avatar.png",
       "ownerHash": "bf65bc1c732341505dc056c65d6ad17b6862e2c1f0cdf99f70af36a873b438aa",
       "updatedAt": "2026-08-13T15:55:40+08:00"
+    },
+    {
+      "folder": "线上聊天状态栏",
+      "name": "[小猫]低仿ios备忘录",
+      "dirName": "[小猫]低仿ios备忘录",
+      "type": "dir",
+      "path": "资源/线上聊天状态栏/[小猫]低仿ios备忘录",
+      "files": [
+        "资源/线上聊天状态栏/[小猫]低仿ios备忘录/ios备忘录by🦭.json"
+      ],
+      "images": [
+        "资源/线上聊天状态栏/[小猫]低仿ios备忘录/IMG_6458.jpeg"
+      ],
+      "description": "很简单的一款！✊🏻",
+      "author": "🦭",
+      "avatar": "",
+      "ownerHash": "fb97e4a005ece2d3acaa890adcf557cb67003ad7e5dcfd62cb7a1767f70e2a91",
+      "updatedAt": "2026-08-18T00:19:36+08:00"
     },
     {
       "folder": "线上聊天状态栏",
