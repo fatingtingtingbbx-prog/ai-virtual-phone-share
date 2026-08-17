@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-17T08:55:34.450Z",
+  "generatedAt": "2026-08-17T09:08:40.896Z",
   "folders": [
     {
       "name": "A 重要须知（自部署版请查看）",
@@ -37,7 +37,7 @@
     },
     {
       "name": "游戏",
-      "count": 4
+      "count": 5
     },
     {
       "name": "线上美化",
@@ -878,6 +878,22 @@
       "avatar": "",
       "ownerHash": "16a8b52b7fbad80a5064ee67e0745c16315e8e4e1de8c06675d070dbcc88e63c",
       "updatedAt": "2026-08-16T18:13:59+08:00"
+    },
+    {
+      "folder": "游戏",
+      "name": "狼人杀[小猫]",
+      "dirName": "狼人杀[小猫]",
+      "type": "dir",
+      "path": "资源/游戏/狼人杀[小猫]",
+      "files": [
+        "资源/游戏/狼人杀[小猫]/moonhowl-werewolf-crossplay-1.1.1.zip"
+      ],
+      "images": [],
+      "description": "",
+      "author": "",
+      "avatar": "",
+      "ownerHash": "a83d302d611d5e325941dd631935792ebc5cec9debc390f4da5e1166e05cea55",
+      "updatedAt": "2026-08-17T17:08:26+08:00"
     },
     {
       "folder": "游戏",
