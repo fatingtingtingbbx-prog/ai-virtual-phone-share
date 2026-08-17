@@ -1,0 +1,325 @@
+﻿/* 1. 全局：隐藏页面头部用户信息（返回按钮旁的头像/昵称/在线） */
+.page-header-content img {
+  display: none;
+}
+.page-header-content .flex.items-center.gap-\[10px\] > div:first-child {
+  background-color: #fff !important;
+  transform: translateX(-44px);
+  z-index: 2;
+  pointer-events: none;
+}
+.page-header-content .ts-16.font-bold {
+  display: none;
+}
+.page-header-content .mt-1 {
+  display: none;
+}
+
+/* 2. Chats 页面：搜索栏上方昵称 + 状态 + 头像 */
+.px-5.pt-5.pb-3 > .flex.items-center.justify-between.mb-4.mt-2 {
+  display: none;
+}
+.px-5.pt-5.pb-3 {
+  position: relative;
+  padding-top: 96px;
+}
+.px-5.pt-5.pb-3::before {
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' \
+    width='200' height='56' viewBox='0 0 200 56'%3E\
+    %3Ctext x='0' y='26' font-size='19' font-weight='bold' fill='%232C3440' \
+      font-family='-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, sans-serif'%3EFloat%3C/text%3E\
+    %3Ctext x='0' y='49' font-size='13' fill='%23888' \
+      font-family='-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, sans-serif'%3E输入状态信息%3C/text%3E\
+  %3C/svg%3E");
+  position: absolute;
+  top: 18px;
+  left: 20px;
+  width: auto;
+  height: 56px;
+  pointer-events: none;
+  z-index: 2;
+}
+.px-5.pt-5.pb-3::after {
+  content: "";
+  position: absolute;
+  top: 12px;
+  right: 20px;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: url("https://i.ibb.co/Q71C39fL/IMG-20260627-181713.jpg") center/cover no-repeat;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* 3. Chats 页面：搜索框微调 + “服务/显示全部”装饰行 */
+.px-5.pt-5.pb-3 .chat-search-bar {
+  border-radius: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  position: relative;
+  margin-bottom: 32px;
+}
+.px-5.pt-5.pb-3 .chat-search-bar input {
+  line-height: 1.2;
+  padding-top: 0;
+  padding-bottom: 0;
+  font-size: 14px;
+  border-radius: 2px;
+}
+.px-5.pt-5.pb-3 .chat-search-bar svg {
+  width: 13px !important;
+  height: 13px !important;
+}
+
+/* 左侧“服务” */
+.px-5.pt-5.pb-3 .chat-search-bar::before {
+  content: "服务";
+  position: absolute;
+  top: calc(100% + 15px);
+  left: 1px;
+  font-size: 15px;
+  font-weight: bold;
+  color: #000;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* 右侧“显示全部” */
+.px-5.pt-5.pb-3 .chat-search-bar::after {
+  content: "显示全部";
+  position: absolute;
+  top: calc(100% + 15px);
+  right: 1px;
+  font-size: 14px;
+  color: #999;
+  cursor: pointer;
+  pointer-events: auto;
+  transition: transform 0.15s ease, color 0.2s;
+  z-index: 1;
+}
+.px-5.pt-5.pb-3 .chat-search-bar:active::after {
+  transform: scale(0.88);
+  color: #555;
+}
+
+/* 4. 全局头部：加号按钮（替换图标 + 左右装饰） */
+.page-header-right .relative:first-child .page-back-btn svg {
+  display: none;
+}
+.page-header-right .relative:first-child .page-back-btn {
+  background-image: url("https://bee-reg-ab.imagency.cn/e/0405c0cc96e74231e72e82766c59e8fa.png");
+  background-size: auto 27px;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 38px;
+  height: 38px;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  transform: translate(-36px, 4px);
+  transition: transform 0.15s ease;
+}
+.page-header-right .relative:first-child .page-back-btn:active {
+  transform: translate(-36px, 4px) scale(0.88);
+}
+.page-header-right .relative:first-child {
+  position: relative;
+}
+
+/* 左侧装饰图片 */
+.page-header-right .relative:first-child::before {
+  content: "";
+  position: absolute;
+  left: -105px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 62px;
+  height: 32px;
+  background: url("https://bee-reg-ab.imagency.cn/e/4a9468c72b2a4bebae2195b74943e71f.png") center/contain no-repeat;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* 右侧装饰图片 */
+.page-header-right .relative:first-child::after {
+  content: "";
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(calc(-50% + 1px));
+  width: 26px;
+  height: 26px;
+  background: url("https://bee-reg-ab.imagency.cn/e/105779de2e9693bacab39a836c9c5930.png") center/contain no-repeat;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* 5. Chats 页面：分组按钮（图片+小字）+ 下方“群/好友”装饰行 */
+.chat-list-tabs {
+  display: flex;
+  align-items: stretch;
+  padding: 0 20px;
+  margin-bottom: 56px;
+  position: relative;
+  overflow: visible !important;
+}
+
+/* 保证父级不裁切 */
+.px-5.pt-5.pb-3,
+.chat-list-tabs {
+  overflow: visible !important;
+}
+
+/* 三个按钮 + 伪元素共同样式 */
+.chat-list-tabs > button,
+.chat-list-tabs::after {
+  flex: 1 1 0;
+  height: 70px;
+  border: none;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: auto 40px;
+  background-position: center 2px;
+  mix-blend-mode: multiply;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  font-size: 0;
+  color: transparent;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+}
+
+/* 前三个按钮（取消正片叠底） */
+.chat-list-tabs > button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  mix-blend-mode: normal;
+}
+
+/* 第四个按钮（静态装饰） */
+.chat-list-tabs::after {
+  content: "";
+  display: block;
+  background-image: url("https://i.ibb.co/67y2HML2/1786980340597.png");
+  pointer-events: none;
+  cursor: default;
+  background-position: center;
+  background-size: contain;
+}
+
+/* 前三个按钮背景图 */
+.chat-list-tabs > button:nth-child(1) {
+  background-image: url("https://bee-reg-ab.imagency.cn/e/a78a88b29e481192e804fbd36fe17c8e.png");
+}
+.chat-list-tabs > button:nth-child(2) {
+  background-image: url("https://bee-reg-ab.imagency.cn/e/0d2b8d5e360f82023128316cd6a7f6e1.png");
+}
+.chat-list-tabs > button:nth-child(3) {
+  background-image: url("https://bee-reg-ab.imagency.cn/e/7b897524efc72163326877714c6f070b.png");
+}
+
+/* 前三个按钮底部小字 */
+.chat-list-tabs > button::after {
+  content: "";
+  font-size: 10.8px;
+  color: #252525;
+  line-height: 1;
+  text-indent: 0;
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-top: 44px;
+}
+.chat-list-tabs > button:nth-child(1)::after { content: "贴图"; }
+.chat-list-tabs > button:nth-child(2)::after { content: "主题"; }
+.chat-list-tabs > button:nth-child(3)::after { content: "官方账号"; }
+
+.chat-list-tabs > button.active {
+  opacity: 0.8;
+}
+.chat-list-tabs > button:active {
+  opacity: 0.65;
+}
+
+/* 下方装饰行：群 / 好友 + 箭头 */
+.chat-list-tabs::before {
+  content: "群\A 好友";
+  white-space: pre;
+  font-size: 14px;
+  font-weight: bold;
+  color: #000;
+  line-height: 2.2;
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 20px;
+  right: 20px;
+  display: block;
+  pointer-events: none;
+  z-index: 1;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M2 2l4 4 4-4' stroke='%23999' stroke-width='1.5' fill='none'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M2 10l4-4 4 4' stroke='%23999' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position:
+    calc(100% + 1px) 10px,
+    calc(100% + 1px) 38px;
+  background-size: 12px 12px, 12px 12px;
+}
+
+/* 6. 全局聊天列表项通用美化 */
+.minimal-avatar-wrapper {
+  width: 42px !important;
+  height: 42px !important;
+}
+.minimal-online-dot {
+  display: none;
+}
+.minimal-list-item {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+.minimal-list-item .flex-1.overflow-hidden {
+  gap: 5px;
+  height: auto;
+}
+.minimal-list-item .ts-16 {
+  line-height: 1.2;
+}
+.minimal-list-item .ts-13 {
+  line-height: 1.2;
+}
+
+/* 7. 通讯录页面：隐藏标题 + 搜索栏微调 */
+.pt-5.pb-1 {
+  padding-top: 8px;
+  padding-bottom: 0;
+}
+.pt-5.pb-1 > .flex.items-center.justify-between.mb-4.mt-2 {
+  display: none;
+}
+.pt-5.pb-1 .chat-search-bar {
+  border-radius: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  margin-bottom: 2px;
+  position: relative;
+}
+.pt-5.pb-1 .chat-search-bar input {
+  font-size: 14px;
+  border-radius: 2px;
+  line-height: 1.2;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.pt-5.pb-1 .chat-search-bar svg {
+  width: 13px !important;
+  height: 13px !important;
+}
