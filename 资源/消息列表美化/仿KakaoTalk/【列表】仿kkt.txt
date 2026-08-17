@@ -1,0 +1,332 @@
+﻿/* ========== 聊天列表侧边栏 ========== */
+
+/* 隐藏 “Chats” 标题整行 */
+.px-5.pt-5.pb-3 > .flex.items-center.justify-between {
+  display: none !important;
+}
+
+/* 搜索栏透明背景，上下内边距 5px */
+.chat-search-bar {
+  background: transparent !important;
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
+}
+
+/* 搜索框左移 */
+.px-5.pt-5.pb-3 .chat-search-bar {
+  margin-left: -10px;
+}
+
+/* 隐藏搜索栏放大镜图标 */
+.chat-search-bar svg {
+  display: none;
+}
+
+/* 只隐藏占位符文字，保留输入内容 */
+.chat-search-input::placeholder {
+  color: transparent !important;
+}
+.chat-search-input {
+  caret-color: auto;
+}
+
+/* 父容器：顶部留空间给头像卡片，背景透明，允许溢出 */
+.px-5.pt-5.pb-3 {
+  position: relative;
+  padding-top: 90px !important;
+  padding-bottom: 0 !important;
+  background: transparent !important;
+  overflow: visible !important;
+}
+
+/* 左侧头像 */
+.px-5.pt-5.pb-3::before {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  width: 64px;
+  height: 64px;
+  background-image: url('https://bee-reg-ab.imagency.cn/e/21f40d4cabdb2eae0976f1ca900115d4.jpg'); /* 👈头像可自行替换 */
+  background-size: cover;
+  background-position: center;
+  border-radius: 24px;
+  border: 1px solid #d0d0d0;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* 右侧文字 + 胶囊按钮（Profile 右移） */
+.px-5.pt-5.pb-3::after {
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='340' height='65' viewBox='0 0 340 65'%3E%3Ctext x='28' y='28' font-family='-apple-system, sans-serif' font-size='20' font-weight='bold' fill='%23333'%3EAbout Me%3C/text%3E%3Ctext x='28' y='52' font-family='-apple-system, sans-serif' font-size='14' fill='%23888'%3E%EB%A7%B9%EC%84%B8%EB%8A%94%20%EC%8B%9C%EC%B0%A8%EA%B0%80%20%EC%9E%88%EB%8A%94%20%EB%B9%84%EC%9D%B4%EB%8B%A4%3C/text%3E%3Crect x='260' y='16' width='74' height='24' rx='12' fill='transparent' stroke='%23d0d0d0' stroke-width='1'/%3E%3Ctext x='297' y='33' font-family='-apple-system, sans-serif' font-size='14' fill='%23333' text-anchor='middle'%3EProfile +%3C/text%3E%3C/svg%3E");
+  position: absolute;
+  top: 15px;
+  left: 72px;
+  width: 340px;
+  height: 65px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* ========== 聊天详情页头部 ========== */
+
+/* 隐藏用户头像容器 */
+.page-header-content .w-\[36px\].h-\[36px\] {
+  display: none !important;
+}
+
+/* 隐藏昵称和在线状态 */
+.page-header-content .flex.flex-col.whitespace-nowrap {
+  display: none !important;
+}
+
+/* 返回按钮右侧加 “Friends” */
+.page-header-content > span:first-child button.page-back-btn {
+  position: relative;
+}
+.page-header-content > span:first-child button.page-back-btn::after {
+  content: "Friends";
+  position: absolute;
+  left: 100%;
+  margin-left: -2px;
+  top: 50%;
+  transform: translateY(-50%);
+  white-space: nowrap;
+  font-size: 23px;
+  font-weight: bold;
+  color: var(--c-text-title, #333);
+  pointer-events: none;
+}
+
+/* ========== 右侧加号按钮及其装饰 ========== */
+
+.page-header-content > span.page-header-right > span > button.page-back-btn {
+  position: relative;
+  transform: translateX(-40px);
+  width: 30px;
+  height: 30px;
+  background-image: url('https://bee-reg-ab.imagency.cn/e/89be7cf7601c5b2a16504f0b0a0e133c.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: brightness(0) saturate(100%);
+}
+.page-header-content > span.page-header-right > span > button.page-back-btn svg {
+  display: none;
+}
+.page-header-content > span.page-header-right > span > button.page-back-btn::before {
+  content: "";
+  position: absolute;
+  left: -46px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 28px;
+  height: 28px;
+  background-image: url('https://bee-reg-ab.imagency.cn/e/8b0fca8fe1dc4bf6ab9573801c8e498e.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: brightness(0) saturate(100%);
+  pointer-events: none;
+}
+.page-header-content > span.page-header-right > span > button.page-back-btn::after {
+  content: "";
+  position: absolute;
+  right: -40px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 28px;
+  height: 28px;
+  background-image: url('https://bee-reg-ab.imagency.cn/e/e2b698063d497747959c018ae19ea407.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: brightness(0) saturate(100%);
+  pointer-events: none;
+}
+
+/* ========== 分组按钮及装饰行 ========== */
+
+/* 分组按钮容器 */
+.chat-list-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  padding: 4px 20px 16px;
+  margin-top: 48px;
+  margin-bottom: 40px;
+  position: relative;
+  background: transparent !important;
+  overflow: visible !important;
+  z-index: 5;
+}
+
+/* 上方装饰行：更新的个人资料 + 箭头 */
+.chat-list-tabs::before {
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='20' viewBox='0 0 420 20'%3E%3Ctext x='20' y='15' font-family='-apple-system, sans-serif' font-size='14' fill='%23444'%3E%E6%9B%B4%E6%96%B0%E7%9A%84%E4%B8%AA%E4%BA%BA%E8%B5%84%E6%96%99%3C/text%3E%3Cpath d='M2 10l4-4 4 4' stroke='%23999' stroke-width='1.5' fill='none' transform='translate(390,3) scale(1.2)'/%3E%3C/svg%3E");
+  position: absolute;
+  top: -48px;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  pointer-events: none;
+  z-index: 100;
+}
+
+/* 下方装饰行：好友 + 箭头 */
+.chat-list-tabs::after {
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='20' viewBox='0 0 420 20'%3E%3Ctext x='20' y='15' font-family='-apple-system, sans-serif' font-size='14' fill='%23444'%3E%E5%A5%BD%E5%8F%8B%3C/text%3E%3Cpath d='M2 10l4-4 4 4' stroke='%23999' stroke-width='1.5' fill='none' transform='translate(390,3) scale(1.2)'/%3E%3C/svg%3E");
+  position: absolute;
+  bottom: -40px;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  pointer-events: none;
+  z-index: 100;
+}
+
+/* 分组按钮样式 */
+.chat-list-tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px 14px;
+  font-size: 13px;
+  color: #252525;
+  line-height: 1.3;
+  border-radius: 8px;
+  transition: none;
+}
+
+.chat-list-tab:hover,
+.chat-list-tab:active,
+.chat-list-tab:focus {
+  background: transparent !important;
+  outline: none;
+}
+
+/* 按钮上方图片 */
+.chat-list-tab::before {
+  content: "";
+  display: block;
+  width: 46px;
+  height: 46px;
+  border-radius: 16px;
+  border: 1px solid #d0d0d0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  flex-shrink: 0;
+}
+
+/* 三个按钮的图片 */
+.chat-list-tab:nth-child(1)::before {
+  background-image: url('https://bee-reg-ab.imagency.cn/e/513ebffd527732fd5ef06c29615ee5cc.jpg'); /* 👈图片可自行替换 */
+}
+.chat-list-tab:nth-child(2)::before {
+  background-image: url('https://bee-reg-ab.imagency.cn/e/5de83be58647e97cbff363c957e5defa.jpg'); /* 👈图片可自行替换 */
+}
+.chat-list-tab:nth-child(3)::before {
+  background-image: url('https://bee-reg-ab.imagency.cn/e/a17938f9693953c0fc59659f5780627d.jpg'); /* 👈图片可自行替换 */
+}
+
+.chat-list-tab.active {
+  font-weight: bold;
+  color: #252525 !important;
+}
+
+/* 分组按钮左偏移 */
+.chat-list-tab:nth-child(1) {
+  transform: translateX(-14px);
+}
+.chat-list-tab:nth-child(2) {
+  transform: translateX(-30px);
+}
+.chat-list-tab:nth-child(3) {
+  transform: translateX(-46px);
+}
+
+/* ========== 聊天列表头像及在线状态点 ========== */
+
+/* 修改列表头像尺寸、圆角及边框 */
+.minimal-avatar-wrapper img {
+  width: 46px !important;
+  height: 46px !important;
+  border-radius: 18px !important;
+  border: 1px solid #d0d0d0;      /* 👈 添加灰色边框 */
+  object-fit: cover;
+}
+
+/* 确保头像容器尺寸一致 */
+.minimal-avatar-wrapper {
+  width: 46px;
+  height: 46px;
+  border-radius: 18px !important;
+  position: relative;
+}
+
+/* 在线状态点改为红色，并移至左上角 */
+.minimal-online-dot {
+  background-color: red !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: auto !important;
+  bottom: auto !important;
+}
+
+/* ========== 聊天列表项间距调整 ========== */
+
+/* 每条列表项上下内间距设为 8px */
+.minimal-list-item {
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
+}
+
+/* 通讯录页面隐藏标题 */
+.pt-5.pb-1 {
+  padding-top: 8px;
+  padding-bottom: 0;
+}
+.pt-5.pb-1 > .flex.items-center.justify-between.mb-4.mt-2 {
+  display: none;
+}
+
+/* ========== 重置特定搜索栏（Search contacts）为原始样式 ========== */
+
+/* 恢复搜索栏背景和上下内边距 */
+.pt-5.pb-1 .chat-search-bar {
+  background: revert !important;
+  padding-top: revert !important;
+  padding-bottom: revert !important;
+  margin-left: -15px;               /* 👈 左移距离，可自行调整 */
+  margin-top: 12px;
+}
+
+/* 恢复搜索栏内部的放大镜图标 */
+.pt-5.pb-1 .chat-search-bar svg {
+  display: block !important;
+}
+
+/* 恢复输入文字颜色 */
+.pt-5.pb-1 .chat-search-input {
+  color: var(--c-text-title) !important;
+}
+
+/* 恢复占位符文字颜色 */
+.pt-5.pb-1 .chat-search-input::placeholder {
+  color: var(--c-icon) !important;
+}
+
+/* 隐藏蓝色圆形背景图标对应的 "New Friends" 项（不使用 :has） */
+.minimal-list-item > div[class*="bg-\[var(--c-action-blue"] {
+  display: none;
+}
+.minimal-list-item > div[class*="bg-\[var(--c-action-blue"] + div {
+  display: none;
+}
