@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-17T05:38:31.340Z",
+  "generatedAt": "2026-08-17T05:39:55.336Z",
   "folders": [
     {
       "name": "A 重要须知（自部署版请查看）",
@@ -588,7 +588,7 @@
     },
     {
       "folder": "应用",
-      "name": "情侣空间by小玉[爱心]",
+      "name": "WithU v1.1 by小玉[爱心]",
       "dirName": "情侣空间by小玉[爱心]",
       "type": "dir",
       "path": "资源/应用/情侣空间by小玉[爱心]",
@@ -596,11 +596,11 @@
         "资源/应用/情侣空间by小玉[爱心]/WithU_v1_2.zip"
       ],
       "images": [],
-      "description": "",
+      "description": "情侣空间",
       "author": "玉米须女工",
       "avatar": "资源/应用/情侣空间by小玉[爱心]/.avatar.png",
       "ownerHash": "b022d2f2f3bc654be53ee75c0fb6e1d8805f0115c3c39ea57a76d5a12ae8340d",
-      "updatedAt": "2026-08-17T13:36:23+08:00"
+      "updatedAt": "2026-08-17T13:39:41+08:00"
     },
     {
       "folder": "应用",
