@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-17T05:36:35.905Z",
+  "generatedAt": "2026-08-17T05:38:31.340Z",
   "folders": [
     {
       "name": "A 重要须知（自部署版请查看）",
@@ -29,7 +29,7 @@
     },
     {
       "name": "应用",
-      "count": 19
+      "count": 20
     },
     {
       "name": "气泡美化",
@@ -411,6 +411,22 @@
       "avatar": "资源/应用/Whisper耳边私语/.avatar.png",
       "ownerHash": "72adb7d77211b0354bc8d30ad6f28de6e6ba7e1047ed9ec1c80c1ab683f98f11",
       "updatedAt": "2026-08-14T05:48:28+08:00"
+    },
+    {
+      "folder": "应用",
+      "name": "YUMI MAP v1.1[幽灵]",
+      "dirName": "YUMI MAP v1.1[幽灵]",
+      "type": "dir",
+      "path": "资源/应用/YUMI MAP v1.1[幽灵]",
+      "files": [
+        "资源/应用/YUMI MAP v1.1[幽灵]/YUMI MAP v1.1 (1).zip"
+      ],
+      "images": [],
+      "description": "高自由度地图应用/小红书@玉米须女工",
+      "author": "玉米须女工",
+      "avatar": "资源/应用/YUMI MAP v1.1[幽灵]/.avatar.png",
+      "ownerHash": "b022d2f2f3bc654be53ee75c0fb6e1d8805f0115c3c39ea57a76d5a12ae8340d",
+      "updatedAt": "2026-08-17T13:38:17+08:00"
     },
     {
       "folder": "应用",
