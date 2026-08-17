@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-17T06:06:10.482Z",
+  "generatedAt": "2026-08-17T06:08:54.375Z",
   "folders": [
     {
       "name": "A 重要须知（自部署版请查看）",
@@ -940,6 +940,7 @@
       "type": "dir",
       "path": "资源/线上美化/【聊天室】青苹果",
       "files": [
+        "资源/线上美化/【聊天室】青苹果/青苹果 .css",
         "资源/线上美化/【聊天室】青苹果/青苹果 （新编）.css"
       ],
       "images": [
@@ -950,7 +951,7 @@
       "author": "xixi828",
       "avatar": "资源/线上美化/【聊天室】青苹果/.avatar.png",
       "ownerHash": "d23c4a5877ea9d4ad2c2109fd88c648da108f59ebf8d61b80ea0c3aa25fd4ce9",
-      "updatedAt": "2026-08-17T14:00:13+08:00"
+      "updatedAt": "2026-08-17T14:08:37+08:00"
     },
     {
       "folder": "线上美化",
