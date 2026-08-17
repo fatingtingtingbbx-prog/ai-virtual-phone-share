@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-17T02:18:34.629Z",
+  "generatedAt": "2026-08-17T02:38:14.732Z",
   "folders": [
     {
       "name": "A 重要须知（自部署版请查看）",
@@ -9,7 +9,7 @@
     },
     {
       "name": "BUG反馈专用文件夹",
-      "count": 4
+      "count": 5
     },
     {
       "name": "Js插件",
@@ -96,6 +96,20 @@
       "avatar": "",
       "ownerHash": "fb962c4fceef95a258ac55e1fab9a3cb0bd1440197814a757957ec7d3234aa5e",
       "updatedAt": "2026-08-13T17:13:53+08:00"
+    },
+    {
+      "folder": "BUG反馈专用文件夹",
+      "name": "应用白屏",
+      "dirName": "应用白屏",
+      "type": "dir",
+      "path": "资源/BUG反馈专用文件夹/应用白屏",
+      "files": [],
+      "images": [],
+      "description": "在资源集市里导入应用之后 应用打开好像一直是白屏 后面也有尝试导入整包在应用市场里面 但好像都一样白屏打不开内容",
+      "author": "",
+      "avatar": "",
+      "ownerHash": "107d8cb7f78be8e5efb101184ea19c43f9a63a493748eb76bc162bb0dbc38715",
+      "updatedAt": "2026-08-17T10:38:01+08:00"
     },
     {
       "folder": "BUG反馈专用文件夹",
