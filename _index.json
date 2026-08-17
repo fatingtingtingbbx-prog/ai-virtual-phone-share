@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-17T08:19:57.480Z",
+  "generatedAt": "2026-08-17T08:55:34.450Z",
   "folders": [
     {
       "name": "A 重要须知（自部署版请查看）",
@@ -508,12 +508,14 @@
       "files": [
         "资源/应用/[幽灵]仿OnlyFans/onlyfans.clone-1.0.1.zip"
       ],
-      "images": [],
+      "images": [
+        "资源/应用/[幽灵]仿OnlyFans/IMG_2671.jpeg"
+      ],
       "description": "因为最近痴迷于网黄梗，于是这个app诞生了。",
       "author": "Zzz",
       "avatar": "资源/应用/[幽灵]仿OnlyFans/.avatar.png",
       "ownerHash": "4c5a389c9b5a488af6c850b9573f167bd072aa6b1d5a4c2884f314e05e1ca5e5",
-      "updatedAt": "2026-08-17T14:23:00+08:00"
+      "updatedAt": "2026-08-17T16:55:20+08:00"
     },
     {
       "folder": "应用",
