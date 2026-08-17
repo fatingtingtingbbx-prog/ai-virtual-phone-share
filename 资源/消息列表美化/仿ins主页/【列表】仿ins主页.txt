@@ -1,0 +1,316 @@
+﻿/* ═══ 消息列表仿 Instagram 美化样式 ═══ */
+
+/* ── 1. 标题栏：隐藏头像、在线状态，调整昵称大小 ── */
+.page-header-content .flex.items-center.gap-\[10px\] > .w-\[36px\].h-\[36px\] {
+  display: none !important;
+}
+.page-header-content .flex.items-center.gap-1.mt-1 {
+  display: none !important;
+}
+.page-header-content .ts-16.font-bold {
+  font-size: 22px !important;
+  font-weight: 700 !important;
+  margin-left: 3px !important;
+}
+
+/* 标题栏整体左内边距 */
+.page-header-content .flex.items-center.min-w-max {
+  padding-left: 4px !important;
+}
+
+/* 返回按钮：逆时针旋转90°，深灰色，缩小图标，紧贴昵称右侧 */
+.page-header-content .flex.items-center.min-w-max > .page-back-btn {
+  order: 2 !important;
+  transform: rotate(-90deg) !important;
+  color: #2C3440 !important;
+  margin-left: -2px !important;
+  margin-right: 0 !important;
+}
+.page-header-content .flex.items-center.min-w-max > .page-back-btn svg {
+  width: 20px !important;
+  height: 20px !important;
+}
+.page-header-content .flex.items-center.min-w-max > div[class*="gap-\[10px\]"] {
+  order: 1 !important;
+}
+
+/* ── 2. 隐藏原来的“Chats”大标题 ── */
+.px-5.pt-5 .ts-28.font-bold {
+  display: none !important;
+}
+
+/* 调整标题区域上下间距 */
+.px-5.pt-5 > .flex.items-center.justify-between {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+.px-5.pt-5 .ts-28.font-bold {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* ── 3. 搜索框外层容器（同时也是个人资料卡片的父容器） ── */
+.px-5.pt-5.pb-3 {
+  position: relative;
+  padding-top: 210px !important;          /* 为头像和资料留出空间 */
+  padding-bottom: 30px !important;        /* 为搜索框下方标签留空 */
+  overflow: visible;
+}
+
+/* 个人资料卡片：头像（左上） */
+.px-5.pt-5.pb-3::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  width: 87px;
+  height: 87px;
+  border-radius: 50%;
+  background-image: url("https://i.ibb.co/Q71C39fL/IMG-20260627-181713.jpg");
+  background-size: cover;
+  background-position: center;
+  border: 3.6px solid #FFFFFF;
+  box-shadow: 0 0 0 3.2px #E0E0E0;
+  box-sizing: border-box;
+  z-index: 2;
+}
+
+/* 个人资料卡片：右侧统计与简介（SVG 背景） */
+.px-5.pt-5.pb-3::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 230px;
+  pointer-events: none;
+  z-index: 1;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: left top;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' font-family='PingFang TC,Noto Sans TC,Heiti TC,sans-serif' width='400' height='230' viewBox='0 0 400 230'%3E%3Ctext x='160' y='46' font-size='15' font-weight='700' fill='%232C3440' text-anchor='middle' dominant-baseline='central'%3E1,314%3C/text%3E%3Ctext x='160' y='66' font-size='14' font-weight='400' fill='%232C3440' text-anchor='middle' dominant-baseline='central'%3E則貼文%3C/text%3E%3Ctext x='260' y='46' font-size='15' font-weight='700' fill='%232C3440' text-anchor='middle' dominant-baseline='central'%3E520%3C/text%3E%3Ctext x='260' y='66' font-size='14' font-weight='400' fill='%232C3440' text-anchor='middle' dominant-baseline='central'%3E位粉絲%3C/text%3E%3Ctext x='360' y='46' font-size='15' font-weight='700' fill='%232C3440' text-anchor='middle' dominant-baseline='central'%3E99%3C/text%3E%3Ctext x='360' y='66' font-size='14' font-weight='400' fill='%232C3440' text-anchor='middle' dominant-baseline='central'%3E追蹤中%3C/text%3E%3Ctext x='18' y='126' font-size='14' fill='%232C3440'%3EAcross a hundred years and two worlds%3C/text%3E%3Ctext x='18' y='148' font-size='14' fill='%232C3440'%3EI found no rest%3C/text%3E%3Ctext x='18' y='170' font-size='14' fill='%232C3440'%3Euntil you became my shore.%3C/text%3E%3Ctext x='18' y='192' font-size='14' fill='%232C3440'%3EYou are the only soul I chose to keep.%3C/text%3E%3Ctext x='18' y='214' font-size='14'%3E%3Ctspan fill='%232C3440'%3Enot to ferry...%3C/tspan%3E%3Ctspan fill='%23A0A3A8'%3E更多%3C/tspan%3E%3C/text%3E%3C/svg%3E");
+}
+
+/* ── 4. 搜索框样式 ── */
+.chat-search-bar {
+  border-radius: 12px !important;
+  padding-top: 6px !important;
+  padding-bottom: 6px !important;
+  margin-top: 10px !important;
+  margin-bottom: 2px !important;
+  background: transparent !important;
+  border: none !important;
+  transform: translateX(-18px);
+}
+.chat-search-bar svg {
+  stroke: #252525 !important;
+}
+.chat-search-input {
+  color: #252525 !important;
+}
+
+/* ── 5. 聊天列表头像（圆形，无在线绿点） ── */
+.minimal-avatar-wrapper {
+  border-radius: 50% !important;
+  overflow: hidden;
+  width: 42px !important;
+  height: 42px !important;
+}
+.minimal-avatar-wrapper img {
+  border-radius: 50% !important;
+  object-fit: cover;
+}
+.minimal-online-dot {
+  display: none !important;
+}
+
+/* ── 6. 聊天列表文字与分割线 ── */
+.minimal-list-item .ts-16 {
+  font-size: 15px !important;
+  line-height: 1.1 !important;
+}
+.minimal-list-item .ts-13 {
+  font-size: 13px !important;
+  line-height: 1.1 !important;
+}
+.minimal-list-item {
+  border-bottom: 1px solid var(--c-card-border, #E0E0E0);
+}
+
+/* ── 7. 顶部右侧：汉堡菜单图标与装饰图片 ── */
+.page-header-right .relative:first-child {
+  display: flex;
+  align-items: center;
+}
+/* 装饰图片（靠右） */
+.page-header-right .relative:first-child::before {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 38px;
+  margin-right: 18px;
+  flex-shrink: 0;
+  background-image: url("https://i.ibb.co/5XbrH1xg/1782562516382.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  pointer-events: none;
+}
+/* 隐藏原返回图标，替换为自定义汉堡线条 */
+.page-header-right .relative:first-child .page-back-btn svg {
+  display: none;
+}
+.page-header-right .relative:first-child .page-back-btn {
+  position: relative;
+  width: 22px;
+  height: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+.page-header-right .relative:first-child .page-back-btn::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 18px;
+  height: 1.8px;
+  background: #2C3440;
+  border-radius: 0.5px;
+  box-shadow: 0 7.4px 0 #2C3440, 0 -7.4px 0 #2C3440;
+}
+
+/* ── 8. 分组标签容器 ── */
+.chat-list-tabs {
+  position: relative;
+  overflow: visible;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 48px !important;
+  padding-bottom: 2px !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* ── 9. 单个标签基础样式 ── */
+.chat-list-tab {
+  flex: 1;
+  text-align: center;
+  position: static;
+  background: transparent !important;
+  border: 0;
+  color: var(--c-text);
+  font-weight: 400;
+  padding: 6px 0;
+  cursor: pointer;
+  transition: color 0.2s;
+  border-radius: 0 !important;
+}
+
+/* 底部装饰横条（固定在第一个标签下方） */
+.chat-list-tab:first-child::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: calc(20px + (100% - 40px) / 6);
+  transform: translateX(-50%);
+  width: 24px;
+  height: 3px;
+  background: #2C3440;
+  border-radius: 0;
+}
+
+.chat-list-tab.active {
+  color: var(--c-text-title) !important;
+  font-weight: 600 !important;
+}
+.chat-list-tab:hover {
+  color: var(--c-text-title);
+}
+
+/* ── 10. 三个装饰按钮（编辑档案、分享档案、图片） ── */
+.chat-list-tab:nth-child(1)::before {
+  content: "編輯個人檔案";
+  position: absolute;
+  top: 6px;
+  left: 16px;
+  width: calc((100% - 78px) / 2);
+  height: 36px;
+  background: #EBEBEB;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: #2C3440;
+  font-weight: 700;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.chat-list-tab:nth-child(2)::before {
+  content: "分享個人檔案";
+  position: absolute;
+  top: 6px;
+  left: calc(16px + (100% - 78px) / 2 + 5px);
+  width: calc((100% - 78px) / 2);
+  height: 36px;
+  background: #EBEBEB;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: #2C3440;
+  font-weight: 700;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.chat-list-tab:nth-child(3)::before {
+  content: "";
+  position: absolute;
+  top: 6px;
+  right: 16px;
+  width: 36px;
+  height: 36px;
+  background-image: url("https://i.ibb.co/F4rBGRwR/1782557509947.jpg");
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ── 11. 隐藏“New Friends”蓝色圆形图标项 ── */
+.minimal-list-item > div[class*="bg-\[var(--c-action-blue"] {
+  display: none;
+}
+.minimal-list-item > div[class*="bg-\[var(--c-action-blue"] + div {
+  display: none;
+}
+
+/* ── 12. 搜索框下方标签栏（仅 Chats 页面） ── */
+.px-5.pt-5.pb-3 .chat-search-bar {
+  position: relative;
+}
+
+.px-5.pt-5.pb-3 .chat-search-bar::after {
+  content: "";
+  position: absolute;
+  top: calc(100% - 7px);
+  left: 15px;
+  width: 100%;
+  height: 40px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' font-family='PingFang TC,Noto Sans TC,Heiti TC,sans-serif' width='240' height='30' viewBox='0 0 240 30'%3E%3Crect x='0' y='2' width='90' height='26' rx='13' fill='transparent' stroke='%23E8E8E8' stroke-width='1'/%3E%3Ctext x='45' y='15.5' font-size='13' fill='%232C3440' text-anchor='middle' dominant-baseline='central'%3ERenaissance%3C/text%3E%3Crect x='100' y='2' width='70' height='26' rx='13' fill='transparent' stroke='%23E8E8E8' stroke-width='1'/%3E%3Ctext x='135' y='15.5' font-size='13' fill='%232C3440' text-anchor='middle' dominant-baseline='central'%3E%3Ctspan font-weight='bold'%3EFor%3C/tspan%3E%3Ctspan font-weight='normal'%3E%20me%3C/tspan%3E%3C/text%3E%3Crect x='180' y='2' width='55' height='26' rx='13' fill='transparent' stroke='%23E8E8E8' stroke-width='1'/%3E%3Cline x1='190' y1='14.8' x2='197' y2='14.8' stroke='%23707378' stroke-width='1' stroke-linecap='round'/%3E%3Cline x1='193.5' y1='11.3' x2='193.5' y2='18.3' stroke='%23707378' stroke-width='1' stroke-linecap='round'/%3E%3Ctext x='203' y='14.8' font-size='11' font-weight='bold' fill='%23707378' text-anchor='start' dominant-baseline='central'%3E%E6%96%B0%E5%A2%9E%3C/text%3E%3C/svg%3E") no-repeat left center;
+  background-size: auto 28px;
+  pointer-events: none;
+}
