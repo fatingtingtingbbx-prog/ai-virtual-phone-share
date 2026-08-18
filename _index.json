@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-18T01:51:58.661Z",
+  "generatedAt": "2026-08-18T03:45:28.117Z",
   "folders": [
     {
       "name": "A 重要须知（自部署版请查看）",
@@ -9,7 +9,7 @@
     },
     {
       "name": "BUG反馈专用文件夹",
-      "count": 8
+      "count": 9
     },
     {
       "name": "Js插件",
@@ -100,6 +100,20 @@
       "avatar": "",
       "ownerHash": "fb962c4fceef95a258ac55e1fab9a3cb0bd1440197814a757957ec7d3234aa5e",
       "updatedAt": "2026-08-13T17:13:53+08:00"
+    },
+    {
+      "folder": "BUG反馈专用文件夹",
+      "name": "密档",
+      "dirName": "密档",
+      "type": "dir",
+      "path": "资源/BUG反馈专用文件夹/密档",
+      "files": [],
+      "images": [],
+      "description": "怎么生成不了",
+      "author": "",
+      "avatar": "",
+      "ownerHash": "4f0ced2a7a36b6f7ec4a59ee0ea589e6a6a0d1acb970b099671899645b6d56ab",
+      "updatedAt": "2026-08-18T11:45:12+08:00"
     },
     {
       "folder": "BUG反馈专用文件夹",
