@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-18T13:20:42.590Z",
+  "generatedAt": "2026-08-18T14:16:09.669Z",
   "folders": [
     {
       "name": "A 重要须知（自部署版请查看）",
@@ -9,7 +9,7 @@
     },
     {
       "name": "BUG反馈专用文件夹",
-      "count": 11
+      "count": 12
     },
     {
       "name": "Js插件",
@@ -33,7 +33,7 @@
     },
     {
       "name": "气泡美化",
-      "count": 3
+      "count": 4
     },
     {
       "name": "消息列表美化",
@@ -176,6 +176,22 @@
       "avatar": "",
       "ownerHash": "c796298c0645c7cecdb67c1a64ebcb1fed2c42b5d38f439b1801adb9ae302e1f",
       "updatedAt": "2026-08-18T08:02:34+08:00"
+    },
+    {
+      "folder": "BUG反馈专用文件夹",
+      "name": "通话显示不全",
+      "dirName": "通话显示不全",
+      "type": "dir",
+      "path": "资源/BUG反馈专用文件夹/通话显示不全",
+      "files": [],
+      "images": [
+        "资源/BUG反馈专用文件夹/通话显示不全/IMG_3069.png"
+      ],
+      "description": "语音通话和视频通话底下都有一段白屏😭显示不全",
+      "author": "",
+      "avatar": "",
+      "ownerHash": "4aefacb906a73c74ca3528c1521af0135fafae2dd4ea846e86e7e53759afca24",
+      "updatedAt": "2026-08-18T22:15:51+08:00"
     },
     {
       "folder": "BUG反馈专用文件夹",
@@ -1006,6 +1022,30 @@
       "avatar": "资源/气泡美化/仿古早消息气泡/.avatar.png",
       "ownerHash": "9255ec1277ace06ef7aebf6566a04ad2844f9b543a7b06e6b1b0b7fe619d781c",
       "updatedAt": "2026-08-14T10:16:41+08:00"
+    },
+    {
+      "folder": "气泡美化",
+      "name": "淡淡系列[雪花]",
+      "dirName": "淡淡系列[雪花]",
+      "type": "dir",
+      "path": "资源/气泡美化/淡淡系列[雪花]",
+      "files": [
+        "资源/气泡美化/淡淡系列[雪花]/淡淡粉 小狗眼.txt",
+        "资源/气泡美化/淡淡系列[雪花]/淡淡绿 小狗眼.txt",
+        "资源/气泡美化/淡淡系列[雪花]/淡淡蓝 小狗眼.txt",
+        "资源/气泡美化/淡淡系列[雪花]/淡淡黄 小狗眼.txt"
+      ],
+      "images": [
+        "资源/气泡美化/淡淡系列[雪花]/IMG_9210.png",
+        "资源/气泡美化/淡淡系列[雪花]/IMG_9211.png",
+        "资源/气泡美化/淡淡系列[雪花]/IMG_9212.png",
+        "资源/气泡美化/淡淡系列[雪花]/IMG_9213.png"
+      ],
+      "description": "自用可以二改气泡颜色 消息行间距 交给小卷就好\n其他不可以二传二改哦",
+      "author": "路人甲",
+      "avatar": "",
+      "ownerHash": "9f37e23318f452c263fceb61aacf58008faf41fb28eb4c51f812856d23237529",
+      "updatedAt": "2026-08-18T21:51:24+08:00"
     },
     {
       "folder": "消息列表美化",
