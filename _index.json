@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-18T14:50:27.042Z",
+  "generatedAt": "2026-08-18T14:51:46.961Z",
   "folders": [
     {
       "name": "A 重要须知（自部署版请查看）",
@@ -701,12 +701,14 @@
       "files": [
         "资源/应用/ao3[蝴蝶结]/ao3-novel-app.zip"
       ],
-      "images": [],
+      "images": [
+        "资源/应用/ao3[蝴蝶结]/IMG_7816.jpeg"
+      ],
       "description": "",
       "author": "小梨",
       "avatar": "",
       "ownerHash": "85294a401778d50187b3ffece59423769c1d20b02054f2f463068ad86e183e16",
-      "updatedAt": "2026-08-18T22:50:09+08:00"
+      "updatedAt": "2026-08-18T22:51:33+08:00"
     },
     {
       "folder": "应用",
