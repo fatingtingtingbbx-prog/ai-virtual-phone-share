@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-18T00:01:39.798Z",
+  "generatedAt": "2026-08-18T00:02:50.640Z",
   "folders": [
     {
       "name": "A 重要须知（自部署版请查看）",
@@ -9,7 +9,7 @@
     },
     {
       "name": "BUG反馈专用文件夹",
-      "count": 7
+      "count": 8
     },
     {
       "name": "Js插件",
@@ -130,6 +130,22 @@
       "avatar": "",
       "ownerHash": "107d8cb7f78be8e5efb101184ea19c43f9a63a493748eb76bc162bb0dbc38715",
       "updatedAt": "2026-08-17T10:38:01+08:00"
+    },
+    {
+      "folder": "BUG反馈专用文件夹",
+      "name": "群聊信息报错",
+      "dirName": "群聊信息报错",
+      "type": "dir",
+      "path": "资源/BUG反馈专用文件夹/群聊信息报错",
+      "files": [
+        "资源/BUG反馈专用文件夹/群聊信息报错/Screenshot_20260818_075836.asset.jpg"
+      ],
+      "images": [],
+      "description": "可以单独聊天，但是创建群聊就会报错，一条信息没发他就显示下面那一堆乱码，发了也是下面那堆乱码，问小助手他也是乱码[幽灵]",
+      "author": "",
+      "avatar": "",
+      "ownerHash": "c796298c0645c7cecdb67c1a64ebcb1fed2c42b5d38f439b1801adb9ae302e1f",
+      "updatedAt": "2026-08-18T08:02:34+08:00"
     },
     {
       "folder": "BUG反馈专用文件夹",
