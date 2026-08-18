@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-18T14:51:46.961Z",
+  "generatedAt": "2026-08-18T14:52:34.634Z",
   "folders": [
     {
       "name": "A 重要须知（自部署版请查看）",
@@ -704,11 +704,11 @@
       "images": [
         "资源/应用/ao3[蝴蝶结]/IMG_7816.jpeg"
       ],
-      "description": "",
+      "description": "可以生成同人文玩，目前还没完善",
       "author": "小梨",
       "avatar": "",
       "ownerHash": "85294a401778d50187b3ffece59423769c1d20b02054f2f463068ad86e183e16",
-      "updatedAt": "2026-08-18T22:51:33+08:00"
+      "updatedAt": "2026-08-18T22:52:20+08:00"
     },
     {
       "folder": "应用",
