@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-18T01:24:15.421Z",
+  "generatedAt": "2026-08-18T01:48:17.894Z",
   "folders": [
     {
       "name": "A 重要须知（自部署版请查看）",
@@ -505,12 +505,13 @@
     },
     {
       "folder": "应用",
-      "name": "YUMI MAP v1.1[幽灵]",
+      "name": "YUMI MAP v1.2[幽灵]",
       "dirName": "YUMI MAP v1.1[幽灵]",
       "type": "dir",
       "path": "资源/应用/YUMI MAP v1.1[幽灵]",
       "files": [
-        "资源/应用/YUMI MAP v1.1[幽灵]/YUMI MAP v1.1 (1).zip"
+        "资源/应用/YUMI MAP v1.1[幽灵]/YUMI MAP v1.1 (1).zip",
+        "资源/应用/YUMI MAP v1.1[幽灵]/YUMI MAP v1.2.zip"
       ],
       "images": [
         "资源/应用/YUMI MAP v1.1[幽灵]/26271.jpg"
@@ -519,7 +520,7 @@
       "author": "玉米须女工",
       "avatar": "资源/应用/YUMI MAP v1.1[幽灵]/.avatar.png",
       "ownerHash": "b022d2f2f3bc654be53ee75c0fb6e1d8805f0115c3c39ea57a76d5a12ae8340d",
-      "updatedAt": "2026-08-17T14:13:23+08:00"
+      "updatedAt": "2026-08-18T09:48:04+08:00"
     },
     {
       "folder": "应用",
@@ -552,10 +553,10 @@
         "资源/应用/[幽灵]仿OnlyFans/IMG_2671.jpeg"
       ],
       "description": "因为最近痴迷于网黄梗，于是这个app诞生了。",
-      "author": "Zzz",
+      "author": "無",
       "avatar": "资源/应用/[幽灵]仿OnlyFans/.avatar.png",
       "ownerHash": "4c5a389c9b5a488af6c850b9573f167bd072aa6b1d5a4c2884f314e05e1ca5e5",
-      "updatedAt": "2026-08-17T16:55:20+08:00"
+      "updatedAt": "2026-08-18T09:48:06+08:00"
     },
     {
       "folder": "应用",
