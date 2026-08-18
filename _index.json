@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-18T14:16:09.669Z",
+  "generatedAt": "2026-08-18T14:50:27.042Z",
   "folders": [
     {
       "name": "A 重要须知（自部署版请查看）",
@@ -29,7 +29,7 @@
     },
     {
       "name": "应用",
-      "count": 27
+      "count": 28
     },
     {
       "name": "气泡美化",
@@ -691,6 +691,22 @@
       "avatar": "资源/应用/[爱心]贴贴/.avatar.png",
       "ownerHash": "610f4f4de346e85636302c26ece1f8743e84cc7417c5c77618e017ca099b9d06",
       "updatedAt": "2026-08-11T11:23:57+02:00"
+    },
+    {
+      "folder": "应用",
+      "name": "ao3[蝴蝶结]",
+      "dirName": "ao3[蝴蝶结]",
+      "type": "dir",
+      "path": "资源/应用/ao3[蝴蝶结]",
+      "files": [
+        "资源/应用/ao3[蝴蝶结]/ao3-novel-app.zip"
+      ],
+      "images": [],
+      "description": "",
+      "author": "小梨",
+      "avatar": "",
+      "ownerHash": "85294a401778d50187b3ffece59423769c1d20b02054f2f463068ad86e183e16",
+      "updatedAt": "2026-08-18T22:50:09+08:00"
     },
     {
       "folder": "应用",
