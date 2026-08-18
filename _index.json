@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-18T01:49:48.126Z",
+  "generatedAt": "2026-08-18T01:51:58.661Z",
   "folders": [
     {
       "name": "A 重要须知（自部署版请查看）",
@@ -29,7 +29,7 @@
     },
     {
       "name": "应用",
-      "count": 24
+      "count": 25
     },
     {
       "name": "气泡美化",
@@ -557,6 +557,24 @@
       "avatar": "资源/应用/[幽灵]仿OnlyFans/.avatar.png",
       "ownerHash": "4c5a389c9b5a488af6c850b9573f167bd072aa6b1d5a4c2884f314e05e1ca5e5",
       "updatedAt": "2026-08-18T09:48:06+08:00"
+    },
+    {
+      "folder": "应用",
+      "name": "[幽灵]健康",
+      "dirName": "[幽灵]健康",
+      "type": "dir",
+      "path": "资源/应用/[幽灵]健康",
+      "files": [
+        "资源/应用/[幽灵]健康/health.period-1.0.0.zip"
+      ],
+      "images": [
+        "资源/应用/[幽灵]健康/IMG_2681.jpeg"
+      ],
+      "description": "其实主要是为了记录经期时间，好方便让角色调用数据来聊天。（但还未测试版。\n还增添了步数及消耗热量这两个数据，如果有其他需求或许可以丢给小坊帮忙添加，也可以来小红书：26984227362  找我，反馈bug和期望增添内容。",
+      "author": "無",
+      "avatar": "资源/应用/[幽灵]健康/.avatar.png",
+      "ownerHash": "4c5a389c9b5a488af6c850b9573f167bd072aa6b1d5a4c2884f314e05e1ca5e5",
+      "updatedAt": "2026-08-18T09:51:40+08:00"
     },
     {
       "folder": "应用",
