@@ -1,0 +1,415 @@
+/* =========================
+   AI 对方气泡
+   ========================= */
+
+.chat-bubble-role-assistant {
+   position: relative !important;
+   background: #F2F2F2 !important;
+   color: #333333 !important;
+   border-radius: 12px !important;
+   border: 1.5px solid #D9D9D9 !important;
+   padding: 6px 12px !important;
+   font-size: 13px !important;
+   line-height: 1.4 !important;
+   box-shadow: none !important;
+   overflow: visible !important;
+}
+
+
+/* =========================
+   用户自己气泡
+   ========================= */
+
+.chat-bubble-role-user {
+   position: relative !important;
+   background: #F0F7FC !important;
+
+   /* 修改：字体黑色 */
+   color: #333333 !important;
+
+   border-radius: 12px !important;
+   border: 1.5px solid #D7DEE5 !important;
+   padding: 6px 12px !important;
+   font-size: 13px !important;
+   line-height: 1.4 !important;
+   box-shadow: none !important;
+   overflow: visible !important;
+}
+
+
+/* =========================
+   防止 Markdown 继承其他颜色
+   ========================= */
+
+.chat-bubble-role-user .chat-markdown,
+.chat-bubble-role-user .chat-markdown p,
+.chat-bubble-role-user .chat-markdown span,
+.chat-bubble-role-user .chat-markdown-paragraph {
+
+   color: #333333 !important;
+
+}
+
+
+
+/* =========================
+   AI 气泡尾巴
+   ========================= */
+
+.chat-bubble-role-assistant::after {
+   content: "" !important;
+   position: absolute !important;
+   top: 3px !important;
+   left: -5px !important;
+   width: 6px !important;
+   height: 12px !important;
+
+   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='6' height='12' viewBox='0 0 6 12'%3E%3Cpath d='M 6 12 C 2 8.5 0.5 3.5 0 0 C 2 0.8 4.2 1.2 6 1.8 Z' fill='%23F2F2F2'/%3E%3Cpath d='M 6 12 C 2 8.5 0.5 3.5 0 0 C 2 0.8 4.2 1.2 6 1.8' fill='none' stroke='%23D9D9D9' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") !important;
+
+   background-repeat: no-repeat !important;
+   background-size: contain !important;
+}
+
+
+
+/* =========================
+   用户气泡尾巴
+   ========================= */
+
+.chat-bubble-role-user::after {
+   content: "" !important;
+   position: absolute !important;
+   top: 3px !important;
+   right: -5px !important;
+   width: 6px !important;
+   height: 12px !important;
+
+   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='6' height='12' viewBox='0 0 6 12'%3E%3Cpath d='M 0 12 C 4 8.5 5.5 3.5 6 0 C 4 0.8 1.8 1.2 0 1.8 Z' fill='%23F0F7FC'/%3E%3Cpath d='M 0 12 C 4 8.5 5.5 3.5 6 0 C 4 0.8 1.8 1.2 0 1.8' fill='none' stroke='%23D7DEE5' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") !important;
+
+   background-repeat: no-repeat !important;
+   background-size: contain !important;
+}
+
+
+
+/* ==========================================================
+   引用消息
+   ========================================================== */
+
+
+.chat-bubble-role-user:has(.chat-quote-preview),
+.chat-bubble-role-assistant:has(.chat-quote-preview) {
+
+   padding: 6px 12px !important;
+   margin-bottom: 32px !important;
+   gap: 0 !important;
+
+}
+
+
+
+/* =========================
+   去除引用内部默认间距
+   ========================= */
+
+.chat-bubble-role-user > .chat-quote-preview,
+.chat-bubble-role-assistant > .chat-quote-preview {
+
+   margin: 0 !important;
+   padding: 0 !important;
+
+}
+
+
+
+/* =========================
+   引用小区域
+   ========================= */
+
+.chat-quote-preview {
+
+   position: absolute !important;
+
+   top: 100% !important;
+
+   width: max-content !important;
+   max-width: 220px !important;
+
+   white-space: nowrap !important;
+
+   margin-top: 4px !important;
+
+   background: rgba(228,237,244,0.65) !important;
+
+   border-left: none !important;
+
+   border-radius: 6px !important;
+
+   padding: 3px 8px !important;
+
+   font-size: 11px !important;
+
+   box-shadow: none !important;
+
+   overflow: hidden !important;
+
+   text-overflow: ellipsis !important;
+
+}
+
+
+
+/* AI 引用位置 */
+
+.chat-bubble-role-assistant .chat-quote-preview {
+
+   left: 0 !important;
+   right: auto !important;
+
+}
+
+
+
+/* 用户引用位置 */
+
+.chat-bubble-role-user .chat-quote-preview {
+
+   right: 0 !important;
+   left: auto !important;
+
+}
+
+
+
+/* 引用文字颜色 */
+
+.chat-quote-preview span {
+
+   color: #7893A3 !important;
+
+}
+/* ==========================================================
+   一、图片 / 媒体消息
+   ========================================================== */
+
+.chat-bubble-role-assistant:has(.chat-bubble-media),
+.chat-bubble-role-user:has(.chat-bubble-media) {
+
+   background: transparent !important;
+   background-color: transparent !important;
+
+   border: none !important;
+   border-radius: 0 !important;
+
+   padding: 0 !important;
+
+   box-shadow: none !important;
+
+   min-width: 0 !important;
+   min-height: 0 !important;
+
+}
+
+
+/* 图片消息隐藏尾巴 */
+
+.chat-bubble-role-assistant:has(.chat-bubble-media)::after,
+.chat-bubble-role-user:has(.chat-bubble-media)::after {
+
+   display: none !important;
+   content: none !important;
+
+}
+
+
+/* 图片本体不添加额外气泡 */
+
+.chat-bubble-media {
+
+   background: transparent !important;
+
+   border: none !important;
+
+   box-shadow: none !important;
+
+   padding: 0 !important;
+
+   margin: 0 !important;
+
+}
+
+
+/* ==========================================================
+   二、表情包 / Sticker
+   ========================================================== */
+
+.chat-bubble-role-assistant:has(.chat-sticker),
+.chat-bubble-role-user:has(.chat-sticker) {
+
+   background: transparent !important;
+   background-color: transparent !important;
+
+   border: none !important;
+   border-radius: 0 !important;
+
+   padding: 0 !important;
+
+   box-shadow: none !important;
+
+   min-width: 0 !important;
+   min-height: 0 !important;
+
+}
+
+
+/* 表情包隐藏气泡尾巴 */
+
+.chat-bubble-role-assistant:has(.chat-sticker)::after,
+.chat-bubble-role-user:has(.chat-sticker)::after {
+
+   display: none !important;
+   content: none !important;
+
+}
+
+
+/* ==========================================================
+   三、微信转账卡片
+   ========================================================== */
+
+.chat-bubble-role-assistant:has(.chat-transfer-card),
+.chat-bubble-role-user:has(.chat-transfer-card) {
+
+   background: transparent !important;
+   background-color: transparent !important;
+
+   border: none !important;
+   border-radius: 0 !important;
+
+   padding: 0 !important;
+
+   box-shadow: none !important;
+
+   min-width: 0 !important;
+   min-height: 0 !important;
+
+}
+
+
+/* 转账消息隐藏气泡尾巴 */
+
+.chat-bubble-role-assistant:has(.chat-transfer-card)::after,
+.chat-bubble-role-user:has(.chat-transfer-card)::after {
+
+   display: none !important;
+   content: none !important;
+
+}
+
+
+/*
+   非常重要：
+
+   不直接修改 .chat-transfer-card 的背景、
+   边框、圆角、阴影。
+
+   这样转账卡片自己的原生样式仍然保留。
+*/
+
+.chat-bubble-role-assistant:has(.chat-transfer-card) .chat-transfer-card,
+.chat-bubble-role-user:has(.chat-transfer-card) .chat-transfer-card {
+
+   position: relative !important;
+
+   z-index: 3 !important;
+
+}
+
+
+/* ==========================================================
+   四、其他常见富媒体卡片
+   ========================================================== */
+
+.chat-bubble-role-assistant:has(.chat-red-packet-card),
+.chat-bubble-role-user:has(.chat-red-packet-card),
+
+.chat-bubble-role-assistant:has(.chat-media-file-card),
+.chat-bubble-role-user:has(.chat-media-file-card),
+
+.chat-bubble-role-assistant:has(.chat-photo-card),
+.chat-bubble-role-user:has(.chat-photo-card) {
+
+   background: transparent !important;
+   background-color: transparent !important;
+
+   border: none !important;
+   border-radius: 0 !important;
+
+   padding: 0 !important;
+
+   box-shadow: none !important;
+
+   min-width: 0 !important;
+   min-height: 0 !important;
+
+}
+
+
+/* 其他富媒体隐藏尾巴 */
+
+.chat-bubble-role-assistant:has(.chat-red-packet-card)::after,
+.chat-bubble-role-user:has(.chat-red-packet-card)::after,
+
+.chat-bubble-role-assistant:has(.chat-media-file-card)::after,
+.chat-bubble-role-user:has(.chat-media-file-card)::after,
+
+.chat-bubble-role-assistant:has(.chat-photo-card)::after,
+.chat-bubble-role-user:has(.chat-photo-card)::after {
+
+   display: none !important;
+   content: none !important;
+
+}
+
+
+/* ==========================================================
+   五、富媒体里的 Markdown 容器也清空
+   防止出现“外面没气泡，里面还有一层底色”的残留
+   ========================================================== */
+
+.chat-bubble-role-assistant:has(.chat-bubble-media) .chat-markdown,
+.chat-bubble-role-user:has(.chat-bubble-media) .chat-markdown,
+
+.chat-bubble-role-assistant:has(.chat-sticker) .chat-markdown,
+.chat-bubble-role-user:has(.chat-sticker) .chat-markdown,
+
+.chat-bubble-role-assistant:has(.chat-transfer-card) .chat-markdown,
+.chat-bubble-role-user:has(.chat-transfer-card) .chat-markdown {
+
+   background: transparent !important;
+
+   padding: 0 !important;
+
+   margin: 0 !important;
+
+}
+
+
+/* ==========================================================
+   六、富媒体消息里的段落不要产生额外间距
+   ========================================================== */
+
+.chat-bubble-role-assistant:has(.chat-bubble-media) .chat-markdown p,
+.chat-bubble-role-user:has(.chat-bubble-media) .chat-markdown p,
+
+.chat-bubble-role-assistant:has(.chat-sticker) .chat-markdown p,
+.chat-bubble-role-user:has(.chat-sticker) .chat-markdown p,
+
+.chat-bubble-role-assistant:has(.chat-transfer-card) .chat-markdown p,
+.chat-bubble-role-user:has(.chat-transfer-card) .chat-markdown p {
+
+   margin: 0 !important;
+
+   padding: 0 !important;
+
+}
