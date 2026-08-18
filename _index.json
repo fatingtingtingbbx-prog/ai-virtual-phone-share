@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-18T10:17:06.416Z",
+  "generatedAt": "2026-08-18T12:59:46.861Z",
   "folders": [
     {
       "name": "A 重要须知（自部署版请查看）",
@@ -73,7 +73,7 @@
     },
     {
       "folder": "BUG反馈专用文件夹",
-      "name": "[花][花]在这个文件夹内留下项目中的bug[花][花]",
+      "name": "AAA 反馈BUG可尽量详细，可提供图片/文件等附件以便复现",
       "dirName": "[花][花]在这里留下项目中的bug[花][花]",
       "type": "dir",
       "path": "资源/BUG反馈专用文件夹/[花][花]在这里留下项目中的bug[花][花]",
@@ -85,7 +85,7 @@
       "author": "Float studio",
       "avatar": "资源/BUG反馈专用文件夹/[花][花]在这里留下项目中的bug[花][花]/.avatar.png",
       "ownerHash": "72adb7d77211b0354bc8d30ad6f28de6e6ba7e1047ed9ec1c80c1ab683f98f11",
-      "updatedAt": "2026-08-14T05:31:17+08:00"
+      "updatedAt": "2026-08-18T20:59:31+08:00"
     },
     {
       "folder": "BUG反馈专用文件夹",
