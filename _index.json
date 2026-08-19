@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-19T10:00:28.161Z",
+  "generatedAt": "2026-08-19T12:19:48.399Z",
   "folders": [
     {
       "name": "A 重要须知（自部署版请查看）",
@@ -45,7 +45,7 @@
     },
     {
       "name": "线上美化",
-      "count": 13
+      "count": 14
     },
     {
       "name": "线上聊天状态栏",
@@ -708,7 +708,7 @@
     },
     {
       "folder": "应用",
-      "name": "ao3[蝴蝶结]",
+      "name": "生成同人小说[蝴蝶结]",
       "dirName": "ao3[蝴蝶结]",
       "type": "dir",
       "path": "资源/应用/ao3[蝴蝶结]",
@@ -722,7 +722,7 @@
       "author": "小梨",
       "avatar": "",
       "ownerHash": "85294a401778d50187b3ffece59423769c1d20b02054f2f463068ad86e183e16",
-      "updatedAt": "2026-08-18T22:52:20+08:00"
+      "updatedAt": "2026-08-19T18:20:38+08:00"
     },
     {
       "folder": "应用",
@@ -1249,6 +1249,24 @@
       "avatar": "",
       "ownerHash": "88f102e0ef217cea73fe5b268e0c11999ebe72de7ee6c86765148d0313569196",
       "updatedAt": "2026-08-12T10:13:58+02:00"
+    },
+    {
+      "folder": "线上美化",
+      "name": "ins风灰",
+      "dirName": "ins风灰",
+      "type": "dir",
+      "path": "资源/线上美化/ins风灰",
+      "files": [
+        "资源/线上美化/ins风灰/ins风灰.docx"
+      ],
+      "images": [
+        "资源/线上美化/ins风灰/IMG_2721.jpeg"
+      ],
+      "description": "可二改。",
+      "author": "無",
+      "avatar": "资源/线上美化/ins风灰/.avatar.png",
+      "ownerHash": "4c5a389c9b5a488af6c850b9573f167bd072aa6b1d5a4c2884f314e05e1ca5e5",
+      "updatedAt": "2026-08-19T20:19:32+08:00"
     },
     {
       "folder": "线上美化",
