@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-19T15:19:51.283Z",
+  "generatedAt": "2026-08-19T15:43:56.418Z",
   "folders": [
     {
       "name": "A 重要须知（自部署版请查看）",
@@ -49,7 +49,7 @@
     },
     {
       "name": "线上聊天状态栏",
-      "count": 5
+      "count": 7
     },
     {
       "name": "线下正则",
@@ -1629,6 +1629,43 @@
       "avatar": "资源/线上聊天状态栏/[蝴蝶结]黑白状态栏美化自取[小猫]/.avatar.png",
       "ownerHash": "72adb7d77211b0354bc8d30ad6f28de6e6ba7e1047ed9ec1c80c1ab683f98f11",
       "updatedAt": "2026-08-14T05:50:01+08:00"
+    },
+    {
+      "folder": "线上聊天状态栏",
+      "name": "仿iCity状态栏",
+      "dirName": "仿iCity状态栏",
+      "type": "dir",
+      "path": "资源/线上聊天状态栏/仿iCity状态栏",
+      "files": [
+        "资源/线上聊天状态栏/仿iCity状态栏/仿iCity状态栏.json"
+      ],
+      "images": [
+        "资源/线上聊天状态栏/仿iCity状态栏/IMG_20260819_231722.jpg"
+      ],
+      "description": "✅二改自用\n🚫二传二卖\n选择 导入-状态栏 即可\n如有bug请反馈 🍠@木叶淀粉酶\n\n\n二编：对已知问题进行了优化，重传一次",
+      "author": "木叶淀粉酶",
+      "avatar": "资源/线上聊天状态栏/仿iCity状态栏/.avatar.png",
+      "ownerHash": "9255ec1277ace06ef7aebf6566a04ad2844f9b543a7b06e6b1b0b7fe619d781c",
+      "updatedAt": "2026-08-19T23:22:42+08:00"
+    },
+    {
+      "folder": "线上聊天状态栏",
+      "name": "仿ig提问箱[皇冠]",
+      "dirName": "仿ig提问箱[皇冠]",
+      "type": "dir",
+      "path": "资源/线上聊天状态栏/仿ig提问箱[皇冠]",
+      "files": [
+        "资源/线上聊天状态栏/仿ig提问箱[皇冠]/仿ig float.json"
+      ],
+      "images": [
+        "资源/线上聊天状态栏/仿ig提问箱[皇冠]/IMG_1609.jpeg",
+        "资源/线上聊天状态栏/仿ig提问箱[皇冠]/IMG_1648.jpeg"
+      ],
+      "description": "一个低仿ig提问箱，因为默认是[粗]双语[/粗]的，所以比较适合外国char。提问箱和评论都是点击翻译ㅎㅎ\n设计参考了[蓝]天天开心[/蓝]老师和[橙]板栗饼[/橙]老师♡ͥ ♡ͦ ♡ͮ ♡ͤ \n🚫二传\n✅自用二改\n头像和背景图的链接都在代码的顶部，大家自己改就好啦！背景图非常适合搭配代餐图和GPT生图食用嘿嘿，[粗]尤其是提示词[/粗]，大家最好自己根据需要修改一下！",
+      "author": "初智齿",
+      "avatar": "",
+      "ownerHash": "fafe02c203d6e36031b9f100bb083c184b4f867d8957ff4384f832bc1162cc57",
+      "updatedAt": "2026-08-19T23:43:41+08:00"
     },
     {
       "folder": "线上聊天状态栏",
