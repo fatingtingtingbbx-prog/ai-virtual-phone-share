@@ -1,0 +1,150 @@
+没问题，宝！一字不差，全在这儿了，你直接复制收好：
+```css
+/* ═══ 全局聊天室 CSS ═══ */
+/* 作用范围：全局所有聊天室 */
+/* ── 标题栏 (保留定制样式) ── */
+.page-header {
+  background: url("https://img.tofaka.com/autoupload/f/896tm/20260814/p02J/top_bar_lines.jpg") center bottom / cover no-repeat;
+  backdrop-filter: none; 
+}
+.page-header-safe-area {
+  background: #ffffff !important;
+}
+.page-header-content {
+  display: flex !important;
+  align-items: flex-start !important; 
+  padding-top: 0px !important;
+  padding-bottom: 35px !important; 
+  background: linear-gradient(to bottom, #ffffff 0%, #ffffff calc(100% - 35px), transparent calc(100% - 35px), transparent 100%) !important;
+}
+/* 恢复返回按钮高度 */
+.page-back-btn, .page-header-right {
+  height: 44px !important; 
+  display: flex !important;
+  align-items: center !important; 
+  color: #333333; 
+  margin-top: 0px !important;
+}
+/* ★★★ 终极隐藏副标题大法 (顶栏保持纯净) ★★★ */
+.page-title {
+  height: 44px !important; 
+  line-height: 44px !important; 
+  overflow: hidden !important; 
+  display: flex !important;
+  flex-direction: column !important; 
+  justify-content: flex-start !important; 
+  margin-left: 4px !important; 
+  margin-right: auto !important; 
+  font-weight: bold !important; 
+}
+.page-title span,
+.page-title div,
+.page-title > *:not(:first-child) {
+  display: none !important;
+  font-size: 0 !important;
+  color: transparent !important;
+  height: 0 !important;
+  opacity: 0 !important;
+  line-height: 0 !important;
+}
+/* ── 改造聊天区底部的“正在输入中” ── */
+.chat-generating-indicator,
+.chat-offline-generating {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  height: 30px !important;
+  min-height: 30px !important;
+  margin-top: 12px !important;
+  margin-bottom: 12px !important;
+  position: relative !important; 
+}
+.chat-generating-indicator .chat-msg-avatar,
+.chat-generating-indicator .chat-msg-content,
+.chat-generating-indicator .chat-bubble,
+.chat-offline-generating .chat-msg-avatar,
+.chat-offline-generating .chat-msg-content,
+.chat-offline-generating .chat-bubble {
+  display: none !important;
+}
+.chat-generating-indicator::before,
+.chat-offline-generating::before {
+  content: "正在输入..." !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important; 
+  text-align: center !important; 
+  font-size: 12px !important; 
+  color: rgba(255, 105, 180, 0.8) !important; 
+  font-weight: bold !important; 
+  line-height: 30px !important;
+  animation: text-breathe 1.5s infinite ease-in-out;
+}
+@keyframes text-breathe {
+  0% { opacity: 0.3; }
+  50% { opacity: 1; }
+  100% { opacity: 0.3; }
+}
+/* ── 消息间距 (换人说话间距缩短一半) ── */
+.chat-msg-wrapper {
+  margin-top: 8px !important; 
+}
+.chat-msg-wrapper[data-consecutive] {
+  margin-top: -6px !important; 
+}
+.chat-msg-wrapper:has(.chat-sys-msg) {
+  margin-top: 2px !important;
+}
+/* ── 头像与气泡的横向距离 ── */
+.chat-msg-wrapper {
+  gap: 4px !important;
+}
+/* ★★★ 全局头像 (微信方形风格 终极暴力破解版) ★★★ */
+/* 强制覆盖所有与头像相关的类名，包括内外层、图片、甚至系统可能用的遮罩 */
+.chat-msg-avatar,
+.chat-msg-avatar *,
+.ui-avatar,
+.ui-avatar *,
+.contact-item .ui-avatar,
+.contact-item .ui-avatar *,
+.minimal-avatar-wrapper,
+.minimal-avatar-wrapper *,
+.feed-profile-avatar,
+.feed-profile-avatar *,
+[class*="avatar"],
+[class*="avatar"] > img {
+  border-radius: 6px !important;
+  clip-path: none !important;
+  -webkit-clip-path: none !important;
+  mask-image: none !important;
+  -webkit-mask-image: none !important;
+}
+/* ── 聊天气泡 (极简直角风 + 字体加粗) ── */
+.chat-bubble {
+  border-radius: 0px !important; 
+  overflow: visible !important; 
+}
+.chat-bubble-tail {
+  display: none !important;
+}
+.chat-bubble-role-assistant {
+  background: #ffffff !important;
+  color: #333333 !important;
+  border: 1px solid #f0f0f0 !important; 
+}
+.chat-bubble-role-assistant::before {
+  content: "";
+  position: absolute;
+  left: -12px;
+  top: 12px;
+  border: 6px solid transparent;
+  border-right-color: #ffffff;
+}
+.chat-bubble-role-user {
+  background: #4a4a4a !important;
+  color: #ffffff !important;
+}
+.chat-bubble-role-user::after {
+  content: "";
+  position: abs
