@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-19T14:23:35.825Z",
+  "generatedAt": "2026-08-19T14:30:43.938Z",
   "folders": [
     {
       "name": "A 重要须知（自部署版请查看）",
@@ -1607,11 +1607,11 @@
       "images": [
         "资源/线上聊天状态栏/仿iCity状态栏/IMG_20260819_222035.jpg"
       ],
-      "description": "✅二改自用\n🚫二传二卖\n导入如有bug请反馈 🍠@木叶淀粉酶",
+      "description": "✅二改自用\n🚫二传二卖\n选择 导入-状态栏 即可导入使用\n导入如有bug请反馈 🍠@木叶淀粉酶",
       "author": "木叶淀粉酶",
       "avatar": "资源/线上聊天状态栏/仿iCity状态栏/.avatar.png",
       "ownerHash": "9255ec1277ace06ef7aebf6566a04ad2844f9b543a7b06e6b1b0b7fe619d781c",
-      "updatedAt": "2026-08-19T22:23:20+08:00"
+      "updatedAt": "2026-08-19T22:30:31+08:00"
     },
     {
       "folder": "线上聊天状态栏",
