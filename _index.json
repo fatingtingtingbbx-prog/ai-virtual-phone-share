@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-19T00:13:31.390Z",
+  "generatedAt": "2026-08-19T04:06:21.326Z",
   "folders": [
     {
       "name": "A 重要须知（自部署版请查看）",
@@ -9,7 +9,7 @@
     },
     {
       "name": "BUG反馈专用文件夹",
-      "count": 12
+      "count": 13
     },
     {
       "name": "Js插件",
@@ -160,6 +160,20 @@
       "avatar": "",
       "ownerHash": "107d8cb7f78be8e5efb101184ea19c43f9a63a493748eb76bc162bb0dbc38715",
       "updatedAt": "2026-08-17T10:38:01+08:00"
+    },
+    {
+      "folder": "BUG反馈专用文件夹",
+      "name": "查手机报错",
+      "dirName": "查手机报错",
+      "type": "dir",
+      "path": "资源/BUG反馈专用文件夹/查手机报错",
+      "files": [],
+      "images": [],
+      "description": "更新过后的手机，查手机不是空回复，就是回复剧情内容格式错误，我还重部署了一遍还没有解决\n应该不是API的问题，我切换了三个中转站都是回复剧情内容",
+      "author": "",
+      "avatar": "",
+      "ownerHash": "89127eca6ef72f2061913ca1106abdc1a029fe09ff0f6b54fee5aaf57c26835d",
+      "updatedAt": "2026-08-19T12:06:06+08:00"
     },
     {
       "folder": "BUG反馈专用文件夹",
