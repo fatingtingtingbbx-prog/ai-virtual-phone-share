@@ -1,0 +1,523 @@
+float│奶蓝芝士by淅沥沥
+禁止二传/禁止仅下载/可以二改
+聊天美化，放在消息-主页-外观css里食用
+放在全局美化里也可以，但是设置角色界面会有bug
+不能直接复制docx里的内容，自行转txt，不行就进主页群里自取，不再回复为什么使用不了的问题
+
+
+
+
+
+/* ═══ 聊天应用 CSS 可爱蓝黄手帐版（壁纸修复+顶栏超萌颜文字版） ═══ */
+/* 作用范围：精准复原聊天室壁纸 + 顶栏追加 ˶⦁ ༝ ⦁˶ 颜文字 + 列表修长半透明 */
+
+/* ══════════════════════════
+   1. 壁纸精准隔离（复原聊天室原生壁纸）
+   ══════════════════════════ */
+/* 给全局页面（除聊天室外）加上你专属的手绘背景，叠加 40% 白色遮罩 */
+.page-body, .moments-feed-page, .profile-page, .settings-page {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), 
+                    url("https://s1.imagehub.cc/images/2026/08/18/8793460d8f4f8d1e55f8d0a6c0d7b8fb.jpg") !important;
+  background-size: cover !important; background-position: center !important; background-attachment: fixed !important;
+}
+
+/* 聊天室保留原生壁纸（或者透明），不受主页底图影响 */
+.chat-room-wrapper .page-body {
+  background: transparent !important; 
+}
+
+/* 聊天室内所有外壳容器【仅】设为底色透明，让底层的原生壁纸完全透出来 */
+.chat-app,
+.chat-room-wrapper, 
+.chat-room-wrapper .chat-message-list, 
+.chat-room-wrapper .page-content,
+.chat-room-wrapper-inner,
+.chat-room-bg {
+  background-color: transparent !important;
+}
+
+
+/* ══════════════════════════
+   2. 颜色变量
+   ══════════════════════════ */
+.chat-app {
+  --c-theme-blue: #E5F2FF;        
+  --c-theme-yellow: #FFF7D6;      
+  --c-line: #6B4B42;              
+  --c-text-title: #36221C;        
+}
+
+
+/* ══════════════════════════
+   3. 全局顶栏 & 搜索栏 & 【新增】顶栏萌化颜文字
+   ══════════════════════════ */
+.page-header {
+  background: rgba(229, 242, 255, 0.85) !important; 
+  backdrop-filter: blur(15px) saturate(120%);
+  border-bottom: 0.85px solid var(--c-line) !important;
+}
+
+/* 强制保护顶栏的“正在输入”等状态文字，防止被贴纸样式误伤 */
+.page-header [class*="typing"], .page-header [class*="indicator"], .page-header [class*="status"] {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  transform: none !important;
+  border-radius: 0 !important;
+}
+
+/* ━━━ 【新增】声明聊天室标题为相对定位基准，并追加可爱 ˶⦁ ༝ ⦁˶ ━━━ */
+.chat-room-wrapper .page-title,
+.chat-room-wrapper [class*="page-title"],
+.chat-room-wrapper .header-title {
+  position: relative !important;
+  display: inline-flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  padding-bottom: 14px !important; /* 给下方颜文字留出空间 */
+}
+
+.chat-room-wrapper .page-title::after,
+.chat-room-wrapper [class*="page-title"]::after,
+.chat-room-wrapper .header-title::after {
+  content: "˶⦁ ༝ ⦁˶" !important;
+  position: absolute !important;
+  bottom: -6px !important;             
+  left: 50% !important;
+  transform: translateX(-50%) !important; 
+  font-size: 11px !important;           
+  font-weight: bold !important;
+  color: var(--c-line) !important; 
+  white-space: nowrap !important;
+  pointer-events: none !important;
+}
+
+/* 搜索栏：胶囊奶油黄 */
+.chat-search-bar, .search-bar {
+  background: var(--c-theme-yellow) !important;
+  border: 0.85px solid var(--c-line) !important;
+  border-radius: 999px !important;
+  box-shadow: inset 0 0 0 2.5px #FFFFFF, 0 3px 8px rgba(107, 75, 66, 0.05) !important;
+  margin: 8px 14px 12px 14px !important;
+}
+
+
+/* ══════════════════════════
+   4. 底部导航栏 & 聊天输入底栏（黄色毛玻璃）
+   ══════════════════════════ */
+.chat-tab-bar, .tab-bar {
+  background: rgba(255, 247, 214, 0.85) !important; 
+  backdrop-filter: blur(15px) saturate(120%);
+  border-top: 0.85px solid var(--c-line) !important;
+}
+.chat-tab-active, .tab-active {
+  color: #1A5C8B !important; 
+  background: radial-gradient(circle, rgba(229, 242, 255, 0.95) 0%, transparent 65%) !important; 
+}
+.chat-tab-bar *, .tab-bar * {
+  box-shadow: none !important;
+}
+
+.chat-input-bar, .chat-room-footer, .input-bar {
+  background: rgba(255, 247, 214, 0.95) !important; 
+  backdrop-filter: blur(15px) saturate(120%);
+  border-top: 0.85px solid var(--c-line) !important;
+}
+
+
+/* ══════════════════════════
+   5. 【深度美化】聊天列表/Chats 界面 (半透明毛玻璃修长版)
+   ══════════════════════════ */
+.page-title, [class*="page-title"], [class*="header-title"], [class*="nav-title"] {
+    font-weight: 900 !important;
+    color: var(--c-text-title) !important;
+    text-shadow: none !important; 
+    letter-spacing: 1px !important;
+}
+
+[class*="tab-item"]:not([class*="bar"]), [class*="filter-item"], [class*="segment-item"], 
+.van-tab, [class*="tab-list"] > div, [class*="segment"] > div {
+    background: #F4F9FF !important; 
+    color: #78625D !important;
+    border: 0.85px dashed var(--c-line) !important;
+    border-radius: 999px !important;
+    padding: 6px 18px !important;
+    font-weight: 600 !important;
+    box-shadow: inset 0 0 0 2px #FFFFFF !important;
+    margin: 0 4px !important;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+}
+[class*="tab-item"][class*="active"], [class*="filter-item"][class*="active"], 
+[class*="segment-item"][class*="active"], .van-tab--active,
+[class*="tab-list"] > div[style*="background"], [class*="segment"] > div[style*="background"] {
+    background: var(--c-theme-yellow) !important;
+    color: #8B6914 !important;
+    border: 0.85px solid var(--c-line) !important;
+    box-shadow: inset 0 0 0 2px #FFFFFF, 0 3px 6px rgba(107, 75, 66, 0.05) !important;
+    transform: scale(1.05) !important;
+}
+
+/* 列表整条卡片：半透明渐变，透出底图 */
+.contact-item, .chat-item, .chat-list-item, .session-item, .conversation-item, [class*="list-item"],
+[class*="contact-item"], [class*="chat-item"], [class*="session-item"] {
+    background: linear-gradient(135deg, rgba(255, 253, 242, 0.75) 0%, rgba(229, 242, 255, 0.75) 50%, rgba(255, 247, 214, 0.75) 100%) !important;
+    backdrop-filter: blur(8px) saturate(120%);
+    -webkit-backdrop-filter: blur(8px) saturate(120%);
+    border: 0.85px solid var(--c-line) !important;
+    border-radius: 22px !important;
+    margin: 10px 6px !important;  
+    padding: 12px 14px !important; 
+    box-shadow: inset 0 0 0 3px rgba(255, 255, 255, 0.5), 0 4px 10px rgba(107, 75, 66, 0.04) !important;
+    transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+    position: relative !important;
+}
+.contact-item:active, .chat-item:active, [class*="chat-item"]:active, [class*="session-item"]:active {
+    transform: scale(0.97) !important;
+}
+
+[class*="list-item"] img, [class*="session-item"] img, [class*="chat-item"] img,
+.contact-item [class*="avatar"], .chat-item [class*="avatar"] {
+    border: 1.5px solid var(--c-line) !important;
+    border-radius: 16px !important; 
+    padding: 2px !important;
+    background: #FFFFFF !important;
+    box-shadow: 0 2px 5px rgba(107, 75, 66, 0.08) !important;
+}
+
+/* 严格限制小绿点仅在聊天列表生效 */
+[class*="list-item"] [class*="online"], [class*="session-item"] [class*="online"], [class*="chat-item"] [class*="online"],
+[class*="list-item"] [class*="status-dot"], [class*="session-item"] [class*="status-dot"], [class*="chat-item"] [class*="status-dot"],
+[class*="list-item"] [style*="rgb(76, 217, 100)"], [class*="session-item"] [style*="rgb(76, 217, 100)"], [class*="chat-item"] [style*="rgb(76, 217, 100)"],
+[class*="list-item"] [style*="#4cd964"], [class*="session-item"] [style*="#4cd964"], [class*="chat-item"] [style*="#4cd964"] {
+    background: #A8E6CF !important; 
+    border: 2.5px solid #FFFFFF !important; 
+    border-radius: 50% !important;
+    box-shadow: 0 2px 4px rgba(168, 230, 207, 0.6) !important;
+    transform: scale(1.3) !important; 
+}
+
+[class*="list-item"] [class*="time"], [class*="session-item"] [class*="time"],
+[class*="list-item"] [class*="tag"], [class*="session-item"] [class*="tag"] {
+    background: #FFF7D6 !important;
+    color: #8B6914 !important;
+    border: 0.85px dashed #8B6914 !important;
+    padding: 2px 6px !important;
+    border-radius: 6px !important;
+    font-size: 10px !important;
+    font-weight: bold !important;
+    transform: rotate(3deg) !important; 
+    display: inline-block !important;
+}
+
+
+/* ══════════════════════════
+   6. 朋友圈/动态 & 主页设置（同款半透明防溢出卡片）
+   ══════════════════════════ */
+.feed-post, [class*="moments-post"], [class*="feed-card"] {
+    background: linear-gradient(to bottom right, rgba(255,255,255,0.75) 30%, rgba(229,242,255,0.75) 100%) !important;
+    backdrop-filter: blur(8px) saturate(120%);
+    -webkit-backdrop-filter: blur(8px) saturate(120%);
+    border: 0.85px solid var(--c-line) !important;
+    border-radius: 26px !important;
+    margin: 16px auto !important;
+    width: calc(100% - 28px) !important;
+    box-sizing: border-box !important;
+    box-shadow: inset 0 0 0 3px rgba(255,255,255,0.5), 0 4px 12px rgba(229, 242, 255, 0.5) !important;
+    padding: 16px !important;
+}
+
+.profile-wrapper .menu-item, .setting-wrapper .menu-item, 
+[class*="setting-item"], [class*="profile-card"], [class*="menu-list"] {
+    background: linear-gradient(90deg, rgba(255,247,214,0.75) 0%, rgba(229,242,255,0.75) 100%) !important;
+    backdrop-filter: blur(8px) saturate(120%);
+    -webkit-backdrop-filter: blur(8px) saturate(120%);
+    border: 0.85px solid var(--c-line) !important;
+    border-radius: 20px !important;
+    margin: 10px auto !important;
+    width: calc(100% - 28px) !important;
+    box-sizing: border-box !important;
+    box-shadow: inset 0 0 0 2.5px rgba(255, 255, 255, 0.5) !important;
+}
+
+
+/* ══════════════════════════
+   7. 聊天气泡：红包全黄 / 转账全蓝 (比例保护版)
+   ══════════════════════════ */
+[class*="chat-bubble"]:has([class*="gift"]),
+[class*="chat-bubble"]:has([class*="redpacket"]),
+[class*="chat-bubble"]:has([class*="red-packet"]),
+[class*="chat-bubble"]:has([class*="lucky-money"]),
+[class*="chat-bubble"]:has([class*="hongbao"]) {
+    background: 
+        url("https://s1.imagehub.cc/images/2026/08/18/4993e94e7c60b13ec3a1565f9d39a135.png") right 8px center / 62px auto no-repeat,
+        url("https://s1.imagehub.cc/images/2026/08/18/dc4953b588c03734015c7b3159d7238b.png") center / 100% 100% no-repeat !important;
+    border: 0.85px solid var(--c-line) !important;
+    padding: 10px 70px 10px 16px !important; 
+}
+
+[class*="chat-bubble"]:has([class*="pay"]),
+[class*="chat-bubble"]:has([class*="transfer"]) {
+    background: 
+        url("https://s1.imagehub.cc/images/2026/08/18/e9697070d0f5abb209813c03ee856f25.png") right 8px center / 62px auto no-repeat,
+        url("https://s1.imagehub.cc/images/2026/08/18/de1dd54a63f0b569ba265cfb7d9bdc38.png") center / 100% 100% no-repeat !important;
+    border: 0.85px solid var(--c-line) !important;
+    padding: 10px 70px 10px 16px !important; 
+}
+
+[class*="chat-bubble"]:has([class*="gift"]) *, [class*="chat-bubble"]:has([class*="redpacket"]) *,
+[class*="chat-bubble"]:has([class*="red-packet"]) *, [class*="chat-bubble"]:has([class*="lucky-money"]) *,
+[class*="chat-bubble"]:has([class*="hongbao"]) *, [class*="chat-bubble"]:has([class*="pay"]) *,
+[class*="chat-bubble"]:has([class*="transfer"]) * {
+    background: transparent !important; background-color: transparent !important;
+    background-image: none !important; border: none !important; box-shadow: none !important;
+}
+[class*="chat-bubble"]:has([class*="gift"]) *::before, [class*="chat-bubble"]:has([class*="redpacket"]) *::before,
+[class*="chat-bubble"]:has([class*="red-packet"]) *::before, [class*="chat-bubble"]:has([class*="lucky-money"]) *::before,
+[class*="chat-bubble"]:has([class*="hongbao"]) *::before, [class*="chat-bubble"]:has([class*="pay"]) *::before,
+[class*="chat-bubble"]:has([class*="transfer"]) *::before, [class*="chat-bubble"]:has([class*="gift"]) *::after,
+[class*="chat-bubble"]:has([class*="redpacket"]) *::after, [class*="chat-bubble"]:has([class*="red-packet"]) *::after,
+[class*="chat-bubble"]:has([class*="lucky-money"]) *::after, [class*="chat-bubble"]:has([class*="hongbao"]) *::after,
+[class*="chat-bubble"]:has([class*="pay"]) *::after, [class*="chat-bubble"]:has([class*="transfer"]) *::after {
+    display: none !important; content: none !important;
+}
+
+.chat-redpacket-card > div:first-child > div:first-child, .chat-red-packet-card > div:first-child > div:first-child,
+.chat-lucky-money-card > div:first-child > div:first-child, [class*="gift-card"] > div:first-child > div:first-child,
+[class*="hongbao"] > div:first-child > div:first-child, .chat-transfer-card > div:first-child > div:first-child,
+.scan-pay-card > div:first-child > div:first-child, [class*="pay-card"] > div:first-child > div:first-child {
+    position: absolute !important; left: -9999px !important; width: 0 !important; height: 0 !important;
+    opacity: 0 !important; overflow: hidden !important; display: none !important;
+}
+
+[class*="chat-bubble"]:has([class*="gift"]) *, [class*="chat-bubble"]:has([class*="redpacket"]) *,
+[class*="chat-bubble"]:has([class*="red-packet"]) *, [class*="chat-bubble"]:has([class*="lucky-money"]) *,
+[class*="chat-bubble"]:has([class*="hongbao"]) * {
+    color: #8B6914 !important; font-weight: 800 !important; text-shadow: none !important;
+}
+[class*="chat-bubble"]:has([class*="pay"]) *, [class*="chat-bubble"]:has([class*="transfer"]) * {
+    color: #1A5C8B !important; font-weight: 800 !important; text-shadow: none !important;
+}
+[class*="chat-bubble"]:has([class*="gift"]) > div > :last-child *, [class*="chat-bubble"]:has([class*="redpacket"]) > div > :last-child *,
+[class*="chat-bubble"]:has([class*="red-packet"]) > div > :last-child *, [class*="chat-bubble"]:has([class*="lucky-money"]) > div > :last-child *,
+[class*="chat-bubble"]:has([class*="pay"]) > div > :last-child *, [class*="chat-bubble"]:has([class*="transfer"]) > div > :last-child * {
+    font-size: 11px !important; opacity: 0.75 !important; margin-top: 8px !important; display: block !important;
+}
+
+
+/* ══════════════════════════
+   8. 纯文本聊天气泡小尾巴
+   ══════════════════════════ */
+.chat-bubble-role-assistant {
+  position: relative; background: radial-gradient(circle at center, #E5F1FF 0%, #F4F9FF 65%, #FFFFFF 100%) !important;
+  border: 0.85px solid var(--c-line); border-radius: 11px; color: var(--c-text-title);
+  padding: 7px 11px; box-shadow: inset 0 0 0 2.5px #FFFFFF, 0 1px 3px rgba(107, 75, 66, 0.02); overflow: visible;
+}
+.chat-bubble-role-assistant::before {
+  content: ""; position: absolute; left: -4px; top: 13px; width: 6.5px; height: 6.5px;
+  background: var(--c-line); transform: rotate(45deg); border-bottom-left-radius: 1.5px; z-index: 1;
+}
+.chat-bubble-role-assistant::after {
+  content: ""; position: absolute; left: -2.8px; top: 13px; width: 6.5px; height: 6.5px;
+  background: #FFFFFF; transform: rotate(45deg); border-bottom-left-radius: 1.5px; z-index: 2;
+}
+
+.chat-bubble-role-user {
+  position: relative; background: radial-gradient(circle at center, #FFF7D6 0%, #FFFDF2 65%, #FFFFFF 100%) !important;
+  border: 0.85px solid var(--c-line); border-radius: 11px; color: var(--c-text-title);
+  padding: 7px 11px; box-shadow: inset 0 0 0 2.5px #FFFFFF, 0 1px 3px rgba(107, 75, 66, 0.02); overflow: visible;
+}
+.chat-bubble-role-user::before {
+  content: ""; position: absolute; right: -4px; top: 13px; width: 6.5px; height: 6.5px;
+  background: var(--c-line); transform: rotate(45deg); border-top-right-radius: 1.5px; z-index: 1;
+}
+.chat-bubble-role-user::after {
+  content: ""; position: absolute; right: -2.8px; top: 13px; width: 6.5px; height: 6.5px;
+  background: #FFFFFF; transform: rotate(45deg); border-top-right-radius: 1.5px; z-index: 2;
+}
+
+
+/* ══════════════════════════
+   9. 引用消息（回复）深度拆分美化
+   ══════════════════════════ */
+[class*="chat-bubble"]:has([class*="reply-wrapper"]),
+[class*="chat-bubble"]:has([class*="quote-wrapper"]) {
+    background: transparent !important;
+    border: none !important; box-shadow: none !important;
+    padding: 0 !important; display: flex !important; flex-direction: column !important; gap: 6px !important;
+}
+[class*="chat-bubble"]:has([class*="reply-wrapper"])::before,
+[class*="chat-bubble"]:has([class*="reply-wrapper"])::after,
+[class*="chat-bubble"]:has([class*="quote-wrapper"])::before,
+[class*="chat-bubble"]:has([class*="quote-wrapper"])::after {
+    display: none !important;
+}
+.chat-bubble-role-user:has([class*="reply-wrapper"]),
+.chat-bubble-role-user:has([class*="quote-wrapper"]) {
+    align-items: flex-end !important;
+}
+
+.chat-bubble-role-assistant:has([class*="reply-wrapper"]) > [class*="reply-wrapper"] ~ *,
+.chat-bubble-role-assistant:has([class*="quote-wrapper"]) > [class*="quote-wrapper"] ~ * {
+    background: radial-gradient(circle at center, #E5F1FF 0%, #F4F9FF 65%, #FFFFFF 100%) !important;
+    border: 0.85px solid var(--c-line) !important; border-radius: 11px !important;
+    padding: 7px 11px !important; position: relative !important; width: fit-content !important;
+    box-shadow: inset 0 0 0 2.5px #FFFFFF, 0 1px 3px rgba(107, 75, 66, 0.02) !important;
+    align-self: flex-start !important;
+}
+.chat-bubble-role-user:has([class*="reply-wrapper"]) > [class*="reply-wrapper"] ~ *,
+.chat-bubble-role-user:has([class*="quote-wrapper"]) > [class*="quote-wrapper"] ~ * {
+    background: radial-gradient(circle at center, #FFF7D6 0%, #FFFDF2 65%, #FFFFFF 100%) !important;
+    border: 0.85px solid var(--c-line) !important; border-radius: 11px !important;
+    padding: 7px 11px !important; position: relative !important; width: fit-content !important;
+    box-shadow: inset 0 0 0 2.5px #FFFFFF, 0 1px 3px rgba(107, 75, 66, 0.02) !important;
+    align-self: flex-end !important;
+}
+
+.chat-bubble-role-assistant:has([class*="reply-wrapper"]) > [class*="reply-wrapper"] ~ *::before,
+.chat-bubble-role-assistant:has([class*="quote-wrapper"]) > [class*="quote-wrapper"] ~ *::before {
+    content: ""; position: absolute; left: -4px; top: 13px; width: 6.5px; height: 6.5px;
+    background: var(--c-line); transform: rotate(45deg); border-bottom-left-radius: 1.5px; z-index: 1;
+}
+.chat-bubble-role-assistant:has([class*="reply-wrapper"]) > [class*="reply-wrapper"] ~ *::after,
+.chat-bubble-role-assistant:has([class*="quote-wrapper"]) > [class*="quote-wrapper"] ~ *::after {
+    content: ""; position: absolute; left: -2.8px; top: 13px; width: 6.5px; height: 6.5px;
+    background: #FFFFFF; transform: rotate(45deg); border-bottom-left-radius: 1.5px; z-index: 2;
+}
+.chat-bubble-role-user:has([class*="reply-wrapper"]) > [class*="reply-wrapper"] ~ *::before,
+.chat-bubble-role-user:has([class*="quote-wrapper"]) > [class*="quote-wrapper"] ~ *::before {
+    content: ""; position: absolute; right: -4px; top: 13px; width: 6.5px; height: 6.5px;
+    background: var(--c-line); transform: rotate(45deg); border-top-right-radius: 1.5px; z-index: 1;
+}
+.chat-bubble-role-user:has([class*="reply-wrapper"]) > [class*="reply-wrapper"] ~ *::after,
+.chat-bubble-role-user:has([class*="quote-wrapper"]) > [class*="quote-wrapper"] ~ *::after {
+    content: ""; position: absolute; right: -2.8px; top: 13px; width: 6.5px; height: 6.5px;
+    background: #FFFFFF; transform: rotate(45deg); border-top-right-radius: 1.5px; z-index: 2;
+}
+
+[class*="reply-wrapper"], [class*="quote-wrapper"] {
+    background: transparent !important;
+    border: none !important; box-shadow: none !important;
+    padding: 0 !important; margin: 0 !important; border-radius: 0 !important;
+    display: flex !important; flex-direction: column !important;
+}
+[class*="reply-wrapper"] *, [class*="quote-wrapper"] * {
+    color: rgba(107, 75, 66, 0.55) !important; 
+    background: transparent !important; border: none !important;
+    font-size: 11.5px !important; text-shadow: none !important;
+}
+
+.chat-bubble-role-assistant [class*="reply-wrapper"],
+.chat-bubble-role-assistant [class*="quote-wrapper"] {
+    border-left: 2.5px solid rgba(107, 75, 66, 0.25) !important;
+    padding-left: 8px !important; margin-left: 4px !important; align-items: flex-start !important;
+}
+.chat-bubble-role-assistant [class*="reply-wrapper"]::before,
+.chat-bubble-role-assistant [class*="quote-wrapper"]::before {
+    content: "↳ 引用回复"; font-size: 10px !important; font-weight: 800 !important;
+    color: rgba(107, 75, 66, 0.45) !important; margin-bottom: 4px !important;
+}
+
+.chat-bubble-role-user [class*="reply-wrapper"],
+.chat-bubble-role-user [class*="quote-wrapper"] {
+    border-right: 2.5px solid rgba(107, 75, 66, 0.25) !important;
+    padding-right: 8px !important; margin-right: 4px !important;
+    align-items: flex-end !important; text-align: right !important;
+}
+.chat-bubble-role-user [class*="reply-wrapper"]::before,
+.chat-bubble-role-user [class*="quote-wrapper"]::before {
+    content: "引用回复 ↵"; font-size: 10px !important; font-weight: 800 !important;
+    color: rgba(107, 75, 66, 0.45) !important; margin-bottom: 4px !important;
+}
+
+
+/* ══════════════════════════
+   10. 心声（纸胶带手绘风）
+   ══════════════════════════ */
+.chat-thought-card, [class*="thought-card"] {
+  position: relative !important; background: linear-gradient(135deg, rgba(229, 242, 255, 0.7) 0%, rgba(255, 247, 214, 0.7) 100%) !important;
+  border: 0.85px dashed #A8938C !important; border-radius: 14px !important; padding: 22px 14px 12px 14px !important;
+  box-shadow: inset 0 0 0 2.5px #FFFFFF, 0 3px 10px rgba(107, 75, 66, 0.02) !important; overflow: visible !important;
+}
+.chat-thought-card::before, [class*="thought-card"]::before {
+  content: "💭 心声" !important; position: absolute !important; top: -11px !important; left: 14px !important;
+  background: linear-gradient(90deg, #E5F2FF 0%, #FFF7D6 100%) !important; color: var(--c-line) !important;
+  border: 0.85px solid var(--c-line) !important; border-radius: 4px !important; font-size: 10px !important; font-weight: bold !important;
+  padding: 1px 7px !important; transform: rotate(-2deg) !important; z-index: 5 !important;
+}
+.chat-thought-card::after, [class*="thought-card"]::after {
+  display: none !important; content: none !important;
+}
+
+
+/* ══════════════════════════
+   11. 连续发消息时：隐藏后续头像
+   ══════════════════════════ */
+.chat-msg-wrapper[data-consecutive] .chat-msg-avatar-container,
+.chat-msg-wrapper[data-consecutive] .chat-msg-avatar,
+.chat-msg-wrapper[data-consecutive] [class*="avatar"] {
+    visibility: hidden !important; opacity: 0 !important; pointer-events: none !important;
+}
+
+
+/* ══════════════════════════
+   12. 发送按钮
+   ══════════════════════════ */
+.ui-btn, .chat-input-send-btn {
+  background: var(--c-theme-yellow) !important; border: 0.85px solid var(--c-line) !important; border-radius: 14px !important;
+  color: var(--c-text-title) !important; font-weight: 800 !important; box-shadow: inset 0 0 0 2px #FFFFFF !important;
+}
+
+
+/* ══════════════════════════
+   13. 屏蔽“输入中”与“加载中”干扰
+   ══════════════════════════ */
+[class*="chat-bubble"][class*="typing"], [class*="chat-bubble"]:has([class*="typing"]),
+[class*="chat-bubble"][class*="loading"], [class*="chat-bubble"]:has([class*="loading"]) {
+    background: transparent !important; border: none !important; box-shadow: none !important;
+}
+[class*="chat-bubble"][class*="typing"]::before, [class*="chat-bubble"][class*="typing"]::after,
+[class*="chat-bubble"]:has([class*="typing"])::before, [class*="chat-bubble"]:has([class*="typing"])::after,
+[class*="chat-bubble"][class*="loading"]::before, [class*="chat-bubble"][class*="loading"]::after,
+[class*="chat-bubble"]:has([class*="loading"])::before, [class*="chat-bubble"]:has([class*="loading"])::after {
+    display: none !important;
+}
+
+
+/* ══════════════════════════
+   14. 【新增】头像悬浮萌宠挂饰
+   ══════════════════════════ */
+.chat-msg-avatar-container, .chat-msg-avatar,
+[class*="chat-msg-wrapper"] [class*="avatar"] {
+    position: relative !important;
+    overflow: visible !important;
+}
+
+/* 对方（左侧）头像挂饰：蓝色图标，已精准上移 5px */
+.chat-msg-wrapper[data-role="assistant"] .chat-msg-avatar-container::after,
+.chat-msg-wrapper[data-role="assistant"] .chat-msg-avatar::after,
+[class*="chat-message"][class*="other"] [class*="avatar"]::after {
+    content: "" !important;
+    position: absolute !important;
+    top: calc(-65% - 5px) !important; /* 精准上移 5px */
+    left: -15% !important;
+    width: 130% !important;
+    height: 130% !important;
+    background: url("https://nos.netease.com/ysf/3c9676c5c5912fc72392acab639a8231.png") no-repeat center/contain !important;
+    pointer-events: none !important;
+    z-index: 999 !important;
+}
+
+/* 我方（右侧）头像挂饰：黄色图标，已精准上移 5px */
+.chat-msg-wrapper[data-role="user"] .chat-msg-avatar-container::after,
+.chat-msg-wrapper[data-role="user"] .chat-msg-avatar::after,
+[class*="chat-message"][class*="self"] [class*="avatar"]::after {
+    content: "" !important;
+    position: absolute !important;
+    top: calc(-65% - 5px) !important; /* 精准上移 5px */
+    left: -15% !important;
+    width: 130% !important;
+    height: 130% !important;
+    background: url("https://nos.netease.com/ysf/f7f5d711937ca0ee16e634b19a52b0e8.png") no-repeat center/contain !important;
+    pointer-events: none !important;
+    z-index: 999 !important;
+}
