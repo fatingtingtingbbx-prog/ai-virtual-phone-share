@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-19T06:09:44.628Z",
+  "generatedAt": "2026-08-19T08:25:27.327Z",
   "folders": [
     {
       "name": "A 重要须知（自部署版请查看）",
@@ -45,7 +45,7 @@
     },
     {
       "name": "线上美化",
-      "count": 12
+      "count": 13
     },
     {
       "name": "线上聊天状态栏",
@@ -243,15 +243,15 @@
       "dirName": "阅读不过",
       "type": "dir",
       "path": "资源/BUG反馈专用文件夹/阅读不过",
-      "files": [
-        "资源/BUG反馈专用文件夹/阅读不过/IMG_2003.asset.png"
+      "files": [],
+      "images": [
+        "资源/BUG反馈专用文件夹/阅读不过/IMG_2003.png"
       ],
-      "images": [],
       "description": "导入文件会变乱码 另外小红书生成路人评论会生成user的，不知道该怎么避免",
       "author": "",
       "avatar": "",
       "ownerHash": "7456f6be79f28efc8524849b2ba61bed37b61368adf52d1f435c942224bb3ca3",
-      "updatedAt": "2026-08-18T06:37:42+08:00"
+      "updatedAt": "2026-08-19T16:25:13+08:00"
     },
     {
       "folder": "BUG反馈专用文件夹",
@@ -1461,6 +1461,22 @@
       "avatar": "资源/线上美化/韩系兔丸/.avatar.png",
       "ownerHash": "bf65bc1c732341505dc056c65d6ad17b6862e2c1f0cdf99f70af36a873b438aa",
       "updatedAt": "2026-08-13T16:01:49+08:00"
+    },
+    {
+      "folder": "线上美化",
+      "name": "黑白气泡粗体",
+      "dirName": "黑白气泡粗体",
+      "type": "dir",
+      "path": "资源/线上美化/黑白气泡粗体",
+      "files": [],
+      "images": [
+        "资源/线上美化/黑白气泡粗体/1000072456.jpg"
+      ],
+      "description": "没问题，宝！一字不差，全在这儿了，你直接复制收好：\n```css\n/* ═══ 全局聊天室 CSS ═══ */\n/* 作用范围：全局所有聊天室 */\n/* ── 标题栏 (保留定制样式) ── */\n.page-header {\n  background: url(\"https://img.tofaka.com/autoupload/f/896tm/20260814/p02J/top_bar_lines.jpg\") center bottom / cover no-repeat;\n  backdrop-filter: none; \n}\n.page-header-safe-area {\n  background: #ffffff !important;\n}\n.page-header-content {\n  display: flex !important;\n  align-items: flex-start !important; \n  padding-top: 0px !important;\n  padding-bottom: 35px !important; \n  background: linear-gradient(to bottom, #ffffff 0%, #ffffff calc(100% - 35px), transparent calc(100% - 35px),",
+      "author": "西瓜耶耶",
+      "avatar": "",
+      "ownerHash": "7f89638be23150f9ce5564d57511d3ac7c3520c4ef0bbc4ce3ad5d451df7bac9",
+      "updatedAt": "2026-08-19T15:18:54+08:00"
     },
     {
       "folder": "线上美化",
