@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-19T08:25:27.327Z",
+  "generatedAt": "2026-08-19T09:16:50.990Z",
   "folders": [
     {
       "name": "A 重要须知（自部署版请查看）",
@@ -1468,15 +1468,17 @@
       "dirName": "黑白气泡粗体",
       "type": "dir",
       "path": "资源/线上美化/黑白气泡粗体",
-      "files": [],
+      "files": [
+        "资源/线上美化/黑白气泡粗体/黑白粗体.docx"
+      ],
       "images": [
         "资源/线上美化/黑白气泡粗体/1000072456.jpg"
       ],
-      "description": "没问题，宝！一字不差，全在这儿了，你直接复制收好：\n```css\n/* ═══ 全局聊天室 CSS ═══ */\n/* 作用范围：全局所有聊天室 */\n/* ── 标题栏 (保留定制样式) ── */\n.page-header {\n  background: url(\"https://img.tofaka.com/autoupload/f/896tm/20260814/p02J/top_bar_lines.jpg\") center bottom / cover no-repeat;\n  backdrop-filter: none; \n}\n.page-header-safe-area {\n  background: #ffffff !important;\n}\n.page-header-content {\n  display: flex !important;\n  align-items: flex-start !important; \n  padding-top: 0px !important;\n  padding-bottom: 35px !important; \n  background: linear-gradient(to bottom, #ffffff 0%, #ffffff calc(100% - 35px), transparent calc(100% - 35px),",
+      "description": "一个黑白粗体，气泡颜色可以找小卷换一下，顶栏也做了改变\n文件内是完整css代码，复制粘贴应用即可\n\n重要！:由于“正在输入”这几个字我位置我无法改变，所以我把它隐藏了，如果大家有什么好的办法，可以自改一下，之后可以分享出来，谢谢。",
       "author": "西瓜耶耶",
       "avatar": "",
       "ownerHash": "7f89638be23150f9ce5564d57511d3ac7c3520c4ef0bbc4ce3ad5d451df7bac9",
-      "updatedAt": "2026-08-19T15:18:54+08:00"
+      "updatedAt": "2026-08-19T17:16:36+08:00"
     },
     {
       "folder": "线上美化",
