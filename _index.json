@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-19T09:17:55.059Z",
+  "generatedAt": "2026-08-19T09:20:46.483Z",
   "folders": [
     {
       "name": "A 重要须知（自部署版请查看）",
@@ -45,7 +45,7 @@
     },
     {
       "name": "线上美化",
-      "count": 13
+      "count": 12
     },
     {
       "name": "线上聊天状态栏",
@@ -1461,24 +1461,6 @@
       "avatar": "资源/线上美化/韩系兔丸/.avatar.png",
       "ownerHash": "bf65bc1c732341505dc056c65d6ad17b6862e2c1f0cdf99f70af36a873b438aa",
       "updatedAt": "2026-08-13T16:01:49+08:00"
-    },
-    {
-      "folder": "线上美化",
-      "name": "黑白气泡粗体",
-      "dirName": "黑白气泡粗体",
-      "type": "dir",
-      "path": "资源/线上美化/黑白气泡粗体",
-      "files": [
-        "资源/线上美化/黑白气泡粗体/黑白粗体.docx"
-      ],
-      "images": [
-        "资源/线上美化/黑白气泡粗体/1000072456.jpg"
-      ],
-      "description": "一个黑白粗体，气泡颜色可以找小卷换一下，顶栏也做了改变\n文件内是完整css代码，复制粘贴应用即可\n\n重要！:由于“正在输入”这几个字我位置我无法改变，所以我把它隐藏了，如果大家有什么好的办法，可以自改一下，之后可以分享出来，谢谢。",
-      "author": "西瓜耶耶",
-      "avatar": "",
-      "ownerHash": "7f89638be23150f9ce5564d57511d3ac7c3520c4ef0bbc4ce3ad5d451df7bac9",
-      "updatedAt": "2026-08-19T17:16:36+08:00"
     },
     {
       "folder": "线上美化",
