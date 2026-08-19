@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-19T15:43:56.418Z",
+  "generatedAt": "2026-08-19T15:53:28.061Z",
   "folders": [
     {
       "name": "A 重要须知（自部署版请查看）",
@@ -13,7 +13,7 @@
     },
     {
       "name": "Js插件",
-      "count": 4
+      "count": 5
     },
     {
       "name": "全局主题",
@@ -341,6 +341,25 @@
       "avatar": "",
       "ownerHash": "88f102e0ef217cea73fe5b268e0c11999ebe72de7ee6c86765148d0313569196",
       "updatedAt": "2026-08-18T05:13:19+08:00"
+    },
+    {
+      "folder": "Js插件",
+      "name": "转发聊天记录",
+      "dirName": "转发聊天记录",
+      "type": "dir",
+      "path": "资源/Js插件/转发聊天记录",
+      "files": [
+        "资源/Js插件/转发聊天记录/zuihou22.js"
+      ],
+      "images": [
+        "资源/Js插件/转发聊天记录/1000033475.jpg",
+        "资源/Js插件/转发聊天记录/1000033476.jpg"
+      ],
+      "description": "一个简单的可以转发角色聊天记录的插件，可能有bug。导入后最好刷新重进一下，如果转发记录后没看见就重进一下聊天应用（退到小手机主页重进就可以了）\n加了气泡会好看一点´ₒ⦁⩊⦁ₒ` 配图没加气泡",
+      "author": "",
+      "avatar": "",
+      "ownerHash": "39b4db040b0b05244ca2889b6bd1e99aa85e7d85600bc3eb247633752276fb3c",
+      "updatedAt": "2026-08-19T23:53:07+08:00"
     },
     {
       "folder": "全局主题",
@@ -1642,11 +1661,11 @@
       "images": [
         "资源/线上聊天状态栏/仿iCity状态栏/IMG_20260819_231722.jpg"
       ],
-      "description": "✅二改自用\n🚫二传二卖\n选择 导入-状态栏 即可\n如有bug请反馈 🍠@木叶淀粉酶\n\n\n二编：对已知问题进行了优化，重传一次",
+      "description": "✅二改自用\n🚫二传二卖\n选择 导入-状态栏 即可\n如有bug请反馈 🍠@木叶淀粉酶\n\n二编：对已知问题进行了优化，重传一次",
       "author": "木叶淀粉酶",
       "avatar": "资源/线上聊天状态栏/仿iCity状态栏/.avatar.png",
       "ownerHash": "9255ec1277ace06ef7aebf6566a04ad2844f9b543a7b06e6b1b0b7fe619d781c",
-      "updatedAt": "2026-08-19T23:22:42+08:00"
+      "updatedAt": "2026-08-19T23:53:09+08:00"
     },
     {
       "folder": "线上聊天状态栏",
