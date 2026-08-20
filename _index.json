@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-20T11:43:55.016Z",
+  "generatedAt": "2026-08-20T13:24:20.964Z",
   "folders": [
     {
       "name": "A 重要须知（自部署版请查看）",
@@ -9,7 +9,7 @@
     },
     {
       "name": "BUG反馈专用文件夹",
-      "count": 13
+      "count": 14
     },
     {
       "name": "Js插件",
@@ -29,7 +29,7 @@
     },
     {
       "name": "应用",
-      "count": 33
+      "count": 34
     },
     {
       "name": "气泡美化",
@@ -114,6 +114,20 @@
       "avatar": "",
       "ownerHash": "4f0ced2a7a36b6f7ec4a59ee0ea589e6a6a0d1acb970b099671899645b6d56ab",
       "updatedAt": "2026-08-18T11:45:12+08:00"
+    },
+    {
+      "folder": "BUG反馈专用文件夹",
+      "name": "导入插件后工坊进入界面跟扩展插件界面白屏",
+      "dirName": "导入插件后工坊进入界面跟扩展插件界面白屏",
+      "type": "dir",
+      "path": "资源/BUG反馈专用文件夹/导入插件后工坊进入界面跟扩展插件界面白屏",
+      "files": [],
+      "images": [],
+      "description": "之前导入插件白屏之后重进刷新一下就好了,这个刷新了很多次还是没好。\n是工坊做的插件不是集市的",
+      "author": "镜观雪",
+      "avatar": "资源/BUG反馈专用文件夹/导入插件后工坊进入界面跟扩展插件界面白屏/.avatar.png",
+      "ownerHash": "1d9cea70e311b630e92234fd8993a1076198434564b88f424df0aba8970847f4",
+      "updatedAt": "2026-08-20T21:24:04+08:00"
     },
     {
       "folder": "BUG反馈专用文件夹",
@@ -817,6 +831,26 @@
       "avatar": "资源/应用/pulse（仿x）/.avatar.png",
       "ownerHash": "8e3664d10538a0676ceac971b51fd4732a8d3997119b81bc78fdb2e3ce7eaba6",
       "updatedAt": "2026-08-12T02:02:50+02:00"
+    },
+    {
+      "folder": "应用",
+      "name": "soul",
+      "dirName": "soul",
+      "type": "dir",
+      "path": "资源/应用/soul",
+      "files": [
+        "资源/应用/soul/soul.meet.app-1.0.3.zip"
+      ],
+      "images": [
+        "资源/应用/soul/Screenshot_20260820_174858_com_sevensix_everlasting_WebV.jpg",
+        "资源/应用/soul/Screenshot_20260820_174918_com_sevensix_everlasting_WebV.jpg",
+        "资源/应用/soul/Screenshot_20260820_181217_com_sevensix_everlasting_WebV.jpg"
+      ],
+      "description": "一款社交交友软件\n功能：\n• 动态广场：AI 会自主发帖、互动神回复，社交生态真实有趣。绑定float生图，可生图。\n• 深度社交：支持私聊搭讪、人物查岗、组建AI群聊、发送图片与虚拟转账。\n• 灵魂匹配：滑动邂逅海量性格迥异的 AI 网友，支持主系统原住民记忆绑定。\n• 线下奔现：专属 RP（角色扮演）小说约会空间，沉浸演绎心动拉扯。\n• 趣味主页：个人留言板与匿名提问箱，互动玩法拉满。",
+      "author": "Stella",
+      "avatar": "",
+      "ownerHash": "eee1ff3396b8bafaeaff7dc7209679503c680ddedfc96481ece03b322fd8e867",
+      "updatedAt": "2026-08-20T21:00:00+08:00"
     },
     {
       "folder": "应用",
