@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-20T04:51:43.228Z",
+  "generatedAt": "2026-08-20T06:14:38.071Z",
   "folders": [
     {
       "name": "A 重要须知（自部署版请查看）",
@@ -771,12 +771,15 @@
       "files": [
         "资源/应用/bubble/bubble.fanmsg-1.0.0.zip"
       ],
-      "images": [],
-      "description": "仿韩娱私信 app bubble：角色在bubble应用里发短消息、照片和语音。角色列表直接读取小手机里的角色，可随时切换；支持关系状态、身份识别与私密邀请。\n\n\ntips：\n1.比较适配本来就是公众人物的char，不是公众人物的char可以通过在房间内补充额外设定自行肘击。\n2.具体功能介绍和bug反馈详见xhs：814000747",
+      "images": [
+        "资源/应用/bubble/IMG_2010.jpeg",
+        "资源/应用/bubble/IMG_2034.jpeg"
+      ],
+      "description": "仿韩娱私信 app bubble：角色在bubble应用里发短消息、照片和语音。角色列表直接读取小手机里的角色，可随时切换；支持关系状态、身份识别与私密邀请。\n\n💜主要功能亮点：\n1.聊天美化尽量还原了bubble页面，也可在app内自行更换聊天背景、注意色和用户头像、id。订阅天数实时更新，char可以随机对你的消息进行引用回复，也可以发图片和语音（需要在float内内置相应api，没配置则显示文字版），增加真实感。\n2.可以体验纯享版bubble，作为粉丝围观char营业。也可以选择装粉丝和char“调情”，char也会猜你是谁，怀疑值达到一定数值char能够确定那个粉丝就是你，还会给你发送私密卡片邀请你回双人聊天室。\n3.支持导出导入功能，可以单个导出也可以全部导出，json版本的可以重新导入回去，txt版本的方便直接阅读。\n\n🔻tips：\n1.比较适配本来就是公众人物的char，不是公众人物的char可以通过在房间内补充额外设定自行肘击。\n2.具体功能介绍和bug反馈详见xhs：814000747",
       "author": "春生夏长",
       "avatar": "",
       "ownerHash": "9826b769ad43698f07cdae86ee6765459bdaa7bcc8d8b88bce607e39bafd0f17",
-      "updatedAt": "2026-08-19T22:49:01+08:00"
+      "updatedAt": "2026-08-20T14:14:18+08:00"
     },
     {
       "folder": "应用",
