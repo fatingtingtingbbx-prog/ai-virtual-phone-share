@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-20T04:39:57.854Z",
+  "generatedAt": "2026-08-20T04:41:21.469Z",
   "folders": [
     {
       "name": "A 重要须知（自部署版请查看）",
@@ -344,7 +344,7 @@
     },
     {
       "folder": "Js插件",
-      "name": "转发聊天记录",
+      "name": "转发聊天记录（修改了一下应该可以正常下载了）",
       "dirName": "转发聊天记录",
       "type": "dir",
       "path": "资源/Js插件/转发聊天记录",
@@ -359,7 +359,7 @@
       "author": "寂幽",
       "avatar": "",
       "ownerHash": "39b4db040b0b05244ca2889b6bd1e99aa85e7d85600bc3eb247633752276fb3c",
-      "updatedAt": "2026-08-20T12:39:46+08:00"
+      "updatedAt": "2026-08-20T12:41:07+08:00"
     },
     {
       "folder": "全局主题",
