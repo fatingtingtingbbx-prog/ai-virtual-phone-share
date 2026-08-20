@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-20T15:24:03.819Z",
+  "generatedAt": "2026-08-20T15:25:30.694Z",
   "folders": [
     {
       "name": "A 重要须知（自部署版请查看）",
@@ -1447,11 +1447,11 @@
       "images": [
         "资源/线上美化/ins风灰/IMG_2721.jpeg"
       ],
-      "description": "可二改。",
+      "description": "8.20改:修复了一下添加好友弹窗的bug…\n\n可二改。有bug可去小红书：26984227362  找我。",
       "author": "無",
       "avatar": "资源/线上美化/ins风灰/.avatar.png",
       "ownerHash": "4c5a389c9b5a488af6c850b9573f167bd072aa6b1d5a4c2884f314e05e1ca5e5",
-      "updatedAt": "2026-08-19T20:19:32+08:00"
+      "updatedAt": "2026-08-20T23:25:16+08:00"
     },
     {
       "folder": "线上美化",
