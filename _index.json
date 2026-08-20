@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-20T08:47:17.649Z",
+  "generatedAt": "2026-08-20T08:57:25.736Z",
   "folders": [
     {
       "name": "A 重要须知（自部署版请查看）",
@@ -29,7 +29,7 @@
     },
     {
       "name": "应用",
-      "count": 32
+      "count": 33
     },
     {
       "name": "气泡美化",
@@ -798,6 +798,24 @@
       "avatar": "资源/应用/pulse（仿x）/.avatar.png",
       "ownerHash": "8e3664d10538a0676ceac971b51fd4732a8d3997119b81bc78fdb2e3ce7eaba6",
       "updatedAt": "2026-08-12T02:02:50+02:00"
+    },
+    {
+      "folder": "应用",
+      "name": "ta的内耗碎碎念app[幽灵]",
+      "dirName": "ta的内耗碎碎念app[幽灵]",
+      "type": "dir",
+      "path": "资源/应用/ta的内耗碎碎念app[幽灵]",
+      "files": [
+        "资源/应用/ta的内耗碎碎念app[幽灵]/inner-echoes.char.monologue-1.4.0.zip"
+      ],
+      "images": [
+        "资源/应用/ta的内耗碎碎念app[幽灵]/1000053874.jpg"
+      ],
+      "description": "“最近发生了让ta很在意的事情?来听听ta的想法吧！[爱心]”\n\n\n生成的内容是第一人称\n右上角可以换主题颜色\n可以添加世界书、选择角色、听语音(语音可以下载、收藏)注:语音生成字数较多，可能在四分钟左右这样\n外语char也可以，翻译是在括号内，不会把翻译也读出来\n\n\n反馈/bug请私xhs:42927243163\n\n\n希望能玩得开心，请随意使用，peace and love",
+      "author": "南柯",
+      "avatar": "",
+      "ownerHash": "cdec925f9e2d6a79f64c584d0e0286f334fd96c5312717c1b5659b9dc42955d3",
+      "updatedAt": "2026-08-20T16:57:12+08:00"
     },
     {
       "folder": "应用",
