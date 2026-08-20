@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-20T04:34:31.520Z",
+  "generatedAt": "2026-08-20T04:39:20.810Z",
   "folders": [
     {
       "name": "A 重要须知（自部署版请查看）",
@@ -349,6 +349,7 @@
       "type": "dir",
       "path": "资源/Js插件/转发聊天记录",
       "files": [
+        "资源/Js插件/转发聊天记录/dvhdi99.js",
         "资源/Js插件/转发聊天记录/zuihou22.js"
       ],
       "images": [
@@ -359,7 +360,7 @@
       "author": "寂幽",
       "avatar": "",
       "ownerHash": "39b4db040b0b05244ca2889b6bd1e99aa85e7d85600bc3eb247633752276fb3c",
-      "updatedAt": "2026-08-20T12:34:21+08:00"
+      "updatedAt": "2026-08-20T12:39:06+08:00"
     },
     {
       "folder": "全局主题",
