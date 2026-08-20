@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-20T14:31:36.519Z",
+  "generatedAt": "2026-08-20T15:24:03.819Z",
   "folders": [
     {
       "name": "A 重要须知（自部署版请查看）",
@@ -13,7 +13,7 @@
     },
     {
       "name": "Js插件",
-      "count": 6
+      "count": 7
     },
     {
       "name": "全局主题",
@@ -374,6 +374,25 @@
       "avatar": "",
       "ownerHash": "88f102e0ef217cea73fe5b268e0c11999ebe72de7ee6c86765148d0313569196",
       "updatedAt": "2026-08-18T05:13:19+08:00"
+    },
+    {
+      "folder": "Js插件",
+      "name": "聊天轮数统计",
+      "dirName": "聊天轮数统计",
+      "type": "dir",
+      "path": "资源/Js插件/聊天轮数统计",
+      "files": [
+        "资源/Js插件/聊天轮数统计/tttg.js"
+      ],
+      "images": [
+        "资源/Js插件/聊天轮数统计/1000033650.jpg",
+        "资源/Js插件/聊天轮数统计/1000033651.jpg"
+      ],
+      "description": "可以查看总聊天轮数和排行榜\n应用在聊天页面的加号中\n写了一半才发现有作者已经写了，但是已经写了一半了所以还是写完了，大家看着玩吧´ₒ⦁⩊⦁ₒ`",
+      "author": "寂幽",
+      "avatar": "",
+      "ownerHash": "39b4db040b0b05244ca2889b6bd1e99aa85e7d85600bc3eb247633752276fb3c",
+      "updatedAt": "2026-08-20T23:23:47+08:00"
     },
     {
       "folder": "Js插件",
