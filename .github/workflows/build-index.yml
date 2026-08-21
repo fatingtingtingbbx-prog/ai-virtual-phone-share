@@ -3,6 +3,13 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+# App 的一次「编辑」会连发好几个提交（删旧文件、传新文件、说明、署名），
+# 每个提交各触发一次运行。不收敛的话它们会同时构建、竞争推送——只有一个
+# 推得上去，其余非快进失败；抢赢的还未必是最新提交，索引就停在旧状态。
+# 收敛成同组：新运行进来就取消还在跑的旧运行，永远只留最新一趟。
+concurrency:
+  group: build-index
+  cancel-in-progress: true
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -14,13 +21,30 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
+          ref: main # 永远按分支最新构建，不按触发那一刻的提交——连发提交时后者可能是旧树
           fetch-depth: 0 # 完整历史才能取到每条资源的真实更新时间
       - name: Build _index.json
         run: node scripts/build-index.mjs
       - name: Commit
+        # 构建期间可能又进了新提交（送花的 [skip-index] 提交不触发新运行，
+        # 不能指望别的运行兜底）：推失败就 rebase 重试；万一 _index.json
+        # 本身冲突（有人手改了它），丢弃本地、按远端最新重建一次再推。
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add _index.json
-          git diff --cached --quiet || git commit -m "chore: rebuild _index.json"
+          git diff --cached --quiet && exit 0
+          git commit -m "chore: rebuild _index.json"
+          for i in 1 2 3; do
+            git push && exit 0
+            if ! git pull --rebase origin main; then
+              git rebase --abort || true
+              git reset --hard origin/main
+              node scripts/build-index.mjs
+              git add _index.json
+              git diff --cached --quiet && exit 0
+              git commit -m "chore: rebuild _index.json"
+            fi
+            sleep 2
+          done
           git push
