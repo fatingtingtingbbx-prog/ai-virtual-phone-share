@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-21T06:06:59.206Z",
+  "generatedAt": "2026-08-21T06:08:21.789Z",
   "folders": [
     {
       "name": "A 重要须知（自部署版请查看）",
@@ -1506,12 +1506,14 @@
       "files": [
         "资源/特调材料/机括—小手机/小手机.json"
       ],
-      "images": [],
-      "description": "随剧情推动，每轮更新小手机里的内容。在配方那里挂载后使用。",
+      "images": [
+        "资源/特调材料/机括—小手机/IMG_2785.png"
+      ],
+      "description": "随剧情推动，每轮更新小手机里的内容。在独家特调——配方那里挂载后使用。",
       "author": "",
       "avatar": "",
       "ownerHash": "72adb7d77211b0354bc8d30ad6f28de6e6ba7e1047ed9ec1c80c1ab683f98f11",
-      "updatedAt": "2026-08-21T14:06:48+08:00"
+      "updatedAt": "2026-08-21T14:08:05+08:00"
     },
     {
       "folder": "线上美化",
