@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-21T05:55:55.793Z",
+  "generatedAt": "2026-08-21T06:06:59.206Z",
   "folders": [
     {
       "name": "A 重要须知（自部署版请查看）",
@@ -42,6 +42,10 @@
     {
       "name": "游戏",
       "count": 5
+    },
+    {
+      "name": "特调材料",
+      "count": 1
     },
     {
       "name": "线上美化",
@@ -1492,6 +1496,22 @@
       "avatar": "",
       "ownerHash": "88f102e0ef217cea73fe5b268e0c11999ebe72de7ee6c86765148d0313569196",
       "updatedAt": "2026-08-12T10:13:58+02:00"
+    },
+    {
+      "folder": "特调材料",
+      "name": "机括—小手机",
+      "dirName": "机括—小手机",
+      "type": "dir",
+      "path": "资源/特调材料/机括—小手机",
+      "files": [
+        "资源/特调材料/机括—小手机/小手机.json"
+      ],
+      "images": [],
+      "description": "随剧情推动，每轮更新小手机里的内容。在配方那里挂载后使用。",
+      "author": "",
+      "avatar": "",
+      "ownerHash": "72adb7d77211b0354bc8d30ad6f28de6e6ba7e1047ed9ec1c80c1ab683f98f11",
+      "updatedAt": "2026-08-21T14:06:48+08:00"
     },
     {
       "folder": "线上美化",
