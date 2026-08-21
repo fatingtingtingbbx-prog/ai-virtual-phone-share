@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-21T08:12:15.384Z",
+  "generatedAt": "2026-08-21T10:11:34.359Z",
   "folders": [
     {
       "name": "A 重要须知（自部署版请查看）",
@@ -29,7 +29,7 @@
     },
     {
       "name": "应用",
-      "count": 36
+      "count": 37
     },
     {
       "name": "朋友圈美化",
@@ -1038,6 +1038,22 @@
       "avatar": "",
       "ownerHash": "b2353d7b810e6658051615dd47fb5a69e69cb8dc4bd0a316ffa4f1f44ab8ea7a",
       "updatedAt": "2026-08-15T18:41:00+08:00"
+    },
+    {
+      "folder": "应用",
+      "name": "审批购物➕记账app[笑脸]",
+      "dirName": "审批购物➕记账app[笑脸]",
+      "type": "dir",
+      "path": "资源/应用/审批购物➕记账app[笑脸]",
+      "files": [
+        "资源/应用/审批购物➕记账app[笑脸]/pocket.approval.app-1.3.0.zip"
+      ],
+      "images": [],
+      "description": "“这个到底买不买呢？听听ta的意见吧！[闪光]”\n\n\n前两天刷到这样的审批小程序，遂做本来只是想做让char帮忙审批购物清单的\n但是感觉告诉char自己的记账情况的话，ta可以更好的给出建议，所以摸了一个记账功能\n记了一下这几天的花费感觉还可以\n依旧是只有把生成的小卡片转发给他，才可以记入记忆\n有语音功能，没有接语音的char也可以生成\n语音可以收藏、下载\n\n\n请随意使用(ˊ˘ˋ*)♡希望玩的开心\n有bug的话请小窗:42927243163",
+      "author": "南柯",
+      "avatar": "资源/应用/审批购物➕记账app[笑脸]/.avatar.png",
+      "ownerHash": "cdec925f9e2d6a79f64c584d0e0286f334fd96c5312717c1b5659b9dc42955d3",
+      "updatedAt": "2026-08-21T18:11:19+08:00"
     },
     {
       "folder": "应用",
