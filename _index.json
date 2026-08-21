@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-21T14:28:20.110Z",
+  "generatedAt": "2026-08-21T14:53:05.461Z",
   "folders": [
     {
       "name": "A 重要须知（自部署版请查看）",
@@ -29,7 +29,7 @@
     },
     {
       "name": "应用",
-      "count": 38
+      "count": 39
     },
     {
       "name": "朋友圈美化",
@@ -1225,6 +1225,24 @@
       "avatar": "资源/应用/秘档/.avatar.png",
       "ownerHash": "1d9cea70e311b630e92234fd8993a1076198434564b88f424df0aba8970847f4",
       "updatedAt": "2026-08-19T08:13:18+08:00"
+    },
+    {
+      "folder": "应用",
+      "name": "童话漫游地图",
+      "dirName": "童话漫游地图",
+      "type": "dir",
+      "path": "资源/应用/童话漫游地图",
+      "files": [
+        "资源/应用/童话漫游地图/app.friends.map-1.0.3 (7).zip"
+      ],
+      "images": [
+        "资源/应用/童话漫游地图/17049.jpg"
+      ],
+      "description": "[粉]使用方式：导入到应用[/粉]大概就是和角色一起环游世界\n绑定角色后会生成专属地点\n地图也可以开多个\n全览可看到角色坐标和地图上全部地点\n点击update按钮可以生成更多地点\n\n支持生图 一起做手账 生成在路上/景点的互动故事\n支持自定义地点\n然后可以保存为记忆邮票\n[粉]可以让角色邀请你去一个地方[/粉]",
+      "author": "juanjuandog",
+      "avatar": "资源/应用/童话漫游地图/.avatar.png",
+      "ownerHash": "0a749ba0d9d6e3baf931f4b89d8da425790803eaed267f9a1a1aad36f47e2a8f",
+      "updatedAt": "2026-08-21T22:52:49+08:00"
     },
     {
       "folder": "应用",
