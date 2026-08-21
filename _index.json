@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-21T11:01:19.226Z",
+  "generatedAt": "2026-08-21T11:22:43.012Z",
   "folders": [
     {
       "name": "A 重要须知（自部署版请查看）",
@@ -13,7 +13,7 @@
     },
     {
       "name": "Js插件",
-      "count": 9
+      "count": 8
     },
     {
       "name": "全局主题",
@@ -359,25 +359,6 @@
       "avatar": "",
       "ownerHash": "88f102e0ef217cea73fe5b268e0c11999ebe72de7ee6c86765148d0313569196",
       "updatedAt": "2026-08-11T16:14:55+02:00"
-    },
-    {
-      "folder": "Js插件",
-      "name": "消息emoji徽章",
-      "dirName": "消息emoji徽章",
-      "type": "dir",
-      "path": "资源/Js插件/消息emoji徽章",
-      "files": [
-        "资源/Js插件/消息emoji徽章/消息emoji徽章.js",
-        "资源/Js插件/消息emoji徽章/消息末尾emoji隐藏.json"
-      ],
-      "images": [
-        "资源/Js插件/消息emoji徽章/IMG_20260821_143457.jpg"
-      ],
-      "description": "注：该插件含 角色最后一条消息的emoji无法被提取成徽章 的bug\n✅二改\n🚫二传二卖\n建议在导入「消息末尾emoji隐藏」正则后使用该插件效果更好，否则会出现提取出emoji徽章以后消息末尾emoji依然存在的情况\n\n一个简单的小插件，会提取每条消息末尾的emoji单独放气泡左/右下角，点击emoji或插件的修改设置按钮可以调整大小、emoji上下高度位置以及层级（避免emoji被气泡覆盖）\n有bug请反馈 📕@木叶淀粉酶",
-      "author": "木叶淀粉酶",
-      "avatar": "资源/Js插件/消息emoji徽章/.avatar.png",
-      "ownerHash": "9255ec1277ace06ef7aebf6566a04ad2844f9b543a7b06e6b1b0b7fe619d781c",
-      "updatedAt": "2026-08-21T15:02:21+08:00"
     },
     {
       "folder": "Js插件",
