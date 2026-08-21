@@ -1,0 +1,1014 @@
+{
+  "name": "辱女词替换-聊天",
+  "description": "仅聊天场景，仅显示时生效，含全部替换规则",
+  "rules": [
+    {
+      "id": "regex-rule-1787338871756",
+      "scriptName": "/女帝/g",
+      "findRegex": "/女帝/g",
+      "replaceString": "皇帝",
+      "tags": [
+        "chat",
+        "text"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-rule-1787338470509",
+      "scriptName": "女司机等",
+      "findRegex": "/女(司机|老师|博士|硕士|作家|王|医生|工程师|科学家|教授|法官|律师|干部|企业家|导演|编剧|歌手|演员|老板|总裁)/g",
+      "replaceString": "$1",
+      "tags": [
+        "chat",
+        "text"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-rule-1787338355547",
+      "scriptName": "/女警/g",
+      "findRegex": "/女警/g",
+      "replaceString": "警察",
+      "tags": [
+        "chat",
+        "text"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-rule-1787338251865",
+      "scriptName": "/女侠/g",
+      "findRegex": "/女侠/g",
+      "replaceString": "大侠",
+      "tags": [
+        "chat",
+        "text"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-rule-1787300669421",
+      "scriptName": "/圣子/g",
+      "findRegex": "/圣子/g",
+      "replaceString": "圣男",
+      "tags": [
+        "chat",
+        "text"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-rule-1787287470207",
+      "scriptName": "/视奸/g",
+      "findRegex": "/视奸/g",
+      "replaceString": "视监",
+      "tags": [
+        "chat",
+        "text"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-rule-1787147292942",
+      "scriptName": "/少女暴君/g",
+      "findRegex": "/少女暴君/g",
+      "replaceString": "少年暴君",
+      "tags": [
+        "chat",
+        "text"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-rule-1787137883157",
+      "scriptName": "/化妆/g",
+      "findRegex": "/化妆/g",
+      "replaceString": "化粧",
+      "tags": [
+        "chat",
+        "text"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-rule-1787050304902",
+      "scriptName": "/金主爸爸/g",
+      "findRegex": "/金主爸爸/g",
+      "replaceString": "金主妈妈",
+      "tags": [
+        "chat",
+        "text"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-rule-1787050072562",
+      "scriptName": "/观众姥爷|观众老爷/g",
+      "findRegex": "/观众姥爷|观众老爷/g",
+      "replaceString": "观众姥姥",
+      "tags": [
+        "chat",
+        "text"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-chat-000",
+      "scriptName": "辱女词替换-仅显示时",
+      "findRegex": "/草泥马|草你妈|草你妹|操你妹|操你妈|日你妈/g",
+      "replaceString": "骟你爹",
+      "tags": [
+        "chat",
+        "text"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-chat-001",
+      "scriptName": "辱女词替换-仅显示时",
+      "findRegex": "/头发长见识短/g",
+      "replaceString": "见识短",
+      "tags": [
+        "chat",
+        "text"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-chat-002",
+      "scriptName": "辱女词替换-仅显示时",
+      "findRegex": "/你妈了个逼|泥马勒戈壁|你麻痹|你妈逼/g",
+      "replaceString": "你爹个蛋",
+      "tags": [
+        "chat",
+        "text"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-chat-003",
+      "scriptName": "辱女词替换-仅显示时",
+      "findRegex": "/去他娘的|去他妈的/g",
+      "replaceString": "去他爹的",
+      "tags": [
+        "chat",
+        "text"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-chat-006",
+      "scriptName": "辱女词替换-仅显示时",
+      "findRegex": "/干你娘/g",
+      "replaceString": "干你爹",
+      "tags": [
+        "chat",
+        "text"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-chat-007",
+      "scriptName": "辱女词替换-仅显示时",
+      "findRegex": "/日你娘/g",
+      "replaceString": "日你爹",
+      "tags": [
+        "chat",
+        "text"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-chat-008",
+      "scriptName": "辱女词替换-仅显示时",
+      "findRegex": "/操你大爷/g",
+      "replaceString": "骟你大爷",
+      "tags": [
+        "chat",
+        "text"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-chat-009",
+      "scriptName": "辱女词替换-仅显示时",
+      "findRegex": "/胸大无脑/g",
+      "replaceString": "无脑",
+      "tags": [
+        "chat",
+        "text"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-chat-010",
+      "scriptName": "辱女词替换-仅显示时",
+      "findRegex": "/婆婆妈妈/g",
+      "replaceString": "公公爹爹",
+      "tags": [
+        "chat",
+        "text"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-chat-011",
+      "scriptName": "辱女词替换-仅显示时",
+      "findRegex": "/你奶奶的/g",
+      "replaceString": "你爷爷的",
+      "tags": [
+        "chat",
+        "text"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-chat-012",
+      "scriptName": "辱女词替换-仅显示时",
+      "findRegex": "/靠恁娘/g",
+      "replaceString": "靠恁爹",
+      "tags": [
+        "chat",
+        "text"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-chat-013",
+      "scriptName": "辱女词替换-仅显示时",
+      "findRegex": "/娘希匹/g",
+      "replaceString": "爹希匹",
+      "tags": [
+        "chat",
+        "text"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-chat-014",
+      "scriptName": "辱女词替换-仅显示时",
+      "findRegex": "/我操|卧槽/g",
+      "replaceString": "我骟",
+      "tags": [
+        "chat",
+        "text"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-chat-015",
+      "scriptName": "辱女词替换-仅显示时",
+      "findRegex": "/日你/g",
+      "replaceString": "骟你",
+      "tags": [
+        "chat",
+        "text"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-chat-016",
+      "scriptName": "辱女词替换-仅显示时",
+      "findRegex": "/(傻|装|事|事儿|你个)逼/g",
+      "replaceString": "$1吊",
+      "tags": [
+        "chat",
+        "text"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-chat-017",
+      "scriptName": "辱女词替换-仅显示时",
+      "findRegex": "/牛逼/g",
+      "replaceString": "牛根",
+      "tags": [
+        "chat",
+        "text"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-chat-018",
+      "scriptName": "辱女词替换-仅显示时",
+      "findRegex": "/[Ss][Bb]/g",
+      "replaceString": "傻叉",
+      "tags": [
+        "chat",
+        "text"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-chat-019",
+      "scriptName": "辱女词替换-仅显示时",
+      "findRegex": "/婊子/g",
+      "replaceString": "龟公",
+      "tags": [
+        "chat",
+        "text"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-chat-020",
+      "scriptName": "辱女词替换-仅显示时",
+      "findRegex": "/骚货/g",
+      "replaceString": "骚男",
+      "tags": [
+        "chat",
+        "text"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-chat-021",
+      "scriptName": "辱女词替换-仅显示时",
+      "findRegex": "/荡妇/g",
+      "replaceString": "荡夫",
+      "tags": [
+        "chat",
+        "text"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-chat-022",
+      "scriptName": "辱女词替换-仅显示时",
+      "findRegex": "/破鞋/g",
+      "replaceString": "破帽",
+      "tags": [
+        "chat",
+        "text"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-chat-023",
+      "scriptName": "辱女词替换-仅显示时",
+      "findRegex": "/贱人/g",
+      "replaceString": "贱男",
+      "tags": [
+        "chat",
+        "text"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-chat-024",
+      "scriptName": "辱女词替换-仅显示时",
+      "findRegex": "/母狗|剩女|男人婆/g",
+      "replaceString": "",
+      "tags": [
+        "chat",
+        "text"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-chat-025",
+      "scriptName": "辱女词替换-仅显示时",
+      "findRegex": "/妓女|娼妇/g",
+      "replaceString": "性工作者",
+      "tags": [
+        "chat",
+        "text"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-chat-026",
+      "scriptName": "辱女词替换-仅显示时",
+      "findRegex": "/姘头/g",
+      "replaceString": "情人",
+      "tags": [
+        "chat",
+        "text"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-chat-027",
+      "scriptName": "辱女词替换-仅显示时",
+      "findRegex": "/老女人/g",
+      "replaceString": "老人",
+      "tags": [
+        "chat",
+        "text"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-chat-028",
+      "scriptName": "辱女词替换-仅显示时",
+      "findRegex": "/泼妇/g",
+      "replaceString": "泼夫",
+      "tags": [
+        "chat",
+        "text"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-chat-029",
+      "scriptName": "辱女词替换-仅显示时",
+      "findRegex": "/怨妇/g",
+      "replaceString": "怨夫",
+      "tags": [
+        "chat",
+        "text"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-chat-030",
+      "scriptName": "辱女词替换-仅显示时",
+      "findRegex": "/事儿妈/g",
+      "replaceString": "事儿爹",
+      "tags": [
+        "chat",
+        "text"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-chat-031",
+      "scriptName": "辱女词替换-仅显示时",
+      "findRegex": "/长舌妇/g",
+      "replaceString": "长舌夫",
+      "tags": [
+        "chat",
+        "text"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-chat-032",
+      "scriptName": "辱女词替换-仅显示时",
+      "findRegex": "/母夜叉/g",
+      "replaceString": "夜叉",
+      "tags": [
+        "chat",
+        "text"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-chat-034",
+      "scriptName": "辱女词替换-仅显示时",
+      "findRegex": "/二奶/g",
+      "replaceString": "第三者",
+      "tags": [
+        "chat",
+        "text"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-chat-035",
+      "scriptName": "辱女词替换-仅显示时",
+      "findRegex": "/老天爷/g",
+      "replaceString": "老天奶",
+      "tags": [
+        "chat",
+        "text"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-chat-036",
+      "scriptName": "辱女词替换-仅显示时",
+      "findRegex": "/父母/g",
+      "replaceString": "母父",
+      "tags": [
+        "chat",
+        "text"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-chat-037",
+      "scriptName": "辱女词替换-仅显示时",
+      "findRegex": "/爸妈/g",
+      "replaceString": "妈爸",
+      "tags": [
+        "chat",
+        "text"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-chat-038",
+      "scriptName": "辱女词替换-仅显示时",
+      "findRegex": "/嫉妒/g",
+      "replaceString": "忮忌",
+      "tags": [
+        "chat",
+        "text"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-chat-039",
+      "scriptName": "辱女词替换-仅显示时",
+      "findRegex": "/嫌弃/g",
+      "replaceString": "慊弃",
+      "tags": [
+        "chat",
+        "text"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-chat-040",
+      "scriptName": "辱女词替换-仅显示时",
+      "findRegex": "/嫖娼/g",
+      "replaceString": "剽倡",
+      "tags": [
+        "chat",
+        "text"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-chat-041",
+      "scriptName": "辱女词替换-仅显示时",
+      "findRegex": "/白嫖/g",
+      "replaceString": "白剽",
+      "tags": [
+        "chat",
+        "text"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-chat-042",
+      "scriptName": "辱女词替换-仅显示时",
+      "findRegex": "/强奸/g",
+      "replaceString": "强仠",
+      "tags": [
+        "chat",
+        "text"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-chat-043",
+      "scriptName": "辱女词替换-仅显示时",
+      "findRegex": "/把妹王/g",
+      "replaceString": "逗弟主",
+      "tags": [
+        "chat",
+        "text"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-chat-044",
+      "scriptName": "辱女词替换-仅显示时",
+      "findRegex": "/英雄/g",
+      "replaceString": "英雌",
+      "tags": [
+        "chat",
+        "text"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-chat-045",
+      "scriptName": "辱女词替换-仅显示时",
+      "findRegex": "/(我|谁)他妈/g",
+      "replaceString": "$1他爹",
+      "tags": [
+        "chat",
+        "text"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-chat-046",
+      "scriptName": "辱女词替换-仅显示时",
+      "findRegex": "/去你妈的/g",
+      "replaceString": "去你爹的",
+      "tags": [
+        "chat",
+        "text"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-chat-047",
+      "scriptName": "辱女词替换-仅显示时",
+      "findRegex": "/你他妈/g",
+      "replaceString": "你他爹",
+      "tags": [
+        "chat",
+        "text"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    },
+    {
+      "id": "regex-chat-048",
+      "scriptName": "辱女词替换-仅显示时",
+      "findRegex": "/妈呀大姐/g",
+      "replaceString": "爸呀大哥",
+      "tags": [
+        "chat",
+        "text"
+      ],
+      "disabled": false,
+      "placement": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "markdownOnly": true
+    }
+  ]
+}
