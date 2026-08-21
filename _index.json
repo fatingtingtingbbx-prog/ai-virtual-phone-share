@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-21T11:44:23.375Z",
+  "generatedAt": "2026-08-21T11:52:38.173Z",
   "folders": [
     {
       "name": "A 重要须知（自部署版请查看）",
@@ -983,7 +983,7 @@
       "author": "西瓜耶耶",
       "avatar": "",
       "ownerHash": "7f89638be23150f9ce5564d57511d3ac7c3520c4ef0bbc4ce3ad5d451df7bac9",
-      "updatedAt": "2026-08-21T13:23:27+08:00"
+      "updatedAt": "2026-08-21T19:52:23+08:00"
     },
     {
       "folder": "应用",
