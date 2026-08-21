@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-21T11:22:43.012Z",
+  "generatedAt": "2026-08-21T11:37:22.051Z",
   "folders": [
     {
       "name": "A 重要须知（自部署版请查看）",
@@ -29,7 +29,7 @@
     },
     {
       "name": "应用",
-      "count": 37
+      "count": 38
     },
     {
       "name": "朋友圈美化",
@@ -835,6 +835,24 @@
       "avatar": "资源/应用/[爱心]贴贴/.avatar.png",
       "ownerHash": "610f4f4de346e85636302c26ece1f8743e84cc7417c5c77618e017ca099b9d06",
       "updatedAt": "2026-08-11T11:23:57+02:00"
+    },
+    {
+      "folder": "应用",
+      "name": "[蝴蝶结]心意优选",
+      "dirName": "[蝴蝶结]心意优选",
+      "type": "dir",
+      "path": "资源/应用/[蝴蝶结]心意优选",
+      "files": [
+        "资源/应用/[蝴蝶结]心意优选/io.xiaoq.giftshop.v2-2.0.0.zip"
+      ],
+      "images": [
+        "资源/应用/[蝴蝶结]心意优选/IMG_6563.png"
+      ],
+      "description": "发现购物软件不能给char送礼物 于是和小坊以及哈基米共同创作了这个app \n具体功能：可根据[粗]char和你的聊天记录[/粗]/[粗]char的人设[/粗]生成[粉]他想要的礼物[/粉]/也可以在购物车自定义添加想送给char的礼物 送出的礼物将以小卡片形式显示在对应char的聊天框界面作为[粗]可读取的上下文[/粗]\n😽😽如果有bug可以找我反馈呀",
+      "author": "🦭",
+      "avatar": "资源/应用/[蝴蝶结]心意优选/.avatar.png",
+      "ownerHash": "fb97e4a005ece2d3acaa890adcf557cb67003ad7e5dcfd62cb7a1767f70e2a91",
+      "updatedAt": "2026-08-21T19:37:05+08:00"
     },
     {
       "folder": "应用",
