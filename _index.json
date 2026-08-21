@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-20T21:05:19.910Z",
+  "generatedAt": "2026-08-21T00:44:27.511Z",
   "folders": [
     {
       "name": "A 重要须知（自部署版请查看）",
@@ -29,7 +29,7 @@
     },
     {
       "name": "应用",
-      "count": 34
+      "count": 35
     },
     {
       "name": "气泡美化",
@@ -1171,6 +1171,25 @@
       "avatar": "资源/应用/纸上风月/.avatar.png",
       "ownerHash": "1d9cea70e311b630e92234fd8993a1076198434564b88f424df0aba8970847f4",
       "updatedAt": "2026-08-20T05:11:12+08:00"
+    },
+    {
+      "folder": "应用",
+      "name": "转一转",
+      "dirName": "转一转",
+      "type": "dir",
+      "path": "资源/应用/转一转",
+      "files": [
+        "资源/应用/转一转/app.zhuan.roulette-1.1.0.zip"
+      ],
+      "images": [
+        "资源/应用/转一转/16975.jpg",
+        "资源/应用/转一转/16981.jpg"
+      ],
+      "description": "一个可以定制转盘/让角色为你定制转盘的app\n适合选择障碍症和不知道做什么决定时\n可以直接在聊天室打开\n可以发送卡片/发给多个角色\n高自由，可以自定义转盘角色和更换软件的主题颜色\n转盘颜色也可自己给色卡\n[粉]点击收藏可以保存已经做好的转盘[/粉]\n[粉]使用方式：导入到应用[/粉]\n[粉]狗狗图片为图标 可以用也可以不用！\n[/粉]",
+      "author": "",
+      "avatar": "资源/应用/转一转/.avatar.png",
+      "ownerHash": "0a749ba0d9d6e3baf931f4b89d8da425790803eaed267f9a1a1aad36f47e2a8f",
+      "updatedAt": "2026-08-21T08:44:11+08:00"
     },
     {
       "folder": "应用",
