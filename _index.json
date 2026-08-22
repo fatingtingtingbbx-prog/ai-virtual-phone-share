@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-22T14:35:42.822Z",
+  "generatedAt": "2026-08-22T15:37:26.244Z",
   "folders": [
     {
       "name": "A 重要须知（自部署版请查看）",
@@ -29,7 +29,7 @@
     },
     {
       "name": "应用",
-      "count": 39
+      "count": 40
     },
     {
       "name": "朋友圈美化",
@@ -991,6 +991,25 @@
       "avatar": "",
       "ownerHash": "85294a401778d50187b3ffece59423769c1d20b02054f2f463068ad86e183e16",
       "updatedAt": "2026-08-19T18:20:38+08:00"
+    },
+    {
+      "folder": "应用",
+      "name": "between",
+      "dirName": "between",
+      "type": "dir",
+      "path": "资源/应用/between",
+      "files": [
+        "资源/应用/between/between-v0.10.2.zip"
+      ],
+      "images": [
+        "资源/应用/between/IMG_7051.jpeg",
+        "资源/应用/between/IMG_7052.jpeg"
+      ],
+      "description": "写在前面：\n本人属性是gb向oc梦女啊，所以该app会比较“凝”char，[粗][红][大]🚫禁止任何bl使用[/大][/红][/粗]，我限制了user必须是女性，可以搞gb gl bg吧！不过user是被进入者用起来可能不怎么顺。\n\n\n以下是gpt写的介绍：between. 是一个只属于你和角色的私密记录空间。\n\n\n它是一份能够与角色、聊天和短期记忆产生联系的私人档案：有些事情不必反复询问，也不该被拥挤的聊天记录淹没。\n\n\nBODY\n\n\n这里记录的是角色的身体，而不是 user 的身体。\n\n\n点击角色头像，角色会结合最近的聊天、朋友圈、日记、其他 APP 事件与短期记忆，自行整理当天的疼痛、涨感、敏感程度和恢复状态。\n\n\n当聊天涉及“今天能不能”“身体恢复了吗”等问题时，角色也可以主动发送 BODY 状态卡，并将同一份报告保存进自己的身体档案。\n\n\nPLAY\n\n\n保存已经发生的记录、想尝试的 Idea 与尚未完成的 Draft。\n\n\n点击角色头像，可以让 AI 根据角色性格和已有档案主动添加内容。不同类型采用独立的卡片与浏览方式，让灵感不再只是一排单调的备忘录。\n\n\nDEVICE\n\n\n添加私人玩具并使用模拟控制器，记录强度、模式、持续时间与 Live Note。\n\n\n每次添加玩具、打开设备、切换模式或结束 Session，相关事件都会写入当前角色的短期记忆。达到较高强度时，角色",
+      "author": "yzy",
+      "avatar": "资源/应用/between/.avatar.png",
+      "ownerHash": "c84f1904fa7b68c212c91bc5fda2055472af121e6c8f64740a348e1eb138a112",
+      "updatedAt": "2026-08-22T23:37:06+08:00"
     },
     {
       "folder": "应用",
