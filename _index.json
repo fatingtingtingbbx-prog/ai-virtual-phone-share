@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-22T11:48:41.341Z",
+  "generatedAt": "2026-08-22T11:53:29.200Z",
   "folders": [
     {
       "name": "A 重要须知（自部署版请查看）",
@@ -9,7 +9,7 @@
     },
     {
       "name": "Js插件",
-      "count": 11
+      "count": 12
     },
     {
       "name": "bug反馈专用，请先询问小坊，无法解决后再进行反馈，反馈最好有详细情境、附图，否则无法复现",
@@ -127,6 +127,22 @@
       "avatar": "资源/Js插件/反查岗/.avatar.png",
       "ownerHash": "1d9cea70e311b630e92234fd8993a1076198434564b88f424df0aba8970847f4",
       "updatedAt": "2026-08-19T22:46:36+08:00"
+    },
+    {
+      "folder": "Js插件",
+      "name": "多选发图",
+      "dirName": "多选发图",
+      "type": "dir",
+      "path": "资源/Js插件/多选发图",
+      "files": [
+        "资源/Js插件/多选发图/float多选发图.js"
+      ],
+      "images": [],
+      "description": "float多选发图 是一个单独的按键 有些美化可能不适配 但是大多数都是正常的",
+      "author": "你好",
+      "avatar": "资源/Js插件/多选发图/.avatar.png",
+      "ownerHash": "ff57dccf982a00ed402e4dcdeb333036bb0a95391ca1f65879d78a5f731a08be",
+      "updatedAt": "2026-08-22T19:53:13+08:00"
     },
     {
       "folder": "Js插件",
