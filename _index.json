@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-22T09:18:44.200Z",
+  "generatedAt": "2026-08-22T11:48:41.341Z",
   "folders": [
     {
       "name": "A 重要须知（自部署版请查看）",
@@ -9,7 +9,7 @@
     },
     {
       "name": "Js插件",
-      "count": 10
+      "count": 11
     },
     {
       "name": "bug反馈专用，请先询问小坊，无法解决后再进行反馈，反馈最好有详细情境、附图，否则无法复现",
@@ -92,6 +92,22 @@
       "avatar": "",
       "ownerHash": "003c802e80a7bcaf061f0e59888f6d5024e1edf3bc7d78909f3d07f9e8f1805a",
       "updatedAt": "2026-08-22T10:17:50+08:00"
+    },
+    {
+      "folder": "Js插件",
+      "name": "user也想说外语",
+      "dirName": "user也想说外语",
+      "type": "dir",
+      "path": "资源/Js插件/user也想说外语",
+      "files": [
+        "资源/Js插件/user也想说外语/翻译6.0.js"
+      ],
+      "images": [],
+      "description": "适合喜欢玩外国char，但是不会外文的老师们\n在输入框输入中文，发出去后会自动翻译成外语！\np1-3:翻译效果\np4-5：插件里的一些设置\n一些tips：\n因为翻译需要时间 点击发送之后会延迟一下，才回成功发送\n如果想要编辑消息，只能输入外语，不然显示的是中文\n因为没有找其他人测试过，可能会有些我不知道bug  欢迎反馈 ！也可以交给ai",
+      "author": "livia",
+      "avatar": "",
+      "ownerHash": "b187c9f8dec83db6cf467b82af2254910d4dd901c73f5da114062d4dbd32661e",
+      "updatedAt": "2026-08-22T19:48:25+08:00"
     },
     {
       "folder": "Js插件",
