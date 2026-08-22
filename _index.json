@@ -1,11 +1,11 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-22T01:35:53.486Z",
+  "generatedAt": "2026-08-22T02:18:08.767Z",
   "folders": [
     {
       "name": "A 重要须知（自部署版请查看）",
-      "count": 1
+      "count": 2
     },
     {
       "name": "Js插件",
@@ -78,6 +78,20 @@
       "avatar": "资源/A 重要须知（自部署版请查看）/上传文件后，头像、昵称、正文、文件所有人可见/.avatar.png",
       "ownerHash": "72adb7d77211b0354bc8d30ad6f28de6e6ba7e1047ed9ec1c80c1ab683f98f11",
       "updatedAt": "2026-08-15T01:23:52+08:00"
+    },
+    {
+      "folder": "A 重要须知（自部署版请查看）",
+      "name": "角色卡",
+      "dirName": "角色卡",
+      "type": "dir",
+      "path": "资源/A 重要须知（自部署版请查看）/角色卡",
+      "files": [],
+      "images": [],
+      "description": "希望角色卡能导出导入",
+      "author": "没有名字",
+      "avatar": "",
+      "ownerHash": "003c802e80a7bcaf061f0e59888f6d5024e1edf3bc7d78909f3d07f9e8f1805a",
+      "updatedAt": "2026-08-22T10:17:50+08:00"
     },
     {
       "folder": "Js插件",
