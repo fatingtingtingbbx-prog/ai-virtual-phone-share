@@ -35,26 +35,4 @@ DEVICE
 添加私人玩具并使用模拟控制器，记录强度、模式、持续时间与 Live Note。
 
 
-每次添加玩具、打开设备、切换模式或结束 Session，相关事件都会写入当前角色的短期记忆。达到较高强度时，角色还可以回到真实聊天室主动回应。（←不过user会发一条很丑的消息，不喜欢的可以搞个正则美化一下）
-
-
-主要功能：
-
-
-• 角色 BODY 自查与历史档案
-• 聊天室 BODY 状态卡
-• 聊天栏“+”快捷入口
-• PLAY Records / Ideas / Drafts
-• AI 自动生成 PLAY 内容
-• 随机抽取 Idea
-• 手动添加私人玩具
-• 模拟设备控制与 Session 记录
-• 自动写入角色短期记忆
-• 多角色独立保存
-• 手机竖屏与触摸操作适配
-
-
-private, because ordinary messages are too crowded.
-
-
-updated, so you don’t have to ask.
+每次添加玩具、打开设备、切换模式或结束 Session，相关事件都会写入当前角色的短期记忆。达到较高强度时，角色
