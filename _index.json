@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-22T14:27:44.551Z",
+  "generatedAt": "2026-08-22T14:35:42.822Z",
   "folders": [
     {
       "name": "A 重要须知（自部署版请查看）",
@@ -13,7 +13,7 @@
     },
     {
       "name": "bug反馈专用，请先询问小坊，无法解决后再进行反馈，反馈最好有详细情境、附图，否则无法复现",
-      "count": 17
+      "count": 16
     },
     {
       "name": "全局主题",
@@ -450,22 +450,6 @@
       "avatar": "",
       "ownerHash": "107d8cb7f78be8e5efb101184ea19c43f9a63a493748eb76bc162bb0dbc38715",
       "updatedAt": "2026-08-21T21:03:56Z"
-    },
-    {
-      "folder": "bug反馈专用，请先询问小坊，无法解决后再进行反馈，反馈最好有详细情境、附图，否则无法复现",
-      "name": "无法删除插件",
-      "dirName": "无法删除插件",
-      "type": "dir",
-      "path": "资源/bug反馈专用，请先询问小坊，无法解决后再进行反馈，反馈最好有详细情境、附图，否则无法复现/无法删除插件",
-      "files": [],
-      "images": [
-        "资源/bug反馈专用，请先询问小坊，无法解决后再进行反馈，反馈最好有详细情境、附图，否则无法复现/无法删除插件/Screenshot_20260822_222537_com.microsoft.emmx.jpg"
-      ],
-      "description": "想删除在集市js插件合集里安装的插件时，找不到删除界面，应用市场里面也没有",
-      "author": "lshls",
-      "avatar": "",
-      "ownerHash": "16a8b52b7fbad80a5064ee67e0745c16315e8e4e1de8c06675d070dbcc88e63c",
-      "updatedAt": "2026-08-22T22:27:28+08:00"
     },
     {
       "folder": "bug反馈专用，请先询问小坊，无法解决后再进行反馈，反馈最好有详细情境、附图，否则无法复现",
