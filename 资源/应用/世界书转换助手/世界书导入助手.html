@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>世界书导入助手 · 小手机专用</title>
+<style>
+  :root{
+    --ink:#1b1d1f; --paper:#f6f4ee; --line:#d8d3c4;
+    --accent:#3a5a78; --accent-dim:#c7d4de; --warn:#a4472c; --ok:#3f6b4a;
+    --mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    --serif: "Songti SC", "Noto Serif SC", "STSong", serif;
+    --sans: -apple-system, "PingFang SC", "Microsoft YaHei", "Segoe UI", sans-serif;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0; background:var(--paper); color:var(--ink); font-family:var(--sans); line-height:1.55;}
+  header{padding:26px 24px 18px; border-bottom:2px solid var(--ink); display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:12px;}
+  header h1{font-family:var(--serif); font-size:24px; margin:0; letter-spacing:0.02em;}
+  header .tag{font-size:12px; color:#6b6558; letter-spacing:0.06em; text-transform:uppercase;}
+  .badge{display:inline-block; background:#e4efe6; color:var(--ok); border-radius:10px; padding:2px 10px; font-size:11px; margin-left:8px; letter-spacing:0;}
+  main{max-width:980px; margin:0 auto; padding:22px;}
+  .card{background:#fff; border:1px solid var(--line); border-radius:2px; padding:20px; margin-bottom:18px;}
+  .card h2{font-family:var(--serif); font-size:16.5px; margin:0 0 12px; border-left:4px solid var(--accent); padding-left:10px;}
+  .drop{border:2px dashed var(--line); border-radius:2px; padding:26px; text-align:center; color:#6b6558; cursor:pointer; transition:.15s;}
+  .drop.hover{border-color:var(--accent); background:#eef2f5;}
+  .drop input{display:none;}
+  .row{display:flex; gap:10px; flex-wrap:wrap; align-items:center;}
+  textarea{width:100%; min-height:100px; font-family:var(--mono); font-size:12.5px; border:1px solid var(--line); border-radius:2px; padding:10px; resize:vertical; background:#fdfcf9;}
+  button{font-size:13.5px; padding:9px 16px; border-radius:2px; border:1px solid var(--ink); background:var(--ink); color:#fff; cursor:pointer;}
+  button.secondary{background:#fff; color:var(--ink);}
+  button:disabled{opacity:.35; cursor:not-allowed;}
+  button:hover:not(:disabled){opacity:.85;}
+  .status{font-size:13px; margin-top:8px; min-height:1.2em;}
+  .status.err{color:var(--warn);}
+  .status.ok{color:var(--ok);}
+  table{width:100%; border-collapse:collapse; font-size:13px;}
+  th,td{border-bottom:1px solid var(--line); padding:7px 6px; text-align:left; vertical-align:top;}
+  th{font-size:10.5px; text-transform:uppercase; letter-spacing:.05em; color:#6b6558;}
+  td.content textarea{width:100%; min-height:56px; font-family:var(--mono); font-size:12px;}
+  input[type=text],input[type=number]{width:100%; font-family:var(--mono); font-size:12px; padding:4px 6px; border:1px solid var(--line); border-radius:2px;}
+  input[type=checkbox]{width:16px; height:16px;}
+  .count-pill{display:inline-block; background:var(--accent-dim); color:var(--accent); padding:2px 10px; border-radius:12px; font-size:12px; margin-left:8px;}
+  .hint{font-size:12.5px; color:#6b6558;}
+  .field-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:10px; margin-bottom:14px;}
+  .field-grid label{font-size:12px; color:#6b6558; display:block; margin-bottom:3px;}
+  footer{text-align:center; color:#8a8574; font-size:12px; padding:18px 0 34px;}
+  .del{color:var(--warn); cursor:pointer; font-size:12px; border:none; background:none; padding:2px 4px;}
+  .toolbar{display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; flex-wrap:wrap; gap:8px;}
+  code{background:#f0ede3; padding:1px 5px; border-radius:3px;}
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <h1>世界书导入助手</h1>
+    <div class="tag">SillyTavern Lorebook → 小手机（ai-virtual-phone）<span class="badge">格式已核实</span></div>
+  </div>
+  <div class="tag">本地运行 · 不上传任何数据</div>
+</header>
+
+<main>
+
+  <div class="card">
+    <h2>说明</h2>
+    <p class="hint">
+      这版按小手机自己导出的世界书文件核实过了真实格式：<code>entries</code> 是数组，每条用 <code>key</code>（逗号分隔的字符串）、<code>content</code>、<code>comment</code>、<code>disable</code>、<code>constant</code>、<code>position</code>/<code>depth</code>、<code>probability</code>/<code>useProbability</code>、<code>role</code>、<code>insertion_order</code> 这些字段，没有 ST 里那些 selective / group / sticky 之类的复杂字段。<br>
+      这个工具会把 ST 世界书（独立导出的 JSON、角色卡内嵌的 <code>character_book</code>、或普通条目数组）解析出来，转换成小手机能直接吃的格式，导出后直接去小手机的世界书导入里选这个文件即可。
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>① 导入 ST 世界书</h2>
+    <div class="drop" id="drop">
+      <input type="file" id="fileInput" accept=".json" multiple>
+      <div>点击选择文件，或把 <b>.json</b> 文件拖到这里（可多选，自动合并）</div>
+    </div>
+    <div class="row" style="margin-top:12px;"><span class="hint">也可以直接粘贴 JSON 文本 →</span></div>
+    <textarea id="pasteArea" placeholder='粘贴 SillyTavern 世界书 JSON，或角色卡 JSON...'></textarea>
+    <div class="row" style="margin-top:10px;">
+      <button id="parseBtn">解析</button>
+      <button id="clearBtn" class="secondary">清空</button>
+    </div>
+    <div id="status" class="status"></div>
+  </div>
+
+  <div class="card" id="editCard" style="display:none;">
+    <div class="toolbar">
+      <h2 style="margin:0;">② 条目预览与编辑 <span class="count-pill" id="countPill">0 条</span></h2>
+      <button id="addRowBtn" class="secondary">+ 新增条目</button>
+    </div>
+    <div style="overflow-x:auto;">
+      <table id="entryTable">
+        <thead>
+          <tr>
+            <th style="width:36px;">启用</th>
+            <th style="width:120px;">备注</th>
+            <th style="width:140px;">关键词(逗号分隔)</th>
+            <th>内容</th>
+            <th style="width:60px;">常驻</th>
+            <th style="width:56px;">顺序</th>
+            <th style="width:56px;">深度</th>
+            <th style="width:36px;"></th>
+          </tr>
+        </thead>
+        <tbody id="entryBody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="card" id="exportCard" style="display:none;">
+    <h2>③ 导出给小手机</h2>
+    <div class="field-grid">
+      <div>
+        <label>世界书名称</label>
+        <input type="text" id="bookName" value="我的世界书">
+      </div>
+    </div>
+    <div class="row">
+      <button id="exportBtn">下载小手机格式 JSON</button>
+    </div>
+    <p class="hint" style="margin-top:10px;">
+      下载后直接去小手机「设置 → 世界书」里导入这个文件。如果个别条目还是没生效或报错，把报错内容和这条条目发我，我再对照调整。
+    </p>
+  </div>
+
+</main>
+
+<footer>世界书导入助手 · 纯前端处理，刷新页面数据即清空</footer>
+
+<script>
+let entries = [];
+let uidCounter = 0;
+const $ = sel => document.querySelector(sel);
+const statusEl = $('#status');
+
+function setStatus(msg, kind){
+  statusEl.textContent = msg;
+  statusEl.className = 'status' + (kind ? ' ' + kind : '');
+}
+
+// ---- internal working entry shape ----
+function defaultEntry(partial){
+  return Object.assign({
+    _id: uidCounter++,
+    key: [],           // array internally, joined to string on export
+    content: '',
+    comment: '',
+    enabled: true,      // -> disable = !enabled
+    constant: false,
+    position: 4,
+    depth: 4,
+    probability: 100,
+    role: 0,
+    order: 50,          // -> insertion_order
+    use_regex: false
+  }, partial || {});
+}
+
+function toArray(v){
+  if (v == null) return [];
+  if (Array.isArray(v)) return v.map(String).filter(Boolean);
+  if (typeof v === 'string') return v.split(/[,，]/).map(s=>s.trim()).filter(Boolean);
+  return [String(v)];
+}
+
+// ---- parse various ST-ish schemas into our working entry shape ----
+function normalizeRawEntry(raw){
+  if (!raw || typeof raw !== 'object') return null;
+  const key = toArray(raw.key ?? raw.keys ?? raw.Keys ?? raw.trigger ?? raw.triggers);
+  const secondary = toArray(raw.keysecondary ?? raw.secondary_keys);
+  const content = raw.content ?? raw.entry ?? raw.text ?? raw.value ?? '';
+  const comment = raw.comment ?? raw.name ?? raw.title ?? raw.memo ?? '';
+  const disabled = raw.disable ?? (raw.enabled === false) ?? (raw.active === false) ?? false;
+  const constant = raw.constant ?? (raw.type === 'constant') ?? false;
+  const order = Number(raw.order ?? raw.insertion_order ?? raw.priority ?? 50);
+  const position = Number(raw.position ?? 4);
+  const depth = Number(raw.depth ?? 4);
+  const probability = Number(raw.probability ?? 100);
+  const role = Number(raw.role ?? 0);
+
+  return defaultEntry({
+    key: key.concat(secondary),
+    content, comment,
+    enabled: !disabled,
+    constant, order, position, depth, probability, role
+  });
+}
+
+function extractEntriesFromParsed(parsed){
+  const out = [];
+
+  // ai-virtual-phone's own export format (entries: array with our confirmed fields)
+  if (parsed && typeof parsed === 'object' && Array.isArray(parsed.entries)) {
+    parsed.entries.forEach(e => { const n = normalizeRawEntry(e); if (n) out.push(n); });
+    if (out.length) return out;
+  }
+
+  // standard ST world info file: entries as object map
+  if (parsed && typeof parsed === 'object' && parsed.entries && typeof parsed.entries === 'object') {
+    Object.values(parsed.entries).forEach(e => { const n = normalizeRawEntry(e); if (n) out.push(n); });
+    if (out.length) return out;
+  }
+
+  // character card v2 embedded book
+  const charBook = parsed?.data?.character_book || parsed?.character_book;
+  if (charBook && charBook.entries) {
+    const ent = charBook.entries;
+    (Array.isArray(ent) ? ent : Object.values(ent)).forEach(e => {
+      const n = normalizeRawEntry(e); if (n) out.push(n);
+    });
+    if (out.length) return out;
+  }
+
+  // bare array
+  if (Array.isArray(parsed)) {
+    parsed.forEach(e => { const n = normalizeRawEntry(e); if (n) out.push(n); });
+    if (out.length) return out;
+  }
+
+  // single entry object
+  if (parsed && typeof parsed === 'object' && (parsed.content || parsed.key || parsed.keys)) {
+    const n = normalizeRawEntry(parsed);
+    if (n) out.push(n);
+  }
+
+  return out;
+}
+
+function parseInputText(text, label){
+  let parsed;
+  try { parsed = JSON.parse(text); }
+  catch (e) { throw new Error(`${label || '输入'} 不是合法 JSON：${e.message}`); }
+  const extracted = extractEntriesFromParsed(parsed);
+  if (!extracted.length) throw new Error(`${label || '输入'} 里没找到能识别的世界书条目结构`);
+  return extracted;
+}
+
+// ---- UI ----
+function render(){
+  const body = $('#entryBody');
+  body.innerHTML = '';
+  entries.forEach((e, idx) => {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td><input type="checkbox" data-f="enabled" data-i="${idx}" ${e.enabled ? 'checked' : ''}></td>
+      <td><input type="text" data-f="comment" data-i="${idx}" value="${escapeAttr(e.comment)}"></td>
+      <td><input type="text" data-f="key" data-i="${idx}" value="${escapeAttr(e.key.join(', '))}"></td>
+      <td class="content"><textarea data-f="content" data-i="${idx}">${escapeHtml(e.content)}</textarea></td>
+      <td><input type="checkbox" data-f="constant" data-i="${idx}" ${e.constant ? 'checked' : ''}></td>
+      <td><input type="number" data-f="order" data-i="${idx}" value="${e.order}"></td>
+      <td><input type="number" data-f="depth" data-i="${idx}" value="${e.depth}"></td>
+      <td><button class="del" data-i="${idx}">删除</button></td>
+    `;
+    body.appendChild(tr);
+  });
+  $('#countPill').textContent = entries.length + ' 条';
+  $('#editCard').style.display = entries.length ? 'block' : 'none';
+  $('#exportCard').style.display = entries.length ? 'block' : 'none';
+
+  body.querySelectorAll('input,textarea').forEach(el=>{
+    el.addEventListener('input', onFieldChange);
+    el.addEventListener('change', onFieldChange);
+  });
+  body.querySelectorAll('.del').forEach(btn=>{
+    btn.addEventListener('click', ()=>{ entries.splice(Number(btn.dataset.i),1); render(); });
+  });
+}
+
+function onFieldChange(ev){
+  const el = ev.target;
+  const i = Number(el.dataset.i);
+  const f = el.dataset.f;
+  if (!entries[i]) return;
+  if (el.type === 'checkbox') entries[i][f] = el.checked;
+  else if (f === 'key') entries[i].key = toArray(el.value);
+  else if (f === 'order' || f === 'depth') entries[i][f] = Number(el.value) || 0;
+  else entries[i][f] = el.value;
+}
+
+function escapeHtml(s){ return String(s ?? '').replace(/[&<>]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c])); }
+function escapeAttr(s){ return String(s ?? '').replace(/"/g, '&quot;'); }
+
+// ---- input handling ----
+function handleParsedAdd(list, label){
+  entries = entries.concat(list);
+  render();
+  setStatus(`已从「${label}」导入 ${list.length} 条，当前共 ${entries.length} 条`, 'ok');
+}
+
+$('#parseBtn').addEventListener('click', () => {
+  const text = $('#pasteArea').value.trim();
+  if (!text) { setStatus('先粘贴点 JSON 内容再解析', 'err'); return; }
+  try {
+    const list = parseInputText(text, '粘贴内容');
+    handleParsedAdd(list, '粘贴内容');
+    $('#pasteArea').value = '';
+  } catch (e) { setStatus(e.message, 'err'); }
+});
+
+$('#clearBtn').addEventListener('click', () => {
+  entries = []; $('#pasteArea').value = ''; render(); setStatus('已清空','');
+});
+
+const drop = $('#drop'), fileInput = $('#fileInput');
+drop.addEventListener('click', ()=> fileInput.click());
+['dragover'].forEach(evt => drop.addEventListener(evt, e=>{ e.preventDefault(); drop.classList.add('hover'); }));
+['dragleave','drop'].forEach(evt => drop.addEventListener(evt, e=>{ e.preventDefault(); drop.classList.remove('hover'); }));
+drop.addEventListener('drop', e => handleFiles(Array.from(e.dataTransfer.files).filter(f=>f.name.endsWith('.json'))));
+fileInput.addEventListener('change', e => handleFiles(Array.from(e.target.files)));
+
+function handleFiles(files){
+  if (!files.length) return;
+  let done = 0, totalAdded = 0, errors = [];
+  files.forEach(file=>{
+    const reader = new FileReader();
+    reader.onload = () => {
+      try {
+        const list = parseInputText(reader.result, file.name);
+        entries = entries.concat(list);
+        totalAdded += list.length;
+      } catch (e) { errors.push(`${file.name}: ${e.message}`); }
+      done++;
+      if (done === files.length) {
+        render();
+        setStatus(errors.length
+          ? `导入了 ${totalAdded} 条，但有问题：${errors.join(' / ')}`
+          : `成功导入 ${totalAdded} 条，当前共 ${entries.length} 条`, errors.length ? 'err' : 'ok');
+      }
+    };
+    reader.onerror = () => { errors.push(`${file.name}: 读取失败`); done++; if (done===files.length) render(); };
+    reader.readAsText(file);
+  });
+}
+
+$('#addRowBtn').addEventListener('click', ()=>{
+  entries.push(defaultEntry({comment:'新条目', key:['关键词'], content:''}));
+  render();
+});
+
+// ---- export in confirmed xiaoshouji format ----
+function randStr(n){
+  const chars = 'abcdefghijklmnopqrstuvwxyz0123456789';
+  let s = '';
+  for (let i=0;i<n;i++) s += chars[Math.floor(Math.random()*chars.length)];
+  return s;
+}
+
+function buildXiaoshoujiExport(){
+  const now = Date.now();
+  return {
+    id: `wb_${now}_${randStr(5)}`,
+    name: $('#bookName').value || '我的世界书',
+    description: '',
+    createdAt: now,
+    updatedAt: now,
+    entries: entries.map((e, idx) => ({
+      uid: `wb-entry-${now + idx}`,
+      key: e.key.join(','),
+      content: e.content,
+      comment: e.comment,
+      use_regex: !!e.use_regex,
+      disable: !e.enabled,
+      constant: !!e.constant,
+      position: Number(e.position ?? 4),
+      depth: Number(e.depth ?? 4),
+      probability: Number(e.probability ?? 100),
+      useProbability: Number(e.probability ?? 100) < 100,
+      role: Number(e.role ?? 0),
+      insertion_order: Number(e.order ?? 50)
+    }))
+  };
+}
+
+function download(filename, obj){
+  const blob = new Blob([JSON.stringify(obj, null, 2)], {type:'application/json'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = filename;
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+
+$('#exportBtn').addEventListener('click', ()=>{
+  if (!entries.length) return;
+  const name = ($('#bookName').value || 'worldbook').trim();
+  download(`${name || 'worldbook'}.json`, buildXiaoshoujiExport());
+  setStatus('已下载，去小手机「设置 → 世界书」导入这个文件', 'ok');
+});
+
+render();
+</script>
+
+</body>
+</html>
