@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-23T15:51:23.119Z",
+  "generatedAt": "2026-08-23T15:52:35.906Z",
   "folders": [
     {
       "name": "A 重要须知（自部署版请查看）",
@@ -532,6 +532,20 @@
     },
     {
       "folder": "bug反馈专用，请先询问小坊，无法解决后再进行反馈，反馈最好有详细情境、附图，否则无法复现",
+      "name": "【已排查】密档",
+      "dirName": "【已排查】密档",
+      "type": "dir",
+      "path": "资源/bug反馈专用，请先询问小坊，无法解决后再进行反馈，反馈最好有详细情境、附图，否则无法复现/【已排查】密档",
+      "files": [],
+      "images": [],
+      "description": "怎么生成不了\n——————————\n【排查反馈】\n这条信息太少，无法定位问题，请补充信息后再进行反馈～",
+      "author": "",
+      "avatar": "",
+      "ownerHash": "4f0ced2a7a36b6f7ec4a59ee0ea589e6a6a0d1acb970b099671899645b6d56ab",
+      "updatedAt": null
+    },
+    {
+      "folder": "bug反馈专用，请先询问小坊，无法解决后再进行反馈，反馈最好有详细情境、附图，否则无法复现",
       "name": "【已排查】查手机报错",
       "dirName": "【已排查】查手机报错",
       "type": "dir",
@@ -618,7 +632,7 @@
       "author": "",
       "avatar": "",
       "ownerHash": "7456f6be79f28efc8524849b2ba61bed37b61368adf52d1f435c942224bb3ca3",
-      "updatedAt": "2026-08-23T15:36:05+00:00"
+      "updatedAt": "2026-08-23T15:51:23+00:00"
     },
     {
       "folder": "bug反馈专用，请先询问小坊，无法解决后再进行反馈，反馈最好有详细情境、附图，否则无法复现",
@@ -635,20 +649,6 @@
       "avatar": "",
       "ownerHash": "58102ce5a9265a94c2ca149a50be3fd3738f293b8d6dc0ecbe83f61ab233cf6e",
       "updatedAt": "2026-08-23T15:36:05+00:00"
-    },
-    {
-      "folder": "bug反馈专用，请先询问小坊，无法解决后再进行反馈，反馈最好有详细情境、附图，否则无法复现",
-      "name": "密档",
-      "dirName": "密档",
-      "type": "dir",
-      "path": "资源/bug反馈专用，请先询问小坊，无法解决后再进行反馈，反馈最好有详细情境、附图，否则无法复现/密档",
-      "files": [],
-      "images": [],
-      "description": "怎么生成不了",
-      "author": "",
-      "avatar": "",
-      "ownerHash": "4f0ced2a7a36b6f7ec4a59ee0ea589e6a6a0d1acb970b099671899645b6d56ab",
-      "updatedAt": "2026-08-21T21:03:56+00:00"
     },
     {
       "folder": "全局主题",
