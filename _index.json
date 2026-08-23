@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-23T10:15:07.919Z",
+  "generatedAt": "2026-08-23T10:52:45.242Z",
   "folders": [
     {
       "name": "A 重要须知（自部署版请查看）",
@@ -30,6 +30,10 @@
     {
       "name": "应用",
       "count": 44
+    },
+    {
+      "name": "应用bug改善",
+      "count": 1
     },
     {
       "name": "朋友圈美化",
@@ -1628,6 +1632,20 @@
       "avatar": "资源/应用/黑珍珠酒吧/.avatar.png",
       "ownerHash": "9be9e2befed8262f2dc8ebeed5742d4950e3b43a5061d45d16097a53ea6841c0",
       "updatedAt": "2026-08-16T22:23:44+08:00"
+    },
+    {
+      "folder": "应用bug改善",
+      "name": "应用字体",
+      "dirName": "应用字体",
+      "type": "dir",
+      "path": "资源/应用bug改善/应用字体",
+      "files": [],
+      "images": [],
+      "description": "希望每个应用能够追随系统字体，或者能够导入字体",
+      "author": "",
+      "avatar": "",
+      "ownerHash": "d634c528c09222703f150a3620947cc1cc7a13005cf35cf0f0dfaa9e16521076",
+      "updatedAt": "2026-08-23T18:52:24+08:00"
     },
     {
       "folder": "朋友圈美化",
