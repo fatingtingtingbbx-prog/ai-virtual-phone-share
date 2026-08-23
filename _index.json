@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-23T12:03:58.686Z",
+  "generatedAt": "2026-08-23T12:35:12.793Z",
   "folders": [
     {
       "name": "A 重要须知（自部署版请查看）",
@@ -9,7 +9,7 @@
     },
     {
       "name": "Js插件",
-      "count": 16
+      "count": 17
     },
     {
       "name": "bug反馈专用，请先询问小坊，无法解决后再进行反馈，反馈最好有详细情境、附图，否则无法复现",
@@ -366,6 +366,24 @@
       "avatar": "资源/Js插件/角色主动聊天（更新保存提醒）/.avatar.png",
       "ownerHash": "ede8199ada8254a22c3c124c5e367a30a98e15e62456b916541c8f03bc4af34b",
       "updatedAt": "2026-08-22T21:38:10+08:00"
+    },
+    {
+      "folder": "Js插件",
+      "name": "转发",
+      "dirName": "转发",
+      "type": "dir",
+      "path": "资源/Js插件/转发",
+      "files": [
+        "资源/Js插件/转发/转发.js"
+      ],
+      "images": [
+        "资源/Js插件/转发/1000083079.jpg"
+      ],
+      "description": "一个粗糙的转发功能，完全模拟微信，但是肘击了n轮依旧没有达到预期，勉强可用\n目前仅可转发文字内容，图片和语音都会显示以下",
+      "author": "momo",
+      "avatar": "",
+      "ownerHash": "0ffce5bd289863ee9a5da25317d422cc3b3ebe42a4b3a0fa8e44b0b9443fc92b",
+      "updatedAt": "2026-08-23T20:34:55+08:00"
     },
     {
       "folder": "Js插件",
