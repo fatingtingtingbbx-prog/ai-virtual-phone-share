@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-23T17:27:43.550Z",
+  "generatedAt": "2026-08-23T22:54:31.786Z",
   "folders": [
     {
       "name": "A 重要须知（自部署版请查看）",
@@ -33,7 +33,7 @@
     },
     {
       "name": "应用bug改善",
-      "count": 1
+      "count": 2
     },
     {
       "name": "朋友圈美化",
@@ -1672,6 +1672,27 @@
       "avatar": "资源/应用/黑珍珠酒吧/.avatar.png",
       "ownerHash": "9be9e2befed8262f2dc8ebeed5742d4950e3b43a5061d45d16097a53ea6841c0",
       "updatedAt": "2026-08-16T22:23:44+08:00"
+    },
+    {
+      "folder": "应用bug改善",
+      "name": "增加世界隔离和聊天隔离",
+      "dirName": "增加世界隔离和聊天隔离",
+      "type": "dir",
+      "path": "资源/应用bug改善/增加世界隔离和聊天隔离",
+      "files": [
+        "资源/应用bug改善/增加世界隔离和聊天隔离/character-world-storage.ts",
+        "资源/应用bug改善/增加世界隔离和聊天隔离/chat-contacts-list.tsx (1).txt",
+        "资源/应用bug改善/增加世界隔离和聊天隔离/chat-message-list.tsx.txt",
+        "资源/应用bug改善/增加世界隔离和聊天隔离/phone-character-app.tsx (3).txt"
+      ],
+      "images": [
+        "资源/应用bug改善/增加世界隔离和聊天隔离/1000035188.jpg"
+      ],
+      "description": "稍改底码，我导的大概一坨稀烂。\n\n\n主要问题是切换世界时，世界1里的角色聊天记录还是会出现在好友列表和聊天列表里，所以改了一下。\n现在按好友列表里那个地球图标就可任意切换世界，个人用下来还挺好用，所以分享给大家，望采纳。",
+      "author": "Elias",
+      "avatar": "",
+      "ownerHash": "38acb300e4466038cf38a60e417d89e06047891e19d5d7f48932d0cadae3523b",
+      "updatedAt": "2026-08-24T06:54:12+08:00"
     },
     {
       "folder": "应用bug改善",
