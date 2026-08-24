@@ -1,0 +1,795 @@
+/* ============================================================
+   🟢 1. 顶栏样式（Header & 顶栏按钮）
+   ============================================================ */
+
+.chat-room-wrapper .page-header {
+  background: #000000 !important;
+  border-bottom: 1px solid #333333 !important;
+  backdrop-filter: none !important;
+  z-index: 100 !important;
+}
+
+.chat-room-wrapper .page-title,
+.chat-room-wrapper .page-back-btn,
+.chat-room-wrapper .header-action-btn {
+  color: #FFFFFF !important;
+}
+
+.chat-room-wrapper .page-back-btn svg,
+.chat-room-wrapper .header-action-btn svg {
+  fill: #FFFFFF !important;
+}
+
+.chat-room-wrapper .page-header .page-back-btn {
+  width: 130px !important;
+  height: 44px !important;
+  min-width: 130px !important;
+  max-width: 130px !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important; 
+  padding: 0 !important;
+  margin: 0 !important;
+  z-index: 50 !important;
+}
+
+.chat-room-wrapper .page-header .page-back-btn > * {
+  display: none !important;
+}
+
+.chat-room-wrapper .page-header .page-back-btn::before {
+  color: #FFFFFF !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-size: 17px !important;
+  font-weight: 800 !important;
+  line-height: 44px !important;
+  letter-spacing: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: inline-block !important;
+  background: transparent !important;
+  position: static !important;
+  transform: none !important;
+}
+
+.chat-room-wrapper .page-header .page-back-btn:first-child {
+  justify-content: flex-start !important;
+  padding-left: 3px !important;
+}
+.chat-room-wrapper .page-header .page-back-btn:first-child::before {
+  content: "< wechat..." !important;
+  text-align: left !important;
+}
+
+.chat-room-wrapper .page-header .page-back-btn:last-child {
+  justify-content: flex-end !important;
+  padding-right: 10px !important;
+}
+.chat-room-wrapper .page-header .page-back-btn:last-child::before {
+  content: "⋯" !important;
+  font-size: 22px !important;
+  font-weight: 800 !important;
+  text-align: right !important;
+  letter-spacing: 0 !important;
+}
+
+.chat-room-wrapper .page-header .page-back-btn::after {
+  display: none !important;
+  content: "" !important;
+}
+
+
+/* ============================================================
+   🟢 2. 容器限制与通用间距布局
+   ============================================================ */
+
+.chat-room-wrapper .page-body {
+  width: 100% !important;
+  max-width: 850px !important;
+  margin: 0 auto !important;
+}
+
+.chat-msg-wrapper {
+  display: flex !important;
+  gap: 8px !important;
+  margin-top: 2px !important;
+  margin-bottom: 2px !important;
+}
+
+.chat-msg-wrapper .chat-bubble-role-user {
+  margin-left: auto !important;
+  margin-right: 0 !important;
+}
+
+
+/* ============================================================
+   🟢 3. 消息列表头像
+   ============================================================ */
+
+[class*="avatar"],
+[class*="avatar"] *,
+.chat-msg-avatar,
+.chat-message-avatar,
+.avatar-root,
+.feed-profile-avatar,
+.minimal-avatar-wrapper {
+  border-radius: 8px !important;
+  clip-path: none !important;
+  -webkit-clip-path: none !important;
+  mask-image: none !important;
+  -webkit-mask-image: none !important;
+  overflow: hidden !important;
+}
+
+[class*="avatar"] img,
+[class*="avatar"] *,
+.chat-msg-avatar img,
+.avatar img {
+  border-radius: 8px !important;
+  clip-path: none !important;
+  -webkit-clip-path: none !important;
+  object-fit: cover !important;
+}
+
+.chat-room-wrapper [class*="avatar"],
+.chat-msg-wrapper [class*="avatar"],
+.chat-msg-avatar {
+  width: 38px !important;
+  height: 38px !important;
+  min-width: 38px !important;
+  min-height: 38px !important;
+  max-width: 38px !important;
+  max-height: 38px !important;
+}
+
+.chat-room-wrapper [class*="avatar"] img,
+.chat-msg-wrapper [class*="avatar"] img,
+.chat-msg-avatar img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+
+
+/* ============================================================
+   🟢 4. 气泡通用与左右侧样式
+   ============================================================ */
+
+.chat-bubble-role-user,
+.chat-bubble-role-assistant {
+  border-radius: 15px !important;
+  padding: 8px 14px !important; 
+  font-size: 14px !important;
+  line-height: 1.5 !important;
+  backdrop-filter: none !important;
+  box-shadow: none !important;
+  border: none !important;
+  max-width: 150% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+}
+
+[class*="chat-bubble"]::after, 
+[class*="chat-bubble"]::before {
+  display: none !important;
+}
+
+/* ==========================================
+   ✨ 用户气泡颜色：浅粉色 f7a8c4，字体黑色
+   ========================================== */
+.chat-bubble-role-user:not(.chat-bubble-media) {
+  background-color: #f7a8c4 !important;
+  color: #000000 !important;
+  padding: 8px 12px !important;
+  margin-right: 4px !important;
+  margin-left: 0px !important;
+}
+
+/* AI气泡：底色黑色，文字浅粉色 f7a8c4 */
+.chat-bubble-role-assistant:not(.chat-bubble-media) {
+  background-color: #000000 !important;
+  color: #f7a8c4 !important;
+  padding: 8px 9px !important;
+  margin-left: 4px !important;
+  margin-right: 0px !important;
+}
+
+
+/* ============================================================
+   🟢 5. 卡片消息（红包、转账等）
+   ============================================================ */
+
+/* 用户侧红包转账：上下全部浅粉色；金额、图标、文字黑色 */
+.chat-red-packet-card,
+.chat-transfer-card {
+  background: #f7a8c4 !important;
+  border: none !important;
+  border-radius: 16px !important;
+  overflow: hidden !important;
+  position: relative !important;
+}
+
+.chat-red-packet-card .chat-red-packet-body,
+.chat-transfer-card .chat-transfer-body {
+  background: #f7a8c4 !important;
+}
+
+.chat-red-packet-card .ui-media-footer,
+.chat-transfer-card .ui-media-footer {
+  background: #f7a8c4 !important;
+}
+
+.chat-red-packet-card *,
+.chat-transfer-card * {
+  background: transparent !important;
+  color: #000000 !important;
+  border-color: #000000 !important;
+  box-shadow: none !important;
+}
+
+.chat-red-packet-card .ts-32,
+.chat-transfer-card .ts-28 {
+  font-size: 0 !important;
+  width: 26px !important;
+  height: 26px !important;
+  flex: 0 0 auto !important;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ctext x='12' y='17' text-anchor='middle' font-size='17' font-family='Arial, sans-serif' font-weight='bold' fill='%23000000'%3E%C2%A5%3C/text%3E%3C/svg%3E") center/contain no-repeat !important;
+}
+
+.chat-red-packet-card .ui-media-footer > span:first-child,
+.chat-transfer-card .ui-media-footer > span:first-child {
+  font-size: 0 !important;
+}
+
+.chat-red-packet-card .ui-media-footer > span:first-child::after {
+  content: "红包";
+  font-size: 11px;
+  color: #000000 !important;
+}
+
+.chat-transfer-card .ui-media-footer > span:first-child::after {
+  content: "转账";
+  font-size: 11px;
+  color: #000000 !important;
+}
+
+.chat-red-packet-card img,
+.chat-transfer-card img,
+.chat-red-packet-card svg,
+.chat-transfer-card svg {
+  display: none !important;
+}
+
+.chat-red-packet-card .chat-red-packet-body,
+.chat-transfer-card .chat-transfer-body,
+.chat-red-packet-card .chat-red-packet-body *,
+.chat-transfer-card .chat-transfer-body * {
+  color: #000000 !important;
+}
+
+.chat-thought-card {
+  background: #111111 !important;
+  border: none !important;
+  border-radius: 16px !important;
+}
+.chat-thought-title,
+.chat-thought-sig {
+  color: #ffffff !important;
+}
+.chat-thought-body {
+  color: #cccccc !important;
+}
+.chat-monologue-heart[data-active] {
+  color: #ffffff !important;
+}
+
+.chat-music-share-card,
+.chat-media-file-card,
+.chat-location-card {
+  background: #111111 !important;
+  border: none !important;
+  border-radius: 16px !important;
+}
+.chat-music-share-title,
+.chat-media-file-title,
+.chat-location-label {
+  color: #ffffff !important;
+}
+.chat-music-share-artist,
+.chat-media-file-time,
+.chat-media-file-save,
+.chat-location-label {
+  color: #888888 !important;
+}
+
+.chat-gift-card,
+.chat-photo-card {
+  background: #111111 !important;
+  border: none !important;
+  border-radius: 16px !important;
+}
+
+.media-modal-emoji {
+  font-size: 0 !important;
+  width: 40px !important;
+  height: 40px !important;
+  margin: 0 auto 8px !important;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ctext x='12' y='17' text-anchor='middle' font-size='17' font-family='Arial, sans-serif' font-weight='bold' fill='%23ffffff'%3E%C2%A5%3C/text%3E%3C/svg%3E") center/contain no-repeat !important;
+}
+
+/* AI气泡内红包转账：反色，底色黑色，文字浅粉色 f7a8c4 */
+.chat-bubble-role-assistant .chat-red-packet-card,
+.chat-bubble-role-assistant .chat-transfer-card,
+.chat-bubble-role-assistant .chat-red-packet-card .chat-red-packet-body,
+.chat-bubble-role-assistant .chat-transfer-card .chat-transfer-body,
+.chat-bubble-role-assistant .chat-red-packet-card .ui-media-footer,
+.chat-bubble-role-assistant .chat-transfer-card .ui-media-footer {
+  background-color: #000000 !important;
+  color: #f7a8c4 !important;
+}
+
+.chat-bubble-role-assistant .chat-red-packet-card .chat-red-packet-body > span,
+.chat-bubble-role-assistant .chat-transfer-card .chat-transfer-body > span,
+.chat-bubble-role-assistant .chat-red-packet-card .ts-32,
+.chat-bubble-role-assistant .chat-transfer-card .ts-28 {
+  font-size: 0 !important;
+  width: 26px !important;
+  height: 26px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: none !important;
+  background-image: none !important;
+  color: transparent !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+.chat-bubble-role-assistant .chat-red-packet-card::after,
+.chat-bubble-role-assistant .chat-transfer-card::after {
+  content: "¥" !important;
+  display: block !important;
+  position: absolute !important;
+  left: 20px !important;
+  top: 24px !important;
+  z-index: 99999 !important;
+  color: #f7a8c4 !important;
+  background: transparent !important;
+  font-size: 24px !important;
+  font-weight: 900 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.chat-bubble-role-assistant .chat-red-packet-card *,
+.chat-bubble-role-assistant .chat-transfer-card * {
+  color: #f7a8c4 !important;
+  background: transparent !important;
+}
+
+/* ==========================================
+   ✨ 用户侧转账/红包样式与文案：上下浅粉色，文字黑色
+   ========================================== */
+.chat-bubble-role-user .chat-red-packet-card .ui-media-footer,
+.chat-bubble-role-user .chat-transfer-card .ui-media-footer,
+.chat-bubble-role-user .chat-red-packet-card .chat-red-packet-footer,
+.chat-bubble-role-user .chat-transfer-card .chat-transfer-footer {
+  background-color: #f7a8c4 !important;
+  background-image: none !important;
+  color: #000000 !important;
+  position: relative !important;
+}
+
+.chat-bubble-role-user .chat-red-packet-card .ui-media-footer::before,
+.chat-bubble-role-user .chat-transfer-card .ui-media-footer::before,
+.chat-bubble-role-user .chat-red-packet-card .chat-red-packet-footer::before,
+.chat-bubble-role-user .chat-transfer-card .chat-transfer-footer::before,
+.chat-bubble-role-user .chat-red-packet-card .ui-media-footer::after,
+.chat-bubble-role-user .chat-transfer-card .ui-media-footer::after,
+.chat-bubble-role-user .chat-red-packet-card .chat-red-packet-footer::after,
+.chat-bubble-role-user .chat-transfer-card .chat-transfer-footer::after {
+  display: none !important;
+  content: "" !important;
+  font-size: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+.chat-bubble-role-user .chat-red-packet-card .ui-media-footer span,
+.chat-bubble-role-user .chat-transfer-card .ui-media-footer span,
+.chat-bubble-role-user .chat-red-packet-card .chat-red-packet-footer span,
+.chat-bubble-role-user .chat-transfer-card .chat-transfer-footer span {
+  color: #000000 !important;
+  font-size: inherit !important;
+  font-weight: inherit !important;
+  font-family: inherit !important;
+  position: static !important;
+  transform: none !important;
+  line-height: inherit !important;
+  opacity: 1 !important;
+  background: transparent !important;
+}
+
+.chat-bubble-role-user .chat-red-packet-card .ui-media-footer span:first-child,
+.chat-bubble-role-user .chat-transfer-card .ui-media-footer span:first-child,
+.chat-bubble-role-user .chat-red-packet-card .chat-red-packet-footer span:first-child,
+.chat-bubble-role-user .chat-transfer-card .chat-transfer-footer span:first-child {
+  font-size: 0 !important;
+}
+
+.chat-bubble-role-user .chat-red-packet-card .ui-media-footer span:first-child::after,
+.chat-bubble-role-user .chat-red-packet-card .chat-red-packet-footer span:first-child::after {
+  content: "红包" !important;
+  font-size: 11px !important;
+  font-weight: 400 !important;
+  color: #000000 !important;
+  display: inline !important;
+}
+
+.chat-bubble-role-user .chat-transfer-card .ui-media-footer span:first-child::after,
+.chat-bubble-role-user .chat-transfer-card .chat-red-packet-footer span:first-child::after {
+  content: "转账" !important;
+  font-size: 11px !important;
+  font-weight: 400 !important;
+  color: #000000 !important;
+  display: inline !important;
+}
+
+/* ========== AI 转账/红包小图标层级防穿透补丁 ========== */
+.chat-bubble-role-assistant .chat-red-packet-card,
+.chat-bubble-role-assistant .chat-transfer-card {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+
+/* ============================================================
+   🟢 6. 引用与回复消息样式
+   ============================================================ */
+
+.chat-bubble-role-user > div:not([class*="reply"]):not([class*="quote"]),
+.chat-bubble-role-assistant > div:not([class*="reply"]):not([class*="quote"]) {
+  order: 1 !important;
+  opacity: 1 !important;
+}
+
+.chat-bubble-role-user > div:not([class*="reply"]):not([class*="quote"]) * {
+  color: #000000 !important;
+}
+
+.chat-bubble-role-assistant > div:not([class*="reply"]):not([class*="quote"]) * {
+  color: #f7a8c4 !important;
+}
+
+.chat-bubble-role-user [class*="reply"],
+.chat-bubble-role-assistant [class*="reply"],
+.chat-bubble-role-user [class*="quote"],
+.chat-bubble-role-assistant [class*="quote"] {
+  display: block !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+  order: 2 !important;
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  border-left: none !important;
+  border-radius: 0 !important;
+}
+
+.chat-bubble-role-user [class*="reply"] *,
+.chat-bubble-role-assistant [class*="reply"] *,
+.chat-bubble-role-user [class*="quote"] *,
+.chat-bubble-role-assistant [class*="quote"] * {
+  font-size: 14px !important;
+  line-height: 1.45 !important;
+  color: #666666 !important;
+  max-height: 70px !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+  background: transparent !important;
+  border: none !important;
+  opacity: 1 !important;
+}
+
+.chat-bubble-role-user :not([class*="reply"]):not([class*="quote"]) {
+  color: #000000 !important;
+}
+
+.chat-bubble-role-assistant :not([class*="reply"]):not([class*="quote"]) {
+  color: #f7a8c4 !important;
+}
+
+
+/* ============================================================
+   🟢 7. 双语对照与悬浮翻译补丁
+   ============================================================ */
+
+.bubble,
+.chat-bubble-role-user,
+.chat-bubble-role-assistant,
+.chat-msg-wrapper,
+.chat-bilingual-block {
+  overflow: visible !important;
+}
+
+.chat-bilingual-block {
+  position: relative !important;
+  display: inline-block !important;
+}
+
+.chat-bilingual-divider {
+  display: none !important;
+}
+
+.chat-bilingual-section-translation {
+  position: absolute !important;
+  top: 100% !important;
+  left: 0 !important;
+  margin-top: 2px !important;
+  background: #000000 !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  padding: 2px 10px !important;
+  font-size: 14px !important;
+  line-height: 1.4 !important;
+  white-space: normal !important;
+  max-width: 600px !important;
+  width: max-content !important;
+  word-break: break-word !important;
+  z-index: 10 !important;
+  color: #ffffff !important;
+}
+
+.chat-bilingual-section-translation *,
+.chat-bilingual-section-translation::before,
+.chat-bilingual-section-translation::after {
+  color: #ffffff !important;
+  background: transparent !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  opacity: 1 !important;
+  text-shadow: none !important;
+}
+
+.chat-bilingual-section-translation,
+.chat-bilingual-section-translation span,
+.chat-bilingual-section-translation p,
+.chat-bilingual-section-translation div,
+.chat-bilingual-section-translation * {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+.chat-bilingual-toggle {
+  position: absolute !important;
+  inset: 0;
+  width: 100% !important;
+  height: 100% !important;
+  opacity: 0 !important;
+  z-index: 10;
+  cursor: pointer;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+
+/* ============================================================
+   🟢 8. 底部输入栏（Input Bar）与左右头像
+   ============================================================ */
+
+#wechat-chat-detail .chat-input-bar {
+  background: #F4F4F6 !important;
+  border-top: 0.7px solid #d8d8da !important;
+  border-bottom: 0.7px solid #d8d8da !important;
+  box-shadow: none !important;
+  position: relative !important;
+  float: left !important;
+  width: 100% !important;
+  clear: both !important;
+  padding: 5px 8px !important;
+  min-height: 48px !important;
+  box-sizing: border-box !important;
+}
+
+#wechat-chat-detail #text-input-container {
+  height: 39px !important;
+  min-height: 39px !important;
+  max-height: 39px !important;
+  padding: 0 10px !important;
+  box-sizing: border-box !important;
+  float: left !important;
+}
+
+#wechat-chat-detail #text-input-container textarea {
+  padding: 0 !important;
+  line-height: 37px !important;
+  min-height: unset !important;
+  box-sizing: border-box !important;
+}
+
+.chat-input-bar {
+  position: fixed !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 9999 !important;
+  background: linear-gradient(to top, #FFFFFF 62px, transparent 62px) !important;
+  backdrop-filter: none !important;
+  border-top: none !important;
+  display: grid !important;
+  grid-template-areas: 
+    "actions actions actions"
+    "avatar-l input avatar-r" !important;
+  grid-template-columns: 45px 1fr 45px !important;
+  grid-template-rows: 38px 62px !important;
+  column-gap: 8px !important;
+  row-gap: 0 !important;
+  padding: 0 12px 0 12px !important;
+  align-items: center !important;
+  overflow: visible !important;
+}
+
+.chat-input-actions {
+  grid-area: actions !important;
+  display: flex !important;
+  justify-content: flex-end !important;
+  gap: 20px !important;
+  padding-right: 8px !important;
+}
+
+.chat-input-actions svg, 
+.chat-input-bar-action svg {
+  width: 20px !important;
+  height: 20px !important;
+  color: #CCCCCC !important;
+  fill: currentColor !important;
+}
+
+/* ==========================================
+   ✨ 【可改3：底栏左侧头像 URL】在这里修改底栏左侧头像图片地址
+   ========================================== */
+.chat-input-bar::before {
+  grid-area: avatar-l !important;
+  content: "" !important;
+  display: block !important;
+  width: 38px !important;
+  height: 38px !important;
+  border-radius: 50% !important;
+  background-image: url('https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAEZnGpqiHFe7qPHPd8FR8jgwgG5eJSYqQACIC8AAgK8QFQjzAfkUAyH5D0E.jpg') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  border: 1px solid #EEEEEE !important;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05) !important;
+  align-self: center !important;
+  margin-top: -2px !important;
+}
+
+.chat-input-bar::after {
+  grid-area: avatar-r !important;
+  content: "" !important;
+  display: block !important;
+  width: 38px !important;
+  height: 38px !important;
+  border-radius: 50% !important;
+  background-image: url('https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAEZrs9qiq2nHoTYfENRx9gGKOdHomIH7QACFyoAAkreUVT7ynBvvTRiwT0E.jpg') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  border: none !important;
+  box-shadow: none !important;
+  align-self: center !important;
+  margin-top: -2px !important;
+}
+
+.chat-input-bar [class*="avatar"],
+.chat-input-bar .avatar-root {
+  display: none !important;
+}
+
+.chat-input-wrapper {
+  grid-area: input !important;
+  width: 100% !important;
+  align-self: center !important;
+  margin-top: 5px !important;
+  position: relative !important;
+}
+
+.chat-input-wrapper textarea::placeholder,
+.chat-input-wrapper input::placeholder {
+  color: transparent !important;
+  font-size: 0 !important;
+  letter-spacing: -100px !important;
+  opacity: 0 !important;
+}
+
+.chat-input-wrapper::before {
+  content: "나는 그저 작은 사랑이에요^⌯𖥦⌯^ ੭" !important;
+  position: absolute !important;
+  left: 16px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  color: #A0A0A0 !important;
+  font-size: 13.5px !important;
+  pointer-events: none !important;
+  z-index: 999 !important;
+  white-space: nowrap !important;
+  display: block !important;
+}
+
+.chat-input-wrapper:has(textarea:focus)::before,
+.chat-input-wrapper:has(input:focus)::before,
+.chat-input-wrapper:has(textarea:not(:placeholder-shown))::before,
+.chat-input-wrapper:has(input:not(:placeholder-shown))::before {
+  display: none !important;
+  opacity: 0 !important;
+}
+
+.chat-input-wrapper textarea,
+.chat-input-wrapper input {
+  width: 100% !important;
+  background-color: #F8F8F8 !important;
+  border-radius: 20px !important;
+  border: 1px solid #EAEAEA !important;
+  padding: 8px 16px !important;
+  font-size: 14px !important;
+  min-height: 36px !important;
+  box-sizing: border-box !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+
+/* ============================================================
+   🟢 9. 弹窗与附件面板防透底修复
+   ============================================================ */
+
+.chat-input-bar .emoji-panel,
+.chat-input-bar .plus-popup,
+.chat-input-bar .popup-root,
+.chat-input-bar [class*="popup"],
+.chat-input-bar [class*="emoji"] {
+  background-color: #ffffff !important;
+  grid-area: unset !important;
+  position: absolute !important;
+  bottom: 100% !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  z-index: 999 !important;
+}
+
+.chat-input-bar .emoji-panel > div,
+.chat-input-bar .plus-popup > div,
+.chat-input-bar [class*="popup"],
+.chat-input-bar [class*="emoji"] > div {
+  background-color: #ffffff !important;
+}
+
+.chat-input-bar > div:not(.chat-input-actions):not(.chat-input-wrapper) {
+  grid-area: unset !important;
+  position: absolute !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 100% !important;
+  width: 100% !important;
+  background-color: #ffffff !important;
+}
+
+.chat-input-bar:has(.plus-popup) .chat-input-wrapper {
+  width: 100% !important;
+  flex: 1 1 auto !important;
+}
+
+.chat-input-bar:has(.emoji-panel),
+.chat-input-bar:has(.plus-popup) {
+  grid-template-areas:
+    "actions actions actions"
+    "avatar-l input avatar-r" !important;
+}
