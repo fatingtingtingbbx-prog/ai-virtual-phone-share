@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-24T16:32:24.373Z",
+  "generatedAt": "2026-08-24T17:11:01.446Z",
   "folders": [
     {
       "name": "A 重要须知（自部署版请查看）",
@@ -194,8 +194,6 @@
       "type": "dir",
       "path": "资源/Js插件/我就想聊天而已",
       "files": [
-        "资源/Js插件/我就想聊天而已/code_20260824(1).js",
-        "资源/Js插件/我就想聊天而已/code_20260824(2).js",
         "资源/Js插件/我就想聊天而已/文件1.js",
         "资源/Js插件/我就想聊天而已/文件2.js",
         "资源/Js插件/我就想聊天而已/文件3.js"
@@ -205,7 +203,7 @@
       "author": "夏黎",
       "avatar": "资源/Js插件/我就想聊天而已/.avatar.png",
       "ownerHash": "38862857e8e107e2eba9d405dc4162385e199a05563417c0022637fd444ac5d1",
-      "updatedAt": "2026-08-24T23:52:21+08:00"
+      "updatedAt": "2026-08-25T01:10:35+08:00"
     },
     {
       "folder": "Js插件",
