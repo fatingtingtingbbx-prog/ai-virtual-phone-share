@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-25T18:33:19.357Z",
+  "generatedAt": "2026-08-25T19:51:20.983Z",
   "folders": [
     {
       "name": "A 重要须知（自部署版请查看）",
@@ -34,6 +34,10 @@
     {
       "name": "应用bug改善",
       "count": 2
+    },
+    {
+      "name": "快捷指令模版",
+      "count": 1
     },
     {
       "name": "朋友圈美化",
@@ -1869,6 +1873,22 @@
       "avatar": "",
       "ownerHash": "d634c528c09222703f150a3620947cc1cc7a13005cf35cf0f0dfaa9e16521076",
       "updatedAt": "2026-08-23T18:52:24+08:00"
+    },
+    {
+      "folder": "快捷指令模版",
+      "name": "打开微信并截图快捷指令",
+      "dirName": "打开微信并截图快捷指令",
+      "type": "dir",
+      "path": "资源/快捷指令模版/打开微信并截图快捷指令",
+      "files": [],
+      "images": [
+        "资源/快捷指令模版/打开微信并截图快捷指令/IMG_3165.jpeg"
+      ],
+      "description": "如图，小手机里配置好后，在手机里打开这个链接导入快捷指令",
+      "author": "",
+      "avatar": "",
+      "ownerHash": "72adb7d77211b0354bc8d30ad6f28de6e6ba7e1047ed9ec1c80c1ab683f98f11",
+      "updatedAt": "2026-08-26T03:36:44+08:00"
     },
     {
       "folder": "朋友圈美化",
