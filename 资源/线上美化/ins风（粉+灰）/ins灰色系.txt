@@ -1,0 +1,431 @@
+ins灰色系
+可二改仅自用，禁止二传
+
+/* ═══ ins灰色系主题═══ */
+:root {
+  /* ── 顶部头像自定义（可在 url 内填入图片链接） ── */
+  --couple-avatar-left: url("");/* 左侧头像图片链接，如 url("https://...") */
+  --couple-avatar-right: url(""); /* 右侧头像图片链接，如 url("https://...") */
+
+  --c-header-bg: transparent;
+  --c-page-body-bg: #F8F9FA;
+  --c-text-title: #2B2F36;
+  --c-text: #7D838D;
+  
+  --c-icon: #A6ABB3;
+  --c-icon-active: #A6ABB3;
+  
+  /* 输入框内部改为浅灰 */
+  --c-input: #EFF0F2;
+  --c-input-border: rgba(0, 0, 0, 0.08);
+}
+
+.chat-room-wrapper {
+  background: linear-gradient(180deg, #FBFBFB 0%, #F5F6F8 100%);
+}
+
+.page-header {
+  background: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+}
+
+.page-header-content {
+  position: relative;
+  min-height: 68px;
+  padding: 6px 14px 6px;
+}
+
+/* 强制左右图标变为灰色 */
+.page-back-btn,
+.page-header-actions button {
+  color: #A6ABB3 !important;
+}
+.page-back-btn svg,
+.page-header-actions button svg {
+  stroke: #A6ABB3 !important;
+}
+.page-title {
+  font-size: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 16px !important;
+  height: 38px !important;
+  position: relative !important;
+  margin-bottom: 0 !important;
+  
+  /* 中间的虚线爱心 SVG（灰色） */
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23CCCCCC' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' stroke-dasharray='3 3'%3E%3Cpath d='M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z'%3E%3C/path%3E%3C/svg%3E") center center no-repeat !important;
+  background-size: 16px 16px !important;
+}
+
+/* 左侧圆形头像 */
+.page-title::before {
+  content: "";
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.04);
+  background-image: var(--couple-avatar-left);
+  background-size: cover;
+  background-position: center;
+  border: 1.5px solid rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  flex-shrink: 0;
+}
+
+/* 右侧圆形头像 */
+.page-title::after {
+  content: "";
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.04);
+  background-image: var(--couple-avatar-right);
+  background-size: cover;
+  background-position: center;
+  border: 1.5px solid rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  flex-shrink: 0;
+}
+
+.page-header-title-wrapper::before,
+.page-header-title-wrapper::after,
+.page-header-content::before,
+.page-header-content::after {
+  content: none !important;
+}
+
+/* 右侧气泡（user）：清透浅灰质感 */
+.chat-bubble-role-user {
+  background: rgba(235, 235, 240, 0.45) !important;
+  color: #332E32 !important;
+  border: 1px solid rgba(235, 235, 240, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 18px 6px 18px 18px !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+  padding: 7px 14px;
+}
+
+/* 左侧气泡（char）：极简透白毛玻璃 */
+.chat-bubble-role-assistant {
+  background: rgba(255, 255, 255, 0.6) !important;
+  color: #2B2F36 !important;
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 6px 18px 18px 18px !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+  padding: 7px 14px;
+}
+
+.chat-bubble-media,
+.chat-bubble-role-user:has(img),
+.chat-bubble-role-assistant:has(img),
+.chat-bubble-role-user:has(.chat-photo-card),
+.chat-bubble-role-assistant:has(.chat-photo-card) {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  padding: 0 !important;
+}
+
+.chat-photo-card,
+.chat-photo-card--image {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.chat-photo-card-image img,
+.chat-bubble-media img,
+.chat-markdown img {
+  border-radius: 12px;
+}
+
+.chat-markdown {
+  letter-spacing: 0.2px;
+  line-height: 1.5;
+}
+.chat-markdown p {
+  margin: 2px 0;
+}
+.chat-markdown p:first-child {
+  margin-top: 0;
+}
+.chat-markdown p:last-child {
+  margin-bottom: 0;
+}
+
+/* 输入栏清透毛玻璃（灰色） */
+.chat-input-bar {
+  background: rgba(245, 245, 247, 0.85);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border-top: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.chat-input-textarea {
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 18px;
+}
+
+/* ── ★ 长按菜单 ★ ── */
+
+.ctx-menu {
+  width: 250px !important;
+  height: auto !important; 
+  
+  background: rgba(252, 252, 252, 0.88) !important;
+  backdrop-filter: blur(28px) saturate(160%) !important;
+  -webkit-backdrop-filter: blur(28px) saturate(160%) !important;
+  
+  border: 1px solid rgba(255, 255, 255, 1) !important;
+  border-radius: 20px !important;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255,255,255,1) !important;
+  
+  padding: 52px 20px 20px !important;
+  box-sizing: border-box !important;
+  position: relative !important;
+  
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-content: flex-start !important;
+  gap: 16px 12px !important;
+}
+
+/* 英文装饰：左侧文字 */
+.ctx-menu::before {
+  content: "A C T I O N S";
+  position: absolute !important;
+  top: 22px !important;
+  left: 24px !important;
+  font-family: "Georgia", "Times New Roman", serif !important;
+  font-size: 10px !important;
+  font-style: italic !important;
+  font-weight: 600 !important;
+  color: #8C8C8C !important;
+  letter-spacing: 4px !important;
+  pointer-events: none !important;
+}
+
+/* 英文装饰：右侧极简线条 */
+.ctx-menu::after {
+  content: "";
+  position: absolute !important;
+  top: 28px !important;
+  right: 24px !important;
+  width: 50px !important;
+  height: 1px !important;
+  background: #D9D9D9 !important;
+  pointer-events: none !important;
+}
+
+.ctx-menu-btn {
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  
+  width: calc(50% - 6px) !important; 
+  
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 10px !important; 
+  
+  color: #2B2F36 !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  letter-spacing: 1px !important;
+  
+  transition: opacity 0.2s ease, transform 0.2s ease !important;
+}
+
+.ctx-menu-btn:active {
+  opacity: 0.5 !important;
+  transform: scale(0.96) !important;
+}
+
+.ctx-menu-btn svg {
+  width: 18px !important;
+  height: 18px !important;
+  stroke: #595959 !important;
+  stroke-width: 1.8 !important;
+  fill: none !important;
+  flex-shrink: 0 !important;
+}
+
+.ctx-menu-btn-danger {
+  color: #7A7A7A !important; 
+}
+.ctx-menu-btn-danger svg {
+  stroke: #7A7A7A !important;
+}
+
+.ctx-menu > .flex {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+  gap: 16px 12px !important;
+  width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  box-sizing: border-box !important;
+}
+
+.ctx-menu .flex,
+.ctx-menu .flex.flex-col {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+  gap: 16px 12px !important;
+  width: 100% !important;
+  padding: 0 !important;
+}
+
+/* ── ★ 红包卡片★ ── */
+
+.chat-bubble-role-user:has(.chat-red-packet-card),
+.chat-bubble-role-assistant:has(.chat-red-packet-card) {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  padding: 0 !important;
+}
+
+.chat-red-packet-card {
+  background: rgba(240, 240, 245, 0.85) !important;
+  background-image: radial-gradient(rgba(160, 160, 170, 0.12) 1.5px, transparent 1.5px) !important;
+  background-size: 14px 14px !important;
+  
+  backdrop-filter: blur(20px) saturate(150%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(150%) !important;
+  
+  border: 1px solid rgba(200, 200, 210, 0.7) !important;
+  border-radius: 18px !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06), inset 0 1px 0 rgba(255,255,255,0.8) !important;
+  
+  overflow: hidden !important;
+  position: relative !important;
+}
+
+.chat-red-packet-body {
+  background: transparent !important;
+  border: none !important;
+}
+
+.chat-red-packet-title,
+.chat-red-packet-amount,
+.chat-red-packet-status {
+  color: #555555 !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.5px !important;
+}
+
+.chat-red-packet-desc {
+  color: #888888 !important;
+}
+
+.chat-red-packet-icon {
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.15)) !important;
+}
+
+/* ── ★ 转账卡片★ ── */
+
+.chat-bubble-role-user:has(.chat-transfer-card),
+.chat-bubble-role-assistant:has(.chat-transfer-card) {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  padding: 0 !important;
+}
+
+.chat-transfer-card {
+  background: rgba(240, 240, 245, 0.85) !important;
+  background-image: radial-gradient(rgba(160, 160, 170, 0.12) 1.5px, transparent 1.5px) !important;
+  background-size: 14px 14px !important;
+  
+  backdrop-filter: blur(20px) saturate(150%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(150%) !important;
+  
+  border: 1px solid rgba(200, 200, 210, 0.7) !important;
+  border-radius: 18px !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06), inset 0 1px 0 rgba(255,255,255,0.8) !important;
+  
+  overflow: hidden !important;
+  position: relative !important;
+}
+
+.chat-transfer-body {
+  background: transparent !important;
+  border: none !important;
+}
+
+.chat-transfer-title,
+.chat-transfer-amount,
+.chat-transfer-status {
+  color: #555555 !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.5px !important;
+}
+
+.chat-transfer-desc {
+  color: #888888 !important;
+}
+
+.chat-transfer-icon {
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.15)) !important;
+}
+
+/* ── ★ 状态栏/内心独白爱心点赞颜色★ ── */
+.chat-monologue-heart[data-active] {
+  color: #CCCCCC !important;
+}
+
+
+.page-title {
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23FFFFFF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' stroke-dasharray='3 3'%3E%3Cpath d='M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z'%3E%3C/path%3E%3C/svg%3E") center center no-repeat !important;
+  background-size: 16px 16px !important;
+}
+
+
+.chat-red-packet-card .ui-media-footer,
+.chat-red-packet-card .ui-media-footer *,
+.chat-red-packet-card .chat-red-packet-status,
+.chat-red-packet-card .chat-red-packet-desc,
+.chat-red-packet-card .chat-red-packet-amount,
+.chat-red-packet-card .chat-red-packet-title {
+  color: #555555 !important;          
+  background-color: transparent !important;
+  border-color: #ffffff !important;
+}
+
+.chat-transfer-card .ui-media-footer,
+.chat-transfer-card .ui-media-footer *,
+.chat-transfer-card .chat-transfer-status,
+.chat-transfer-card .chat-transfer-desc,
+.chat-transfer-card .chat-transfer-amount,
+.chat-transfer-card .chat-transfer-title {
+  color: #555555 !important;          
+  background-color: transparent !important;
+  border-color: #ffffff !important;
+}
+
+.chat-red-packet-card .ui-media-footer,
+.chat-transfer-card .ui-media-footer {
+  background: #ffffff !important;
+  color: #FFFFFF !important;
+}
