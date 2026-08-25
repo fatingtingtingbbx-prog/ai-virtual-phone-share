@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-24T23:50:01.177Z",
+  "generatedAt": "2026-08-25T04:01:47.261Z",
   "folders": [
     {
       "name": "A 重要须知（自部署版请查看）",
@@ -57,7 +57,7 @@
     },
     {
       "name": "线上美化",
-      "count": 18
+      "count": 19
     },
     {
       "name": "线上聊天状态栏",
@@ -2099,6 +2099,26 @@
       "avatar": "资源/线上美化/ins风灰/.avatar.png",
       "ownerHash": "4c5a389c9b5a488af6c850b9573f167bd072aa6b1d5a4c2884f314e05e1ca5e5",
       "updatedAt": "2026-08-20T23:25:16+08:00"
+    },
+    {
+      "folder": "线上美化",
+      "name": "ins风（粉+灰）",
+      "dirName": "ins风（粉+灰）",
+      "type": "dir",
+      "path": "资源/线上美化/ins风（粉+灰）",
+      "files": [
+        "资源/线上美化/ins风（粉+灰）/ins灰色系.txt",
+        "资源/线上美化/ins风（粉+灰）/ins粉色系.txt"
+      ],
+      "images": [
+        "资源/线上美化/ins风（粉+灰）/IMG_3694.jpeg",
+        "资源/线上美化/ins风（粉+灰）/IMG_3695.jpeg"
+      ],
+      "description": "极简ins风格 粉色系和灰色系\n使用方法：消息—更多—自定义css样式—导入\n可二改 仅自用 [粗][红]禁止二传[蝴蝶结][/红][/粗]",
+      "author": "小雨酱",
+      "avatar": "资源/线上美化/ins风（粉+灰）/.avatar.png",
+      "ownerHash": "dce2d2c1fa83f62ffecba146d01e074745f865062ed02250d368219e96a7e22a",
+      "updatedAt": "2026-08-25T12:01:26+08:00"
     },
     {
       "folder": "线上美化",
