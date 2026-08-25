@@ -1,0 +1,536 @@
+水彩
+/* 水彩晕染｜聊天 App 配套外观
+   与"水彩风气泡.css"搭配使用 */
+
+/* ── 全局颜色 ── */
+.chat-app {
+  --c-header-bg: #faf8f5;
+  --c-page-body-bg: #f7f4f0;
+  --c-card: rgba(255, 253, 250, 0.82);
+  --c-card-border: rgba(195, 175, 215, 0.20);
+  --c-input: rgba(238, 230, 248, 0.78);
+  --c-input-border: rgba(195, 175, 215, 0.22);
+  --c-text-title: #4a3858;
+  --c-text: #8878a0;
+  --c-icon: #b0a0c0;
+  --c-icon-active: #8868a8;
+  --c-bubble-self: rgba(255, 218, 210, 0.85);
+  --c-bubble-other: rgba(228, 235, 255, 0.85);
+  --c-success: #90c8a8;
+  --c-warning: #f0c888;
+  --c-danger: #f0a8b8;
+}
+
+/* ── 页面、标题栏与底栏 ── */
+.chat-app .page-body {
+  background-color: var(--c-page-body-bg);
+}
+
+.chat-app .page-header {
+  background: rgba(250, 248, 245, 0.75);
+  border-bottom-color: rgba(195, 175, 215, 0.13);
+  backdrop-filter: blur(18px) saturate(112%);
+  -webkit-backdrop-filter: blur(18px) saturate(112%);
+}
+
+.chat-app .page-title,
+.chat-app .page-back-btn {
+  color: #4a3858;
+}
+
+.chat-app .chat-tab-bar {
+  background: rgba(252, 250, 248, 0.88);
+  border-top: 1px solid rgba(195, 175, 215, 0.15);
+  box-shadow: 0 -8px 24px rgba(150, 120, 180, 0.04);
+  backdrop-filter: blur(18px) saturate(112%);
+  -webkit-backdrop-filter: blur(18px) saturate(112%);
+}
+
+.chat-app .chat-tab {
+  color: #c0b0d0;
+}
+
+.chat-app .chat-tab-active {
+  color: #8868a8;
+}
+
+/* ── 搜索框、输入框与常用按钮 ── */
+.chat-app .chat-search-bar,
+.chat-app .ui-input,
+.chat-app .ui-textarea,
+.chat-app .ui-select {
+  background: rgba(238, 230, 248, 0.84);
+  border-color: rgba(195, 175, 215, 0.22);
+  color: #4a3858;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.60);
+}
+
+.chat-app .ui-btn-soft-action {
+  background: #e4d8f4;
+  border-color: rgba(170, 140, 210, 0.20);
+  color: #7058a0;
+}
+
+.chat-app .ui-btn-outline {
+  background: rgba(255, 253, 250, 0.60);
+  border-color: rgba(195, 175, 215, 0.24);
+  color: #8868a8;
+}
+
+.chat-app .ui-toggle {
+  background: rgba(185, 165, 215, 0.18);
+}
+
+.chat-app .ui-toggle[data-checked] {
+  background: #a888c8;
+}
+
+.chat-app .ui-toggle-knob {
+  box-shadow: 0 2px 7px rgba(110, 80, 150, 0.16);
+}
+
+/* ── 消息页与联系人页｜水彩强化版 ── */
+
+/* ① 整个消息/联系人页面铺一层淡淡的水彩云雾
+   用 :has(.chat-search-bar) 只锁定含聊天搜索框的页面，避免影响个人主页 */
+.chat-app .page-body:has(.chat-search-bar) {
+  background:
+    radial-gradient(ellipse 48% 28% at 4% 6%,
+      rgba(166, 210, 255, 0.42), transparent 68%),
+    radial-gradient(ellipse 42% 24% at 96% 20%,
+      rgba(255, 190, 178, 0.30), transparent 70%),
+    radial-gradient(ellipse 46% 28% at 88% 56%,
+      rgba(210, 188, 248, 0.30), transparent 72%),
+    radial-gradient(ellipse 38% 22% at 12% 82%,
+      rgba(188, 228, 218, 0.18), transparent 72%),
+    #f7f4f0 !important;
+}
+
+/* ② 搜索框本身也做成水彩玻璃，而不是一整条纯紫 */
+.chat-app .page-body:has(.chat-search-bar) .chat-search-bar {
+  background:
+    radial-gradient(circle at 9% 50%,
+      rgba(173, 215, 252, 0.44), transparent 28%),
+    radial-gradient(circle at 90% 45%,
+      rgba(222, 199, 252, 0.54), transparent 40%),
+    rgba(244, 238, 250, 0.78) !important;
+  border: 1px solid rgba(210, 188, 235, 0.28) !important;
+  box-shadow:
+    0 8px 24px rgba(145, 115, 175, 0.07),
+    inset 0 1px 0 rgba(255, 255, 255, 0.72) !important;
+  backdrop-filter: blur(14px) saturate(112%);
+  -webkit-backdrop-filter: blur(14px) saturate(112%);
+}
+
+/* ③ 消息页 / 联系人页条目：从“几乎透明”改成明显一点的水彩卡片 */
+.chat-app :is(.contact-item, .chat-item, .chat-list-item, .conversation-item) {
+  position: relative !important;
+  overflow: hidden !important;
+  background:
+    radial-gradient(circle at 0% 0%,
+      rgba(182, 218, 252, 0.22), transparent 42%),
+    radial-gradient(circle at 100% 100%,
+      rgba(225, 202, 250, 0.22), transparent 40%),
+    rgba(255, 253, 250, 0.72) !important;
+  border: 1px solid rgba(255, 255, 255, 0.72) !important;
+  border-radius: 18px !important;
+  margin: 7px 12px !important;
+  box-shadow:
+    0 8px 22px rgba(150, 120, 180, 0.075),
+    inset 0 1px 0 rgba(255, 255, 255, 0.76) !important;
+  backdrop-filter: blur(10px) saturate(108%);
+  -webkit-backdrop-filter: blur(10px) saturate(108%);
+}
+
+/* 让相邻条目有一点不同的水彩晕染，不会像复制粘贴的卡片 */
+.chat-app :is(.contact-item, .chat-item, .chat-list-item, .conversation-item):nth-child(3n + 2) {
+  background:
+    radial-gradient(circle at 8% 15%,
+      rgba(255, 205, 190, 0.20), transparent 40%),
+    radial-gradient(circle at 92% 88%,
+      rgba(211, 193, 248, 0.22), transparent 42%),
+    rgba(255, 253, 250, 0.72) !important;
+}
+
+.chat-app :is(.contact-item, .chat-item, .chat-list-item, .conversation-item):nth-child(3n + 3) {
+  background:
+    radial-gradient(circle at 2% 80%,
+      rgba(190, 225, 218, 0.18), transparent 42%),
+    radial-gradient(circle at 96% 12%,
+      rgba(180, 214, 252, 0.20), transparent 40%),
+    rgba(255, 253, 250, 0.72) !important;
+}
+
+/* ④ 头像边缘加更明显的柔光，和主页的水彩氛围呼应 */
+.chat-app .minimal-avatar-wrapper {
+  border-radius: 14px !important;
+  box-shadow:
+    0 5px 18px rgba(150, 125, 195, 0.20),
+    0 0 0 1px rgba(255, 255, 255, 0.74) !important;
+}
+
+/* ⑤ 名字 / 预览 / 时间保持柔和，但把层级拉开 */
+.chat-app :is(.contact-item, .chat-item, .chat-list-item, .conversation-item)
+:is(.contact-name, .chat-name) {
+  color: #4a3858 !important;
+}
+
+.chat-app :is(.contact-item, .chat-item, .chat-list-item, .conversation-item)
+:is(.last-message, .chat-preview) {
+  color: #9d8cad !important;
+}
+
+.chat-app :is(.contact-item, .chat-item, .chat-list-item, .conversation-item)
+:is(.chat-time, .last-time) {
+  color: #b9a8c9 !important;
+}
+
+/* ⑥ AI 标签做成半透明颜料块 */
+.chat-app :is(.contact-item, .chat-item, .chat-list-item, .conversation-item) .chat-tag {
+  background:
+    linear-gradient(135deg,
+      rgba(190, 215, 255, 0.50),
+      rgba(220, 192, 248, 0.50)) !important;
+  color: #76589f !important;
+  border: 1px solid rgba(255, 255, 255, 0.58) !important;
+  box-shadow: 0 3px 10px rgba(135, 105, 170, 0.07) !important;
+}
+
+/* ⑦ 顶部标题栏也给一点很轻的蓝紫水彩，不抢正文 */
+.chat-app:has(.page-body .chat-search-bar) .page-header {
+  background:
+    radial-gradient(circle at 18% 0%,
+      rgba(180, 218, 252, 0.22), transparent 38%),
+    radial-gradient(circle at 82% 15%,
+      rgba(238, 207, 246, 0.20), transparent 42%),
+    rgba(250, 248, 245, 0.78) !important;
+  backdrop-filter: blur(18px) saturate(112%);
+  -webkit-backdrop-filter: blur(18px) saturate(112%);
+}
+
+/* ⑧ 底栏轻微呼应页面的紫色水彩 */
+.chat-app:has(.page-body .chat-search-bar) .chat-tab-bar {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(252, 250, 248, 0.88),
+      rgba(247, 241, 250, 0.92)
+    ) !important;
+  box-shadow: 0 -8px 24px rgba(145, 115, 175, 0.055) !important;
+}
+
+
+/* ── 个人主页顶部：蓝紫+珊瑚双色水彩光晕 ── */
+.chat-app .user-profile-page-root {
+  background: #f7f4f0 !important;
+}
+
+.chat-app .user-profile-page-root::before {
+  height: 330px !important;
+  background:
+    radial-gradient(circle at 20% 22%, rgba(175, 215, 252, 0.72), transparent 48%),
+    radial-gradient(circle at 78% 62%, rgba(250, 180, 175, 0.55), transparent 42%),
+    linear-gradient(135deg, rgba(225, 218, 248, 0.78), rgba(247, 244, 250, 0.42)) !important;
+}
+
+/* 头像：轻柔白边 */
+.chat-app .user-profile-page-root .page-body > div > div:first-of-type > div:first-child > div {
+  border-color: rgba(255, 253, 250, 0.92) !important;
+  box-shadow: 0 7px 22px rgba(140, 110, 170, 0.10) !important;
+}
+
+/* 在线状态圆点 */
+.chat-app .user-profile-page-root .bg-blue-400 {
+  background-color: #a888c8 !important;
+}
+
+/* 余额卡 */
+.chat-app .user-profile-page-root .page-body > div > button:first-of-type {
+  background:
+    linear-gradient(145deg, rgba(225, 215, 248, 0.93), rgba(245, 238, 255, 0.93)) !important;
+  border: 1px solid rgba(255, 253, 250, 0.88) !important;
+  color: #4a3858 !important;
+  box-shadow:
+    0 10px 28px rgba(140, 100, 180, 0.07),
+    inset 0 1px 0 rgba(255, 255, 255, 0.68) !important;
+}
+
+.chat-app .user-profile-page-root .page-body > div > button:first-of-type span[style] {
+  color: #4a3858 !important;
+}
+
+.chat-app .user-profile-page-root .page-body > div > button:first-of-type > div:last-child > span:last-child {
+  background: rgba(255, 253, 250, 0.72) !important;
+  border-color: rgba(195, 175, 215, 0.18) !important;
+  color: #8868a8 !important;
+}
+
+/* 主页的各组白色卡片 */
+.chat-app .user-profile-page-root .page-body > div > div:nth-of-type(n + 2) {
+  background: rgba(255, 253, 250, 0.80) !important;
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  box-shadow: 0 9px 25px rgba(140, 110, 170, 0.05) !important;
+  backdrop-filter: blur(12px) saturate(106%);
+  -webkit-backdrop-filter: blur(12px) saturate(106%);
+}
+
+/* 三个快捷入口：水彩蓝、水彩珊瑚、水彩紫 */
+.chat-app .user-profile-page-root .page-body > div > div:nth-of-type(2) > button:nth-child(1) > div {
+  background: rgba(175, 215, 252, 0.55) !important;
+  color: #4878b0 !important;
+}
+
+.chat-app .user-profile-page-root .page-body > div > div:nth-of-type(2) > button:nth-child(2) > div {
+  background: rgba(255, 192, 168, 0.55) !important;
+  color: #b06850 !important;
+}
+
+.chat-app .user-profile-page-root .page-body > div > div:nth-of-type(2) > button:nth-child(3) > div {
+  background: rgba(208, 182, 248, 0.52) !important;
+  color: #7858b8 !important;
+}
+
+/* ── 动态页卡片 ── */
+.chat-app .feed-post,
+.chat-app .feed-profile-card {
+  border-color: rgba(195, 175, 215, 0.16);
+}
+
+.chat-app .feed-cover-bg {
+  background: linear-gradient(145deg, #ddeeff, #ede8ff);
+}
+
+/* ── Chats 筛选胶囊｜All / Private / Groups 水彩适配 ── */
+/* 锁定：聊天搜索框后面紧跟的筛选按钮组，同时兼容常见 tab/filter 类名 */
+.chat-app .page-body:has(.chat-search-bar)
+:is(
+  .chat-search-bar + div,
+  .chat-filter-tabs,
+  .chat-list-filters,
+  .chat-category-tabs,
+  .chat-filter-group
+) > button,
+.chat-app .page-body:has(.chat-search-bar)
+:is(.chat-filter-btn, .chat-filter-tab, .chat-category-tab) {
+  min-width: 92px !important;
+  border: 1px solid rgba(255, 255, 255, 0.64) !important;
+  border-radius: 999px !important;
+  color: #927fa7 !important;
+  background: rgba(241, 233, 248, 0.74) !important;
+  box-shadow:
+    0 7px 18px rgba(145, 115, 175, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.72) !important;
+  backdrop-filter: blur(10px) saturate(112%);
+  -webkit-backdrop-filter: blur(10px) saturate(112%);
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease,
+    color 160ms ease,
+    background 160ms ease !important;
+}
+
+/* 三颗胶囊分别带一点点不同的水彩底色 */
+.chat-app .page-body:has(.chat-search-bar)
+:is(.chat-search-bar + div, .chat-filter-tabs, .chat-list-filters, .chat-category-tabs, .chat-filter-group)
+> button:nth-child(1) {
+  background:
+    radial-gradient(circle at 25% 25%, rgba(170, 215, 255, 0.34), transparent 48%),
+    rgba(236, 233, 250, 0.78) !important;
+}
+
+.chat-app .page-body:has(.chat-search-bar)
+:is(.chat-search-bar + div, .chat-filter-tabs, .chat-list-filters, .chat-category-tabs, .chat-filter-group)
+> button:nth-child(2) {
+  background:
+    radial-gradient(circle at 25% 30%, rgba(255, 205, 193, 0.28), transparent 50%),
+    rgba(243, 235, 248, 0.78) !important;
+}
+
+.chat-app .page-body:has(.chat-search-bar)
+:is(.chat-search-bar + div, .chat-filter-tabs, .chat-list-filters, .chat-category-tabs, .chat-filter-group)
+> button:nth-child(3) {
+  background:
+    radial-gradient(circle at 72% 28%, rgba(215, 191, 252, 0.34), transparent 52%),
+    rgba(239, 232, 248, 0.80) !important;
+}
+
+/* 激活态：不再用纯蓝，改成蓝紫水彩胶囊 */
+.chat-app .page-body:has(.chat-search-bar)
+:is(
+  .chat-search-bar + div,
+  .chat-filter-tabs,
+  .chat-list-filters,
+  .chat-category-tabs,
+  .chat-filter-group
+) > button:is(
+  .active,
+  .is-active,
+  [data-active="true"],
+  [data-state="active"],
+  [aria-selected="true"]
+),
+.chat-app .page-body:has(.chat-search-bar)
+:is(.chat-filter-btn, .chat-filter-tab, .chat-category-tab):is(
+  .active,
+  .is-active,
+  [data-active="true"],
+  [data-state="active"],
+  [aria-selected="true"]
+),
+/* 兼容 Tailwind 风格的蓝色激活按钮 */
+.chat-app .page-body:has(.chat-search-bar)
+:is(.chat-search-bar + div, .chat-filter-tabs, .chat-list-filters, .chat-category-tabs, .chat-filter-group)
+> button[class*="bg-blue-"] {
+  color: #ffffff !important;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(173, 220, 255, 0.96), transparent 42%),
+    radial-gradient(circle at 82% 82%, rgba(184, 151, 236, 0.90), transparent 48%),
+    linear-gradient(135deg, rgba(103, 162, 235, 0.96), rgba(154, 122, 211, 0.94)) !important;
+  border-color: rgba(255, 255, 255, 0.72) !important;
+  box-shadow:
+    0 9px 22px rgba(118, 104, 190, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.36) !important;
+}
+
+/* 轻微按压感 */
+.chat-app .page-body:has(.chat-search-bar)
+:is(
+  .chat-search-bar + div,
+  .chat-filter-tabs,
+  .chat-list-filters,
+  .chat-category-tabs,
+  .chat-filter-group
+) > button:active,
+.chat-app .page-body:has(.chat-search-bar)
+:is(.chat-filter-btn, .chat-filter-tab, .chat-category-tab):active {
+  transform: scale(0.97) !important;
+}
+
+
+/* ══════════════════════════════════════════════════════
+   v3 修复 ①｜Chats 真实选中类：移除突兀的系统蓝
+   ══════════════════════════════════════════════════════ */
+.chat-app {
+  /* 同时替换聊天 App 内仍引用系统蓝色变量的少数控件 */
+  --c-action-blue: #a18abe;
+}
+
+.chat-app .chat-list-tab {
+  background: rgba(239, 232, 248, 0.78) !important;
+  color: #8f7da2 !important;
+  border: 1px solid rgba(255, 255, 255, 0.62) !important;
+  box-shadow:
+    0 6px 16px rgba(137, 111, 164, 0.055),
+    inset 0 1px 0 rgba(255, 255, 255, 0.68) !important;
+}
+
+.chat-app .chat-list-tab.active {
+  color: #ffffff !important;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(188, 222, 255, 0.92), transparent 43%),
+    radial-gradient(circle at 86% 86%, rgba(204, 166, 225, 0.90), transparent 49%),
+    linear-gradient(135deg, #91b4dc 0%, #a999ce 54%, #c69fbd 100%) !important;
+  border-color: rgba(255, 255, 255, 0.74) !important;
+  box-shadow:
+    0 8px 20px rgba(123, 105, 165, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.38) !important;
+}
+
+
+/* ══════════════════════════════════════════════════════
+   v3 修复 ②｜聊天室自适应水彩背景
+   左上雾蓝 → 中央淡紫 → 右下水粉红；纯 CSS，自动适应屏幕
+   ══════════════════════════════════════════════════════ */
+.chat-app .chat-room-wrapper {
+  background-color: #eee9f6 !important;
+  background-image:
+    radial-gradient(ellipse 105% 58% at -8% -5%,
+      rgba(147, 199, 249, 0.72) 0%,
+      rgba(176, 211, 247, 0.40) 39%,
+      transparent 72%),
+    radial-gradient(ellipse 86% 58% at 105% 8%,
+      rgba(199, 210, 246, 0.54) 0%,
+      transparent 70%),
+    radial-gradient(ellipse 86% 74% at 92% 96%,
+      rgba(247, 174, 188, 0.64) 0%,
+      rgba(241, 194, 215, 0.40) 42%,
+      transparent 76%),
+    radial-gradient(ellipse 88% 62% at 20% 58%,
+      rgba(222, 211, 245, 0.42) 0%,
+      transparent 72%),
+    linear-gradient(158deg,
+      #d8e8f8 0%,
+      #e1e5f7 30%,
+      #e9e1f4 58%,
+      #f2dfe9 78%,
+      #f5d6df 100%) !important;
+  background-position: center !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+}
+
+/* 消息滚动层必须透明，才能露出上面的整屏水彩 */
+.chat-app .chat-room-wrapper > .page-body,
+.chat-app .chat-room-wrapper .chat-room-main-pane.page-body {
+  background: transparent !important;
+}
+
+/* 标题栏像覆在水彩上的一层薄宣纸 */
+.chat-app .chat-room-wrapper .page-header {
+  background:
+    linear-gradient(180deg,
+      rgba(248, 247, 250, 0.74),
+      rgba(248, 247, 250, 0.40)) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.30) !important;
+  backdrop-filter: blur(18px) saturate(112%) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(112%) !important;
+}
+
+/* 输入栏也保持半透明，不在底部切出一块纯色 */
+.chat-app .chat-room-wrapper .chat-input-bar {
+  background: rgba(249, 247, 250, 0.62) !important;
+  border-top-color: rgba(255, 255, 255, 0.34) !important;
+  box-shadow: 0 -8px 22px rgba(114, 96, 145, 0.045) !important;
+  backdrop-filter: blur(18px) saturate(112%) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(112%) !important;
+}
+
+/* 输入框本体用浅紫雾白玻璃，与背景区分但不过分抢眼 */
+.chat-app .chat-room-wrapper .chat-input-bar :is(input, textarea),
+.chat-app .chat-room-wrapper .chat-input-bar .chat-input {
+  background: rgba(255, 253, 252, 0.68) !important;
+  border-color: rgba(184, 166, 207, 0.22) !important;
+}
+
+/* 水彩原生气泡｜用户侧可读性修正
+   不改原生气泡的形状、背景、圆角和阴影 */
+
+/* 蜜桃粉底配深莓果灰字 */
+.chat-app .chat-bubble-role-user {
+  color: #6b4b59 !important;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.20);
+}
+
+/* 防止 Markdown 段落、引用和子元素继续套用默认白字 */
+.chat-app .chat-bubble-role-user :is(
+  .chat-markdown,
+  .chat-markdown p,
+  .chat-markdown q,
+  .chat-markdown span
+) {
+  color: inherit !important;
+}
+
+/* 双语译文比正文稍淡，但仍然清楚 */
+.chat-app .chat-bubble-role-user :is(
+  .chat-bilingual-toggle,
+  .chat-bilingual-section-translation,
+  .chat-bilingual-section-translation .chat-markdown
+) {
+  color: #815f6b !important;
+}
+
+.chat-app .chat-bubble-role-user .chat-bilingual-divider {
+  border-top-color: rgba(107, 75, 89, 0.18) !important;
+}
+
