@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-25T12:22:45.257Z",
+  "generatedAt": "2026-08-25T12:25:43.778Z",
   "folders": [
     {
       "name": "A 重要须知（自部署版请查看）",
@@ -61,7 +61,7 @@
     },
     {
       "name": "线上聊天状态栏",
-      "count": 8
+      "count": 7
     },
     {
       "name": "线下正则",
@@ -2505,22 +2505,6 @@
       "avatar": "",
       "ownerHash": "fb97e4a005ece2d3acaa890adcf557cb67003ad7e5dcfd62cb7a1767f70e2a91",
       "updatedAt": "2026-08-18T00:19:36+08:00"
-    },
-    {
-      "folder": "线上聊天状态栏",
-      "name": "[彩虹]",
-      "dirName": "[彩虹]",
-      "type": "dir",
-      "path": "资源/线上聊天状态栏/[彩虹]",
-      "files": [
-        "资源/线上聊天状态栏/[彩虹]/状态栏.json"
-      ],
-      "images": [],
-      "description": "",
-      "author": "如何呢",
-      "avatar": "",
-      "ownerHash": "13e824da13754778f516a72236f720dddb1a75b6c99ffb49f76861afdbfac2d4",
-      "updatedAt": "2026-08-25T20:22:23+08:00"
     },
     {
       "folder": "线上聊天状态栏",
