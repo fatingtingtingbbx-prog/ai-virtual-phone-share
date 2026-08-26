@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-26T16:23:39.894Z",
+  "generatedAt": "2026-08-26T16:50:44.724Z",
   "folders": [
     {
       "name": "A 重要须知（自部署版请查看）",
@@ -9,7 +9,7 @@
     },
     {
       "name": "Js插件",
-      "count": 21
+      "count": 22
     },
     {
       "name": "bug反馈专用，请先询问小坊，无法解决后再进行反馈，反馈最好有详细情境、附图，否则无法复现",
@@ -139,6 +139,24 @@
       "avatar": "",
       "ownerHash": "b187c9f8dec83db6cf467b82af2254910d4dd901c73f5da114062d4dbd32661e",
       "updatedAt": "2026-08-22T19:58:15+08:00"
+    },
+    {
+      "folder": "Js插件",
+      "name": "会话管理器",
+      "dirName": "会话管理器",
+      "type": "dir",
+      "path": "资源/Js插件/会话管理器",
+      "files": [
+        "资源/Js插件/会话管理器/session-manager.mjs"
+      ],
+      "images": [
+        "资源/Js插件/会话管理器/IMG_2071.png"
+      ],
+      "description": "删除建错的聊天，不可恢复！！！\n支持导出jsonl和html的聊天记录\n起因是发现建错的群聊删不了，删除后群聊和记录就行本地彻底删除了，慎用！！\n使用方式：聊天-主页-插件，导入",
+      "author": "但求一睡君莫笑",
+      "avatar": "",
+      "ownerHash": "610f4f4de346e85636302c26ece1f8743e84cc7417c5c77618e017ca099b9d06",
+      "updatedAt": "2026-08-27T00:38:20+08:00"
     },
     {
       "folder": "Js插件",
