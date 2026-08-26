@@ -1,0 +1,107 @@
+/* 樱桃可乐｜聊天气泡
+   请与"樱桃可乐-聊天外观.css"搭配使用 */
+
+/* 对方：暖奶白玻璃 */
+.chat-bubble-role-assistant:not(.chat-bubble-media):not(.chat-bubble-html-preview) {
+  background:
+    radial-gradient(circle at 16% 10%, rgba(255, 248, 238, 0.60), transparent 44%),
+    linear-gradient(145deg, rgba(254, 248, 240, 0.72), rgba(240, 228, 210, 0.58)) !important;
+  color: #5a3a2a !important;
+  border: 1px solid rgba(220, 180, 140, 0.36) !important;
+  border-radius: 19px 19px 19px 7px !important;
+  padding: 10px 14px;
+  box-shadow:
+    0 9px 24px rgba(120, 60, 40, 0.10),
+    inset 0 1px 0 rgba(255, 248, 235, 0.80),
+    inset 0 -1px 0 rgba(160, 100, 60, 0.08) !important;
+  backdrop-filter: blur(18px) saturate(115%);
+  -webkit-backdrop-filter: blur(18px) saturate(115%);
+}
+
+/* 自己：深莓红，带淡金内光 */
+.chat-bubble-role-user:not(.chat-bubble-media):not(.chat-bubble-html-preview) {
+  background:
+    radial-gradient(circle at 80% 10%, rgba(220, 100, 100, 0.28), transparent 42%),
+    linear-gradient(145deg, rgba(190, 50, 65, 0.88), rgba(138, 22, 36, 0.80)) !important;
+  color: #fdf0ee !important;
+  border: 1px solid rgba(240, 180, 170, 0.20) !important;
+  border-radius: 19px 19px 7px 19px !important;
+  padding: 10px 14px;
+  box-shadow:
+    0 9px 24px rgba(120, 30, 40, 0.24),
+    inset 0 1px 0 rgba(255, 200, 195, 0.28),
+    inset 0 -1px 0 rgba(100, 15, 25, 0.14) !important;
+  backdrop-filter: blur(18px) saturate(120%);
+  -webkit-backdrop-filter: blur(18px) saturate(120%);
+}
+
+/* 正文和特殊文字继承气泡色 */
+.chat-bubble-role-assistant :is(.chat-markdown, p, q),
+.chat-bubble-role-user :is(.chat-markdown, p, q) {
+  color: inherit !important;
+}
+
+.chat-bubble-role-assistant .chat-markdown,
+.chat-bubble-role-user .chat-markdown {
+  font-size: calc(14px * var(--app-text-scale, 1));
+  line-height: 1.50;
+  letter-spacing: 0.012em;
+}
+
+/* 收紧长消息的段落间距，保留轻微呼吸感 */
+.chat-bubble-role-assistant .chat-markdown > p,
+.chat-bubble-role-user .chat-markdown > p {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.chat-bubble-role-assistant .chat-markdown > p + p,
+.chat-bubble-role-user .chat-markdown > p + p {
+  margin-top: 0.38em !important;
+}
+
+.chat-bubble-role-assistant .chat-markdown :is(ul, ol),
+.chat-bubble-role-user .chat-markdown :is(ul, ol) {
+  margin-top: 0.30em !important;
+  margin-bottom: 0.30em !important;
+}
+
+/* 引号内台词：暖金棕 */
+.chat-bubble-role-assistant .chat-markdown q {
+  color: #9a6840 !important;
+}
+
+.chat-bubble-role-user .chat-markdown q {
+  color: #f0c8a8 !important;
+}
+
+/* 双语译文 */
+.chat-bubble-role-assistant :is(
+  .chat-bilingual-toggle,
+  .chat-bilingual-section-translation,
+  .chat-bilingual-section-translation .chat-markdown
+) {
+  color: #9a7a68 !important;
+}
+
+.chat-bubble-role-user :is(
+  .chat-bilingual-toggle,
+  .chat-bilingual-section-translation,
+  .chat-bilingual-section-translation .chat-markdown
+) {
+  color: #e8b8a8 !important;
+}
+
+.chat-bilingual-divider {
+  border-top-color: rgba(160, 80, 60, 0.17) !important;
+}
+
+/* 时间、撤回等系统提示 */
+.chat-sys-msg {
+  color: #9a7a7a !important;
+  background: rgba(250, 242, 236, 0.53) !important;
+  border: 1px solid rgba(160, 90, 80, 0.10) !important;
+  box-shadow: none !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
