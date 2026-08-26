@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-26T08:16:38.440Z",
+  "generatedAt": "2026-08-26T08:26:29.619Z",
   "folders": [
     {
       "name": "A 重要须知（自部署版请查看）",
@@ -29,7 +29,7 @@
     },
     {
       "name": "应用",
-      "count": 48
+      "count": 49
     },
     {
       "name": "应用bug改善",
@@ -1763,6 +1763,25 @@
       "avatar": "资源/应用/羁绊手札/.avatar.png",
       "ownerHash": "8e3664d10538a0676ceac971b51fd4732a8d3997119b81bc78fdb2e3ce7eaba6",
       "updatedAt": "2026-08-23T20:03:39+08:00"
+    },
+    {
+      "folder": "应用",
+      "name": "美团",
+      "dirName": "美团",
+      "type": "dir",
+      "path": "资源/应用/美团",
+      "files": [
+        "资源/应用/美团/float.meituan-2.0.0.zip"
+      ],
+      "images": [
+        "资源/应用/美团/IMG_5092.png",
+        "资源/应用/美团/IMG_5099.jpeg"
+      ],
+      "description": "制作了一个外卖app\n主要功能支持char根据user状态点外卖，user也可以给char点外卖，同时在购物车界面如图标红处可选择是否分享订单，分享订单会直接发送char聊天主页，char会自动回应，若选择给char惊喜，可选择不分享卡片，骑手送达后char会主动联系",
+      "author": "Cheesie",
+      "avatar": "",
+      "ownerHash": "fc3b073e463d31c9cd6019b161a6f3cf5aff4af389077e4f391887a2aa2f4ae2",
+      "updatedAt": "2026-08-26T16:26:06+08:00"
     },
     {
       "folder": "应用",
