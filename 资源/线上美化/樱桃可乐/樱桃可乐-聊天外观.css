@@ -1,0 +1,302 @@
+/* 樱桃可乐｜聊天 App 配套外观
+   与"樱桃可乐-气泡.css"搭配使用 */
+
+/* ── 全局色板：莓红、暖奶白、淡金 ── */
+.chat-app {
+  --c-header-bg: #f5edea;
+  --c-page-body-bg: #f0e6e0;
+  --c-card: rgba(254, 247, 242, 0.80);
+  --c-card-border: rgba(160, 80, 80, 0.14);
+  --c-panel: rgba(253, 247, 242, 0.92);
+  --c-panel-border: rgba(160, 80, 80, 0.15);
+  --c-polaroid: #fef9f5;
+  --c-polaroid-back: #ead8ce;
+  --c-input: rgba(238, 222, 214, 0.82);
+  --c-input-border: rgba(160, 80, 80, 0.15);
+  --c-text-title: #4a2525;
+  --c-text: #7a4a45;
+  --c-icon: #a87070;
+  --c-icon-active: #8c3040;
+  --c-bubble-self: #b83040;
+  --c-bubble-other: rgba(254, 248, 240, 0.88);
+  --c-success: #7fa99b;
+  --c-warning: #c6a06d;
+  --c-danger: #bd4455;
+  color: var(--c-text);
+}
+
+/* ── 页面、标题栏与底栏 ── */
+.chat-app .page-body {
+  background-color: var(--c-page-body-bg);
+  color: var(--c-text);
+}
+
+.chat-app .page-header {
+  background:
+    linear-gradient(180deg, rgba(250, 244, 240, 0.90), rgba(240, 230, 224, 0.70)) !important;
+  border-bottom: 1px solid rgba(160, 80, 80, 0.10) !important;
+  box-shadow: 0 7px 22px rgba(100, 40, 40, 0.05);
+  backdrop-filter: blur(20px) saturate(108%);
+  -webkit-backdrop-filter: blur(20px) saturate(108%);
+}
+
+.chat-app :is(.page-title, .page-back-btn) {
+  color: #4a2525 !important;
+}
+
+.chat-app .chat-tab-bar {
+  background: rgba(250, 244, 240, 0.88) !important;
+  border-top: 1px solid rgba(160, 80, 80, 0.10) !important;
+  box-shadow: 0 -7px 23px rgba(100, 40, 40, 0.05) !important;
+  backdrop-filter: blur(20px) saturate(108%);
+  -webkit-backdrop-filter: blur(20px) saturate(108%);
+}
+
+.chat-app .chat-tab { color: #b08888 !important; }
+.chat-app .chat-tab-active { color: #8c3040 !important; }
+
+/* ── 搜索、输入与按钮 ── */
+.chat-app :is(.chat-search-bar, .ui-input, .ui-textarea, .ui-select) {
+  background:
+    linear-gradient(145deg, rgba(238, 220, 212, 0.88), rgba(228, 208, 198, 0.80)) !important;
+  border-color: rgba(160, 80, 80, 0.15) !important;
+  color: #4d2a28 !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 248, 240, 0.66),
+    0 6px 18px rgba(100, 40, 40, 0.05) !important;
+}
+
+.chat-app :is(input, textarea)::placeholder {
+  color: #b89898 !important;
+}
+
+.chat-app .ui-btn-soft-action {
+  background: #e8c8c0 !important;
+  border-color: rgba(160, 80, 80, 0.16) !important;
+  color: #8c3040 !important;
+}
+
+.chat-app .ui-btn-outline {
+  background: rgba(254, 248, 242, 0.64) !important;
+  border-color: rgba(160, 80, 80, 0.18) !important;
+  color: #8a4848 !important;
+}
+
+.chat-app .ui-toggle { background: rgba(180, 120, 110, 0.23) !important; }
+.chat-app .ui-toggle[data-checked] { background: #b83040 !important; }
+.chat-app .ui-toggle-knob { box-shadow: 0 2px 8px rgba(100, 30, 30, 0.17); }
+
+/* ── 消息和联系人：暖奶玻璃卡片 ── */
+.chat-app .page-body:has(.chat-search-bar) {
+  background:
+    radial-gradient(circle at 8% 9%, rgba(200, 80, 100, 0.20), transparent 28%),
+    radial-gradient(circle at 91% 17%, rgba(220, 160, 120, 0.18), transparent 27%),
+    radial-gradient(circle at 18% 89%, rgba(210, 140, 110, 0.16), transparent 30%),
+    linear-gradient(150deg, #f5edea, #eee0d8 56%, #ead8ce) !important;
+}
+
+.chat-app :is(.contact-item, .chat-item, .chat-list-item, .conversation-item) {
+  position: relative !important;
+  overflow: hidden !important;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(200, 100, 80, 0.12), transparent 39%),
+    rgba(254, 248, 242, 0.78) !important;
+  border: 1px solid rgba(180, 100, 90, 0.12) !important;
+  border-radius: 18px !important;
+  margin: 7px 12px !important;
+  box-shadow:
+    0 8px 22px rgba(100, 40, 40, 0.065),
+    inset 0 1px 0 rgba(255, 248, 240, 0.72) !important;
+  backdrop-filter: blur(11px) saturate(106%);
+  -webkit-backdrop-filter: blur(11px) saturate(106%);
+}
+
+.chat-app :is(.contact-item, .chat-item, .chat-list-item, .conversation-item)
+  :is(.contact-name, .chat-name) {
+  color: #4a2525 !important;
+}
+
+.chat-app :is(.contact-item, .chat-item, .chat-list-item, .conversation-item)
+  :is(.last-message, .chat-preview) {
+  color: #8a5a55 !important;
+}
+
+.chat-app :is(.contact-item, .chat-item, .chat-list-item, .conversation-item)
+  :is(.chat-time, .last-time) {
+  color: #aa8080 !important;
+}
+
+.chat-app .minimal-avatar-wrapper {
+  border-radius: 50% !important;
+  box-shadow:
+    0 0 0 2px rgba(254, 248, 242, 0.86),
+    0 6px 16px rgba(100, 40, 40, 0.12) !important;
+}
+
+.chat-app .minimal-avatar-wrapper :is(img, picture) {
+  border-radius: 50% !important;
+}
+
+/* 筛选胶囊：樱桃晕 */
+.chat-app .chat-list-tab {
+  background: rgba(232, 210, 202, 0.82) !important;
+  color: #996060 !important;
+  border: 1px solid rgba(255, 245, 240, 0.64) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 248, 240, 0.66) !important;
+}
+
+.chat-app .chat-list-tab.active {
+  color: #fdf5f0 !important;
+  background:
+    radial-gradient(circle at 20% 18%, rgba(220, 150, 130, 0.60), transparent 43%),
+    linear-gradient(145deg, #c04050, #8c2030) !important;
+  border-color: rgba(255, 220, 210, 0.50) !important;
+  box-shadow:
+    0 7px 19px rgba(120, 30, 40, 0.20),
+    inset 0 1px 0 rgba(255, 220, 210, 0.22) !important;
+}
+
+/* ── 聊天室：樱桃雾霭 ── */
+.chat-app .chat-room-wrapper {
+  background-color: #ede0d8 !important;
+  background-image:
+    radial-gradient(circle at 7% 6%, rgba(200, 80, 100, 0.22), transparent 31%),
+    radial-gradient(circle at 95% 11%, rgba(220, 160, 100, 0.18), transparent 30%),
+    radial-gradient(circle at 85% 92%, rgba(210, 120, 90, 0.16), transparent 32%),
+    radial-gradient(ellipse 70% 42% at 48% 105%, rgba(200, 100, 80, 0.14), transparent 72%),
+    linear-gradient(150deg, #f5ede8 0%, #ede0d5 54%, #e8d8cc 100%) !important;
+  background-position: center !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+}
+
+.chat-app .chat-room-wrapper > .page-body,
+.chat-app .chat-room-wrapper .chat-room-main-pane.page-body {
+  background: transparent !important;
+}
+
+.chat-app .chat-room-wrapper .page-header {
+  background: linear-gradient(180deg, rgba(250, 244, 240, 0.84), rgba(238, 228, 222, 0.54)) !important;
+  border-bottom-color: rgba(160, 80, 80, 0.09) !important;
+  backdrop-filter: blur(20px) saturate(108%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(108%) !important;
+}
+
+.chat-app .chat-room-wrapper .chat-input-bar {
+  background: rgba(248, 242, 238, 0.76) !important;
+  border-top-color: rgba(160, 80, 80, 0.09) !important;
+  box-shadow: 0 -8px 23px rgba(100, 40, 40, 0.05) !important;
+  backdrop-filter: blur(20px) saturate(108%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(108%) !important;
+}
+
+.chat-app .chat-room-wrapper .chat-input-bar :is(input, textarea),
+.chat-app .chat-room-wrapper .chat-input-bar .chat-input {
+  background: rgba(254, 250, 246, 0.76) !important;
+  border-color: rgba(160, 80, 80, 0.13) !important;
+  color: #4d2a28 !important;
+}
+
+/* ── 聊天信息页：暖白玻璃面板 ── */
+.chat-app .chat-info-menu .menu-group {
+  background:
+    radial-gradient(circle at 100% 0%, rgba(200, 100, 80, 0.10), transparent 38%),
+    rgba(253, 247, 242, 0.91) !important;
+  border: 1px solid rgba(180, 100, 90, 0.12) !important;
+  box-shadow:
+    0 8px 23px rgba(100, 40, 40, 0.07),
+    inset 0 1px 0 rgba(255, 248, 240, 0.72) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.chat-app .chat-info-menu .menu-item { color: #5a3030 !important; }
+.chat-app .chat-info-menu .menu-label { color: #4a2525 !important; }
+.chat-app .chat-info-menu .menu-desc { color: #9a7070 !important; }
+.chat-app .chat-info-menu .menu-right { color: #a08080 !important; }
+.chat-app .chat-info-menu .menu-label-danger { color: #b83040 !important; }
+
+.chat-app .chat-info-menu .menu-item:not(:last-child)::after {
+  background: rgba(160, 80, 80, 0.09) !important;
+  border-color: rgba(160, 80, 80, 0.09) !important;
+}
+
+.chat-app .chat-info-menu .chat-info-icon {
+  background: rgba(235, 215, 205, 0.76) !important;
+  box-shadow: inset 0 0 0 1px rgba(255, 240, 230, 0.60) !important;
+}
+
+/* ── 个人主页：暖红封面 ── */
+.chat-app .user-profile-page-root {
+  background: #f0e6e0 !important;
+}
+
+.chat-app .user-profile-page-root::before {
+  height: 330px !important;
+  background:
+    radial-gradient(circle at 18% 17%, rgba(200, 80, 100, 0.30), transparent 44%),
+    radial-gradient(circle at 81% 46%, rgba(220, 150, 100, 0.24), transparent 39%),
+    linear-gradient(145deg, #ede0d8, #f5edea) !important;
+}
+
+.chat-app .user-profile-page-root .page-body > div > div:first-of-type > div:first-child > div {
+  border-color: rgba(254, 248, 242, 0.93) !important;
+  box-shadow: 0 7px 22px rgba(100, 40, 40, 0.12) !important;
+}
+
+.chat-app .user-profile-page-root .bg-blue-400 {
+  background-color: #b83040 !important;
+}
+
+.chat-app .user-profile-page-root .page-body > div > button:first-of-type {
+  background: linear-gradient(145deg, rgba(230, 210, 200, 0.96), rgba(245, 238, 234, 0.94)) !important;
+  border: 1px solid rgba(255, 245, 238, 0.86) !important;
+  color: #4a2525 !important;
+  box-shadow:
+    0 10px 28px rgba(100, 40, 40, 0.09),
+    inset 0 1px 0 rgba(255, 248, 240, 0.66) !important;
+}
+
+.chat-app .user-profile-page-root .page-body > div > button:first-of-type span[style] {
+  color: #4a2525 !important;
+}
+
+.chat-app .user-profile-page-root .page-body > div > button:first-of-type > div:last-child > span:last-child {
+  background: rgba(254, 248, 242, 0.66) !important;
+  border-color: rgba(160, 80, 80, 0.16) !important;
+  color: #8c3040 !important;
+}
+
+.chat-app .user-profile-page-root .page-body > div > div:nth-of-type(n + 2) {
+  background: rgba(253, 247, 242, 0.82) !important;
+  border: 1px solid rgba(255, 240, 230, 0.70) !important;
+  box-shadow: 0 9px 25px rgba(100, 40, 40, 0.065) !important;
+  backdrop-filter: blur(13px) saturate(106%);
+  -webkit-backdrop-filter: blur(13px) saturate(106%);
+}
+
+/* 快捷入口：樱桃金、莓红、暖杏 */
+.chat-app .user-profile-page-root .page-body > div > div:nth-of-type(2) > button:nth-child(1) > div {
+  background: rgba(224, 180, 120, 0.42) !important;
+  color: #8a5520 !important;
+}
+
+.chat-app .user-profile-page-root .page-body > div > div:nth-of-type(2) > button:nth-child(2) > div {
+  background: rgba(200, 100, 110, 0.34) !important;
+  color: #8c2030 !important;
+}
+
+.chat-app .user-profile-page-root .page-body > div > div:nth-of-type(2) > button:nth-child(3) > div {
+  background: rgba(220, 170, 120, 0.38) !important;
+  color: #8a5030 !important;
+}
+
+/* 动态页 */
+.chat-app :is(.feed-post, .feed-profile-card) {
+  background: rgba(253, 247, 242, 0.82) !important;
+  border-color: rgba(180, 100, 90, 0.12) !important;
+}
+
+.chat-app .feed-cover-bg {
+  background: linear-gradient(145deg, #e8c0b8, #c07080) !important;
+}
