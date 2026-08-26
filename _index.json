@@ -1,7 +1,7 @@
 {
   "schema": "ai_phone_share_index",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-26T02:47:03.836Z",
+  "generatedAt": "2026-08-26T03:24:54.027Z",
   "folders": [
     {
       "name": "A 重要须知（自部署版请查看）",
@@ -65,7 +65,7 @@
     },
     {
       "name": "线上聊天状态栏",
-      "count": 7
+      "count": 8
     },
     {
       "name": "线下正则",
@@ -2694,6 +2694,25 @@
       "avatar": "",
       "ownerHash": "fafe02c203d6e36031b9f100bb083c184b4f867d8957ff4384f832bc1162cc57",
       "updatedAt": "2026-08-19T23:43:41+08:00"
+    },
+    {
+      "folder": "线上聊天状态栏",
+      "name": "病历状态栏",
+      "dirName": "病历状态栏",
+      "type": "dir",
+      "path": "资源/线上聊天状态栏/病历状态栏",
+      "files": [
+        "资源/线上聊天状态栏/病历状态栏/病历灰棕.json",
+        "资源/线上聊天状态栏/病历状态栏/病历红黑.json"
+      ],
+      "images": [
+        "资源/线上聊天状态栏/病历状态栏/1000127625.jpg"
+      ],
+      "description": "两个版本，黑灰棕配色和红黑绿配色。主题是char的精神病收容档案/病历。内容包括体征指数、SAN值、病情记录、医生值班记录和char病娇发言。两版本的提示词略有不同，灰棕的淡淡的绝望偏向物哀感，红黑更激烈更抗拒偏向美恐风格。",
+      "author": "clad",
+      "avatar": "资源/线上聊天状态栏/病历状态栏/.avatar.png",
+      "ownerHash": "2413d3f1b7ac7351a31a964e60b2669f07429fa3cdc45ba1fae1b99fb6efb32b",
+      "updatedAt": "2026-08-26T11:24:34+08:00"
     },
     {
       "folder": "线上聊天状态栏",
